@@ -1,0 +1,43 @@
+.slider {
+    opacity: 0;
+    transition: .4s ease;
+
+    &--partner {
+        overflow: hidden;
+
+
+        .slider {
+            &__box {
+                overflow: hidden;
+            }
+
+            &__wrapper {
+                box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 274px;
+
+            &:not(:last-child) {
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 3px;
+                    background: $gray-1;
+                    opacity: 0.6;
+                    height: 100%;
+                    right: -3px;
+                }
+            }
+        }
+
+        .arrow {
+            margin-top: 72px;
+        }
+    }
+}

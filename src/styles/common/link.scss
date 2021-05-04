@@ -1,0 +1,50 @@
+.link {
+    display: inline-block;
+
+    &--detail {
+        position: relative;
+        display: inline-flex;
+        width: auto;
+        justify-content: flex-start;
+        margin-right: auto;
+        padding-right: 24px;
+        align-items: center;
+        font-weight: 600;
+        color: $purple-1;
+
+        &:hover {
+            color: $red-1;
+
+            & .link__ic {
+                transform: translateX(5px);
+
+                .icon {
+                    svg {
+                        fill: $red-1;
+                    }
+                }
+            }
+        }
+
+        .link {
+            &__ic {
+                transition: .3s ease-in-out;
+                position: relative;
+                top: 1px;
+
+                .icon {
+                    height: 10px;
+                    width: 19px;
+
+                    svg {
+                        fill: $purple-1;
+                    }
+                }
+            }
+
+            &__txt {
+                margin-right: 6px;
+            }
+        }
+    }
+}
