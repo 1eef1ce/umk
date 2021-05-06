@@ -1,0 +1,26 @@
+.call.mf-margin 
+    .call__container.container 
+        .call__grid 
+          .call__column
+            h2.call__title.title-2 Появились вопросы? Свяжитесь с нами
+            .call__txt Мы ответим на все ваши вопросы о&nbsp;производстве и переработке металлопроката, а также его свойствах и особенностях применения. Проведем подробную консультацию по имеющимся товарам.
+          .call__column
+            form.call__subgrid 
+              .call__col.call__col--name 
+                .call__field
+                  label(for="name") Ваше имя*
+                  input#name.js-input(type="text")
+              .call__col.call__col--company 
+                .call__field
+                  label(for="company") Компания
+                  input#company.js-input(type="text")
+              .call__col.call__col--email
+                .call__field
+                  label(for="email") E-mail*
+                  input#email.js-input(type="text")
+              .call__col.call__col--phone
+                .call__field
+                  label(for="phone") Телефон
+                  input#phone.js-input(type="text")
+              .call__col.call__col--submit
+                button.btn.btn--basic(type="submit") Отправить

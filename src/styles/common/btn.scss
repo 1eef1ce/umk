@@ -1,0 +1,19 @@
+.btn {
+    display: inline-block;
+    transition: .3s ease-in-out;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 23.5px 140px;
+    cursor: pointer;
+
+
+    &--basic {
+        background-color: $purple-1;
+        color: white;
+        border: none;
+
+        &:hover {
+            background-color: $red-1;
+        }
+    }
+}

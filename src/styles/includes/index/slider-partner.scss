@@ -1,0 +1,39 @@
+.slider-partner {
+    position: relative;
+    padding-bottom: 120px;
+    margin-top: 60px;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__quote {
+        font-size: 16px;
+        max-width: 643px;
+        text-align: center;
+        width: 100%;
+        margin: 11px auto 0;
+        line-height: 1.5;
+    }
+
+
+    &:after,
+    &:before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        background-color: white;
+        z-index: 2;
+        height: calc(100% - 120px - 133px);
+        width: 10px;
+        top: 133px;
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+}

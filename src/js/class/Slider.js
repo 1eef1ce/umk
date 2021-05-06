@@ -7,78 +7,24 @@ class Slider {
         this.name = name;
         this.view = view;
         this.space = space;
+        this.settings = {};
     }
 
     createSlider() {
-        if (this.pagination || this.arrow) {
-            let pagEl = $(this.name).find('.pagination');
-            let arrowNext = $(this.name).find('.arrow__link--next');
-            let arrowPrev = $(this.name).find('.arrow__link--prev');
+        this.slider = new Swiper(this.name, {
+            slidesPerView: this.view,
+            spaceBetween: this.space,
+        });
 
-            let settings = {
-                slidesPerView: this.view,
-                spaceBetween: this.space,
-                slidesPerColumn: this.column,
-                slidesPerColumnFill: 'row',
-                touchRatio: this.ratio,
-                effect: this.effect,
-                navigation: {
-                    nextEl: arrowNext,
-                    prevEl: arrowPrev,
-                },
-                pagination: {
-                    el: pagEl,
-                    type: "custom",
-                    renderCustom: function (swiper, current, total) {
-                        let i = current ? current : 0;
-                        return `${("0" + i).slice(-2)} / ${("0" + total).slice(-2)}`;
-                    }
-                },
-            };
+        setTimeout(() => {
+            $(this.name).css('opacity', 1);
+        }, 600);
 
-            if (this.custom === true) {
-                console.log(this.custom);
-                this.slider = new Swiper(this.name, settings);
-            }
-            else {
-                this.slider = new Swiper(this.name, {
-                    slidesPerView: this.view,
-                    spaceBetween: this.space,
-                    slidesPerColumn: this.column,
-                    slidesPerColumnFill: 'row',
-                    touchRatio: this.ratio,
-                    effect: this.effect,
-                    fade: { crossFade: true },
-                    loop: this.loop,
-                    direction: this.direction,
-                    pagination: {
-                        el: pagEl,
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: arrowNext,
-                        prevEl: arrowPrev,
-                    },
-                });
-
-                setTimeout(() => {
-                    $(this.name).css('opacity', 1);
-                }, 600);
-            }
-        } else {
-            this.slider = new Swiper(this.name, {
-                slidesPerView: this.view,
-                spaceBetween: this.space,
-            });
-
-            setTimeout(() => {
-                $(this.name).css('opacity', 1);
-            }, 600);
-        }
         return this.slider;
     }
 
     updateSlider(props, res = '') {
+
         switch (props) {
             case 'space':
                 this.slider.params.spaceBetween = res;
@@ -132,7 +78,7 @@ class Slider {
                 break;
             case 'pagination':
                 let pagEl = $(this.name).find('.pagination')[0];
-                let settings = {
+                this.settings = {
                     slidesPerView: this.view,
                     spaceBetween: this.space,
                     slidesPerColumn: this.column,
@@ -142,7 +88,17 @@ class Slider {
                     },
                 };
                 this.slider.destroy();
-                this.slider = new Swiper(this.name, settings);
+                this.slider = new Swiper(this.name, this.settings);
+                break;
+            case 'arrow':
+                let arrowNext = $(this.name).find('.arrow__link--next')[0];
+                let arrowPrev = $(this.name).find('.arrow__link--prev')[0];
+                this.settings.navigation = {
+                    nextEl: arrowNext,
+                    prevEl: arrowPrev,
+                };
+                this.slider.destroy();
+                this.slider = new Swiper(this.name, this.settings);
                 break;
         }
     }

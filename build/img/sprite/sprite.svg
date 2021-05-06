@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="ic-arrow-sm">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="ic-arrow-slider">
+    <path d="M6.474 6.875l4.192-4.209L8.375.375.25 8.5l8.125 8.125 2.291-2.291-4.192-4.209H32.75v-3.25H6.474z"/>
+</symbol><symbol id="ic-arrow-sm">
     <path d="M13.118 4.777l-2.005 2.012 1.096 1.096L16.094 4 12.209.115 11.113 1.21l2.005 2.013H.554v1.554h12.564z"/>
 </symbol><symbol id="ic-arrow">
     <path d="M14.899 5.375L12.64 7.641l1.234 1.234L18.25 4.5 13.875.125l-1.234 1.234L14.9 3.625H.75v1.75h14.149z"/>

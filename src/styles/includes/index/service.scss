@@ -1,12 +1,28 @@
 .service {
-    background-color: $gray-3;
-    padding-top: 4.71em;
-    padding-bottom: 5.357em;
+    background-image: url(../img/decor/grid2.svg);
+    padding-top: 61px;
+    padding-bottom: 75px;
+    background-size: auto;
+    background-position: 49% 157%;
+    background-repeat: no-repeat;
+
+    &__title {
+        text-align: center;
+    }
 
     &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 36px 36px;
+        margin-top: 30px;
+    }
+
+    &__quote {
+        font-size: 16px;
+        margin: 12px auto 0;
+        max-width: 636px;
+        text-align: center;
+        line-height: 1.5;
     }
 
     &__bloc {
@@ -16,6 +32,12 @@
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
         height: 196px;
         padding: 1.928em 1.785em 2.071em;
+        transition: linear .3s;
+
+
+        &:hover {
+            background-color: red;
+        }
 
         &:nth-child(2) {
             .service__pic .icon {
@@ -38,6 +60,12 @@
                 height: 12px;
             }
         }
+
+        .color {
+            svg {
+                fill: white !important;
+            }
+        }
     }
 
     &__pic {
@@ -49,6 +77,7 @@
         background-color: $blue-1;
         border-radius: 26px;
         margin-top: auto;
+        transform: scale(1);
 
         .icon {
             width: 20px;

@@ -6,6 +6,8 @@
 
 @import "common/link";
 
+@import "common/btn";
+
 @import "common/helper";
 
 @import "common/slider";
@@ -18,4 +20,19 @@
 
 @import "includes/index/novation";
 
+@import "includes/index/slider-partner";
+
+@import "includes/index/inset";
+
+@import "includes/index/call";
+
+@import "includes/index/layer";
+
 @import "includes/catalog/catalog-list";
+
+.on-focus {
+    label {
+        font-size: 12px;
+        transform: translate3d(0, -10px, 0);
+    }
+}

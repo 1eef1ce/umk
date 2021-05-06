@@ -4,7 +4,8 @@
 
     &--partner {
         overflow: hidden;
-
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
+        margin-top: 32px;
 
         .slider {
             &__box {
@@ -34,10 +35,101 @@
                     right: -3px;
                 }
             }
+
+            img {
+                transform: translateY(-10px);
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            border-radius: 0;
+            transition: .3s ease-in-out;
+            background-color: $gray-1;
+            opacity: 1;
+
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+
+            &:hover {
+                background-color: $purple-1;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $purple-1;
         }
 
         .arrow {
-            margin-top: 72px;
+            position: absolute;
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            bottom: 0;
+
+            &__cover {
+                display: flex;
+            }
+
+            &__link {
+                width: 83px;
+                height: 83px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &--next {
+                    transform: scale(-1, 1);
+                }
+
+                svg {
+                    fill: $purple-1;
+                }
+            }
+        }
+    }
+
+    .arrow {
+        &__link {
+            width: 83px;
+            height: 83px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            border: 2px solid transparent;
+
+            &--next {
+                transform: scale(-1, 1);
+            }
+
+            path {
+                fill: $purple-1;
+                transition: .3s ease-in-out;
+            }
+
+            &:hover {
+                border-color: $red-1;
+
+                & path {
+                    fill: $red-1;
+                }
+            }
+
+            &:active {
+                background-color: $red-1;
+
+                & path {
+                    fill: white;
+                }
+            }
         }
     }
 }
