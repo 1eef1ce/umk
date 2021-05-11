@@ -71,4 +71,10 @@
             }
         }
     }
+
+    &__column {
+        &:last-child {
+            transform: translateY(5px);
+        }
+    }
 }

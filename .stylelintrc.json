@@ -23,6 +23,8 @@
     "no-empty-source": null,
     "declaration-empty-line-before": null,
     "no-missing-end-of-source-newline": null,
+    "selector-combinator-space-before": "never",
+    "selector-combinator-space-after": "never",
     "unit-whitelist": [
       "em",
       "rem",

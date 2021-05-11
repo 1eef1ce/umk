@@ -12,6 +12,8 @@
 
 @import "common/slider";
 
+@import "common/social";
+
 @import "includes/index/view";
 
 @import "includes/index/service";
@@ -35,4 +37,63 @@
         font-size: 12px;
         transform: translate3d(0, -10px, 0);
     }
+}
+
+.checkbox-other {
+    display: block;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.checkbox-other input[type="checkbox"] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-other span {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 35px;
+    max-width: 285px;
+    width: 100%;
+    bottom: 4px;
+    line-height: 1.4;
+}
+
+.checkbox-other span::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border: 1.5px solid $red-1;
+    box-sizing: border-box;
+}
+
+.checkbox-other span::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    width: 18px;
+    height: 15px;
+    box-sizing: border-box;
+    background: url("/img/icons/ic-ok.svg") no-repeat center;
+}
+
+.checkbox-other input[type="checkbox"]:checked+span::before {
+    background-color: $red-1;
+}
+
+.checkbox-other input[type="checkbox"]:checked+span::after {
+    background: url("/img/icons/ic-ok.svg") no-repeat center;
 }
