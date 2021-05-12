@@ -1,36 +1,26 @@
 @import "common/global";
-
 @import "common/header";
-
 @import "common/footer";
-
 @import "common/link";
-
 @import "common/btn";
-
 @import "common/helper";
-
 @import "common/slider";
-
 @import "common/social";
-
 @import "includes/index/view";
-
 @import "includes/index/service";
-
 @import "includes/index/advantage";
-
 @import "includes/index/novation";
-
 @import "includes/index/slider-partner";
-
 @import "includes/index/inset";
-
 @import "includes/index/call";
-
 @import "includes/index/layer";
-
 @import "includes/catalog/catalog-list";
+@import "includes/404";
+@import "includes/delivery";
+@import "includes/about";
+@import "includes/about/activity";
+@import "includes/about/mission";
+@import "includes/vacancy-detail";
 
 .on-focus {
     label {

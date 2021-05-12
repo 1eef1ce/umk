@@ -1,0 +1,30 @@
+.not-found {
+  background: url("/img/404.png") no-repeat 100% 200%;
+
+  &__inner {
+    width: 50%;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 150px;
+    line-height: 1.02;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 1.12;
+    margin-top: 4px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 1em;
+  }
+
+  .btn {
+    margin-top: 40px;
+  }
+}
