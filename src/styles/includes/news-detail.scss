@@ -1,0 +1,42 @@
+.news-detail {
+
+  &__container {
+    max-width: 997px;
+  }
+
+  &__title {
+    line-height: 1.2;
+  }
+
+  &__date {
+    line-height: 1.5;
+    color: $gray-2;
+    margin-top: 22px;
+  }
+
+  &__img {
+    height: 556px;
+    margin-top: 26px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+  }
+
+  p {
+    margin: 12px 0 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,26 @@
+.share {
+  display: flex;
+  align-items: center;
+
+  span {
+    font-weight: 600;
+    line-height: 1;
+    margin-right: 20px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
+  }
+}
