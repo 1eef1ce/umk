@@ -1,0 +1,31 @@
+.notification {
+
+  &__container {
+    max-width: 997px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+  }
+
+  &__item {
+    padding: 17px 0;
+
+    &:not(:last-of-type) {
+      border-bottom: 2px solid rgba(217, 217, 217, 0.35);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  &__text {
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+}

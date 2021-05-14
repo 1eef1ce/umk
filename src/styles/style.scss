@@ -7,6 +7,7 @@
 @import "common/slider";
 @import "common/social";
 @import "common/share";
+@import "common/aside";
 @import "includes/index/view";
 @import "includes/index/service";
 @import "includes/index/advantage";
@@ -24,6 +25,10 @@
 @import "includes/vacancy-detail";
 @import "includes/news";
 @import "includes/news-detail";
+@import "includes/notification";
+@import "includes/standard";
+@import "includes/tender";
+@import "includes/tender-detail";
 
 .on-focus {
     label {
