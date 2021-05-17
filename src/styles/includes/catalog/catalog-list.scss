@@ -71,4 +71,35 @@
             grid-area: b5;
         }
     }
+
+    &--search {
+        margin-top: 55px;
+
+        .catalog-list {
+            &__grid {
+                display: grid;
+                grid-column-gap: 95px;
+                max-width: 1009px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 0px;
+                grid-template-areas:
+                    "b1 b2 b3 b4";
+            }
+
+            &__bloc {
+                margin-top: 0;
+            }
+        }
+
+        .link--title {
+            &:not(:first-child) {
+                margin-top: 27px;
+            }
+        }
+
+        .link--small:not(:first-child) {
+            margin-top: 17px;
+        }
+    }
 }

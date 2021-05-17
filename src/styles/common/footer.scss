@@ -27,8 +27,12 @@
     &__logo {
         width: 121px;
         height: 52px;
-        background-color: red;
         margin-right: 25px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__link {

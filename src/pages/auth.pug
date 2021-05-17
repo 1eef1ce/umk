@@ -1,0 +1,27 @@
+extends common/layout
+
+block content
+  main.main
+    .auth
+      .auth__container.container 
+        .auth__box 
+          .auth-popup
+            .auth-popup__header 
+              .auth-popup__link.js-form-reg Регистрация
+              .auth-popup__link.js-form-auth.active Вход
+            .auth-popup__cover
+              form.auth-popup__form.show
+                .input
+                    label(for="email") E-mail
+                    input#email.js-input(type="text")
+                .input
+                    label(for="pass") Пароль
+                    input#pass.js-input(type="password")
+                .btn.btn--basic(type="submit") Войти
+              form.auth-popup__form
+                .input
+                    label(for="email_reg") E-mail
+                    input.js-input(type="text")
+                #email_reg.btn.btn--basic(type="submit") Войти
+                .auth-popup__info При создании учётной записи вы автоматически соглашаетесь с  
+                  a.link(href="javascript:void(0);") “Политикой конфиденциальности”

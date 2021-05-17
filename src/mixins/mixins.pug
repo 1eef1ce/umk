@@ -4,11 +4,12 @@
 //- 		use(xlink:href="i/sprite/sprite.svg#" + name)
 
 
-mixin icon(name, size, fill)
-    - var size = size || 24;
+mixin icon(name, width, height)
+    - var sizeW = width || 24;
+    - var sizeH = height || 24;
     - var sprite = "img/sprite/sprite.svg"
     - var prefix = ""
     
     span.icon(aria-hidden="true")&attributes(attributes)
-        svg(viewBox='0 0 ' + size + ' ' + size width=size height=size fill=fill)
+        svg(viewBox='0 0 ' + sizeW + ' ' + sizeH width=sizeW height=sizeH)
             use(xlink:href= sprite + '#' + name)

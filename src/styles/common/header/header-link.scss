@@ -1,0 +1,16 @@
+.header-link {
+    display: flex;
+    margin-right: 34px;
+
+    &__icon {
+        margin-right: 8px;
+
+        .icon {
+            fill: $purple-1;
+        }
+    }
+
+    &__txt {
+        line-height: 20px;
+    }
+}

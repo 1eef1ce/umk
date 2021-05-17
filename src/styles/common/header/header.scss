@@ -1,0 +1,85 @@
+@import "../../mixins/media";
+
+.header {
+    width: 100%;
+    background-color: white;
+    font-size: 15px;
+    position: relative;
+    z-index: 100;
+    min-height: 93px;
+
+    &__inner {
+        min-height: 93px;
+        background-color: white;
+    }
+
+    &__container {
+        display: flex;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__logo {
+        display: block;
+        margin-right: 32px;
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 4px;
+    }
+
+    &__link {
+        font-size: 15px;
+        color: $basic;
+        opacity: 0.5;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__top,
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bottom {
+        margin-top: 19px;
+
+        .burger {
+            margin-right: 10px;
+        }
+    }
+
+    &__bloc {
+        display: flex;
+    }
+
+    // @include media-tablet {
+    //     width: 500px;
+    // }
+
+    .dropdown {
+        &--user {
+            margin-right: 23px;
+        }
+
+        &--phone {
+            margin-right: 32px;
+        }
+
+        .dropdown-label {
+            &__icon {
+                margin-right: 8px;
+
+                .icon {
+                    fill: $purple-1;
+                }
+            }
+        }
+    }
+}

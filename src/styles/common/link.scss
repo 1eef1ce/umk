@@ -1,6 +1,43 @@
 .link {
     display: inline-block;
 
+    &:hover {
+        color: $purple-1;
+    }
+
+    &--title {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+        color: $purple-1;
+
+        &:hover {
+            color: $red-1;
+        }
+
+        &.active {
+            color: $red-1;
+        }
+    }
+
+    &--small {
+        display: block;
+        font-size: 16px;
+        color: $gray-2;
+
+        &:not(:first-child) {
+            margin-top: 14px;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &.active {
+            opacity: 0.8;
+        }
+    }
+
     &--detail {
         position: relative;
         display: inline-flex;

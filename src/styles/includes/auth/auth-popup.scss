@@ -1,0 +1,77 @@
+.auth-popup {
+    flex: 1;
+    padding: 46px 65px 60px;
+
+    &__cover {
+        position: relative;
+        margin-top: 31px;
+        min-height: 245px;
+    }
+
+    &__form {
+        position: absolute;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        left: 0;
+        right: 0;
+
+        bottom: 0;
+
+        .btn {
+            padding: 23.5px 191px;
+            margin-top: 24px;
+        }
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+    }
+
+    &__link {
+        font-size: 35px;
+        line-height: 54px;
+        font-weight: 600;
+        color: $gray-2;
+        cursor: pointer;
+
+        &.active {
+            color: $basic;
+            font-size: 45px;
+            transform: translateY(0);
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        font-size: 14px;
+        max-width: 370px;
+        line-height: 1.5;
+        margin-top: 16px;
+        color: $gray-2;
+
+        &>.link {
+            color: $gray-2;
+
+            &:hover {
+                color: $purple-1;
+            }
+        }
+    }
+
+    .input {
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
+    }
+
+
+
+
+}

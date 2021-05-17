@@ -1,6 +1,6 @@
 @import "common/global";
 
-@import "common/header";
+@import "common/header/header";
 
 @import "common/footer";
 
@@ -13,6 +13,18 @@
 @import "common/slider";
 
 @import "common/social";
+
+@import "common/dropdown";
+
+@import "common/burger";
+
+@import "common/search";
+
+@import "common/header/header-link";
+
+@import "common/menu-popup";
+
+@import "common/input";
 
 @import "includes/index/view";
 
@@ -29,6 +41,10 @@
 @import "includes/index/call";
 
 @import "includes/index/layer";
+
+@import "includes/auth/auth";
+
+@import "includes/auth/auth-popup";
 
 @import "includes/catalog/catalog-list";
 
@@ -96,4 +112,13 @@
 
 .checkbox-other input[type="checkbox"]:checked+span::after {
     background: url("/img/icons/ic-ok.svg") no-repeat center;
+}
+
+.icon-stroke {
+    stroke: currentColor;
+}
+
+.icon-md {
+    height: 3rem;
+    width: 3rem;
 }

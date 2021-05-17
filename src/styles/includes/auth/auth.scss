@@ -1,0 +1,21 @@
+.auth {
+
+
+    &__box {
+        height: auto;
+        max-height: 536px;
+        overflow: hidden;
+        display: flex;
+        max-width: 556px;
+        width: 100%;
+        background-color: white;
+        margin: auto;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
+        transition: max-height 1.5s;
+    }
+
+    &__container {
+        padding-top: 100px;
+        min-height: 594px;
+    }
+}
