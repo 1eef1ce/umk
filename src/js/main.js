@@ -1,5 +1,6 @@
 import $ from '../local_modules/jquery/dist/jquery.min';
 import Slider from './class/Slider.js';
+import Swiper from '../local_modules/swiper/swiper-bundle.min';
 import { gsap, TimelineMax, Back } from 'gsap';
 
 $.fn.exists = function () {
@@ -109,6 +110,17 @@ $(document).ready(() => {
         item.addEventListener('mouseleave', function () {
             serviceHover(item, false);
         });
+    });
+
+    const relatedSwiper = new Swiper('.product-related__items', {
+        slidesPerView: 4,
+        spaceBetween: 36,
+        watchOverflow: true,
+        pagination: {
+            el: '.pagination',
+            clickable: true,
+        },
+
     });
 
 });

@@ -1,0 +1,25 @@
+extends common/layout
+
+block content
+    main.main
+        .product
+            .container
+                .product__top
+                    .product__icon
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 48.4793L6.25 33.896L9.625 31.271L24.9792 43.2085L40.3542 31.2522L43.75 33.896L25 48.4793ZM25 39.5835L6.25 25.0002L9.625 22.3752L24.9792 34.3127L40.3542 22.3543L43.75 25.0002L25 39.5835ZM25 30.6877L9.64583 18.7502L6.25 16.1043L25 1.521L43.75 16.1043L40.3333 18.7502L25 30.6877Z" fill="#B7DDFA"/>
+                        </svg>
+                    .product__title
+                        .product__code Код товара: 954108
+                        h1.title-1.product__name Натяжитель ленты ГОСТ 380-2005
+                include includes/product/product-specs
+                .product__bottom
+                    .product-price
+                        .product-price__text Стоимость:
+                        .product-price__value 50 000 ₽
+                    .product-actions
+                        form
+                            input
+                            button.btn.btn--basic.btn--w200.btn--h47(type="submit") В корзину
+                include includes/product/product-info
+                include includes/product/product-related

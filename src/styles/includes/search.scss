@@ -1,0 +1,43 @@
+.search {
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    list-style: none;
+    counter-reset: numbers-counter;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 26px;
+    margin: 10px 0;
+    counter-increment: numbers-counter;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: counter(numbers-counter) ". ";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: 1.5;
+    color: $purple-1;
+    margin-top: 3px;
+
+    &:hover {
+      color: $red-1;
+    }
+  }
+}

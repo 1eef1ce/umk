@@ -8,6 +8,7 @@
 @import "common/social";
 @import "common/share";
 @import "common/aside";
+@import "common/tooltip";
 @import "includes/index/view";
 @import "includes/index/service";
 @import "includes/index/advantage";
@@ -19,7 +20,7 @@
 @import "includes/catalog/catalog-list";
 @import "includes/404";
 @import "includes/delivery";
-@import "includes/about";
+@import "includes/about/about";
 @import "includes/about/activity";
 @import "includes/about/mission";
 @import "includes/vacancy-detail";
@@ -29,6 +30,11 @@
 @import "includes/standard";
 @import "includes/tender";
 @import "includes/tender-detail";
+@import "includes/search";
+@import "includes/product/product";
+@import "includes/product/product-info";
+@import "includes/product/product-related";
+@import "includes/product/product-specs";
 
 .on-focus {
     label {

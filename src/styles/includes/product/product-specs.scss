@@ -1,0 +1,27 @@
+.product-specs {
+  padding: 28px 0 36px;
+  border-bottom: 2px solid rgba(217, 217, 217, 0.35);
+
+  &__items {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    width: 47.5%;
+    font-weight: 600;
+  }
+
+  &__value {
+    width: 52.5%;
+  }
+}
