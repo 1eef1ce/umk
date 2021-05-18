@@ -8,24 +8,21 @@
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
+h1,
 h2,
 h3,
 h4 {
     margin: 0;
 }
 
-html {
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'MyriadPro', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.5;
     color: $basic;
 }
 
@@ -50,7 +47,6 @@ a {
     font-weight: 600;
     font-size: 45px;
     line-height: 1.12;
-    margin: 0;
 }
 
 .title-2 {

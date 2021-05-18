@@ -1,9 +1,7 @@
 .call {
     &__txt {
-        font-size: 16px;
         max-width: 274px;
         margin-top: 16px;
-        line-height: 1.5;
     }
 
     &__grid {
@@ -30,7 +28,6 @@
         label {
             position: absolute;
             line-height: 64px;
-            font-size: 16px;
             transition: .3s ease-in-out;
             opacity: .5;
             color: $basic;
