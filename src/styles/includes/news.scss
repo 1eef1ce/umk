@@ -37,10 +37,15 @@
   }
 
   &__title {
+    display: block;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.35;
     margin-top: 25px;
+
+    &:hover {
+      color: $purple-1;
+    }
   }
 
   &__text {

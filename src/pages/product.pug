@@ -19,7 +19,7 @@ block content
                         .product-price__value 50 000 ₽
                     .product-actions
                         form
-                            input
-                            button.btn.btn--basic.btn--w200.btn--h47(type="submit") В корзину
+                            input.form-group__input(type="text" id="quantity" name="quantity" value="1 т")
+                            button.btn.btn--basic.btn--w200.btn--h47(type="submit" name="submit") В корзину
                 include includes/product/product-info
                 include includes/product/product-related

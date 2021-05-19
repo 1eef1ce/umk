@@ -1,0 +1,65 @@
+.form {
+  margin-top: 32px;
+
+  &-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+
+    &__label {
+      position: absolute;
+      top: 32px;
+      left: 26px;
+      transform: translateY(-50%);
+      line-height: 1.2;
+      color: $gray-2;
+      transition: 0.2s;
+
+      &.active {
+        top: 20px;
+        font-size: 12px;
+      }
+
+      &.disabled {
+        color: $gray-1;
+      }
+
+      &+.form-group__input {
+
+        &:focus,
+        &:not([value=""]) {
+          padding: 34px 26px 14px;
+        }
+      }
+    }
+
+    &__input {
+      padding: 24px 26px;
+      border: 1px solid $gray-1;
+      line-height: 1.2;
+      transition: 0.2s;
+
+      &:disabled {
+        background-color: initial;
+      }
+
+      &:not(:disabled) {
+
+        &:hover,
+        &:focus {
+          border-color: $basic;
+        }
+      }
+    }
+
+    textarea {
+      height: 160px;
+    }
+  }
+
+  .btn {
+    width: 426px;
+    margin-top: 25px;
+  }
+}

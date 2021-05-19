@@ -29,9 +29,14 @@
   }
 
   &__title {
+    display: block;
     font-weight: 600;
     font-size: 18px;
     line-height: 1.6;
+
+    &:hover {
+      color: $purple-1;
+    }
   }
 
   &__text {
