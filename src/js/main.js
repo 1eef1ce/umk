@@ -1,5 +1,6 @@
 import $ from '../local_modules/jquery/dist/jquery.min';
 import Slider from './class/Slider.js';
+import Swiper from '../local_modules/swiper/swiper-bundle.min';
 import { gsap, TimelineMax, Back } from 'gsap';
 
 $.fn.exists = function () {
@@ -109,6 +110,57 @@ $(document).ready(() => {
         item.addEventListener('mouseleave', function () {
             serviceHover(item, false);
         });
+    });
+
+    const relatedSwiper = new Swiper('.product-related__items', {
+        slidesPerView: 4,
+        spaceBetween: 36,
+        watchOverflow: true,
+        pagination: {
+            el: '.pagination',
+            clickable: true,
+        },
+    });
+
+    if($('[data-form]').exists()) {
+        $('[data-form-group]').each(function () {
+            let field = $(this).find('[data-form-field]');
+            let label = $(this).find('[data-form-label]');
+
+            field.focus(function () {
+                label.addClass('active');
+            });
+            field.blur(function () {
+                if(field.val() === '') {
+                    label.removeClass('active');
+                }
+            });
+            if(field.val() !== '') {
+                label.addClass('active');
+            }
+            if (field.prop('disabled') === true) {
+                label.addClass('disabled');
+            }
+        });
+    }
+
+    $('input[type="file"]').change(function () {
+        let label = $('.file .file__label');
+        if (typeof (this.files) != 'undefined') {
+            if (this.files.length == 0) {
+                label.text(label.data('default'));
+            }
+            else {
+                let file = this.files[0];
+                let name = file.name;
+                label.text(name);
+            }
+        }
+        else {
+            let name = this.value.split("\\");
+            label.text(name[name.length - 1]);
+        }
+        return false;
     });
 
 });

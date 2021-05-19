@@ -1,41 +1,29 @@
 @import "../../local_modules/normalize.css/normalize";
 @import "../../local_modules/swiper/swiper-bundle.min";
 @import "../utils/color.scss";
+@import "../utils/fonts.scss";
+@import "../utils/variables.scss";
 
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
-:root {
-    font-size: 14px;
-}
-
+h1,
 h2,
 h3,
 h4 {
     margin: 0;
 }
 
-html {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-    font-family: 'Myriad Pro', sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-
-    color: $basic;
+    font-family: 'MyriadPro', Arial, sans-serif;
     font-weight: 400;
-    line-height: 1.2;
-    position: relative;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+    line-height: 1.5;
+    color: $basic;
 }
 
 img {
@@ -56,20 +44,27 @@ a {
 }
 
 .title-1 {
+    font-weight: 600;
     font-size: 45px;
-    letter-spacing: -0.7px;
-    font-weight: 700;
-    margin: 0;
+    line-height: 1.12;
 }
 
 .title-2 {
-    font-size: 40px;
-    line-height: 1.1;
     font-weight: 600;
+    font-size: 40px;
+    line-height: 1.02;
 }
 
 .title-3 {
+    font-weight: 600;
     font-size: 35px;
+    line-height: 1.02;
+}
+
+.title-4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.35;
 }
 
 svg {
@@ -82,5 +77,16 @@ svg {
 }
 
 p {
+    margin: 16px 0 0;
+    line-height: 1.5;
+}
+
+ul,
+ol {
+    padding: 0;
     margin: 0;
+}
+
+textarea {
+    resize: none;
 }

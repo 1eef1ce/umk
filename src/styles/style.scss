@@ -1,36 +1,44 @@
 @import "common/global";
-
 @import "common/header";
-
 @import "common/footer";
-
 @import "common/link";
-
 @import "common/btn";
-
 @import "common/helper";
-
 @import "common/slider";
-
 @import "common/social";
-
+@import "common/share";
+@import "common/aside";
+@import "common/tooltip";
+@import "common/form";
+@import "common/checkbox";
+@import "common/file";
+@import "common/modal";
 @import "includes/index/view";
-
 @import "includes/index/service";
-
 @import "includes/index/advantage";
-
 @import "includes/index/novation";
-
 @import "includes/index/slider-partner";
-
 @import "includes/index/inset";
-
 @import "includes/index/call";
-
 @import "includes/index/layer";
-
 @import "includes/catalog/catalog-list";
+@import "includes/404";
+@import "includes/delivery";
+@import "includes/about/about";
+@import "includes/about/activity";
+@import "includes/about/mission";
+@import "includes/vacancy-detail";
+@import "includes/news";
+@import "includes/news-detail";
+@import "includes/notification";
+@import "includes/standard";
+@import "includes/tender";
+@import "includes/tender-detail";
+@import "includes/search";
+@import "includes/product/product";
+@import "includes/product/product-info";
+@import "includes/product/product-related";
+@import "includes/product/product-specs";
 
 .on-focus {
     label {

@@ -1,0 +1,52 @@
+.tender {
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    list-style: none;
+    counter-reset: numbers-counter;
+  }
+
+  &__item {
+    position: relative;
+    padding: 15px 0 20px 35px;
+    counter-increment: numbers-counter;
+
+    &:not(:last-of-type) {
+      border-bottom: 2px solid rgba(217, 217, 217, 0.35);
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 15px;
+      content: counter(numbers-counter) ". ";
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.6;
+
+    &:hover {
+      color: $purple-1;
+    }
+  }
+
+  &__text {
+    margin-top: 4px;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 1.45;
+    color: $gray-2;
+    margin-top: 10px;
+  }
+}

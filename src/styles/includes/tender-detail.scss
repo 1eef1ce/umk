@@ -1,0 +1,50 @@
+.tender-detail {
+
+  &__container {
+    max-width: 997px;
+  }
+
+  &__content {
+    margin-top: 16px;
+  }
+
+  p {
+    margin: 12px 0 0;
+
+    span,
+    a {
+      font-weight: 600;
+      color: $purple-1;
+    }
+
+    a {
+
+      &:hover {
+        color: $red-1;
+      }
+    }
+  }
+
+  &__contacts {
+    margin: 30px 0;
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: $red-1;
+    margin-left: 4px;
+  }
+
+  &__form {
+    max-width: 845px;
+    margin-top: 50px;
+  }
+}
