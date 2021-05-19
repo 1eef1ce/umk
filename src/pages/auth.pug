@@ -13,16 +13,16 @@ block content
               form.auth-popup__form.show
                 .input
                     label(for="email") E-mail
-                    input#email.js-input(type="text")
+                    input#email.js-input(type="text" name="email")
                 .input
                     label(for="pass") Пароль
-                    input#pass.js-input(type="password")
+                    input#pass.js-input(type="password" name="password")
                 .btn.btn--basic(type="submit") Войти
                 a.auth-popup__ref.link(href="javascript:void(0);") Забыли пароль?
               form.auth-popup__form
                 .input
                     label(for="email_reg") E-mail
-                    input.js-input(type="text")
+                    input#email.js-input(type="text" name="email")
                 #email_reg.btn.btn--basic(type="submit") Войти
                 .auth-popup__info При создании учётной записи вы автоматически соглашаетесь с  
                   a.link(href="javascript:void(0);") “Политикой конфиденциальности”

@@ -9,7 +9,7 @@ block content
             h1.auth-popup__title.title-1 Восстановить пароль
             .auth-popup__quote Если вы забыли пароль, введите E-mail. Ваши региcтрационные данные (пароль) будут высланы на этот адрес электронной почты.
             .auth-popup__cover
-              form.auth-popup__form.show
+              form.auth-popup__form.show(action="/")
                 .input
                     label(for="email_reg") E-mail
                     input.js-input(type="text")

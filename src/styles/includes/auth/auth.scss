@@ -1,6 +1,7 @@
 .auth {
     background: url(../img/decor/grid4.svg) no-repeat 50% 28%/auto;
     margin-bottom: -105px;
+    min-height: 773px;
 
     &__box {
         height: 100vh;
@@ -27,7 +28,8 @@
     }
 
     &--restore {
-        background: url(../img/decor/grid5.svg) no-repeat 50% 28%/auto;
+        min-height: initial;
+        background: url(../img/decor/grid5.svg) no-repeat 50% -25%/auto;
 
         .auth-popup {
             padding: 0;
@@ -66,7 +68,7 @@
             }
 
             &__container {
-                padding-bottom: 121px;
+                padding-bottom: 225px;
                 min-height: initial;
             }
         }
