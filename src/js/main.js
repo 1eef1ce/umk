@@ -1,6 +1,6 @@
 import $ from '../local_modules/jquery/dist/jquery.min';
 import Slider from './class/Slider.js';
-import { gsap, TimelineMax, Back, Sine } from 'gsap';
+import { gsap, TimelineMax, Back, Power1 } from 'gsap';
 
 $.fn.exists = function () {
     return $(this).length;
@@ -19,15 +19,17 @@ const projectFunc = {
         if ($('.auth-popup').exists()) {
             try {
                 const includeBloc = document.querySelector('.auth-popup');
-                const tabsEl = includeBloc.querySelectorAll('.auth-popup__form');
+                let tabsEl = includeBloc.querySelectorAll('.auth-popup__form');
                 let btnTab = includeBloc.querySelectorAll('.auth-popup__link');
+                tabsEl = Array.prototype.slice.call(tabsEl);
+                tabsEl = tabsEl.reverse();
                 btnTab = Array.prototype.slice.call(btnTab);
-                btnTab = btnTab.reverse();
+                // btnTab = btnTab.reverse();
 
                 const hideForm = new TimelineMax({
                     reversed: true,
                     paused: true,
-                    defaults: { duration: 0.3 }
+                    defaults: { duration: 0.5 }
                 });
 
                 tabsEl.forEach((element, i) => {
@@ -39,17 +41,20 @@ const projectFunc = {
                                 {
                                     fontSize: '35px',
                                     color: '#AAAAAA',
-                                    ease: Sine.Out
+                                    ease: Power1.inOut
                                 }
                             )
                             .to(
                                 element,
+                                0.3,
                                 {
                                     autoAlpha: 0,
                                     display: 'none',
-                                    ease: Sine.Out
-                                }
+                                    ease: Power1.inOut
+                                },
+                                '-=0.3'
                             );
+
                         hideForm.play();
 
                     }
@@ -63,16 +68,29 @@ const projectFunc = {
         if ($('.auth-popup').exists()) {
             try {
                 const includeBloc = document.querySelector('.auth-popup');
-                const tabsEl = includeBloc.querySelectorAll('.auth-popup__form');
+                let tabsEl = includeBloc.querySelectorAll('.auth-popup__form');
                 let btnTab = includeBloc.querySelectorAll('.auth-popup__link');
                 btnTab = Array.prototype.slice.call(btnTab);
-                btnTab = btnTab.reverse();
-
+                tabsEl = Array.prototype.slice.call(tabsEl);
+                tabsEl = tabsEl.reverse();
+                const mainBloc = document.querySelector('.auth__box');
 
                 const showForm = new TimelineMax({
                     reversed: true,
                     paused: true,
-                    defaults: { duration: 0.3 }
+                    defaults: { duration: 0.5 },
+                    onStart: () => {
+                        setTimeout(
+                            () => {
+                                console.log('end');
+                                tabsEl[index].style.display = 'block';
+                                mainBloc.style.maxHeight = 191 + tabsEl[index].scrollHeight + `px`;
+                                tabsEl[index].style.display = 'none';
+                                console.log(mainBloc.style.maxHeight);
+                            },
+                            100
+                        );
+                    }
                 });
 
                 showForm
@@ -82,82 +100,89 @@ const projectFunc = {
                         {
                             fontSize: '45px',
                             color: '#38393F',
-                            ease: Sine.Out
-
+                            ease: Power1.inOut
                         }
                     )
                     .to(tabsEl[index],
+                        0.3,
                         {
                             autoAlpha: 1,
                             display: 'block',
-                            ease: Sine.Out
+                            ease: Power1.inOut
                         },
-                        '+=0.3'
+                        '+=0.1'
                     );
-
-
                 showForm.play();
                 console.log(index);
             } catch (err) {
                 console.log(err);
             }
         }
-    }
-};
+    },
+    hoverTab(element, state) {
+        const hoverTab = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 }
+        });
 
-$(document).ready(() => {
-    projectFunc.createSlider();
+        const hoverTabLeave = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 }
+        });
 
+        hoverTab
+            .to(
+                element,
+                {
+                    color: '#38393F'
+                }
+            );
 
-    const setTabs = () => {
+        hoverTabLeave
+            .to(
+                element,
+                {
+                    color: '#AAAAAA'
+                }
+            );
+
+        if (state) {
+            hoverTab.play();
+            hoverTabLeave.reverse();
+        } else {
+            hoverTabLeave.play();
+            hoverTab.reverse();
+        }
+    },
+    setTabs() {
         if ($('.auth-popup__link').exists()) {
             try {
                 const includeBloc = document.querySelector('.auth-popup');
                 let btnTab = includeBloc.querySelectorAll('.auth-popup__link');
-                const heightCover = includeBloc.querySelector('.auth-popup__cover');
-
                 btnTab = Array.prototype.slice.call(btnTab);
-                btnTab = btnTab.reverse();
-                let tabsEl = includeBloc.querySelectorAll('.auth-popup__form');
-                tabsEl = Array.prototype.slice.call(tabsEl);
-                tabsEl = tabsEl.reverse();
+                projectFunc.hiddenTabs(1);
 
-
-                projectFunc.showTabs(0);
-                projectFunc.hiddenTabs(0);
-
-
-                btnTab.forEach((element, index) => {
+                btnTab.forEach((element, i) => {
                     element.addEventListener('click', function () {
-                        console.log(tabsEl[index]);
-                        heightCover.style.minHeight = tabsEl[index].clientHeight + 'px';
-
-                        console.log(heightCover);
-
-                        projectFunc.showTabs(index);
-                        projectFunc.hiddenTabs(index);
-
+                        projectFunc.showTabs(i);
+                        projectFunc.hiddenTabs(i);
+                        $(element).addClass('active').siblings().removeClass('active');
+                    });
+                    element.addEventListener('mouseenter', function () {
+                        projectFunc.hoverTab(element, true);
+                    });
+                    element.addEventListener('mouseleave', function () {
+                        projectFunc.hoverTab(element, false);
                     });
                 });
             } catch (err) {
                 console.log(err);
             }
         }
-    };
-
-    setTabs();
-
-    $('.js-input').each((_, element) => {
-        $(element).focus(function () {
-            $(element).parent().addClass('on-focus');
-        }).blur(function () {
-            if ($(element).val() === '') {
-                $(element).parent().removeClass('on-focus');
-            }
-        });
-    });
-
-    const serviceHover = (element, state) => {
+    },
+    serviceHover(element, state) {
         const article = $(element).find('.service__article');
         const link = $(element).find('.link');
         const ic = $(element).find('.link__ic');
@@ -217,8 +242,6 @@ $(document).ready(() => {
                 { className: '+=link__ic' },
                 '-=0.5'
             );
-
-
         if (state) {
             serviceBg.play();
             serviceBgLeave.reverse();
@@ -226,17 +249,44 @@ $(document).ready(() => {
             serviceBgLeave.play();
             serviceBg.reverse();
         }
-    };
+    }
+};
 
-    gsap.utils.toArray('.service__bloc').forEach((item) => {
-        item.addEventListener('mouseenter', function () {
-            serviceHover(item, true);
-        });
+function init() {
+    projectFunc.setTabs();
+    projectFunc.createSlider();
+}
 
-        item.addEventListener('mouseleave', function () {
-            serviceHover(item, false);
+window.addEventListener('load', function () {
+    init();
+
+    if ($('.js-input').exists()) {
+        try {
+            $('.js-input').each((_, element) => {
+                $(element).focus(function () {
+                    $(element).parent().addClass('on-focus');
+                }).blur(function () {
+                    if ($(element).val() === '') {
+                        $(element).parent().removeClass('on-focus');
+                    }
+                });
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.service__bloc').exists()) {
+        gsap.utils.toArray('.service__bloc').forEach((item) => {
+            item.addEventListener('mouseenter', function () {
+                projectFunc.serviceHover(item, true);
+            });
+
+            item.addEventListener('mouseleave', function () {
+                projectFunc.serviceHover(item, false);
+            });
         });
-    });
+    }
 
     if ($('.header__inner').exists) {
         try {
@@ -257,5 +307,4 @@ $(document).ready(() => {
             console.log(err);
         }
     }
-
 });

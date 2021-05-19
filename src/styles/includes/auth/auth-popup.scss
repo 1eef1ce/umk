@@ -3,20 +3,23 @@
     padding: 46px 65px 60px;
 
     &__cover {
-        position: relative;
         margin-top: 31px;
-        min-height: 245px;
+    }
+
+    &__ref {
+        margin-top: 19px;
+        color: $gray-2;
     }
 
     &__form {
-        position: absolute;
         display: none;
         visibility: hidden;
         opacity: 0;
         left: 0;
         right: 0;
-
         bottom: 0;
+
+
 
         .btn {
             padding: 23.5px 191px;
@@ -38,9 +41,14 @@
         cursor: pointer;
 
         &.active {
-            color: $basic;
+            color: $basic !important;
             font-size: 45px;
             transform: translateY(0);
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: $basic;
         }
     }
 
