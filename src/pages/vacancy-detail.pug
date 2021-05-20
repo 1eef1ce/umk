@@ -1,4 +1,5 @@
 extends common/layout
+
 block content
     main.main
         .vacancy-detail
@@ -40,9 +41,9 @@ block content
                             li Высшее образование.
                             li Работоспособность, активность, внутренняя дисциплина, стрессоустойчивость, умение работать в команде, порядочность.
                             li Обязательно ВЫСЫЛАТЬ РЕЗЮМЕ.
-                            p.
-                                Срок рассмотрения резюме 10 рабочих дней. Если Ваши знания, опыт работы и пожелания
-                                соответствуют требованиям и возможностям Компании, мы свяжемся с Вами по указанным в Вашем резюме контактам.
+                        p.
+                            Срок рассмотрения резюме 10 рабочих дней. Если Ваши знания, опыт работы и пожелания
+                            соответствуют требованиям и возможностям Компании, мы свяжемся с Вами по указанным в Вашем резюме контактам.
                     .vacancy-detail__item
                         h2.title-4 Условия работы:
                         ol
@@ -85,18 +86,18 @@ block content
                         form.form(data-form)
                             .form-group(data-form-group)
                                 label.form-group__label(for="name" data-form-label) Имя*
-                                input.form-group__input(type="text" id="name" name="name" data-form-field)
+                                input#name.form-group__input(type="text" name="name" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="phone" data-form-label) Телефон*
-                                input.form-group__input(type="tel" id="phone" name="phone" data-form-field)
+                                input#phone.form-group__input(type="tel" name="phone" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="email" data-form-label) E-mail*
-                                input.form-group__input(type="text" id="email" name="email" data-form-field)
+                                input#email.form-group__input(type="text" name="email" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="text" data-form-label) Поле ввода
-                                textarea.form-group__input(id="text" name="text" data-form-field)
+                                textarea#text.form-group__input(name="text" data-form-field)
                             label.file(for="file")
-                                input.file__input(id="file" type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
+                                input#file.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
                                 +icon('file_new')
                                 .file__label Прикрепить файлы: резюме, фото и т.п.
                             button.btn.btn--basic(type="submit" name="submit" data-form-button) Отправить

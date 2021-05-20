@@ -1,4 +1,5 @@
 extends common/layout
+
 block content
     main.main
         .tender-detail
@@ -40,20 +41,20 @@ block content
                         form.form(data-form)
                             .form-group(data-form-group)
                                 label.form-group__label(for="name" data-form-label) Имя*
-                                input.form-group__input(type="text" id="name" name="name" data-form-field)
+                                input#name.form-group__input(type="text" name="name" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="phone" data-form-label) Телефон*
-                                input.form-group__input(type="tel" id="phone" name="phone" data-form-field)
+                                input#phone.form-group__input(type="tel" name="phone" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="email" data-form-label) E-mail*
-                                input.form-group__input(type="text" id="email" name="email" data-form-field)
+                                input#email.form-group__input(type="text" name="email" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="company" data-form-label) Компания
-                                input.form-group__input(type="text" id="company" name="company" data-form-field)
+                                input#company.form-group__input(type="text" name="company" data-form-field)
                             .form-group(data-form-group)
                                 label.form-group__label(for="text" data-form-label) Поле ввода
-                                textarea.form-group__input(id="text" name="text" data-form-field)
+                                textarea#text.form-group__input(name="text" data-form-field)
                             label.checkbox(for="agree" data-form-label)
-                                input.checkbox__input(id="agree" type="checkbox" name="check" value="agree" data-form-check)
+                                input#agree.checkbox__input(type="checkbox" name="check" value="agree" data-form-check)
                                 .checkbox__label Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
                             button.btn.btn--basic(type="submit" name="submit" data-form-button) Отправить

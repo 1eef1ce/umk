@@ -1,4 +1,5 @@
 extends common/layout
+
 block content
     main.main
         .product
@@ -16,7 +17,7 @@ block content
                         .product-price__value 50 000 ₽
                     .product-actions
                         form
-                            input.form-group__input(type="text" id="quantity" name="quantity" value="1 т")
+                            input#quantity.form-group__input(type="text" name="quantity" value="1 т")
                             button.btn.btn--basic.btn--w200.btn--h47(type="submit" name="submit") В корзину
                 include includes/product/product-info
                 include includes/product/product-related
