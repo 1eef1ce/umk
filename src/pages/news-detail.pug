@@ -1,5 +1,4 @@
 extends common/layout
-
 block content
     main.main
         .news-detail
@@ -24,12 +23,12 @@ block content
                     .news-detail__actions
                         a.btn.btn--basic.btn--w250(href="#") Вернуться назад
                         .share
-                            span Поделиться:
+                            .share__text Поделиться:
                             a(href="#")
-                                img(src="../img/icons/facebook.svg" alt="facebook")
+                                +icon('facebook')
                             a(href="#")
-                                img(src="../img/icons/twitter.svg" alt="twitter")
+                                +icon('twitter')
                             a(href="#")
-                                img(src="../img/icons/linkedin.svg" alt="linkedin")
+                                +icon('linkedin')
                             a(href="#")
-                                img(src="../img/icons/google.svg" alt="google")
+                                +icon('google')

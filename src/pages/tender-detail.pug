@@ -1,5 +1,4 @@
 extends common/layout
-
 block content
     main.main
         .tender-detail
@@ -16,18 +15,26 @@ block content
                             поставки продукции на склад Покупателя. Базис поставки — склад Покупателя.
                         .tender-detail__contacts
                             h2.title-4 Контактное лицо:
-                            p Зам. начальника бюро снабжения ООО «Уральская металлообрабатывающая компания»: <span>О. М. Савин.</span>
-                            p Электронная почта: <a href="mailto:o.savin@uralmetalcompany.ru">o.savin@uralmetalcompany.ru</a>
-                            p Телефон: <span>8 (912) 300-24-00; 8 (3519) 58-00-15 (доб.187)</span>
+                            p
+                                | Зам. начальника бюро снабжения ООО «Уральская металлообрабатывающая компания»:
+                                |
+                                span О. М. Савин.
+                            p
+                                | Электронная почта:
+                                |
+                                a(href="mailto:o.savin@uralmetalcompany.ru") o.savin@uralmetalcompany.ru
+                            p
+                                | Телефон:
+                                |
+                                span 8 (912) 300-24-00; 8 (3519) 58-00-15 (доб.187)
 
                         p Конкурсная документация прилагается.
                         .tender-detail__download
                             span Скачать архив:
-                            a.tender-detail__link(href="#").
-                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M14.25 16.5H3.75V15H14.25V16.5ZM9 13.5L4.5 9L5.5575 7.9425L8.25 10.6275V1.5H9.75V10.6275L12.4425 7.9425L13.5 9L9 13.5Z" fill="#D81A27"/>
-                                 </svg>
-                                 Attachments_o.savin@uralmetalcompany.ru_2018-12-06_08-36-05
+                            a.tender-detail__link(href="#")
+                                +icon('download')
+                                |
+                                | Attachments_o.savin@uralmetalcompany.ru_2018-12-06_08-36-05
                     .tender-detail__form
                         h2.title-3 Заполните заявку
                         form.form(data-form)
@@ -46,10 +53,7 @@ block content
                             .form-group(data-form-group)
                                 label.form-group__label(for="text" data-form-label) Поле ввода
                                 textarea.form-group__input(id="text" name="text" data-form-field)
-                            label(for="agree" data-form-label).checkbox
-                                input(id="agree" type="checkbox" name="check" value="agree" data-form-check).checkbox__input
+                            label.checkbox(for="agree" data-form-label)
+                                input.checkbox__input(id="agree" type="checkbox" name="check" value="agree" data-form-check)
                                 .checkbox__label Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
                             button.btn.btn--basic(type="submit" name="submit" data-form-button) Отправить
-
-
-

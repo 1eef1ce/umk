@@ -25,6 +25,10 @@
     border-radius: 100%;
     background: $purple-1;
     margin-right: 16px;
+
+    svg {
+      fill: #fff;
+    }
   }
 
   &__title {
