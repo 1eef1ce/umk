@@ -20,6 +20,13 @@
 
   &__text {
     margin-top: 1em;
+
+    a {
+
+      &:hover {
+        color: $purple-1;
+      }
+    }
   }
 
   .btn {

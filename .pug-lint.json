@@ -15,5 +15,5 @@
   "requireStrictEqualityOperators": true,
   "validateAttributeQuoteMarks": "\"",
   "validateDivTags":true,
-  "validateLineBreaks":"LF"
+  "validateLineBreaks":"CRLF"
 }

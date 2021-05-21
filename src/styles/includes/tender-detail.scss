@@ -41,6 +41,10 @@
     font-weight: 600;
     color: $red-1;
     margin-left: 4px;
+
+    svg {
+      fill: $red-1;
+    }
   }
 
   &__form {
