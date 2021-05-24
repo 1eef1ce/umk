@@ -1,0 +1,45 @@
+.activity {
+  padding: 60px 0;
+  background: $gray-3;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px -40px -23px -40px;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(33.33% - 80px);
+    max-width: 318px;
+    margin: 23px 40px;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    background: $purple-1;
+    margin-right: 16px;
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+
+  &__text {
+    line-height: 1.35;
+    margin-top: 10px;
+  }
+}

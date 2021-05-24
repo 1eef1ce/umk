@@ -1,0 +1,60 @@
+extends common/layout
+
+block content
+    main.main
+        .tender-detail
+            .container
+                .tender-detail__container
+                    h1.title-1 Тендер 1 56226-548ОПНт59
+                    .tender-detail__content
+                        p.
+                            Проводится конкурс на поставку пиломатериалов и поддонов на ООО «УМК». Контракт заключается с
+                            победителем тендера — участником, подавшим предложение, соответствующее требованиям
+                            документации, в котором предложены наилучшие условия.
+                        p.
+                            Согласно типовому договору ООО «УМК» на поставку продукции срок оплаты составляет 30 дней после
+                            поставки продукции на склад Покупателя. Базис поставки — склад Покупателя.
+                        .tender-detail__contacts
+                            h2.title-4 Контактное лицо:
+                            p
+                                | Зам. начальника бюро снабжения ООО «Уральская металлообрабатывающая компания»:
+                                |
+                                span О. М. Савин.
+                            p
+                                | Электронная почта:
+                                |
+                                a(href="mailto:o.savin@uralmetalcompany.ru") o.savin@uralmetalcompany.ru
+                            p
+                                | Телефон:
+                                |
+                                span 8 (912) 300-24-00; 8 (3519) 58-00-15 (доб.187)
+
+                        p Конкурсная документация прилагается.
+                        .tender-detail__download
+                            span Скачать архив:
+                            a.tender-detail__link(href="#")
+                                +icon('download')
+                                |
+                                | Attachments_o.savin@uralmetalcompany.ru_2018-12-06_08-36-05
+                    .tender-detail__form
+                        h2.title-3 Заполните заявку
+                        form.form(data-form)
+                            .form-group(data-form-group)
+                                label.form-group__label(for="name" data-form-label) Имя*
+                                input#name.form-group__input(type="text" name="name" data-form-field)
+                            .form-group(data-form-group)
+                                label.form-group__label(for="phone" data-form-label) Телефон*
+                                input#phone.form-group__input(type="tel" name="phone" data-form-field)
+                            .form-group(data-form-group)
+                                label.form-group__label(for="email" data-form-label) E-mail*
+                                input#email.form-group__input(type="text" name="email" data-form-field)
+                            .form-group(data-form-group)
+                                label.form-group__label(for="company" data-form-label) Компания
+                                input#company.form-group__input(type="text" name="company" data-form-field)
+                            .form-group(data-form-group)
+                                label.form-group__label(for="text" data-form-label) Поле ввода
+                                textarea#text.form-group__input(name="text" data-form-field)
+                            label.checkbox(for="agree" data-form-label)
+                                input#agree.checkbox__input(type="checkbox" name="check" value="agree" data-form-check)
+                                .checkbox__label Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                            button.btn.btn--basic(type="submit" name="submit" data-form-button) Отправить

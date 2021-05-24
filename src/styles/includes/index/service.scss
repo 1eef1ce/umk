@@ -1,7 +1,6 @@
 .service {
-    background-image: url(../img/decor/grid2.svg);
-    padding-top: 61px;
-    padding-bottom: 75px;
+    background-image: url(../img/decor/grid2.svg) $gray-3;
+    padding: 69px 0 75px;
     background-size: auto;
     background-position: 49% 157%;
     background-repeat: no-repeat;
@@ -18,11 +17,9 @@
     }
 
     &__quote {
-        font-size: 16px;
         margin: 12px auto 0;
         max-width: 636px;
         text-align: center;
-        line-height: 1.5;
     }
 
     &__bloc {
@@ -31,7 +28,7 @@
         background-color: white;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
         height: 196px;
-        padding: 1.928em 1.785em 2.071em;
+        padding: 29px 26px;
         transition: linear .3s;
 
 
@@ -91,12 +88,12 @@
 
     &__article {
         font-weight: 600;
-        font-size: 1.714rem;
+        font-size: 24px;
+        line-height: 1;
     }
 
     .link {
         margin-top: 0.687em;
-        font-size: 1.142rem;
         pointer-events: none;
     }
 

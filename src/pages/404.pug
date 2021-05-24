@@ -1,0 +1,18 @@
+extends common/layout.pug
+
+block content
+    main.main
+        .not-found
+            .container
+                .not-found__inner
+                    .not-found__title 404
+                    .not-found__subtitle Страница не найдена
+                    .not-found__text
+                        | Похоже страница, которую вы ищете, не найдена.
+                        br
+                        | Наши операторы ответят на все вопросы и помогут сформировать заказ.
+                    .not-found__text
+                        | Телефон:
+                        |
+                        a(href="tel:+79585487856") 8 (958) 548-78-56
+                    a.btn.btn--basic.btn--w250(href="/") Вернуться на Главную

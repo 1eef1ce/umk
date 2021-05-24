@@ -26,6 +26,20 @@
 
 @import "common/input";
 
+@import "common/share";
+
+@import "common/aside";
+
+@import "common/tooltip";
+
+@import "common/form";
+
+@import "common/checkbox";
+
+@import "common/file";
+
+@import "common/modal";
+
 @import "includes/index/view";
 
 @import "includes/index/service";
@@ -47,6 +61,40 @@
 @import "includes/auth/auth-popup";
 
 @import "includes/catalog/catalog-list";
+
+@import "includes/404";
+
+@import "includes/delivery";
+
+@import "includes/about/about";
+
+@import "includes/about/activity";
+
+@import "includes/about/mission";
+
+@import "includes/vacancy-detail";
+
+@import "includes/news";
+
+@import "includes/news-detail";
+
+@import "includes/notification";
+
+@import "includes/standard";
+
+@import "includes/tender";
+
+@import "includes/tender-detail";
+
+@import "includes/search";
+
+@import "includes/product/product";
+
+@import "includes/product/product-info";
+
+@import "includes/product/product-related";
+
+@import "includes/product/product-specs";
 
 .on-focus {
     label {

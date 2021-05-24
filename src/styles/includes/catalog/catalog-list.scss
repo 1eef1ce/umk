@@ -1,11 +1,13 @@
 .catalog-list {
+    padding: 69px 0;
+
     &__grid {
         display: grid;
         grid-column-gap: 105px;
         max-width: 1055px;
         width: 100%;
         margin: 0 auto;
-        margin-top: -34px;
+        margin-top: -29px;
         grid-template-areas:
             "b1 b2 b3"
             "b4 b2 b3"
@@ -16,7 +18,7 @@
         display: block;
 
         &_title {
-            font-size: 1.714em;
+            font-size: 24px;
             font-weight: 600;
             color: $red-1;
 
@@ -26,7 +28,7 @@
         }
 
         &_middle {
-            font-size: 1.285em;
+            font-size: 18px;
 
             &:hover {
                 color: $gray-2;
@@ -34,8 +36,8 @@
         }
 
         &_small {
-            font-size: 1em;
-            margin-top: 9px;
+            font-size: 14px;
+            margin-top: 4px;
             color: $gray-2;
 
             &:hover {
@@ -45,11 +47,11 @@
     }
 
     &__box {
-        margin-top: 18px;
+        margin-top: 14px;
     }
 
     &__bloc {
-        margin-top: 34px;
+        margin-top: 29px;
 
         &--b1 {
             grid-area: b1;

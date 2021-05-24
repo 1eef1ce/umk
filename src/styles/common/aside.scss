@@ -1,0 +1,13 @@
+.aside {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__main {
+    width: calc(100% - 285px - 70px);
+  }
+
+  &__sidebar {
+    width: 285px;
+    margin-left: 70px;
+  }
+}
