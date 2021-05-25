@@ -25,9 +25,8 @@
               .call__col.call__col--submit
                 button.btn.btn--basic(type="submit") Отправить
               .call__col.call__col--accord
-                <label class="checkbox-other">
-                  <input type="checkbox" checked>
-                  <span>Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных</span>
-                </label>
+                label.checkbox(for="agree" data-form-label)
+                  input#agree.checkbox__input(type="checkbox" name="check" value="agree" data-form-check)
+                  .checkbox__label Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
 
                 

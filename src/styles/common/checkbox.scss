@@ -14,7 +14,7 @@
 
         &+.checkbox__label {
 
-          &:hover{
+          &:hover {
 
             &::before {
               border-color: $red-1;
@@ -30,19 +30,6 @@
           &::before {
             background-color: $red-1;
             border-color: $red-1;
-          }
-
-          &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 4px;
-            left: 9px;
-            width: 7px;
-            height: 14px;
-            border: solid #fff;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
           }
         }
       }
@@ -75,19 +62,6 @@
         &::before {
           background-color: $red-1;
           border-color: $red-1;
-        }
-
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 4px;
-          left: 9px;
-          width: 7px;
-          height: 14px;
-          border: solid #fff;
-          border-width: 0 2px 2px 0;
-          transform: rotate(45deg);
         }
       }
     }
@@ -126,6 +100,16 @@
 
     &::after {
       transition: 0.2s;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 9px;
+      width: 7px;
+      height: 14px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
     }
   }
 }

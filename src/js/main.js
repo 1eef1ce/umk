@@ -249,6 +249,92 @@ const projectFunc = {
             serviceBgLeave.play();
             serviceBg.reverse();
         }
+    },
+    showOverlay(status, popup) {
+        if ($('.js-overlay').exists()) {
+            const overlayEl = $(popup).parent('.js-overlay');
+            const showOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.6
+                },
+                onStart: projectFunc.lockedDOM,
+                onStartParams: [status, false],
+                onComplete: projectFunc.stateObject,
+                onCompleteParams: ['start', popup]
+            });
+
+            const hideOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.3
+                },
+                onStart: projectFunc.stateObject,
+                onStartParams: ['end', popup],
+                onComplete: projectFunc.lockedDOM,
+                onCompleteParams: [status, true]
+            });
+
+            showOvTl
+                .to(overlayEl, { autoAlpha: 1, ease: 'power2.out' });
+
+            hideOvTl
+                .to(overlayEl, { autoAlpha: 0, ease: 'power2.out' }, '+=0.6');
+
+            if (status) {
+                showOvTl.reverse();
+                showOvTl.play();
+            } else {
+                hideOvTl.reverse();
+                hideOvTl.play();
+            }
+        }
+    },
+    formShow(element, status) {
+        if ($(element).exists()) {
+            const formShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.4
+                }
+            });
+
+            const formHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.4
+                }
+            });
+
+            formHideTl.to(element, { yPercent: -110, autoAlpha: 0 });
+            formShowTl.set(element, { yPercent: -100 }).to(element, { yPercent: 0, autoAlpha: 1, ease: 'power2.out' });
+
+            if (status) {
+                formHideTl.reverse();
+                formShowTl.play();
+            } else {
+                formShowTl.reverse();
+                formHideTl.play();
+            }
+        }
+    },
+    lockedDOM(status) {
+        if (status) {
+            $('html').css('overflow', 'hidden');
+        } else {
+            $('html').css('overflow', 'auto');
+        }
+    },
+    stateObject(status, popup) {
+        if (status === 'start') {
+            projectFunc.formShow(popup, true);
+        } else {
+            projectFunc.formShow(popup, false);
+        }
     }
 };
 
@@ -259,7 +345,9 @@ function init() {
 
 window.addEventListener('load', function () {
     init();
-
+    $('.menu-btn').click(function () {
+        $('.menu-btn').toggleClass('open');
+    });
     if ($('.js-input').exists()) {
         try {
             $('.js-input').each((_, element) => {
@@ -307,6 +395,7 @@ window.addEventListener('load', function () {
             console.log(err);
         }
     }
+
     // const relatedSwiper = new Swiper('.product-related__items', {
     //     slidesPerView: 4,
     //     spaceBetween: 36,

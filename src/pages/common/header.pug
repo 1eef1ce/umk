@@ -44,11 +44,17 @@ header.header
                     a(href="javascript:void(0);") En
                   
         .header__bottom
-          .header__bloc
-            .burger 
-              +icon('ic-burger')
+          .header__bloc.header__bloc--popup-menu
+            .menu-btn.js-btn-menu 
+              .menu-btn__btn
+                span
+                span
+                span
+              .menu-btn__cross 
+                span 
+                span
             .header__txt Меню
-          .header__bloc 
+          .header__bloc.header__bloc--info
             .dropdown.dropdown--phone
               a(href="tel:8(958)548-78-56").dropdown-label
                 .dropdown-label__icon
