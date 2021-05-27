@@ -1,0 +1,28 @@
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 35px 0 30px;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.45;
+    cursor: default;
+    white-space: nowrap;
+
+    &:not(:first-of-type) {
+
+      &::before {
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background: url("/img/icons/arrow-right-small.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}

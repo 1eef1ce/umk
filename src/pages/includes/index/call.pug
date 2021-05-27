@@ -6,28 +6,28 @@
             .call__txt Мы ответим на все ваши вопросы о&nbsp;производстве и переработке металлопроката, а также его свойствах и особенностях применения. Проведем подробную консультацию по имеющимся товарам.
           .call__column
             form.call__subgrid 
-              .call__col.call__col--name 
-                .call__field
-                  label(for="name") Ваше имя*
-                  input#name.js-input(type="text")
-              .call__col.call__col--company 
-                .call__field
-                  label(for="company") Компания
-                  input#company.js-input(type="text")
+              .call__col.call__col--name
+                .form-group
+                  label.form-group__label(for="name") Ваше имя*
+                  input#name.form-group__input.js-input(type="text")
+              .call__col.call__col--company
+                .form-group
+                  label.form-group__label(for="company") Компания
+                  input#company.form-group__input.js-input(type="text")
               .call__col.call__col--email
-                .call__field
-                  label(for="email") E-mail*
-                  input#email.js-input(type="text")
+                .form-group
+                  label.form-group__label(for="email") E-mail*
+                  input#email.form-group__input.js-input(type="text")
               .call__col.call__col--phone
-                .call__field
-                  label(for="phone") Телефон
-                  input#phone.js-input(type="text")
+                .form-group
+                  label.form-group__label(for="phone") Телефон
+                  input#phone.form-group__input.js-input(type="tel")
               .call__col.call__col--submit
                 button.btn.btn--basic(type="submit") Отправить
-              .call__col.call__col--accord
-                <label class="checkbox-other">
-                  <input type="checkbox" checked>
-                  <span>Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных</span>
-                </label>
+              .call__col.call__col--check
+                label.checkbox(for="agree")
+                  input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                  .checkbox__label
+                    span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
 
                 

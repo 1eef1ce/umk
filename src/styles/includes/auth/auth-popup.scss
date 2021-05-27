@@ -19,8 +19,6 @@
         right: 0;
         bottom: 0;
 
-
-
         .btn {
             padding: 23.5px 191px;
             margin-top: 24px;
@@ -72,14 +70,4 @@
             }
         }
     }
-
-    .input {
-        &:not(:first-child) {
-            margin-top: 25px;
-        }
-    }
-
-
-
-
 }

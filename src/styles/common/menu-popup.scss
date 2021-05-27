@@ -30,6 +30,12 @@
         padding-top: 17px;
     }
 
+    &__search {
+        width: 508px;
+        flex-shrink: 0;
+        margin: 47px auto 0;
+    }
+
     &__logo {
         display: block;
         height: 64px;
