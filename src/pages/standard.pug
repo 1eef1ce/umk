@@ -4,6 +4,7 @@ block content
     main.main
         .standard
             .container
+                include common/breadcrumb
                 .aside
                     .aside__main
                         h1.title-1 Арматура, катанка
@@ -15,12 +16,13 @@ block content
                         ol.standard__items
                             li.standard__item
                                 .standard__head
-                                    a.standard__title(href="#") ГОСТ 103-76.
-                                    a.standard__doc(href="#") PDF
+                                    a.standard__title(href="javascript:void(0);") ГОСТ 103-76.
+                                    a.standard__doc(href="javascript:void(0);") PDF
                                 .standard__text Сталь арматурная термомеханически упрочненная для железобетонных конструкций (технические условия).
                             li.standard__item
                                 .standard__head
-                                    a.standard__title(href="#") ГОСТ 103-76.
-                                    a.standard__doc(href="#") PDF
+                                    a.standard__title(href="javascript:void(0);") ГОСТ 103-76.
+                                    a.standard__doc(href="javascript:void(0);") PDF
                                 .standard__text Сталь арматурная термомеханически упрочненная для железобетонных конструкций (технические условия).
+                        include common/pagination
                     .aside__sidebar

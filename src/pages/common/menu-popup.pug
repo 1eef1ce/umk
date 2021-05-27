@@ -21,10 +21,16 @@
                 button.menu-popup__close.js-menu-close Закрыть
         .menu-popup__content 
             .menu-popup__title.title-1 Главное меню
+            //- form(class="search-input" action="#" method="get")
+            //-     .search-input__field.input
+            //-         label(for="search") Поиск
+            //-         input#search.js-input(type="text")
+            //-     button(type="submit" class="mf-search")
+            //-         +icon('ic-search')
             form(class="search-input" action="#" method="get")
-                .search-input__field.input
-                    label(for="search") Поиск
-                    input#search.js-input(type="text")
+                .form-group
+                    label.form-group__label(for="email") E-mail*
+                    input#email.form-group__input.js-input(type="text")
                 button(type="submit" class="mf-search")
                     +icon('ic-search')
             .catalog-list.catalog-list--search

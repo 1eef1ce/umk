@@ -7,6 +7,21 @@
     flex-direction: column;
     margin-top: 25px;
 
+    &.on-focus {
+
+      .form-group__label {
+        top: 20px;
+        font-size: 12px;
+      }
+    }
+
+    &.disabled {
+
+      .form-group__label {
+        color: $gray-1;
+      }
+    }
+
     &__label {
       position: absolute;
       top: 32px;
@@ -15,15 +30,6 @@
       line-height: 1.2;
       color: $gray-2;
       transition: 0.2s;
-
-      &.active {
-        top: 20px;
-        font-size: 12px;
-      }
-
-      &.disabled {
-        color: $gray-1;
-      }
 
       &+.form-group__input {
 

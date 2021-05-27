@@ -76,7 +76,7 @@ class Slider {
                 this.slider.update();
                 break;
             case 'pagination':
-                let pagEl = $(this.name).find('.pagination')[0];
+                let pagEl = $(this.name).find('.swiper-pagination')[0];
 
                 if (res === 'custom') {
                     this.settings.pagination = {

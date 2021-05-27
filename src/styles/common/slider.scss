@@ -7,16 +7,6 @@
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
         margin-top: 36px;
 
-        .slider {
-            &__box {
-                overflow: hidden;
-            }
-
-            &__wrapper {
-                box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
-            }
-        }
-
         .swiper-slide {
             position: relative;
             display: flex;
@@ -127,6 +117,29 @@
 
                 & path {
                     fill: white;
+                }
+            }
+
+            &.swiper-button-disabled {
+                cursor: auto;
+                pointer-events: none;
+
+                svg * {
+                    fill: $gray-1;
+                }
+            }
+        }
+
+        &--box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+
+            .arrow {
+                &__link {
+                    width: 41px;
+                    height: 41px;
                 }
             }
         }

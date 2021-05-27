@@ -12,30 +12,22 @@
     }
 
     &__field {
-        position: relative;
         width: 100%;
         height: 65px;
-    }
-
-    input {
-        width: 100%;
         padding-left: 26px;
         background-color: white;
         border: 1px solid $gray-1;
         left: 0;
         padding-right: 69px;
-        position: absolute;
-        height: 100%;
         transition: .2s ease-out;
         cursor: pointer;
         font-size: 16px;
-
-
 
         &:active {
             border-color: $basic;
         }
 
+        &:hover,
         &:focus {
             border-color: $basic;
         }
@@ -45,20 +37,20 @@
         }
     }
 
-    button {
-        background: 0 0;
+    &__button {
+
+        position: absolute;
         top: 0;
         right: 0;
         width: 71px;
-        position: absolute;
         height: 100%;
+        background: 0 0;
         transition: .2s ease-out;
         cursor: pointer;
         padding: 0;
         border: 0;
 
         .icon {
-            display: -webkit-box;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,5 +66,12 @@
             width: 25px;
             fill: $basic;
         }
+    }
+
+    .mf-search {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 }

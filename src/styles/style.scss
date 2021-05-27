@@ -1,166 +1,54 @@
 @import "common/global";
-
 @import "common/header/header";
-
 @import "common/footer";
-
 @import "common/link";
-
 @import "common/btn";
-
 @import "common/helper";
-
 @import "common/slider";
-
 @import "common/social";
-
 @import "common/dropdown";
-
 @import "common/menu-btn";
-
 @import "common/search-input";
-
 @import "common/header/header-link";
-
 @import "common/menu-popup";
-
 @import "common/input";
-
 @import "common/share";
-
 @import "common/aside";
-
 @import "common/tooltip";
-
 @import "common/form";
-
 @import "common/checkbox";
-
 @import "common/file";
-
 @import "common/modal";
-
+@import "common/breadcrumb";
+@import "common/pagination";
 @import "includes/index/view";
-
 @import "includes/index/service";
-
 @import "includes/index/advantage";
-
 @import "includes/index/novation";
-
 @import "includes/index/slider-partner";
-
 @import "includes/index/inset";
-
 @import "includes/index/call";
-
 @import "includes/index/layer";
-
 @import "includes/auth/auth";
-
 @import "includes/auth/auth-popup";
-
 @import "includes/catalog/catalog-list";
-
 @import "includes/404";
-
 @import "includes/delivery";
-
 @import "includes/about/about";
-
 @import "includes/about/activity";
-
 @import "includes/about/mission";
-
 @import "includes/vacancy-detail";
-
 @import "includes/news";
-
 @import "includes/news-detail";
-
 @import "includes/notification";
-
 @import "includes/standard";
-
 @import "includes/tender";
-
 @import "includes/tender-detail";
-
-@import "includes/search";
-
+@import "includes/search-page";
 @import "includes/product/product";
-
 @import "includes/product/product-info";
-
 @import "includes/product/product-related";
-
 @import "includes/product/product-specs";
-
-.on-focus {
-    label {
-        font-size: 12px;
-        transform: translate3d(0, -10px, 0);
-    }
-}
-
-.checkbox-other {
-    display: block;
-    margin: 0 0 10px 0;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-}
-
-.checkbox-other input[type="checkbox"] {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    display: block;
-    width: 0;
-    height: 0;
-}
-
-.checkbox-other span {
-    display: inline-block;
-    position: relative;
-    padding: 0 0 0 35px;
-    max-width: 285px;
-    width: 100%;
-    bottom: 4px;
-    line-height: 1.4;
-}
-
-.checkbox-other span::before {
-    content: "";
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    border: 1.5px solid $red-1;
-    box-sizing: border-box;
-}
-
-.checkbox-other span::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: 3px;
-    top: 10px;
-    width: 18px;
-    height: 15px;
-    box-sizing: border-box;
-    background: url("/img/icons/ic-ok.svg") no-repeat center;
-}
-
-.checkbox-other input[type="checkbox"]:checked+span::before {
-    background-color: $red-1;
-}
-
-.checkbox-other input[type="checkbox"]:checked+span::after {
-    background: url("/img/icons/ic-ok.svg") no-repeat center;
-}
 
 .icon-stroke {
     stroke: currentColor;
@@ -169,4 +57,32 @@
 .icon-md {
     height: 3rem;
     width: 3rem;
+}
+
+.swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--num {
+        margin: 0 20px;
+
+        .swiper-pagination-bullet {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: transparent;
+            opacity: 1;
+            color: $gray-2;
+
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            color: $basic;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 .product-related
     h2.title-2 Сопутствующие товары
-    .swiper-container.product-related__items
+    .swiper-container.slider.slider--product.product-related__items
         .swiper-wrapper
             .swiper-slide
                 .product-related__item
@@ -30,12 +30,12 @@
                             span Класс покрытия:
                             |
                             | 100
-                    a.product-related__link(href="#")
+                    a.product-related__link(href="javascript:void(0);")
                         div
                             .product-related__text Открыть товар
                             .product-related__price 100 000 ₽
                         .product-related__icon
-                            +icon('long_right')
+                            +icon('long_right', 21, 21)
             .swiper-slide
                 .product-related__item
                     .product-related__inner
@@ -64,12 +64,12 @@
                             span Класс покрытия:
                             |
                             | 100
-                    a.product-related__link(href="#")
+                    a.product-related__link(href="javascript:void(0);")
                         div
                             .product-related__text Открыть товар
                             .product-related__price 100 000 ₽
                         .product-related__icon
-                            +icon('long_right')
+                            +icon('long_right', 21, 21)
             .swiper-slide
                 .product-related__item
                     .product-related__inner
@@ -98,12 +98,12 @@
                             span Класс покрытия:
                             |
                             | 100
-                    a.product-related__link(href="#")
+                    a.product-related__link(href="javascript:void(0);")
                         div
                             .product-related__text Открыть товар
                             .product-related__price 100 000 ₽
                         .product-related__icon
-                            +icon('long_right')
+                            +icon('long_right', 21, 21)
             .swiper-slide
                 .product-related__item
                     .product-related__inner
@@ -132,12 +132,12 @@
                             span Класс покрытия:
                             |
                             | 100
-                    a.product-related__link(href="#")
+                    a.product-related__link(href="javascript:void(0);")
                         div
                             .product-related__text Открыть товар
                             .product-related__price 100 000 ₽
                         .product-related__icon
-                            +icon('long_right')
+                            +icon('long_right', 21, 21)
             .swiper-slide
                 .product-related__item
                     .product-related__inner
@@ -166,10 +166,14 @@
                             span Класс покрытия:
                             |
                             | 100
-                    a.product-related__link(href="#")
+                    a.product-related__link(href="javascript:void(0);")
                         div
                             .product-related__text Открыть товар
                             .product-related__price 100 000 ₽
                         .product-related__icon
-                            +icon('long_right')
-        .pagination
+                            +icon('long_right', 21, 21)
+        .arrow.arrow--box
+            .arrow__link.arrow__link--prev
+            .swiper-pagination.swiper-pagination--num
+            .arrow__link.arrow__link--next
+                
