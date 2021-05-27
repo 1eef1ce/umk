@@ -14,7 +14,15 @@ const projectFunc = {
             partnerSlider.updateSlider('arrow');
             partnerSlider.updateSlider('pagination');
         }
+
+        if ($('.product-related__items').exists()) {
+            const relatedSlider = new Slider('.product-related__items', 4, 36);
+            relatedSlider.createSlider();
+            relatedSlider.updateSlider('arrow');
+            relatedSlider.updateSlider('pagination');
+        }
     },
+
     hiddenTabs(index) {
         if ($('.auth-popup').exists()) {
             try {
@@ -64,6 +72,7 @@ const projectFunc = {
             }
         }
     },
+
     showTabs(index) {
         if ($('.auth-popup').exists()) {
             try {
@@ -119,6 +128,7 @@ const projectFunc = {
             }
         }
     },
+
     hoverTab(element, state) {
         const hoverTab = new TimelineMax({
             reversed: true,
@@ -156,6 +166,7 @@ const projectFunc = {
             hoverTab.reverse();
         }
     },
+
     setTabs() {
         if ($('.auth-popup__link').exists()) {
             try {
@@ -182,6 +193,7 @@ const projectFunc = {
             }
         }
     },
+
     serviceHover(element, state) {
         const article = $(element).find('.service__article');
         const link = $(element).find('.link');
@@ -270,6 +282,9 @@ window.addEventListener('load', function () {
                         $(element).parent().removeClass('on-focus');
                     }
                 });
+                if ($(element).prop('disabled') === true) {
+                    $(element).parent().addClass('disabled');
+                }
             });
         } catch (err) {
             console.log(err);
@@ -307,55 +322,39 @@ window.addEventListener('load', function () {
             console.log(err);
         }
     }
-    // const relatedSwiper = new Swiper('.product-related__items', {
-    //     slidesPerView: 4,
-    //     spaceBetween: 36,
-    //     watchOverflow: true,
-    //     pagination: {
-    //         el: '.pagination',
-    //         clickable: true,
-    //     },
-    // });
 
-    // if ($('[data-form]').exists()) {
-    //     $('[data-form-group]').each(function () {
-    //         let field = $(this).find('[data-form-field]');
-    //         let label = $(this).find('[data-form-label]');
+    $('input[type="file"]').change(function () {
+        let label = $('.file .file__label');
+        if (typeof (this.files) != 'undefined') {
+            if (this.files.length == 0) {
+                label.text(label.data('default'));
+            }
+            else {
+                let file = this.files[0];
+                let name = file.name;
+                label.text(name);
+            }
+        }
+        else {
+            let name = this.value.split("\\");
+            label.text(name[name.length - 1]);
+        }
+        return false;
+    });
 
-    //         field.focus(function () {
-    //             label.addClass('active');
-    //         });
-    //         field.blur(function () {
-    //             if (field.val() === '') {
-    //                 label.removeClass('active');
-    //             }
-    //         });
-    //         if (field.val() !== '') {
-    //             label.addClass('active');
-    //         }
-    //         if (field.prop('disabled') === true) {
-    //             label.addClass('disabled');
-    //         }
-    //     });
-    // }
+    if ($('.js-open-modal').exists()) {
+        $('.js-open-modal').on('click', (event) => {
+            event.preventDefault();
+            //showOverlay(true);
+            $('.js-modal').addClass('open');
+        });
+    }
 
-    // $('input[type="file"]').change(function () {
-    //     let label = $('.file .file__label');
-    //     if (typeof (this.files) != 'undefined') {
-    //         if (this.files.length == 0) {
-    //             label.text(label.data('default'));
-    //         }
-    //         else {
-    //             let file = this.files[0];
-    //             let name = file.name;
-    //             label.text(name);
-    //         }
-    //     }
-    //     else {
-    //         let name = this.value.split("\\");
-    //         label.text(name[name.length - 1]);
-    //     }
-    //     return false;
-    // });
+    if ($('.js-close-modal').exists()) {
+        $('.js-close-modal').on('click', () => {
+            //showOverlay(false);
+            $('.js-modal').removeClass('open');
+        });
+    }
 
 });

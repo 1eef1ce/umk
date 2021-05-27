@@ -1,4 +1,6 @@
 .notification {
+  background: url("/img/decor/bg-notification.svg") no-repeat 100% 30%;
+  background-size: cover;
 
   &__container {
     max-width: 997px;

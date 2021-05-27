@@ -38,6 +38,16 @@
         }
     }
 
+    &--underline {
+        font-weight: 600;
+        color: $purple-1;
+        text-decoration: underline;
+
+        &:hover {
+            color: $red-1;
+        }
+    }
+
     &--detail {
         position: relative;
         display: inline-flex;

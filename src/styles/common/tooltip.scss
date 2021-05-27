@@ -1,8 +1,42 @@
 .tooltip {
+  position: relative;
   display: inline-block;
   margin-left: 5px;
 
-  svg {
-    fill: $purple-1;
+  &:hover {
+
+    .tooltip__content {
+      display: block;
+    }
+  }
+
+  &__icon {
+
+    svg {
+      fill: $purple-1;
+    }
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    width: 200px;
+    padding: 10px 15px;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+
+    &:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: #fff;
+      transform: translateY(-50%) translateX(-50%) rotate(45deg);
+    }
   }
 }
