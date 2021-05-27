@@ -12,7 +12,7 @@ const projectFunc = {
             const partnerSlider = new Slider('.js-slider-partners', 3, 0);
             partnerSlider.createSlider();
             partnerSlider.updateSlider('arrow');
-            partnerSlider.updateSlider('pagination');
+            partnerSlider.updateSlider('pagination', 'custom');
         }
     },
     hiddenTabs(index) {
@@ -294,11 +294,24 @@ const projectFunc = {
     },
     formShow(element, status) {
         if ($(element).exists()) {
+
+            const showMainMenu = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 10
+                }
+            });
+
+            const hideMainMenu = new TimelineMax({
+                paused: true,
+            });
+
             const formShowTl = new TimelineMax({
                 reversed: true,
                 paused: true,
                 defaults: {
-                    duration: 0.4
+                    duration: 1.4
                 }
             });
 
@@ -306,12 +319,26 @@ const projectFunc = {
                 reversed: true,
                 paused: true,
                 defaults: {
-                    duration: 0.4
+                    duration: 1.1
+                },
+                onComplete: () => {
+                    hideMainMenu.play();
                 }
             });
 
-            formHideTl.to(element, { yPercent: -110, autoAlpha: 0 });
-            formShowTl.set(element, { yPercent: -100 }).to(element, { yPercent: 0, autoAlpha: 1, ease: 'power2.out' });
+            formHideTl.to(element, { yPercent: -100, ease: 'power4.inOut' });
+            formShowTl.set(element, { autoAlpha: 1 }).to(element, { yPercent: 0, ease: 'power4.inOut' }).add(showMainMenu.play(), '-=1.3');
+
+            showMainMenu
+                .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
+                .set('.catalog-list__bloc', { autoAlpha: 0, xPercent: -35 })
+                .to('.menu-popup__title', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' })
+                .to('.search-input', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' }, '-=0.7')
+                .to('.catalog-list__bloc', { autoAlpha: 1, xPercent: 0, duration: 1, stagger: 0.25, ease: 'power4.inOut' }, '-=1.9');
+
+            hideMainMenu
+                .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
+                .set('.catalog-list--search .catalog-list__bloc', { autoAlpha: 0, xPercent: -35 });
 
             if (status) {
                 formHideTl.reverse();
@@ -345,6 +372,30 @@ function init() {
 
 window.addEventListener('load', function () {
     init();
+
+    if ($('.js-btn-menu').exists()) {
+        const popup = document.querySelector('.js-menu-popup');
+        gsap.set(popup, { yPercent: -100 });
+
+        $('.js-btn-menu').on('click', () => {
+            if (popup) {
+                $('.menu-btn').addClass('open');
+                projectFunc.formShow(popup, true);
+            }
+        });
+    }
+
+    if ($('.js-menu-close').exists()) {
+        const popup = document.querySelector('.js-menu-popup');
+
+        $('.js-menu-close').on('click', () => {
+            if (popup) {
+                $('.menu-btn').removeClass('open');
+                projectFunc.formShow(popup, false);
+            }
+        });
+    }
+
     $('.menu-btn').click(function () {
         $('.menu-btn').toggleClass('open');
     });

@@ -5,6 +5,7 @@
     flex-shrink: 0;
     margin: 0 auto;
     margin-top: 50px;
+    opacity: 0;
 
     &:hover input {
         border-color: $basic;
