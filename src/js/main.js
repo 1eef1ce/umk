@@ -1,6 +1,10 @@
 import $ from '../local_modules/jquery/dist/jquery.min';
+import $2 from 'jquery';
 import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
+import select2 from '../local_modules/select2/dist/js/select2.min';
+select2($2);
+
 
 $.fn.exists = function () {
     return $(this).length;
@@ -232,7 +236,6 @@ const projectFunc = {
                 '-=0.5'
             );
 
-
         serviceBgLeave
             .to(
                 element,
@@ -339,14 +342,14 @@ const projectFunc = {
             });
 
             formHideTl.to(element, { yPercent: -100, ease: 'power4.inOut' });
-            formShowTl.set(element, { autoAlpha: 1 }).to(element, { yPercent: 0, ease: 'power4.inOut' }).add(showMainMenu.play(), '-=1.3');
+            formShowTl.set(element, { autoAlpha: 1 }).to(element, { yPercent: 0, ease: 'power4.inOut' }).add(showMainMenu.play(), '-=0.5');
 
             showMainMenu
                 .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
-                .set('.catalog-list__bloc', { autoAlpha: 0, xPercent: -35 })
+                .set('.catalog-list--search .catalog-list__bloc', { autoAlpha: 0, xPercent: -35 })
                 .to('.menu-popup__title', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' })
                 .to('.search-input', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' }, '-=0.7')
-                .to('.catalog-list__bloc', { autoAlpha: 1, xPercent: 0, duration: 1, stagger: 0.25, ease: 'power4.inOut' }, '-=1.9');
+                .to('.catalog-list--search .catalog-list__bloc', { autoAlpha: 1, xPercent: 0, duration: 1, stagger: 0.25, ease: 'power4.inOut' }, '-=0.9');
 
             hideMainMenu
                 .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
@@ -381,6 +384,10 @@ function init() {
     projectFunc.setTabs();
     projectFunc.createSlider();
 }
+
+$(() => {
+    $('.js-example-basic-single').select2();
+});
 
 window.addEventListener('load', function () {
     init();

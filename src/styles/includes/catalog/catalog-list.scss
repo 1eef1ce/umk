@@ -52,7 +52,6 @@
 
     &__bloc {
         margin-top: 29px;
-        opacity: 0;
 
         &--b1 {
             grid-area: b1;
@@ -94,6 +93,7 @@
 
             &__bloc {
                 margin-top: 0;
+                opacity: 0;
             }
         }
 

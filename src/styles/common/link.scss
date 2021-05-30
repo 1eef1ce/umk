@@ -23,7 +23,7 @@
     &--small {
         display: block;
         font-size: 16px;
-        color: $gray-2;
+        color: $basic;
 
         &:not(:first-child) {
             margin-top: 14px;
@@ -31,6 +31,7 @@
 
         &:hover {
             opacity: 0.8;
+            color: $basic;
         }
 
         &.active {
