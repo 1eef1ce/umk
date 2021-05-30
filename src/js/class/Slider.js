@@ -1,5 +1,6 @@
 import $ from '../../local_modules/jquery/dist/jquery.min';
 import Swiper from '../../local_modules/swiper/swiper-bundle.min';
+import 'select2';
 
 class Slider {
     constructor(name, view, space) {

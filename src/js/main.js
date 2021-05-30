@@ -1,10 +1,5 @@
-import $ from '../local_modules/jquery/dist/jquery.min';
-import $2 from 'jquery';
 import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
-import select2 from '../local_modules/select2/dist/js/select2.min';
-select2($2);
-
 
 $.fn.exists = function () {
     return $(this).length;
@@ -385,12 +380,12 @@ function init() {
     projectFunc.createSlider();
 }
 
-$(() => {
-    $('.js-example-basic-single').select2();
-});
-
 window.addEventListener('load', function () {
     init();
+
+    if ($('.js-example-basic-single').exists()) {
+        $('.js-example-basic-single').select2();
+    }
 
     if ($('.js-btn-menu').exists()) {
         const popup = document.querySelector('.js-menu-popup');

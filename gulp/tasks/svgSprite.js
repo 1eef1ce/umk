@@ -6,6 +6,7 @@ const svgmin = require('gulp-svgmin'),
   replace = require('gulp-replace');
 
 
+
 module.exports = function svgSprite() {
   return gulp.src('src/sprite/*.svg')
     .pipe(svgmin({
@@ -32,4 +33,3 @@ module.exports = function svgSprite() {
     .pipe(gulp.dest('./build/img/sprite'));
 
 }
-

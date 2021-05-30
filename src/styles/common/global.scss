@@ -81,8 +81,24 @@ svg {
 }
 
 .icon {
-    display: block;
+    fill: currentColor;
+    height: 100%;
+    width: 100%;
+
+    & svg {
+        height: 100%;
+        width: 100%;
+    }
 }
+
+.icon,
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+
+
 
 p {
     margin: 16px 0 0;
