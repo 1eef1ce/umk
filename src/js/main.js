@@ -272,6 +272,10 @@ function init() {
 window.addEventListener('load', function () {
     init();
 
+    if($('.js-select').exists()) {
+        $('.js-select').select2();
+    }
+
     if ($('.js-input').exists()) {
         try {
             $('.js-input').each((_, element) => {
@@ -354,6 +358,33 @@ window.addEventListener('load', function () {
         $('.js-close-modal').on('click', () => {
             //showOverlay(false);
             $('.js-modal').removeClass('open');
+        });
+    }
+
+    if($('.js-accordion-head').exists()) {
+        let $head = '.js-accordion-head';
+
+        $(document).off('click.toggle');
+        $(document).on('click.toggle', $head, function (e) {
+            e.preventDefault();
+
+            let $this = $(this);
+            let $item = $this.parents('.js-accordion-item:first');
+
+            $item.toggleClass('active');
+            $item.find('.js-accordion-body:first').slideToggle();
+        });
+    }
+
+    if($('.js-tab-btn').exists()) {
+
+        $('.js-tab-btn').click (function(e) {
+            e.preventDefault();
+            $('.js-tab-btn').removeClass('active');
+            $(this).addClass('active');
+            $('.js-tab-body').removeClass('active');
+            let tabID = $(this).attr('data-tab-btn');
+            $('.js-tab-body[data-tab-body="' + tabID + '"]').addClass('active');
         });
     }
 

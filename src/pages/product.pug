@@ -17,8 +17,8 @@ block content
                         .product-price__text Стоимость:
                         .product-price__value 50 000 ₽
                     .product-actions
-                         form
-                             input#quantity.form-group__input(type="text" name="quantity" value="1 т")
-                             button.btn.btn--basic.btn--w200.btn--h47(type="submit" name="submit") В корзину
+                         .count
+                            input#quantity.count__input(type="number" name="quantity" placeholder="1 т")
+                         a.btn.btn--basic.btn--w200.btn--h47 В корзину
                 include includes/product/product-info
                 include includes/product/product-related

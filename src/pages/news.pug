@@ -6,24 +6,70 @@ block content
             .container
                 include common/breadcrumb
                 h1.title-1 Новости
-                .news__items
-                    .news__item
-                        .news__img
-                            img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
-                        .news__content
-                            .news__date 3 декабря 2020 года
-                            a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
-                            .news__text.
-                                В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
-                                данные World Steel Association, выплавили 315 млн. тонн стали.
-                    .news__item
-                        .news__img
-                            img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности")
-                        .news__content
-                            .news__date 3 декабря 2020 года
-                            a.news__title(href="javascript:void(0);") На ЧерМК начали выпускать новую сталь повышенной прочности
-                            .news__text.
-                                В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
-                                "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
-                                горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
-                include common/pagination
+                .tabs
+                    ul.tabs__list
+                        li.tabs__item
+                            a.tabs__link.active.js-tab-btn(href="javascript:void(0);" data-tab-btn="1") Важное
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="2") Новости рынка
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="3") Новая продукция
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="4") О компании
+                    .tabs__content
+                        .tabs__body.active.js-tab-body(data-tab-body="1")
+                            .news__items
+                                .news__item
+                                    .news__img
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                    .news__content
+                                        .news__date 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text.
+                                            В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
+                                            данные World Steel Association, выплавили 315 млн. тонн стали.
+                                .news__item
+                                    .news__img
+                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности")
+                                    .news__content
+                                        .news__date 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);") На ЧерМК начали выпускать новую сталь повышенной прочности
+                                        .news__text.
+                                            В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
+                                            "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
+                                            горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
+                            include common/pagination
+                        .tabs__body.js-tab-body(data-tab-body="2")
+                            .news__items
+                                .news__item
+                                    .news__img
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                    .news__content
+                                        .news__date 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text.
+                                            В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
+                                            данные World Steel Association, выплавили 315 млн. тонн стали.
+                        .tabs__body.js-tab-body(data-tab-body="3")
+                            .news__items
+                                .news__item
+                                    .news__img
+                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности")
+                                    .news__content
+                                        .news__date 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);") На ЧерМК начали выпускать новую сталь повышенной прочности
+                                        .news__text.
+                                            В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
+                                            "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
+                                            горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
+                        .tabs__body.js-tab-body(data-tab-body="4")
+                            .news__items
+                                .news__item
+                                    .news__img
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                    .news__content
+                                        .news__date 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text.
+                                            В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
+                                            данные World Steel Association, выплавили 315 млн. тонн стали.

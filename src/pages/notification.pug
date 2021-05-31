@@ -7,6 +7,19 @@ block content
                 .notification__container
                     include common/breadcrumb
                     h1.title-1 Оповещение о НМУ
+                    .filter
+                        form
+                            select.js-select
+                                option Январь
+                                option Февраль
+                                option Март
+                            select.js-select
+                                option 2021
+                                option 2020
+                                option 2019
+                            button.btn.btn--basic(type="submit")
+                                +icon('ic-search', 15, 15)
+                                | Найти
                     .notification__items
                         .notification__item
                             .notification__title 26 февраля 2021 года

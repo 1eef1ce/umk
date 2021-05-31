@@ -1,0 +1,33 @@
+.count {
+
+  &__input {
+    width: 130px;
+    height: 47px;
+    padding: 0 15px;
+    margin-right: 25px;
+    border: 1px solid $gray-1;
+    font-family: 'MyriadPro', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $basic;
+    transition: 0.2s;
+
+    &::placeholder {
+      font-weight: 600;
+      color: $gray-2;
+    }
+
+    &:disabled {
+      background-color: initial;
+    }
+
+    &:not(:disabled) {
+
+      &:hover,
+      &:focus {
+        border-color: $basic;
+      }
+    }
+  }
+}

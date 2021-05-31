@@ -1,12 +1,24 @@
 .product-info {
   margin-top: 42px;
 
+  &__section {
+    margin-top: 2px;
+
+    &.active {
+
+      .product-info__icon {
+        transform: scale(1, -1);
+      }
+    }
+  }
+
   &__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 20px 20px 30px;
+    padding: 20px 20px 18px 30px;
     background: rgba(217, 217, 217, 0.3);
+    cursor: pointer;
   }
 
   &__title {
@@ -16,6 +28,7 @@
   }
 
   &__icon {
+    transition: 0.2s;
 
     svg {
       fill: $basic;
@@ -23,6 +36,7 @@
   }
 
   &__body {
+    display: none;
     padding: 25px 28px 38px;
     border: 2px solid rgba(217, 217, 255, 0.3);
   }
