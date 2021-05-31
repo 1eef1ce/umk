@@ -82,8 +82,8 @@ svg {
 
 .icon {
     fill: currentColor;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 
     & svg {
         height: 100%;
@@ -96,9 +96,6 @@ svg {
     height: 100%;
     width: 100%;
 }
-
-
-
 
 p {
     margin: 16px 0 0;

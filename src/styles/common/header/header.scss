@@ -26,6 +26,8 @@
     &__logo {
         display: block;
         margin-right: 32px;
+        width: 155px;
+        height: 70px;
     }
 
     &__grid {
@@ -73,22 +75,31 @@
     // }
 
     .dropdown {
-        &--user {
-            margin-right: 23px;
-        }
-
-        &--phone {
-            margin-right: 32px;
-        }
-
         .dropdown-label {
             &__icon {
                 margin-right: 8px;
+                width: 16px;
+                height: 16px;
 
                 .icon {
                     fill: $purple-1;
                 }
             }
+        }
+
+        &--user {
+            margin-right: 23px;
+
+            .dropdown-label {
+                &__icon {
+                    width: 23px;
+                    height: 23px;
+                }
+            }
+        }
+
+        &--phone {
+            margin-right: 32px;
         }
     }
 }
