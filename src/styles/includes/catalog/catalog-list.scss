@@ -75,9 +75,11 @@
     }
 
     &--search {
-        margin-top: 55px;
+
+        padding: 52px 0 0;
 
         .catalog-list {
+
             &__grid {
                 display: grid;
                 grid-column-gap: 95px;
@@ -91,17 +93,18 @@
 
             &__bloc {
                 margin-top: 0;
+                opacity: 0;
             }
         }
 
         .link--title {
             &:not(:first-child) {
-                margin-top: 27px;
+                margin-top: 19px;
             }
         }
 
         .link--small:not(:first-child) {
-            margin-top: 17px;
+            margin-top: 12px;
         }
     }
 }

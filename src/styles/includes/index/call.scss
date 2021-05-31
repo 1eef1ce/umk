@@ -1,7 +1,7 @@
 .call {
     &__txt {
         max-width: 274px;
-        margin-top: 16px;
+        margin-top: 22px;
     }
 
     &__grid {
@@ -17,7 +17,7 @@
             'email phone'
             'submit accord';
         grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
-        grid-row-gap: 27px;
+        grid-row-gap: 24px;
     }
 
     &__col {
@@ -46,6 +46,41 @@
 
         .form-group {
             margin-top: 0;
+        }
+
+        &--accord {
+            .checkbox {
+                margin-top: 0;
+
+                &__label {
+                    align-items: flex-start;
+                    max-width: 290px;
+                    width: 100%;
+                    margin-top: 0px;
+                    transform: translateY(-5px);
+
+                    &:before {
+                        transform: translateY(5px);
+                    }
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 9px;
+                        left: 9px;
+                        width: 7px;
+                        height: 14px;
+                        border: solid #fff;
+                        border-width: 0 2px 2px 0;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            .checkbox__input:checked+.checkbox__label::after {
+                top: 9px;
+            }
         }
     }
 

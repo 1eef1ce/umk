@@ -44,15 +44,21 @@ header.header
                     a(href="javascript:void(0);") En
                   
         .header__bottom
-          .header__bloc
-            .burger 
-              +icon('ic-burger')
+          .header__bloc.header__bloc--popup-menu.js-btn-menu 
+            .menu-btn
+              .menu-btn__btn
+                span
+                span
+                span
+              .menu-btn__cross 
+                span 
+                span
             .header__txt Меню
-          .header__bloc 
+          .header__bloc.header__bloc--info
             .dropdown.dropdown--phone
               a(href="tel:8(958)548-78-56").dropdown-label
                 .dropdown-label__icon
-                  +icon('ic-tube', 16, 16)
+                  +icon('ic-tube')
                 .dropdown-label__txt 8 (958) 548-78-56
               .dropdown-menu 
                 ul.submenu
@@ -68,12 +74,12 @@ header.header
                     a(href="javascript:void(0);") 8(958)548-88-24
             a(href="tel:8(958)548-78-56").header-link
                 .header-link__icon
-                  +icon('ic-cart', 19.5, 19.5)
+                  +icon('ic-cart')
                 .header-link__txt Корзина
             .dropdown.dropdown--user
               .dropdown-label
                 .dropdown-label__icon
-                  +icon('ic-users', 21.5, 19.5)
+                  +icon('ic-users')
                 .dropdown-label__txt Личный кабинет
               .dropdown-menu 
                 ul.submenu

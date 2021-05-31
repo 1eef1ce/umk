@@ -81,7 +81,20 @@ svg {
 }
 
 .icon {
-    display: block;
+    fill: currentColor;
+    height: auto;
+    width: auto;
+
+    & svg {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.icon,
+svg {
+    height: 100%;
+    width: 100%;
 }
 
 p {
@@ -98,6 +111,16 @@ ol {
 input,
 textarea {
     outline: none;
+}
+
+.swiper-pagination-bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
 }
 
 textarea {

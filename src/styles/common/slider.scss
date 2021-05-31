@@ -34,7 +34,6 @@
         .swiper-pagination-bullet {
             width: 10px;
             height: 10px;
-            display: inline-block;
             border-radius: 0;
             transition: .3s ease-in-out;
             background-color: $gray-1;
@@ -127,6 +126,20 @@
 
                 svg * {
                     fill: $gray-1;
+                }
+            }
+        }
+
+        &--box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+
+            .arrow {
+                &__link {
+                    width: 41px;
+                    height: 41px;
                 }
             }
         }
