@@ -1,5 +1,15 @@
-.search {
+.search-input {
     position: relative;
+    width: 508px;
+    margin-left: auto;
+    flex-shrink: 0;
+    margin: 0 auto;
+    margin-top: 50px;
+    opacity: 0;
+
+    &:hover input {
+        border-color: $basic;
+    }
 
     &__field {
         width: 100%;
@@ -56,5 +66,16 @@
             width: 25px;
             fill: $basic;
         }
+    }
+
+    .mf-search {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 23px 21px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
     }
 }

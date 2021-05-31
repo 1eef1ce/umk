@@ -1,4 +1,3 @@
-import $ from '../local_modules/jquery/dist/jquery.min';
 import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
 
@@ -19,7 +18,7 @@ const projectFunc = {
             const relatedSlider = new Slider('.product-related__items', 4, 36);
             relatedSlider.createSlider();
             relatedSlider.updateSlider('arrow');
-            relatedSlider.updateSlider('pagination');
+            relatedSlider.updateSlider('pagination', 'custom');
         }
     },
 
@@ -232,7 +231,6 @@ const projectFunc = {
                 '-=0.5'
             );
 
-
         serviceBgLeave
             .to(
                 element,
@@ -261,6 +259,119 @@ const projectFunc = {
             serviceBgLeave.play();
             serviceBg.reverse();
         }
+    },
+    showOverlay(status, popup) {
+        if ($('.js-overlay').exists()) {
+            const overlayEl = $(popup).parent('.js-overlay');
+            const showOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.6
+                },
+                onStart: projectFunc.lockedDOM,
+                onStartParams: [status, false],
+                onComplete: projectFunc.stateObject,
+                onCompleteParams: ['start', popup]
+            });
+
+            const hideOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 0.3
+                },
+                onStart: projectFunc.stateObject,
+                onStartParams: ['end', popup],
+                onComplete: projectFunc.lockedDOM,
+                onCompleteParams: [status, true]
+            });
+
+            showOvTl
+                .to(overlayEl, { autoAlpha: 1, ease: 'power2.out' });
+
+            hideOvTl
+                .to(overlayEl, { autoAlpha: 0, ease: 'power2.out' }, '+=0.6');
+
+            if (status) {
+                showOvTl.reverse();
+                showOvTl.play();
+            } else {
+                hideOvTl.reverse();
+                hideOvTl.play();
+            }
+        }
+    },
+    formShow(element, status) {
+        if ($(element).exists()) {
+
+            const showMainMenu = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 10
+                }
+            });
+
+            const hideMainMenu = new TimelineMax({
+                paused: true,
+            });
+
+            const formShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 1.4
+                }
+            });
+
+            const formHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: {
+                    duration: 1.1
+                },
+                onComplete: () => {
+                    hideMainMenu.play();
+                }
+            });
+
+            formHideTl.to(element, { yPercent: -100, ease: 'power4.inOut' });
+            formShowTl.set(element, { autoAlpha: 1 }).to(element, { yPercent: 0, ease: 'power4.inOut' }).add(showMainMenu.play(), '-=0.5');
+
+            showMainMenu
+                .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
+                .set('.catalog-list--search .catalog-list__bloc', { autoAlpha: 0, xPercent: -35 })
+                .to('.menu-popup__title', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' })
+                .to('.search-input', 1, { autoAlpha: 1, yPercent: 0, ease: 'power4.inOut' }, '-=0.7')
+                .to('.catalog-list--search .catalog-list__bloc', { autoAlpha: 1, xPercent: 0, duration: 1, stagger: 0.25, ease: 'power4.inOut' }, '-=0.9');
+
+            hideMainMenu
+                .set(['.menu-popup__title', '.search-input'], { autoAlpha: 0, yPercent: -35 })
+                .set('.catalog-list--search .catalog-list__bloc', { autoAlpha: 0, xPercent: -35 });
+
+            if (status) {
+                formHideTl.reverse();
+                formShowTl.play();
+            } else {
+                formShowTl.reverse();
+                formHideTl.play();
+            }
+        }
+    },
+    lockedDOM(status) {
+        if (status) {
+            $('html').css('overflow', 'hidden');
+        } else {
+            $('html').css('overflow', 'auto');
+        }
+    },
+    stateObject(status, popup) {
+        if (status === 'start') {
+            projectFunc.formShow(popup, true);
+        } else {
+            projectFunc.formShow(popup, false);
+        }
     }
 };
 
@@ -272,6 +383,36 @@ function init() {
 window.addEventListener('load', function () {
     init();
 
+    if ($('.js-example-basic-single').exists()) {
+        $('.js-example-basic-single').select2();
+    }
+
+    if ($('.js-btn-menu').exists()) {
+        const popup = document.querySelector('.js-menu-popup');
+        gsap.set(popup, { yPercent: -100 });
+
+        $('.js-btn-menu').on('click', () => {
+            if (popup) {
+                $('.menu-btn').addClass('open');
+                projectFunc.formShow(popup, true);
+            }
+        });
+    }
+
+    if ($('.js-menu-close').exists()) {
+        const popup = document.querySelector('.js-menu-popup');
+
+        $('.js-menu-close').on('click', () => {
+            if (popup) {
+                $('.menu-btn').removeClass('open');
+                projectFunc.formShow(popup, false);
+            }
+        });
+    }
+
+    $('.menu-btn').click(function () {
+        $('.menu-btn').toggleClass('open');
+    });
     if ($('.js-input').exists()) {
         try {
             $('.js-input').each((_, element) => {
@@ -323,20 +464,18 @@ window.addEventListener('load', function () {
         }
     }
 
-    $('input[type="file"]').change(function () {
-        let label = $('.file .file__label');
-        if (typeof (this.files) != 'undefined') {
-            if (this.files.length == 0) {
+    $('input[type=file]').change(function () {
+        const label = $('.file .file__label');
+        if (typeof ($('input[type=file]').files) !== 'undefined') {
+            if ($('input[type=file]').files.length === 0) {
                 label.text(label.data('default'));
-            }
-            else {
-                let file = this.files[0];
-                let name = file.name;
+            } else {
+                const file = $('input[type=file]').files[0];
+                const name = file.name;
                 label.text(name);
             }
-        }
-        else {
-            let name = this.value.split("\\");
+        } else {
+            const name = $('input[type=file]').value.split('\\');
             label.text(name[name.length - 1]);
         }
         return false;
@@ -345,14 +484,12 @@ window.addEventListener('load', function () {
     if ($('.js-open-modal').exists()) {
         $('.js-open-modal').on('click', (event) => {
             event.preventDefault();
-            //showOverlay(true);
             $('.js-modal').addClass('open');
         });
     }
 
     if ($('.js-close-modal').exists()) {
         $('.js-close-modal').on('click', () => {
-            //showOverlay(false);
             $('.js-modal').removeClass('open');
         });
     }

@@ -1,3 +1,4 @@
+@import "libs/libs";
 @import "common/global";
 @import "common/header/header";
 @import "common/footer";
@@ -7,8 +8,8 @@
 @import "common/slider";
 @import "common/social";
 @import "common/dropdown";
-@import "common/burger";
-@import "common/search";
+@import "common/menu-btn";
+@import "common/search-input";
 @import "common/header/header-link";
 @import "common/menu-popup";
 @import "common/input";
@@ -21,6 +22,7 @@
 @import "common/modal";
 @import "common/breadcrumb";
 @import "common/pagination";
+@import "common/close-btn";
 @import "includes/index/view";
 @import "includes/index/service";
 @import "includes/index/advantage";
@@ -61,4 +63,28 @@
 
 .swiper-pagination {
     position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--num {
+        margin: 0 20px;
+
+        .swiper-pagination-bullet {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: transparent;
+            opacity: 1;
+            color: $gray-2;
+
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            color: $basic;
+        }
+    }
 }

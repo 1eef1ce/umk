@@ -1,9 +1,10 @@
-const gulp = require('gulp')
-const plumber = require('gulp-plumber')
-const webpack = require('webpack-stream')
-const CircularDependencyPlugin = require('circular-dependency-plugin')
-const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin")
-const eslint = require('gulp-eslint')
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const webpack = require('webpack-stream');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+const eslint = require('gulp-eslint');
+const webpackB = require('webpack-stream').webpack;
 
 module.exports = function script() {
   return gulp.src('src/js/main.js')
@@ -29,9 +30,17 @@ module.exports = function script() {
           }
         ]
       },
+      externals: {
+        $: '../../src/local_modules/jquery/dist/jquery.slim.min.js'
+      },
       plugins: [
         new CircularDependencyPlugin(),
-        new DuplicatePackageCheckerPlugin()
+        new DuplicatePackageCheckerPlugin(),
+        new webpackB.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+          "window.jQuery": "jquery",
+        })
       ]
     }))
     .pipe(gulp.dest('build/js'))

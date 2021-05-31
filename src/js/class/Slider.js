@@ -1,5 +1,6 @@
 import $ from '../../local_modules/jquery/dist/jquery.min';
 import Swiper from '../../local_modules/swiper/swiper-bundle.min';
+import 'select2';
 
 class Slider {
     constructor(name, view, space) {
@@ -49,10 +50,6 @@ class Slider {
                 this.slider.params.slideActiveClass = res;
                 this.slider.update();
                 break;
-            case 'autoHeight':
-                this.slider.params.autoHeight = res;
-                this.slider.update();
-                break;
             case 'slideToClickedSlide':
                 this.slider.params.slideToClickedSlide = res;
                 this.slider.update();
@@ -81,10 +78,21 @@ class Slider {
                 break;
             case 'pagination':
                 let pagEl = $(this.name).find('.swiper-pagination')[0];
-                this.settings.pagination = {
-                    el: pagEl,
-                    clickable: true
-                };
+
+                if (res === 'custom') {
+                    this.settings.pagination = {
+                        el: pagEl,
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + '">' + (index + 1) + "</span>";
+                        }
+                    };
+                } else {
+                    this.settings.pagination = {
+                        el: pagEl,
+                        clickable: true
+                    };
+                }
                 this.slider.destroy();
                 this.slider = new Swiper(this.name, this.settings);
                 break;

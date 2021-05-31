@@ -10,7 +10,7 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: 196px 200px 119px 172px 136px;
+        grid-template-columns: 196px 201px 119px 172px 136px;
         grid-column-gap: 70px;
         margin-top: -30px;
     }
@@ -21,7 +21,7 @@
     }
 
     &__top {
-        padding: 48px 0 50px;
+        padding: 48px 0 46px;
     }
 
     &__logo {
@@ -40,7 +40,7 @@
 
         &--title {
             font-size: 20px;
-            margin-top: 30px;
+            margin-top: 25px;
 
             &:hover {
                 color: $purple-1;
@@ -55,7 +55,7 @@
             color: $gray-2;
 
             &:not(:first-child) {
-                margin-top: 14px;
+                margin-top: 10px;
             }
 
             &:hover {
@@ -69,12 +69,12 @@
     }
 
     &__box {
-        margin-top: 18px;
+        margin-top: 12px;
     }
 
     &__copy {
         font-size: 16px;
-        margin-top: 18px;
+        margin-top: 11px;
         color: $gray-2;
     }
 
