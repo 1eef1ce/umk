@@ -384,7 +384,10 @@ window.addEventListener('load', function () {
     init();
 
     if($('.js-select').exists()) {
-        $('.js-select').select2();
+        $('.js-select').select2({
+            minimumResultsForSearch: Infinity,
+            width: 'resolve',
+        });
     }
 
     if ($('.js-btn-menu').exists()) {
@@ -511,7 +514,6 @@ window.addEventListener('load', function () {
     }
 
     if($('.js-tab-btn').exists()) {
-
         $('.js-tab-btn').click (function(e) {
             e.preventDefault();
             $('.js-tab-btn').removeClass('active');

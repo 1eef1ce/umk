@@ -2,22 +2,31 @@ extends common/layout
 
 block content
     main.main
+        include common/topmenu
         .news
             .container
                 include common/breadcrumb
                 h1.title-1 Новости
-                .tabs
-                    ul.tabs__list
-                        li.tabs__item
-                            a.tabs__link.active.js-tab-btn(href="javascript:void(0);" data-tab-btn="1") Важное
-                        li.tabs__item
-                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="2") Новости рынка
-                        li.tabs__item
-                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="3") Новая продукция
-                        li.tabs__item
-                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="4") О компании
-                    .tabs__content
-                        .tabs__body.active.js-tab-body(data-tab-body="1")
+                .news__filter
+                    .tabs
+                        ul.tabs__list
+                            li.tabs__item
+                                a.tabs__link.active.js-tab-btn(href="javascript:void(0);" data-tab-btn="1") Важное
+                            li.tabs__item
+                                a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="2") Новости рынка
+                            li.tabs__item
+                                a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="3") Новая продукция
+                            li.tabs__item
+                                a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="4") О компании
+                    .filter
+                        form
+                            select.js-select(style="width: 133px;")
+                                option 2021
+                                option 2020
+                                option 2019
+                .news__container
+                    .tabs-content
+                        .tabs-content__body.active.js-tab-body(data-tab-body="1")
                             .news__items
                                 .news__item
                                     .news__img
@@ -39,7 +48,7 @@ block content
                                             "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
                                             горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
                             include common/pagination
-                        .tabs__body.js-tab-body(data-tab-body="2")
+                        .tabs-content__body.js-tab-body(data-tab-body="2")
                             .news__items
                                 .news__item
                                     .news__img
@@ -50,7 +59,7 @@ block content
                                         .news__text.
                                             В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
                                             данные World Steel Association, выплавили 315 млн. тонн стали.
-                        .tabs__body.js-tab-body(data-tab-body="3")
+                        .tabs-content__body.js-tab-body(data-tab-body="3")
                             .news__items
                                 .news__item
                                     .news__img
@@ -62,7 +71,7 @@ block content
                                             В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
                                             "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
                                             горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
-                        .tabs__body.js-tab-body(data-tab-body="4")
+                        .tabs-content__body.js-tab-body(data-tab-body="4")
                             .news__items
                                 .news__item
                                     .news__img

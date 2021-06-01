@@ -28,10 +28,12 @@
     }
 
     &__button {
-
         position: absolute;
         top: 0;
         right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 71px;
         height: 100%;
         background: 0 0;
@@ -41,21 +43,9 @@
         border: 0;
 
         .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 20px;
             height: 20px;
-            z-index: 1;
-            position: absolute;
-            top: 5px;
-            bottom: 0;
-            margin: auto;
-            left: 4px;
-            right: 0;
-            transition: .2s ease-out;
             pointer-events: none;
-            width: 25px;
             fill: $basic;
         }
     }

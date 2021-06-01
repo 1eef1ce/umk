@@ -33,4 +33,14 @@
     &--w275 {
         width: 275px;
     }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        fill: #fff;
+    }
 }

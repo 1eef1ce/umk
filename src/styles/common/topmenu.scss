@@ -1,0 +1,23 @@
+.topmenu {
+  display: flex;
+  align-items: center;
+  background: $gray-3;
+  list-style: none;
+  padding: 0 25px;
+
+  &__item {
+    margin: 0 15px;
+  }
+
+  &__link {
+    padding: 13px 0 14px;
+    font-size: 15px;
+    line-height: 1.45;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &.active {
+      border-bottom-color: $purple-1;
+    }
+  }
+}

@@ -44,15 +44,14 @@
     }
   }
 
-  &__content {
+  &-content {
 
-  }
+    &__body {
+      display: none;
 
-  &__body {
-    display: none;
-
-    &.active {
-      display: block;
+      &.active {
+        display: block;
+      }
     }
   }
 }

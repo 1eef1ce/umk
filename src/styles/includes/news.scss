@@ -1,9 +1,27 @@
 .news {
 
+  &__filter {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .tabs {
+      max-width: 997px;
+      flex-grow: 1;
+
+      &__list {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__container {
+    max-width: 997px;
+  }
+
   &__items {
     display: flex;
     flex-direction: column;
-    max-width: 997px;
   }
 
   &__item {
