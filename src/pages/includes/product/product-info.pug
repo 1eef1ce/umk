@@ -1,10 +1,10 @@
 .product-info
-    .product-info__item
-        .product-info__head
+    .product-info__section.js-accordion-item
+        .product-info__head.js-accordion-head
             .product-info__title Подробнее о товаре
             .product-info__icon
                 +icon('chevron_down', 24, 24)
-        .product-info__body
+        .product-info__body.js-accordion-body
             .product-info__row
                 h2.title-4 Описание
                 p.
@@ -32,9 +32,21 @@
                     в строительных конструкциях данных видов труб может снизить удельный расход стальных материалов,
                     а значит и снизить их стоимость. Еще одним преимуществом является более устойчивое крепление
                     различных строительных материалов к ровной плоскости.
-    .product-info__item
-        .product-info__head
+    .product-info__section.js-accordion-item
+        .product-info__head.js-accordion-head
             .product-info__title Упаковка
             .product-info__icon
                 +icon('chevron_down', 24, 24)
-        .product-info__body
+        .product-info__body.js-accordion-body
+    .product-info__section.js-accordion-item
+        .product-info__head.js-accordion-head
+            .product-info__title Свойства
+            .product-info__icon
+                +icon('chevron_down', 24, 24)
+        .product-info__body.js-accordion-body
+    .product-info__section.js-accordion-item
+        .product-info__head.js-accordion-head
+            .product-info__title Качество и стандарты
+            .product-info__icon
+                +icon('chevron_down', 24, 24)
+        .product-info__body.js-accordion-body

@@ -1,15 +1,5 @@
-.search-input {
+.search {
     position: relative;
-    width: 508px;
-    margin-left: auto;
-    flex-shrink: 0;
-    margin: 0 auto;
-    margin-top: 50px;
-    opacity: 0;
-
-    &:hover input {
-        border-color: $basic;
-    }
 
     &__field {
         width: 100%;
@@ -38,10 +28,12 @@
     }
 
     &__button {
-
         position: absolute;
         top: 0;
         right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 71px;
         height: 100%;
         background: 0 0;
@@ -51,31 +43,10 @@
         border: 0;
 
         .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-            position: absolute;
-            top: 5px;
-            bottom: 0;
-            margin: auto;
-            left: 4px;
-            right: 0;
-            transition: .2s ease-out;
+            width: 20px;
+            height: 20px;
             pointer-events: none;
-            width: 25px;
             fill: $basic;
         }
-    }
-
-    .mf-search {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        padding: 23px 21px;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
     }
 }

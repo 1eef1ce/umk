@@ -2,6 +2,7 @@ extends common/layout
 
 block content
     main.main
+        include common/topmenu
         .standard
             .container
                 include common/breadcrumb
@@ -26,3 +27,56 @@ block content
                                 .standard__text Сталь арматурная термомеханически упрочненная для железобетонных конструкций (технические условия).
                         include common/pagination
                     .aside__sidebar
+                        .sidemenu
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Сортовой прокат
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                                    ul.sidemenu__items
+                                        li.sidemenu__item
+                                            a.sidemenu__link(href="javascript:void(0);") ГОСТы
+                                        li.sidemenu__item
+                                            a.sidemenu__link.active(href="javascript:void(0);") Арматура, катанка
+                                        li.sidemenu__item
+                                            a.sidemenu__link(href="javascript:void(0);") Балка двутавровая, швеллер
+                                        li.sidemenu__item
+                                            a.sidemenu__link(href="javascript:void(0);") Уголок
+                                        li.sidemenu__item
+                                            a.sidemenu__link(href="javascript:void(0);") Оконно-рамный профиль
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Трубы
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Листовой прокат
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Метизы
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Качественные стали
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                            .sidemenu__section.js-accordion-item
+                                .sidemenu__head.js-accordion-head
+                                    .sidemenu__title Цветные металлы
+                                    .sidemenu__icon
+                                        +icon('chevron_down', 24, 24)
+                                .sidemenu__body.js-accordion-body
+                                    ul.sidemenu__items
+                                        li.sidemenu__item
+                                            a.sidemenu__link(href="javascript:void(0);") ГОСТы
+                                        li.sidemenu__item
+                                            a.sidemenu__link.active(href="javascript:void(0);") Арматура, катанка

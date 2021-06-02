@@ -22,17 +22,9 @@
                     .close-btn__icon
         .menu-popup__content 
             .menu-popup__title.title-1 Главное меню
-            //- form(class="search-input" action="#" method="get")
-            //-     .search-input__field.input
-            //-         label(for="search") Поиск
-            //-         input#search.js-input(type="text")
-            //-     button(type="submit" class="mf-search")
-            //-         +icon('ic-search')
-            form(class="search-input" action="#" method="get")
-                .form-group
-                    label.form-group__label(for="email") E-mail*
-                    input#email.form-group__input.js-input(type="text")
-                button(type="submit" class="mf-search")
+            form.search.menu-popup__search(action="#" method="get")
+                input.search__field(name="s" placeholder="Поиск" type="search")
+                button.search__button.mf-search(type="submit")
                     +icon('ic-search')
             .catalog-list.catalog-list--search
                 .catalog-list__container.container 
