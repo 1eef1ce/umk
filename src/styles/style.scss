@@ -51,6 +51,10 @@
 @import "includes/product/product-info";
 @import "includes/product/product-related";
 @import "includes/product/product-specs";
+@import "common/header/header-search";
+@import "includes/catalog/catalog-grid";
+@import "includes/catalog/catalog";
+@import "includes/catalog/catalog-service";
 
 .icon-stroke {
     stroke: currentColor;

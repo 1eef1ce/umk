@@ -59,6 +59,7 @@
         align-items: center;
         font-weight: 600;
         color: $purple-1;
+        transition: none;
 
         &:hover {
             color: $red-1;
@@ -94,6 +95,7 @@
 
             &__txt {
                 margin-right: 6px;
+                transition: .3s ease-in-out;
             }
         }
     }

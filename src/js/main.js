@@ -90,7 +90,6 @@ const projectFunc = {
                     onStart: () => {
                         setTimeout(
                             () => {
-                                console.log('end');
                                 tabsEl[index].style.display = 'block';
                                 mainBloc.style.maxHeight = 191 + tabsEl[index].scrollHeight + `px`;
                                 tabsEl[index].style.display = 'none';
@@ -241,11 +240,18 @@ const projectFunc = {
                 }
             )
             .to(
-                [link, article],
+                [link],
                 {
                     color: '#2c43a1'
                 },
-                '-=0.5',
+                '-=0.5'
+            )
+            .to(
+                [article],
+                {
+                    color: '#38393f'
+                },
+                '-=0.5'
             )
             .set(
                 ic,
@@ -372,6 +378,43 @@ const projectFunc = {
         } else {
             projectFunc.formShow(popup, false);
         }
+    },
+    initSearch(state) {
+        const searchBloc = document.querySelector('.header-search');
+        const inputSearch = searchBloc.querySelector('.header-search__field');
+
+        const showSearch = new TimelineMax({
+            reversed: true,
+            paused: true,
+            ease: Power1.inOut,
+            onComplete: () => {
+                $(inputSearch).focus();
+            }
+        });
+
+        const hideSearch = new TimelineMax({
+            reversed: true,
+            paused: true,
+            ease: Power1.inOut,
+            onComplete: () => {
+                $(inputSearch).val('');
+            }
+        });
+
+        if (searchBloc.length > 0) {
+            showSearch
+                .to(searchBloc, 0.7, { width: '100%', ease: 'sine.inOut' });
+
+            hideSearch
+                .to(searchBloc, 0.7, { width: '0%', ease: 'slow(0.1, 0.1, true)' });
+        }
+
+        if (state) {
+            showSearch.play();
+        } else {
+            hideSearch.play();
+            showSearch.stop();
+        }
     }
 };
 
@@ -382,6 +425,19 @@ function init() {
 
 window.addEventListener('load', function () {
     init();
+
+    if ($('.js-btn-search').exists()) {
+        $('.js-btn-search').on('click', () => {
+            projectFunc.initSearch(true);
+        });
+    }
+
+    if ($('.js-close-search').exists()) {
+        $('.js-close-search').on('click', function (event) {
+            event.preventDefault();
+            projectFunc.initSearch(false);
+        });
+    }
 
     if ($('.js-example-basic-single').exists()) {
         $('.js-example-basic-single').select2();

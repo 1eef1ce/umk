@@ -10,4 +10,14 @@
     width: 285px;
     margin-left: 70px;
   }
+
+
+  &--reverse {
+    .aside {
+      &__sidebar {
+        margin-left: 0;
+        margin-right: 25px;
+      }
+    }
+  }
 }
