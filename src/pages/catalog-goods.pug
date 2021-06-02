@@ -19,11 +19,19 @@ block content
                             li  
                                 a(href="javascript:void(0);") Аккумуляторный инструмент
                 .tab 
-                    .tab__item Все
-                    .tab__item Натяжитель ленты
-                    .tab__item Замковой ручной инструмент
-                    .tab__item Замковой инструмент для тяжелых грузов
-                    .tab__item Ножницы для резки
+                    a.tab__item(href="javascript:void(0);") Все
+                    a.tab__item.active(href="javascript:void(0);") Натяжитель ленты
+                    a.tab__item(href="javascript:void(0);") Замковой ручной инструмент
+                    a.tab__item(href="javascript:void(0);") Замковой инструмент для тяжелых грузов
+                    a.tab__item(href="javascript:void(0);") Ножницы для резки
                 .aside.aside--reverse
                     .aside__sidebar
+                        .form-filter
+                            .form-filter__bloc
+                                .form-filter__title Наличие
+                                .form-filter__group 
+                                    label.checkbox(for="agree")
+                                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                                        .checkbox__label
+                                            span Подтверждаю
                     .aside__main
