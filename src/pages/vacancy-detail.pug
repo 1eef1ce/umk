@@ -83,7 +83,7 @@ block content
     .modal.js-modal
         .modal__content
             a.modal__close.js-close-modal(href="javascript:void(0);")
-                +icon('close_big', 30, 30)
+                +icon('close_big')
             h2.title-2 Отправьте резюме,
             p и наш специалист свяжется с Вами в ближайшее время.
             form.form
@@ -101,7 +101,7 @@ block content
                     textarea#text.form-group__input.js-input(name="text")
                 label.file(for="file")
                     input#file.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
-                    +icon('file_new', 25, 25)
+                    +icon('file_new')
                     .file__label Прикрепить файлы: резюме, фото и т.п.
                 button.btn.btn--basic(type="submit" name="submit") Отправить
 
@@ -109,9 +109,9 @@ block content
     .modal.js-modal.modal--success
         .modal__content
             a.modal__close.js-close-modal(href="javascript:void(0);")
-                +icon('close_big', 30, 30)
+                +icon('close_big')
             .modal__img
-                +icon('check_all_big', 105, 105)
+                +icon('check_all_big')
             h2.title-2 Спасибо!
             p
                 | Ваше резюме будет обработано
