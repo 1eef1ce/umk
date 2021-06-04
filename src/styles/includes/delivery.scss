@@ -51,32 +51,31 @@
     }
   }
 
-  &__item {
+  &-unit {
     padding: 16px 20px;
     border: 2px solid rgba(217, 217, 217, 0.35);
     margin-top: 50px;
-  }
 
-  &__title {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  &__text {
-    margin-top: 12px;
-
-    span,
-    a {
+    &__title {
       font-weight: 600;
-      color: $purple-1;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    a {
-      &:hover {
-        color: $red-1;
+    &__text {
+      margin-top: 12px;
+
+      span,
+      a {
+        font-weight: 600;
+        color: $purple-1;
+      }
+
+      a {
+        &:hover {
+          color: $red-1;
+        }
       }
     }
   }
-
 }

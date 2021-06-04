@@ -2,6 +2,7 @@
 
   &__section {
     position: relative;
+    display: block;
     padding-left: 20px;
     border: solid rgba(217, 217, 217, 0.35);
     border-width: 0 0 2px 2px;
@@ -17,12 +18,16 @@
       background: #fff;
     }
 
+    &:hover,
     &.active {
       border-left-color: $purple-1;
 
       .sidemenu__title {
         color: $purple-1;
       }
+    }
+
+    &.active {
 
       .sidemenu__icon {
         transform: scale(1, -1);
