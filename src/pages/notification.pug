@@ -8,29 +8,28 @@ block content
                 .notification__container
                     include common/breadcrumb
                     h1.title-1 Оповещение о НМУ
-                    .notification__filter
-                        form.notification__form
-                            select.js-select(style="width: 162px;")
-                                option Январь
-                                option Февраль
-                                option Март
-                                option Апрель
-                                option Май
-                                option Июнь
-                                option Июль
-                                option Август
-                                option Сентябрь
-                                option Октябрь
-                                option Ноябрь
-                                option Декабрь
-                            select.js-select(style="width: 162px;")
-                                option 2021
-                                option 2020
-                                option 2019
-                            button.btn.btn--basic.notification__button(type="submit")
-                                .btn__icon
-                                    +icon('ic-search', 15, 15)
-                                span Найти
+                    form.notification__form
+                        select.js-select(style="width: 162px;")
+                            option Январь
+                            option Февраль
+                            option Март
+                            option Апрель
+                            option Май
+                            option Июнь
+                            option Июль
+                            option Август
+                            option Сентябрь
+                            option Октябрь
+                            option Ноябрь
+                            option Декабрь
+                        select.js-select(style="width: 162px;")
+                            option 2021
+                            option 2020
+                            option 2019
+                        button.btn.btn--basic.notification__button(type="submit")
+                            .btn__icon
+                                +icon('ic-search')
+                            span Найти
                     .notification__items
                         .notification__item
                             .notification__title 26 февраля 2021 года
