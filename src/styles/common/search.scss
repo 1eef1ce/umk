@@ -49,4 +49,20 @@
             fill: $basic;
         }
     }
+
+    .mf-search {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 23px 21px;
+        border: none;
+        cursor: pointer;
+
+        .icon {
+            width: 28px;
+            height: 21px;
+            fill: white;
+        }
+    }
 }

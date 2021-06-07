@@ -1,0 +1,85 @@
+.filter {
+    background-color: $gray-3;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    &__bloc {
+        padding: 12px 0;
+    }
+
+    &__box {
+        padding: 17px 23px 39px;
+        border: 2px solid rgba(217, 217, 217, 0.35);
+        border-bottom: none;
+    }
+
+    .checkbox {
+        margin-top: 0;
+        display: inline-flex;
+        align-self: flex-start;
+
+        &:not(:first-child) {
+            margin-top: 18px;
+        }
+
+        &__label {
+            display: inline-flex;
+            align-items: flex-start;
+            line-height: 1.2;
+            max-width: 208px;
+            color: $basic;
+
+            &:after {
+                top: 1px;
+                left: 5px;
+                width: 5px;
+                height: 10px;
+                border-width: 0 1px 1px 0;
+            }
+
+            &:before {
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                position: relative;
+                background-color: white;
+            }
+
+            span {
+                line-height: 0;
+            }
+        }
+
+        &__input:checked+.checkbox__label::before {
+            background: $purple-1;
+            border-color: $purple-1;
+        }
+    }
+
+    .btn {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 21px;
+        border: 2px solid rgba(217, 217, 217, 0.35);
+        color: $basic;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $purple-1;
+            color: white;
+            border-color: $purple-1;
+        }
+    }
+}

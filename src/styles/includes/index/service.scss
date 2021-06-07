@@ -31,6 +31,34 @@
         padding: 29px 26px;
         transition: linear .3s;
 
+        &--special {
+            background-color: $purple-1 !important;
+            color: white;
+
+            .link,
+            .service__article {
+                color: white !important;
+            }
+
+            &:hover {
+                background-color: white !important;
+
+                .link {
+                    color: $purple-1 !important;
+
+                    &__ic {
+                        .icon {
+                            fill: $purple-1 !important;
+                        }
+                    }
+                }
+
+                .service__article {
+                    color: $basic !important;
+                }
+            }
+        }
+
 
         &:hover {
             background-color: red;
@@ -79,10 +107,7 @@
         .icon {
             width: 20px;
             height: 23px;
-
-            svg {
-                fill: white;
-            }
+            fill: white;
         }
     }
 
@@ -95,6 +120,11 @@
     .link {
         margin-top: 0.687em;
         pointer-events: none;
+
+        &__txt {
+            transition: none;
+
+        }
     }
 
     .num {

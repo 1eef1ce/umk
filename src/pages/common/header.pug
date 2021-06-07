@@ -89,3 +89,15 @@ header.header
                     a(href="javascript:void(0);") Иван Иванов
                   li  
                     a(href="javascript:void(0);") Иван Иванов
+          button(class="btn btn--search js-btn-search")
+            +icon('ic-search')
+        form.header-search
+          input(type="text" placeholder="Натяжитель ленты ГОСТ 380-2005").header-search__field
+          button.btn.btn--basic.mf-search(type="submit")
+            .btn__icon
+                +icon('ic-search')
+            span Найти
+          .close-btn.js-close-search
+            .close-btn__icon
+
+

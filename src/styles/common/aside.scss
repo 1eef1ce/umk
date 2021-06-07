@@ -14,4 +14,21 @@
       margin-top: 40px;
     }
   }
+
+
+  &--reverse {
+    border: 1px solid red;
+    padding: 13px 0 64px;
+
+    .aside {
+      &__sidebar {
+        margin-left: 0;
+        margin-right: 23px;
+      }
+
+      &__main {
+        width: calc(100% - 285px - 23px);
+      }
+    }
+  }
 }
