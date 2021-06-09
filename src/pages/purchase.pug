@@ -18,26 +18,27 @@ block content
                         option По 20 записей
                         option По 50 записей
                     button.btn.btn--basic.btn--w200(type="submit") Применить
-                .table
-                    .table__row.table__row--head
-                        .table__cell Номер торгов
-                        .table__cell Наименование торгов
-                        .table__cell Дата открытия
-                        .table__cell Дата закрытия
-                        .table__cell Контактное лицо
-                        .table__cell Статус
-                    .table__row
-                        .table__cell 15215_5
-                        .table__cell Дерево ясень
-                        .table__cell 02.02.2021
-                        .table__cell 07.09.2021
-                        .table__cell Иванов Иван Иванович
-                        .table__cell На рассмотрении
-                    .table__row
-                        .table__cell 15215_5
-                        .table__cell Дерево ясень
-                        .table__cell 02.02.2021
-                        .table__cell 07.09.2021
-                        .table__cell Иванов Иван Иванович
-                        .table__cell На рассмотрении
+                .purchase__table
+                    table
+                        tr
+                            td Номер торгов
+                            td Наименование торгов
+                            td Дата открытия
+                            td Дата закрытия
+                            td Контактное лицо
+                            td Статус
+                        tr
+                            td 15215_5
+                            td Дерево ясень
+                            td 02.02.2021
+                            td 07.09.2021
+                            td Иванов Иван Иванович
+                            td На рассмотрении
+                        tr
+                            td 15215_5
+                            td Дерево ясень
+                            td 02.02.2021
+                            td 07.09.2021
+                            td Иванов Иван Иванович
+                            td На рассмотрении
                 include common/pagination

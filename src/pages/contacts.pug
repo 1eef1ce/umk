@@ -1,0 +1,105 @@
+extends common/layout
+
+block content
+    main.main
+        include common/topmenu
+        .contacts
+            .container
+                include common/breadcrumb
+                h1.title-1 Контакты
+                p Контакты предприятия ООО”УМК”. Адреса и телефоны в Магнитогорске.
+                .tabs.contacts__tabs
+                    ul.tabs__list
+                        li.tabs__item
+                            a.tabs__link.active.js-tab-btn(href="javascript:void(0);" data-tab-btn="1") Для покупателей
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="2") Руководство
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="3") Для поставщиков
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="4") Для соискателей
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="5") Телефон доверия
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="6") Претензионная работа
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="7") Реквизиты
+                .tabs-content
+                    .tabs-content__body.active.js-tab-body(data-tab-body="1")
+                        .contacts__table
+                            table
+                                tr
+                                    td Подразделение
+                                    td Телефон
+                                    td Руководитель подразделения/контактное лицо
+                                    td ФИО
+                                tr
+                                    td Группа продажи трубы
+                                    td +7 (3517) 01 08 13 доб. 193
+                                    td Старший менеджер по продаже трубы
+                                    td Нелюбин Михаил Павлович
+                                tr
+                                    td Группа продажи штрипса (ленты)
+                                    td +7 (3517) 01 08 13 доб. 185
+                                    td Старший менеджер по продаже штрипса
+                                    td Вечканов Николай Александрович
+                        p
+                            |Электронная почта для покупателей:
+                            |
+                            a(href="mailto:order@uralmetalcompany.ru") order@uralmetalcompany.ru
+                    .tabs-content__body.active.js-tab-body(data-tab-body="2")
+                    .tabs-content__body.active.js-tab-body(data-tab-body="3")
+                    .tabs-content__body.active.js-tab-body(data-tab-body="4")
+                    .tabs-content__body.active.js-tab-body(data-tab-body="5")
+                    .tabs-content__body.active.js-tab-body(data-tab-body="6")
+                    .tabs-content__body.active.js-tab-body(data-tab-body="7")
+                .contacts__section
+                    h2.title-2 Адрес и схема проезда:
+                    .contacts__items
+                        .contacts__item
+                            .contacts__img
+                                +icon('location_outline')
+                            div Адрес: Коммунальная улица, 10с1, Орджоникидзевский район, Магнитогорск, Челябинская область, 455007
+                        .contacts__item
+                            .contacts__img
+                                +icon('mail')
+                            div
+                                |E-mail:
+                                |
+                                a.link(href="mailto:mail@uralmetalcompany.ru") mail@uralmetalcompany.ru
+                        .contacts__item
+                            .contacts__img
+                                +icon('site')
+                            div
+                                |Сайт:
+                                |
+                                a.link(href="http://uralmetalcompany.ru/") http://uralmetalcompany.ru/
+                        .contacts__item
+                            .contacts__img
+                                +icon('clock')
+                            div График работы: Пн-Чт 08:30–17.30; Пт 08:30–16:15; Сб-Вс - выходной
+                    .contacts__map
+                        img(src="../img/map-placeholder.jpg" alt="map")
+                .contacts__section
+                    .h2.title-3 География поставок:
+                    p.
+                        Поставки продукции осуществляются как автомобильным, так и железнодорожным транспортом.
+                        Основные направления поставок компании:
+                    .delivery__list
+                        ul
+                            li Свердловская область;
+                            li Челябинская область;
+                            li Москва и Московская область;
+                            li Пермский край;
+                            li Саратовская область;
+                            li Башкортостан;
+                            li Татарстан;
+                        ul
+                            li Тюменская область и ХМАО;
+                            li Омская область;
+                            li Оренбургская область;
+                            li Приморский край и Хабаровск;
+                            li Казахстан и Средняя Азия (Киргизия, Узбекистан, Таджикистан, Туркменистан);
+                            li Азербайджан.
+                    .delivery__map
+                        img(src="../img/delivery-map.png" alt="География поставок")
