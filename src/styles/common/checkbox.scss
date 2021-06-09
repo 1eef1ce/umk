@@ -60,7 +60,7 @@
       &+.checkbox__label {
 
         &::before {
-          background-color: $red-1;
+          background-color: red;
           border-color: $red-1;
         }
       }
@@ -95,6 +95,7 @@
       border: 1px solid $red-1;
       margin-right: 12px;
       box-sizing: border-box;
+      background-color: white;
       transition: 0.2s;
     }
 

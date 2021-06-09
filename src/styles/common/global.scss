@@ -75,6 +75,12 @@ a {
     line-height: 1.35;
 }
 
+.subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: $purple-1;
+}
+
 svg {
     display: block;
     transition: .3s ease-in-out;

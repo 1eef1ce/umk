@@ -2,6 +2,7 @@
 @import "common/global";
 @import "common/header/header";
 @import "common/header/header-link";
+@import "common/header/header-search";
 @import "common/aside";
 @import "common/breadcrumb";
 @import "common/btn";
@@ -10,6 +11,7 @@
 @import "common/count";
 @import "common/dropdown";
 @import "common/file";
+@import "common/filter";
 @import "common/footer";
 @import "common/form";
 @import "common/helper";
@@ -19,12 +21,14 @@
 @import "common/menu-popup";
 @import "common/modal";
 @import "common/pagination";
+@import "common/pagination-filter";
 @import "common/search";
 @import "common/select";
 @import "common/share";
 @import "common/sidemenu";
 @import "common/slider";
 @import "common/social";
+@import "common/tab";
 @import "common/table";
 @import "common/tabs";
 @import "common/tooltip";
@@ -35,7 +39,10 @@
 @import "includes/about/mission";
 @import "includes/auth/auth";
 @import "includes/auth/auth-popup";
+@import "includes/catalog/catalog";
+@import "includes/catalog/catalog-grid";
 @import "includes/catalog/catalog-list";
+@import "includes/catalog/catalog-service";
 @import "includes/index/advantage";
 @import "includes/index/call";
 @import "includes/index/inset";
@@ -48,6 +55,7 @@
 @import "includes/product/product-info";
 @import "includes/product/product-related";
 @import "includes/product/product-specs";
+@import "includes/subject/subject";
 @import "includes/vacancy/feature";
 @import "includes/vacancy/vacancy";
 @import "includes/404";

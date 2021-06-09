@@ -34,6 +34,10 @@
         width: 275px;
     }
 
+    &--w127 {
+        width: 127px;
+    }
+
     &__icon {
         display: flex;
         align-items: center;
@@ -42,5 +46,28 @@
         height: 15px;
         margin-right: 5px;
         fill: #fff;
+    }
+
+    &--search {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        transform: translateY(1px);
+    }
+
+    &--special {
+        background-color: $purple-1;
+        border: none;
+        color: white;
+
+        &:hover {
+            background-color: $red-1;
+        }
+
+        .icon {
+            fill: white;
+        }
     }
 }

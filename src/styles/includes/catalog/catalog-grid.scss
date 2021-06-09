@@ -1,0 +1,54 @@
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 47px 47px;
+    margin-top: 41px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        min-height: 405px;
+        border: 2px solid $gray-3;
+        background-color: white;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 46px 30px;
+        padding-right: 22px;
+        border-bottom: 2px solid $gray-3;
+        max-height: 130px;
+    }
+
+    &__pic {
+        max-width: 195px;
+    }
+
+    &__name {
+        padding-bottom: 5px;
+
+        &:hover {
+            color: $red-1;
+        }
+    }
+
+    &__link {
+        display: block;
+
+        &:hover {
+            color: $gray-2;
+        }
+
+        &:not(:first-child) {
+            margin-top: 15px;
+        }
+    }
+
+    &__content {
+        padding: 30px;
+        padding: 21px 30px;
+        flex: 1;
+    }
+}

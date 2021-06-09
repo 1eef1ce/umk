@@ -10,7 +10,7 @@
         // grid-template-rows: minmax(376px, 39vh) minmax(auto, 47vh);
         grid-template-rows: 392px minmax(451px, 47vh);
         align-items: start;
-        border-bottom: 2px solid $gray-1;
+        border-bottom: 2px solid $gray-5;
     }
 
     &__title {
@@ -27,12 +27,12 @@
 
         &:nth-child(1),
         &:nth-child(3) {
-            border-bottom: 2px solid $gray-1;
+            border-bottom: 2px solid $gray-5;
             height: 100%;
         }
 
         &:nth-child(2) {
-            border: 2px solid $gray-1;
+            border: 2px solid $gray-5;
             border-top: none;
             height: 100%;
             padding-bottom: 101px;

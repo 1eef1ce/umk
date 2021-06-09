@@ -1,0 +1,10 @@
+.catalog-service {
+    background: url(../img/decor/bg-catalog.svg) no-repeat center;
+    background-size: cover;
+
+    p {
+        &:not(:first-of-type) {
+            margin-top: 13px;
+        }
+    }
+}
