@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     transition: .3s ease-in-out;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     height: 65px;
     cursor: pointer;
@@ -36,6 +36,10 @@
 
     &--w127 {
         width: 127px;
+    }
+
+    &--w149 {
+        width: 149px;
     }
 
     &__icon {

@@ -2,6 +2,9 @@
     background-color: $gray-3;
 
     &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-size: 16px;
         font-weight: 600;
     }
@@ -51,7 +54,7 @@
                 height: 15px;
                 margin-right: 10px;
                 position: relative;
-                background-color: white;
+                background-color: rgba(44, 67, 161, 0);
             }
 
             span {
@@ -60,7 +63,7 @@
         }
 
         &__input:checked+.checkbox__label::before {
-            background: $purple-1;
+            background-color: $purple-1;
             border-color: $purple-1;
         }
     }

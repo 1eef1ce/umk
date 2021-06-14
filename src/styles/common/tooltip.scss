@@ -3,8 +3,74 @@
   display: inline-block;
   margin-left: 5px;
 
-  &:hover {
+  &--requ {
+    .icon {
+      fill: $green-1;
+    }
 
+    .tooltip__content {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: -30px;
+      margin-left: -133px;
+      width: calc(266px - -6px);
+      transition: .25s ease-in-out;
+      font-size: 14px;
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &--finish {
+    font-size: 14px;
+    font-weight: 400;
+
+    .tooltip__content {
+      min-width: 254px;
+      font-size: 14px;
+      line-height: 1.5;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &--contract {
+    .icon {
+      fill: $red-1;
+    }
+
+    .tooltip__content {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: -30px;
+      margin-left: -133px;
+      width: calc(266px - -6px);
+      transition: .25s ease-in-out;
+      font-size: 14px;
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &:hover {
     .tooltip__content {
       display: block;
     }

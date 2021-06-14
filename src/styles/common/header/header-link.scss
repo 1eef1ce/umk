@@ -2,7 +2,26 @@
     display: flex;
     margin-right: 34px;
 
+    &:hover {
+        .header-link__txt {
+            color: $purple-1;
+        }
+    }
+
+    &--user {
+        @media(max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &--cart {
+        @media(max-width: 1024px) {
+            margin-right: 0;
+        }
+    }
+
     &__icon {
+        position: relative;
         margin-right: 8px;
         width: 20px;
         height: 20px;
@@ -14,5 +33,9 @@
 
     &__txt {
         line-height: 20px;
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
     }
 }

@@ -1,5 +1,26 @@
 import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
+import Scrollbar from 'smooth-scrollbar';
+
+document.addEventListener('DOMContentLoaded', () => {
+    if ($('#ds_filter_catalog').exists()) {
+        let ds = '';
+        ds = document.getElementById('ds_filter_catalog');
+        const values = JSON.parse(localStorage.getItem(ds.id));
+
+        if (values.length > 0) {
+            for (let i = 0; i < values.length; ++i) {
+                const el = ds[values[i][1]];
+
+                if (el.type === 'checkbox') {
+                    el.setAttribute('checked', 'checked');
+                } else {
+                    el.value = values[i][1];
+                }
+            }
+        }
+    }
+});
 
 $.fn.exists = function () {
     return $(this).length;
@@ -20,8 +41,15 @@ const projectFunc = {
             relatedSlider.updateSlider('arrow');
             relatedSlider.updateSlider('pagination', 'custom');
         }
-    },
 
+        if ($('.js-history-slider').exists()) {
+            const objSlider = new Slider('.js-history-slider', 1, 0);
+            objSlider.createSlider();
+            objSlider.updateSlider('effect', 'fade');
+            objSlider.updateSlider('arrow');
+            objSlider.updateSlider('pagination');
+        }
+    },
     hiddenTabs(index) {
         if ($('.auth-popup').exists()) {
             try {
@@ -266,38 +294,49 @@ const projectFunc = {
             serviceBg.reverse();
         }
     },
-    showOverlay(status, popup) {
+    showOverlay: function (form, status) {
         if ($('.js-overlay').exists()) {
-            const overlayEl = $(popup).parent('.js-overlay');
+
+            const overlayEl = document.querySelector('.js-overlay');
+
             const showOvTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: {
-                    duration: 0.6
-                },
+                defaults: { duration: 0.3 },
                 onStart: projectFunc.lockedDOM,
-                onStartParams: [status, false],
+                onStartParams: [true],
                 onComplete: projectFunc.stateObject,
-                onCompleteParams: ['start', popup]
+                onCompleteParams: [form, 'start'],
             });
 
             const hideOvTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: {
-                    duration: 0.3
-                },
+                defaults: { duration: 0.3 },
                 onStart: projectFunc.stateObject,
-                onStartParams: ['end', popup],
+                onStartParams: [form, 'end'],
                 onComplete: projectFunc.lockedDOM,
-                onCompleteParams: [status, true]
+                onCompleteParams: [false]
             });
 
             showOvTl
-                .to(overlayEl, { autoAlpha: 1, ease: 'power2.out' });
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 0.5,
+                        ease: 'power2.out'
+                    }
+                );
 
             hideOvTl
-                .to(overlayEl, { autoAlpha: 0, ease: 'power2.out' }, '+=0.6');
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 0,
+                        ease: 'power2.out'
+                    },
+                    '+=0.6'
+                );
 
             if (status) {
                 showOvTl.reverse();
@@ -365,6 +404,104 @@ const projectFunc = {
             }
         }
     },
+    popupShow: function (form, status) {
+        if ($(form).exists()) {
+            const element = document.querySelector(form);
+
+            const formShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            const formHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            const menuShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            const menuHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 1 }
+            });
+
+            menuShowTl
+                .to(
+                    element,
+                    {
+                        autoAlpha: 1,
+                        xPercent: -100,
+                        ease: 'power2.out'
+                    }
+                )
+
+            menuHideTl
+                .to(
+                    element,
+                    {
+                        autoAlpha: 0,
+                        xPercent: 100,
+                        ease: 'power2.out'
+                    }
+                )
+
+            formHideTl
+                .to(
+                    element,
+                    {
+                        autoAlpha: 0,
+                        yPercent: -100,
+                        xPercent: -50,
+                        ease: 'power2.out'
+                    }
+                )
+
+            formShowTl
+                .set(
+                    element, {
+                    yPercent: -100,
+                    xPercent: -50,
+                }
+                )
+                .to(
+                    element,
+                    {
+                        autoAlpha: 1,
+                        yPercent: -50,
+                        //xPercent: -50,
+                        ease: 'power2.out'
+                    }
+                )
+
+            if (status) {
+                if (form === '.js-menu-mobile') {
+                    menuHideTl.reverse()
+                    menuShowTl.play();
+
+                } else {
+                    formHideTl.reverse();
+                    formShowTl.play();
+                }
+            }
+            else {
+                if (form === '.js-menu-mobile') {
+                    menuShowTl.reverse();
+                    menuHideTl.play();
+                    $('.menu-btn').removeClass('open');
+                } else {
+                    formShowTl.reverse();
+                    formHideTl.play();
+                }
+            }
+        }
+    },
     lockedDOM(status) {
         if (status) {
             $('html').css('overflow', 'hidden');
@@ -372,11 +509,12 @@ const projectFunc = {
             $('html').css('overflow', 'auto');
         }
     },
-    stateObject(status, popup) {
-        if (status === 'start') {
-            projectFunc.formShow(popup, true);
-        } else {
-            projectFunc.formShow(popup, false);
+    stateObject: function (form, status) {
+        if (status == 'start') {
+            projectFunc.popupShow(form, true);
+        }
+        else {
+            projectFunc.popupShow(form, false);
         }
     },
     initSearch(state) {
@@ -415,16 +553,254 @@ const projectFunc = {
             hideSearch.play();
             showSearch.stop();
         }
+    },
+    sendFilter() {
+        if ($('#ds_filter_catalog').exists()) {
+            try {
+                let ds = '';
+                ds = document.getElementById('ds_filter_catalog');
+
+                ds.onchange = () => {
+                    const json = JSON.stringify(Array.from(new FormData(ds)));
+                    localStorage.setItem(ds.id, json);
+                    // ds.submit(); // Отправка формы
+                };
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    },
+    clearFilter(form) {
+        let ds = '';
+        ds = document.getElementById(form);
+        localStorage.removeItem(ds.id);
+        ds.submit();
+    },
+    initCost() {
+        if ($('.subject__item').exists()) {
+            const productItem = document.querySelectorAll('.subject__item');
+
+            productItem.forEach((element) => {
+                let num = '';
+                let costInfo = element.querySelector('.js-cost').textContent;
+                let discounts = element.dataset.discounts
+
+                $(element).find('.js-cost').text(costInfo);
+                costInfo = +costInfo.replace(/\s+/g, '');
+
+                $(element).find('.js-count-input').on('keyup change', function () {
+
+                    if (element.hasAttribute('data-discounts')) {
+                        num = $(this).val() * (costInfo - (costInfo / 100 * discounts));
+                    } else {
+                        num = $(this).val() * costInfo;
+                    }
+
+                    if (num < costInfo) {
+                        num = costInfo;
+                    }
+
+                    num = num.toLocaleString();
+                    $(element).find('.js-cost').text(num);
+                });
+            });
+        }
+    },
+    getScrollbarWidth() {
+        let div, width = projectFunc.getScrollbarWidth.width;
+        if (width === undefined) {
+            div = document.createElement('div');
+            div.innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>';
+            div = div.firstChild;
+            document.body.appendChild(div);
+            width = projectFunc.getScrollbarWidth.width = div.offsetWidth - div.clientWidth;
+            document.body.removeChild(div);
+        }
+        return width;
+    },
+    scrollbarPage() {
+        let locked = document.querySelector('html');
+        locked.style.setProperty('--wScroll', projectFunc.getScrollbarWidth() + 'px');
     }
 };
+
+
+const showService = (element) => {
+    if ($(element).exists()) {
+        const serviceHover = (element, state) => {
+            console.log(1);
+            const serviceBg = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            const serviceBgLeave = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            serviceBg
+                .to(
+                    element,
+                    1,
+                    {
+                        backgroundColor: "#2C43A1",
+                        color: 'white',
+                        ease: Back.easeOut.config(1.7)
+                    }
+                )
+
+            serviceBgLeave
+                .to(
+                    element,
+                    1,
+                    {
+                        backgroundColor: "white",
+                        color: '#38393F',
+                        ease: Back.easeOut.config(1.7)
+                    }
+                )
+
+            if (state) {
+                serviceBg.play();
+                serviceBgLeave.reverse();
+            }
+            else {
+                serviceBgLeave.play();
+                serviceBg.reverse();
+            }
+        }
+
+        gsap.utils.toArray(element).forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                serviceHover(this, true);
+            });
+
+            item.addEventListener('mouseleave', function () {
+                serviceHover(this, false);
+            });
+        });
+    }
+}
 
 function init() {
     projectFunc.setTabs();
     projectFunc.createSlider();
+    projectFunc.sendFilter();
+    projectFunc.initCost();
+    projectFunc.scrollbarPage();
+    showService('.lk-menu__item');
 }
 
 window.addEventListener('load', function () {
     init();
+
+    if ($('.js-portfolio').exists()) {
+
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', wheel, false);
+        }
+
+        function wheel(event) {
+            event.preventDefault();
+            event.returnValue = false;
+        };
+
+        Scrollbar.init(document.querySelector('.js-portfolio'));
+
+        const blocPortfolio = document.querySelector('.js-portfolio');
+
+        blocPortfolio.addEventListener('mouseenter', function () {
+            projectFunc.lockedDOM(true);
+        });
+
+        blocPortfolio.addEventListener('mouseleave', function () {
+            projectFunc.lockedDOM(false);
+        });
+    }
+
+    if ($('.js-dropdown').exists()) {
+        let accordions = document.getElementsByClassName("js-dropdown");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function () {
+                this.classList.toggle('is-open');
+
+                let content = $(this).find('.menu-mobile__sub')[0];
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            }
+        }
+    }
+
+    if ($('.lk-profile__item').exists()) {
+        let accordions = document.getElementsByClassName('lk-profile__item');
+        let btn = '';
+
+        for (let i = 0; i < accordions.length; i++) {
+            if (!accordions[i].classList.contains('disable')) {
+                btn = accordions[i].querySelector('.js-btn-edit');
+
+                btn.onclick = function () {
+                    accordions[i].classList.toggle('is-open');
+                    let content = $(this).closest('.lk-profile__row').next().find('.lk-edit')[0];
+                    let box = $(this).closest('.lk-profile__row').next()[0];
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        box.style.maxHeight = content.scrollHeight + "px";
+                    }
+
+                    $(this).closest('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(this).closest('.lk-profile__row').css('overflowY', 'hidden'); $(content).find('input').focus(); } });
+                };
+            }
+        }
+
+        if ($('.js-close-edit').exists()) {
+            let closeEdit = document.querySelectorAll('.js-close-edit');
+            for (let i = 0; i < closeEdit.length; i++) {
+                closeEdit[i].onclick = function () {
+                    accordions[i].classList.toggle('is-open');
+                    let content = $(accordions[i]).find('.lk-profile__row').next().find('.lk-edit')[0];
+                    let box = $(accordions[i]).find('.lk-profile__row').next()[0];
+
+                    console.log(accordions[i]);
+
+                    box.style.maxHeight = null;
+                    $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
+                };
+            }
+        }
+    }
+
+    if ($('.js-clear-filter').exists()) {
+        const btnReset = document.querySelector('.js-clear-filter');
+        btnReset.onclick = (event) => {
+            event.preventDefault();
+            projectFunc.clearFilter('ds_filter_catalog');
+        };
+    }
+
+    if ($('.js-btn-resume').exists()) {
+        $('.js-btn-resume').on('click', () => {
+            projectFunc.showOverlay('.js-modal-resume', true);
+        });
+    }
+
+    if ($('.js-overlay').exists()) {
+        $('.js-overlay').on('click', () => {
+            projectFunc.showOverlay('.js-menu-mobile', false);
+            projectFunc.showOverlay('.js-modal-success', false);
+            projectFunc.showOverlay('.js-modal-resume', false);
+        })
+    }
 
     if ($('.js-select').exists()) {
         $('.js-select').select2({
@@ -454,12 +830,23 @@ window.addEventListener('load', function () {
         const popup = document.querySelector('.js-menu-popup');
         gsap.set(popup, { yPercent: -100 });
 
-        $('.js-btn-menu').on('click', () => {
-            if (popup) {
-                $('.menu-btn').addClass('open');
-                projectFunc.formShow(popup, true);
-            }
-        });
+        $(window).on('resize load', function () {
+            $('.js-btn-menu').on('click', () => {
+                if ($(window).width() > 1024) {
+                    if (popup) {
+                        $('.menu-btn').addClass('open');
+                        projectFunc.formShow(popup, true);
+                    }
+                } else {
+                    if (!$('.menu-btn').hasClass('open')) {
+                        console.log('false');
+                        projectFunc.showOverlay('.js-menu-mobile', false);
+                    } else {
+                        projectFunc.showOverlay('.js-menu-mobile', true);
+                    }
+                }
+            });
+        }).resize();
     }
 
     if ($('.js-menu-close').exists()) {
@@ -517,9 +904,11 @@ window.addEventListener('load', function () {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 if (scrollTop > $h) {
                     $target.addClass('mf-scroll');
+                    $('.header').addClass('mf-small-header');
                     // return;
                 } else {
                     $target.removeClass('mf-scroll');
+                    $('.header').removeClass('mf-small-header');
                 }
                 // return;
             });
@@ -554,7 +943,8 @@ window.addEventListener('load', function () {
 
     if ($('.js-close-modal').exists()) {
         $('.js-close-modal').on('click', () => {
-            $('.js-modal').removeClass('open');
+            projectFunc.showOverlay('.js-modal-success', false);
+            projectFunc.showOverlay('.js-modal-resume', false);
         });
     }
 
@@ -584,4 +974,10 @@ window.addEventListener('load', function () {
         });
     }
 
+    if ($('.js-btn-success').exists()) {
+        $('.js-btn-success').on('click', () => {
+            event.preventDefault();
+            projectFunc.showOverlay('.js-modal-success', true);
+        })
+    }
 });

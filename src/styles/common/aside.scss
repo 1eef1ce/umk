@@ -17,7 +17,6 @@
 
 
   &--reverse {
-    border: 1px solid red;
     padding: 13px 0 64px;
 
     .aside {
@@ -25,9 +24,20 @@
         margin-left: 0;
         margin-right: 23px;
       }
+    }
+  }
+
+  &--lk {
+    .aside {
+      &__sidebar {
+        margin-left: 0;
+        margin-right: 35px;
+        width: 222px;
+        padding-top: 7px;
+      }
 
       &__main {
-        width: calc(100% - 285px - 23px);
+        width: calc(100% - 222px - 35px);
       }
     }
   }

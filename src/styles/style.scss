@@ -1,6 +1,7 @@
 @import "libs/libs";
 @import "common/global";
 @import "common/header/header";
+@import "common/header/menu-mobile";
 @import "common/header/header-link";
 @import "common/aside";
 @import "common/breadcrumb";
@@ -65,8 +66,16 @@
 @import "includes/catalog/catalog";
 @import "includes/catalog/catalog-service";
 @import "includes/subject/subject";
+@import "includes/catalog/include";
 @import "common/tab";
 @import "common/filter";
+@import "common/overlay";
+@import "includes/history/history";
+@import "includes/history/history-slider";
+@import "includes/lk/lk-menu";
+@import "includes/lk/lk";
+@import "includes/lk/lk-profile";
+@import "includes/lk/lk-edit";
 
 .icon-stroke {
     stroke: currentColor;
@@ -92,7 +101,6 @@
             background-color: transparent;
             opacity: 1;
             color: $gray-2;
-
 
             &:not(:last-child) {
                 margin-right: 20px;

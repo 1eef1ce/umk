@@ -59,6 +59,16 @@
         margin-right: 24px;
     }
 
+    &__qty {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 5px;
+
+        .js-qty {
+            margin-right: 3px;
+        }
+    }
+
     &__price {
         font-size: 18px;
         font-weight: 600;

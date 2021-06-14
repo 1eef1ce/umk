@@ -1,0 +1,42 @@
+extends common/layout
+
+block content
+    main.main
+        .lk
+            .lk__container.container
+                .aside.aside--lk
+                    .aside__sidebar
+                        include common/sidemenu
+                        .delivery-unit
+                            .delivery-unit__title Ваш менеджер:
+                            .delivery-unit__text
+                                | Специалист:
+                                br
+                                span Иванов Иван Иванович
+                            .delivery-unit__text
+                                | Почта:
+                                br
+                                a(href="mailto:sdefefvr@mail.ru") sdefefvr@mail.ru
+                            .delivery-unit__text
+                                | Телефон:
+                                br
+                                a(href="tel:+7(999)985-48-56") +7 (999) 985-48-56
+                    .aside__main
+                        h1.title-1 Рабочий стол
+                        .lk-menu 
+                            a.lk-menu__item(href="javascript:void(0);")
+                                .lk-menu__title Мои заказы
+                                .lk-menu__icon
+                                    +icon('ic-trash')
+                            a.lk-menu__item(href="javascript:void(0);")
+                                .lk-menu__title Обратная связь
+                                .lk-menu__icon
+                                    +icon('ic-call')
+                            a.lk-menu__item(href="javascript:void(0);")
+                                .lk-menu__title Личный профиль
+                                .lk-menu__icon
+                                    +icon('ic-trash')
+                            a.lk-menu__item(href="javascript:void(0);")
+                                .lk-menu__title Профиль компании
+                                .lk-menu__icon
+                                    +icon('ic-call')

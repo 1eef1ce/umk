@@ -1,22 +1,23 @@
 .modal {
-  display: none;
+  display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1060;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  left: 50%;
+  top: 50%;
 
   &.open {
     display: block;
   }
 
   &--success {
+    max-width: 414px;
+    width: 100%;
 
     .modal__content {
-      max-width: 414px;
       padding: 61px 67px 85px;
       text-align: center;
 
@@ -29,8 +30,8 @@
   &__content {
     position: relative;
     background: #fff;
-    width: 96%;
-    max-width: 580px;
+    width: 100%;
+    // max-width: 580px;
     margin: auto;
     padding: 65px 77px 77px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
