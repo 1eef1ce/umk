@@ -8,6 +8,10 @@
     height: 65px;
     cursor: pointer;
 
+    @media (max-width: 1024px) {
+        font-size: 14px;
+    }
+
     &--basic {
         background-color: $purple-1;
         color: white;
@@ -24,10 +28,22 @@
 
     &--w200 {
         width: 200px;
+
+        @media (max-width: 1024px) {
+            width: 168px;
+        }
+
+        @media (max-width: 620px) {
+            width: 50px;
+        }
     }
 
     &--w250 {
         width: 250px;
+
+        @media (max-width: 620px) {
+            width: 100%;
+        }
     }
 
     &--w275 {

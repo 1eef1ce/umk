@@ -19,6 +19,16 @@ const projectFunc = {
             relatedSlider.createSlider();
             relatedSlider.updateSlider('arrow');
             relatedSlider.updateSlider('pagination', 'custom');
+
+            $(window).resize(function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 621) {
+                    relatedSlider.updateSlider('view', 2);
+                    relatedSlider.updateSlider('space', 30);
+                }
+                if ($(this).width() <= 620 && $(this).width() >= 320) {
+                    relatedSlider.updateSlider('view', 1);
+                }
+            }).resize();
         }
     },
 
