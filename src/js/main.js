@@ -437,10 +437,12 @@ window.addEventListener('load', function () {
     init();
 
     if ($('.js-select').exists()) {
-        $('.js-select').select2({
-            minimumResultsForSearch: Infinity,
-            width: 'resolve',
-        });
+        $(window).resize(function () {
+            $('.js-select').select2({
+                minimumResultsForSearch: Infinity,
+                width: 'element',
+            });
+        }).resize();
     }
 
     if ($('.js-btn-search').exists()) {

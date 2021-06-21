@@ -62,6 +62,10 @@
         height: 15px;
         margin-right: 5px;
         fill: #fff;
+
+        @media (max-width: 620px) {
+            margin-right: 0;
+        }
     }
 
     &--search {
