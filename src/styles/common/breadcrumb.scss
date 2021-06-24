@@ -5,7 +5,7 @@
   margin: 35px 0 30px;
 
   @media (max-width: 1024px) {
-    margin: 30px 0 18px;
+    margin: 27px 0 15px;
     overflow-x: scroll;
   }
 
@@ -22,6 +22,10 @@
     white-space: nowrap;
 
     @media (max-width: 1024px) {
+      line-height: 1.75;
+    }
+
+    @media (max-width: 620px) {
       font-size: 12px;
       line-height: 1.55;
     }

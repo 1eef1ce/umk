@@ -6,12 +6,28 @@
     margin-top: 12px;
     list-style: none;
     counter-reset: numbers-counter;
+
+    @media (max-width: 1024px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 7px;
+    }
   }
 
   &__item {
     position: relative;
     padding: 15px 0 20px 35px;
     counter-increment: numbers-counter;
+
+    @media (max-width: 1024px) {
+      padding: 21px 0 22px 28px;
+    }
+
+    @media (max-width: 620px) {
+      padding: 13px 0 20px 28px;
+    }
 
     &:not(:last-of-type) {
       border-bottom: 2px solid rgba(217, 217, 217, 0.35);
@@ -25,6 +41,16 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 1.6;
+
+      @media (max-width: 1024px) {
+        top: 22px;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 620px) {
+        top: 13px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -34,6 +60,14 @@
     font-size: 18px;
     line-height: 1.6;
 
+    @media (max-width: 1024px) {
+      line-height: 1.65;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 16px;
+    }
+
     &:hover {
       color: $purple-1;
     }
@@ -41,6 +75,15 @@
 
   &__text {
     margin-top: 4px;
+
+    @media (max-width: 620px) {
+      display: -webkit-box;
+      max-height: 100px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &__date {
@@ -48,5 +91,14 @@
     line-height: 1.45;
     color: $gray-2;
     margin-top: 10px;
+
+    @media (max-width: 1024px) {
+      line-height: 1.75;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 12px;
+      line-height: 1.55;
+    }
   }
 }
