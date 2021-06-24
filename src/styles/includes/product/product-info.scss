@@ -1,5 +1,9 @@
 .product-info {
-  margin-top: 42px;
+  margin-top: 40px;
+
+  @media (max-width: 620px) {
+    margin-top: 34px;
+  }
 
   &__section {
     margin-top: 2px;
@@ -19,12 +23,21 @@
     padding: 20px 20px 18px 30px;
     background: rgba(217, 217, 217, 0.3);
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+      padding: 19px 20px 19px 22px;
+    }
   }
 
   &__title {
     font-weight: 600;
     font-size: 18px;
     line-height: 1.6;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      line-height: 1.65;
+    }
   }
 
   &__icon {
@@ -41,16 +54,41 @@
     display: none;
     padding: 25px 28px 38px;
     border: 2px solid rgba(217, 217, 255, 0.3);
+
+    @media (max-width: 1024px) {
+      padding: 15px 20px 20px 20px;
+    }
+
+    @media (max-width: 620px) {
+      padding: 24px 20px 25px 22px;
+    }
   }
 
   &__row {
 
     &:not(:first-of-type) {
       margin-top: 22px;
+
+      @media (max-width: 1024px) {
+        margin-top: 9px;
+      }
+
+      @media (max-width: 620px) {
+        margin-top: 15px;
+      }
     }
   }
 
   p {
     margin: 13px 0 0;
+
+    @media (max-width: 1024px) {
+      margin: 4px 0 0;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 620px) {
+      margin: 7px 0 0;
+    }
   }
 }

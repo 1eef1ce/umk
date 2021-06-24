@@ -5,8 +5,26 @@
   list-style: none;
   padding: 0 25px;
 
+  @media (max-width: 1024px) {
+    padding: 0 5px;
+    overflow-x: scroll;
+  }
+
+  @media (max-width: 620px) {
+    padding: 0 8px;
+  }
+
   &__item {
     margin: 0 15px;
+    white-space: nowrap;
+
+    @media (max-width: 1024px) {
+      margin: 0 15px;
+    }
+
+    @media (max-width: 620px) {
+      margin: 0 12px;
+    }
   }
 
   &__link {
@@ -14,6 +32,18 @@
     font-size: 15px;
     line-height: 1.45;
     border-bottom: 2px solid transparent;
+
+    @media (max-width: 1024px) {
+      padding: 11px 0;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 620px) {
+      padding: 12px 0;
+      font-size: 14px;
+      line-height: 1.75;
+    }
 
     &:hover,
     &.active {

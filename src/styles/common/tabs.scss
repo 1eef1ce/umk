@@ -1,37 +1,69 @@
 .tabs {
+  margin-top: 30px;
+
+  @media (max-width: 1024px) {
+    margin-top: 25px;
+  }
+
+  @media (max-width: 620px) {
+    margin-top: 23px;
+  }
 
   &__list {
     display: flex;
     list-style: none;
     border-bottom: 2px solid rgba(217, 217, 217, 0.35);
-    height: 48px;
-    margin-top: 30px;
+
+    @media (max-width: 1024px) {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
   }
 
   &__item {
+    white-space: nowrap;
 
     &:not(:last-of-type) {
       margin-right: 35px;
+
+      @media (max-width: 1024px) {
+        margin-right: 25px;
+      }
     }
   }
 
   &__link {
     position: relative;
     display: block;
-    height: 100%;
+    padding-bottom: 12px;
     font-weight: 600;
     font-size: 24px;
     color: $gray-2;
-    border-bottom: 2px solid transparent;
+
+    @media (max-width: 1024px) {
+      padding-bottom: 16px;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 620px) {
+      padding-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
 
     &::after {
       content: "";
       position: absolute;
-      bottom: -4px;
+      bottom: -2px;
       left: 0;
       width: 100%;
       height: 2px;
       background: transparent;
+
+      @media (max-width: 1024px) {
+        bottom: 0;
+      }
     }
 
     &:hover,

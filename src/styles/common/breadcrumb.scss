@@ -4,6 +4,15 @@
   flex-wrap: nowrap;
   margin: 35px 0 30px;
 
+  @media (max-width: 1024px) {
+    margin: 27px 0 15px;
+    overflow-x: scroll;
+  }
+
+  @media (max-width: 620px) {
+    margin: 25px 0 15px;
+  }
+
   &__item {
     display: inline-flex;
     align-items: center;
@@ -11,6 +20,15 @@
     line-height: 1.45;
     cursor: default;
     white-space: nowrap;
+
+    @media (max-width: 1024px) {
+      line-height: 1.75;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 12px;
+      line-height: 1.55;
+    }
 
     &:not(:first-of-type) {
 

@@ -5,13 +5,45 @@
     align-items: flex-end;
     justify-content: space-between;
 
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      margin-top: 23px;
+    }
+
     .tabs {
       max-width: 997px;
+      width: 100%;
       flex-grow: 1;
+      margin-top: 20px;
 
-      &__list {
-        margin-top: 20px;
+      @media (max-width: 1024px) {
+        max-width: 100%;
+        margin-top: 27px;
       }
+
+      @media (max-width: 620px) {
+        margin-top: 24px;
+      }
+    }
+
+    .js-select {
+      width: 133px;
+
+      @media (max-width: 1024px) {
+        width: 190px;
+      }
+
+      @media (max-width: 620px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__form {
+
+    @media (max-width: 620px) {
+      width: 100%;
     }
   }
 
@@ -22,18 +54,50 @@
   &__items {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1024px) {
+      margin-top: 7px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 0;
+    }
   }
 
   &__item {
     display: flex;
-    max-height: 212px;
+    height: 212px;
     margin-top: 38px;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+      align-items: center;
+      height: 189px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 620px) {
+      flex-direction: column;
+      height: auto;
+    }
   }
 
   &__img {
     width: 387px;
+    height: 100%;
     margin-right: 30px;
     flex-shrink: 0;
+
+    @media (max-width: 1024px) {
+      width: 276px;
+      margin-right: 22px;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+      max-height: 183px;
+      margin-right: 0;
+    }
 
     img {
       width: 100%;
@@ -46,12 +110,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: 620px) {
+      margin-top: 15px;
+    }
   }
 
   &__date {
     font-size: 14px;
     line-height: 1.45;
     color: $gray-2;
+
+    @media (max-width: 1024px) {
+      font-size: 12px;
+      line-height: 1.55;
+    }
   }
 
   &__title {
@@ -60,6 +133,17 @@
     font-size: 24px;
     line-height: 1.35;
     margin-top: 25px;
+
+    @media (max-width: 1024px) {
+      font-size: 22px;
+      line-height: 1.4;
+      margin-top: 13px;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 18px;
+      line-height: 1.55;
+    }
 
     &:hover {
       color: $purple-1;
@@ -70,5 +154,10 @@
     max-height: 93px;
     overflow: hidden;
     margin-top: 10px;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      margin-top: 10px;
+    }
   }
 }
