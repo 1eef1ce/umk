@@ -1,0 +1,106 @@
+extends common/layout
+
+block content
+    main.main
+        .service-detail
+            .service-detail__header(style="background-color: #f3f4f5; background-image: url('../img/bg-service-detail.png');")
+                .container
+                    include common/breadcrumb
+                    h1.title-1 Горячекатаный рулон
+            .container
+                .aside
+                    .aside__main
+                        h2.title-4 Общие характеристики
+                        p.
+                            Внутренний диаметр рулона со станов горячей прокатки «2000» и «2500» составляет 850 мм.
+                            Кромка у рулона обоих станов катаная. Внутренний диаметр рулона из агрегата продольной
+                            резки — 750 или 840 мм. Рулон поставляется с обрезной кромкой.
+                        h2.title-4 Упаковка
+                        p.
+                            Со стана горячей прокатки «2000» металл поставляется в рулонах весом от 9 до 30 тонн.
+                            Со стана «2500» — в рулонах массой 9-22 тонны. Агрегат продольной резки ЛПЦ7 выпускает
+                            продукцию в рулонах массой 15 тонн.
+                        h2.title-4 Маркировка
+                        p Продукция маркируется бумажными или металлическими бирками.
+                        h2.title-4 Сортамент и марки стали
+                        .service-detail__table
+                            table
+                                tr
+                                    td Назначение
+                                    td Марки стали
+                                    td Типоразмер, мм
+                                    td Стандарт
+                                tr
+                                    td(rowspan="3") Специального и общего назначения
+                                    td 09Г2, 17ГС, 09Г2С
+                                    td более 4 мм
+                                    td ГОСТ 17066
+                                tr
+                                    td 09Г2, 17ГС, 09Г2С
+                                    td менее 4 мм
+                                    td ГОСТ 1577
+                                tr
+                                    td 09Г2, 17ГС, 09Г2С
+                                    td менее 4 мм
+                                    td ГОСТ 1577
+                                tr
+                                    td Для клепаных, сварных и болтовых конструкций
+                                    td 09Г2, 17ГС, 09Г2С, 17Г1С
+                                    td более 4 мм
+                                    td ГОСТ 19281
+                                tr
+                                    td Для клепаных, сварных и болтовых конструкций
+                                    td 09Г2, 17ГС, 09Г2С, 17Г1С
+                                    td более 4 мм
+                                    td ГОСТ 19281
+                                tr
+                                    td(rowspan="2") Специального и общего назначения
+                                    td 09Г2, 17ГС, 09Г2С
+                                    td более 4 мм
+                                    td ГОСТ 17066
+                                tr
+                                    td 09Г2, 17ГС, 09Г2С
+                                    td менее 4 мм
+                                    td ГОСТ 1577
+                                tr
+                                    td Для клепаных, сварных и болтовых конструкций
+                                    td 09Г2, 17ГС, 09Г2С, 17Г1С
+                                    td более 4 мм
+                                    td ГОСТ 19281
+                        p.
+                            Условия поставки, конкретные типоразмеры и марочный состав согласовываются индивидуально
+                            при оформлении заказа.
+                    .aside__sidebar
+                        .sidemenu
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Горячекатаный рулон
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Горячекатаный лист
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Холоднокатаный рулон
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Холоднокатаный лист
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Оцинкованный прокат
+                            a.sidemenu__section(href="javascript:void(0);")
+                                .sidemenu__head
+                                    .sidemenu__title Прокат с полимерным покрытием
+                        .delivery-unit
+                            .delivery-unit__title Отдел продаж:
+                            .delivery-unit__text
+                                | Менеджер:
+                                br
+                                span Роман Южаков
+                            .delivery-unit__text
+                                | Телефон:
+                                br
+                                a(href="tel:+73519517015") +7 (3519) 51-70-15
+                            .delivery-unit__text
+                                | E-mail:
+                                br
+                                a(href="mailto:order@uralmetalcompany.ru") order@uralmetalcompany.ru

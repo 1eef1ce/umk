@@ -19,6 +19,16 @@ const projectFunc = {
             relatedSlider.createSlider();
             relatedSlider.updateSlider('arrow');
             relatedSlider.updateSlider('pagination', 'custom');
+
+            $(window).resize(function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 621) {
+                    relatedSlider.updateSlider('view', 2);
+                    relatedSlider.updateSlider('space', 30);
+                }
+                if ($(this).width() <= 620 && $(this).width() >= 320) {
+                    relatedSlider.updateSlider('view', 1);
+                }
+            }).resize();
         }
     },
 
@@ -427,10 +437,12 @@ window.addEventListener('load', function () {
     init();
 
     if ($('.js-select').exists()) {
-        $('.js-select').select2({
-            minimumResultsForSearch: Infinity,
-            width: 'resolve',
-        });
+        $(window).resize(function () {
+            $('.js-select').select2({
+                minimumResultsForSearch: Infinity,
+                width: 'element',
+            });
+        }).resize();
     }
 
     if ($('.js-btn-search').exists()) {
@@ -577,9 +589,9 @@ window.addEventListener('load', function () {
         $('.js-tab-btn').click(function (e) {
             e.preventDefault();
             $('.js-tab-btn').removeClass('active');
-            $('.js-tab-btn').addClass('active');
+            $(this).addClass('active');
             $('.js-tab-body').removeClass('active');
-            const tabID = $('.js-tab-btn').attr('data-tab-btn');
+            const tabID = $(this).attr('data-tab-btn');
             $('.js-tab-body[data-tab-body="' + tabID + '"]').addClass('active');
         });
     }

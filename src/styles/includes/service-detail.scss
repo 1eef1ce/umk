@@ -1,0 +1,30 @@
+.service-detail {
+
+  &__table {
+    margin-top: 20px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 240px;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-bottom: 48px;
+
+    .breadcrumb {
+      margin-top: 0;
+    }
+  }
+
+  .title-4 {
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
+
+  p {
+    margin: 11px 0 0;
+  }
+}

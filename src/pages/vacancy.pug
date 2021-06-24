@@ -1,0 +1,59 @@
+extends common/layout
+
+block content
+    main.main
+        include common/topmenu
+        .vacancy
+            .container
+                include common/breadcrumb
+                h1.title-1 Вакансии
+                p.
+                    Самая большая ценность нашей Компании – это сотрудники, именно из их знаний, навыков, опыта и энергии
+                    складывается уникальный потенциал. В ООО “УМК” работает более 3 тысяч сотрудников. Мы создаем
+                    комфортные рабочие места и предлагаем возможности для профессионального развития. Компания входит
+                    в десятку лучших работодателей России по версиям различных рейтингов.
+        .feature
+            .container
+                .feature__items
+                    .feature__item
+                        .feature__img
+                            +icon('settings_future')
+                        .feature__content
+                            .feature__title Крупная стабильная компания
+                            .feature__text Являясь всего лишь частью общей картины, стремящиеся вытеснить.
+                    .feature__item
+                        .feature__img
+                            +icon('settings_future')
+                        .feature__content
+                            .feature__title Обучение за счет компании
+                            .feature__text Являясь всего лишь частью общей картины, стремящиеся вытеснить.
+                    .feature__item
+                        .feature__img
+                            +icon('settings_future')
+                        .feature__content
+                            .feature__title Раскрытие потенциала каждого сотрудника
+                            .feature__text Являясь всего лишь частью общей картины, стремящиеся вытеснить.
+                    .feature__item
+                        .feature__img
+                            +icon('settings_future')
+                        .feature__content
+                            .feature__title Возможности карьерного роста
+                            .feature__text Являясь всего лишь частью общей картины, стремящиеся вытеснить.
+        .vacancy
+            .container
+                .video.vacancy__video
+                    .video__content
+                        img(src="../img/vacancy-video-placeholder.jpg" alt="video")
+                        .video__button
+                .vacancy__items
+                    .vacancy__item
+                        .vacancy__content
+                            .vacancy__title Менеджер по сбыту металлопродукции
+                            .vacancy__text Магнитогорск / от 3х лет / Полная занятость
+                        .vacancy__payment от 20 000 до 60 000 руб.
+                    .vacancy__item
+                        .vacancy__content
+                            .vacancy__title Менеджер по сбыту металлопродукции
+                            .vacancy__text Магнитогорск / от 3х лет / Полная занятость
+                        .vacancy__payment от 20 000 до 60 000 руб.
+                    include common/pagination

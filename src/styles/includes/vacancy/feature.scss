@@ -1,0 +1,50 @@
+.feature {
+  background: rgba(243, 244, 245, 0.5);
+  padding: 50px 0 55px;
+  margin-top: 50px;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(25% - 60px);
+    margin: 0 30px;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    background: $purple-1;
+    margin-right: 16px;
+    flex-shrink: 0;
+
+    svg {
+      width: 23px;
+      height: 23px;
+      fill: #fff;
+    }
+  }
+
+  &__content {
+    margin-top: 4px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  &__text {
+    line-height: 1.35;
+    margin-top: 11px;
+  }
+}

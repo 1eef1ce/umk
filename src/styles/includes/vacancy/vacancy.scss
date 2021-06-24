@@ -1,0 +1,40 @@
+.vacancy {
+
+  &__video {
+    height: 675px;
+    margin-top: 60px;
+  }
+
+  &__items {
+    margin-top: 35px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0 20px;
+    border-bottom: 2px solid rgba(217, 217, 217, 0.35);
+  }
+
+  &__content {
+
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+
+  &__payment {
+    font-weight: 600;
+    font-size: 22px;
+  }
+}

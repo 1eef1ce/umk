@@ -13,9 +13,13 @@ block content
                         h1.title-1.product__name Натяжитель ленты ГОСТ 380-2005
                 include includes/product/product-specs
                 .product__bottom
-                    .product-price
-                        .product-price__text Стоимость:
-                        .product-price__value 50 000 ₽
+                    .product-numbers
+                        .product-numbers__item
+                            .product-numbers__text На складе:&nbsp;
+                            .product-numbers__value 350 т
+                        .product-numbers__item.product-numbers__item--price
+                            .product-numbers__text Стоимость:&nbsp;
+                            .product-numbers__value 50 000 ₽
                     .product-actions
                          .count
                             input#quantity.count__input(type="number" name="quantity" placeholder="1 т")

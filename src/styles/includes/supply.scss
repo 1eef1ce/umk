@@ -13,8 +13,9 @@
   }
 
   &__table {
+    margin-top: 20px;
 
-    .table__cell {
+    td {
 
       &:last-of-type {
         width: 200px;
