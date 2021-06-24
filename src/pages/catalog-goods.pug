@@ -1,0 +1,355 @@
+extends common/layout
+
+block content
+    main.main
+        .catalog-goods
+            .catalog-goods__container.container
+                include common/breadcrumb
+                .dropdown.dropdown--catalog-goods
+                    .dropdown-label
+                        .dropdown-label__txt Ручной инструмент
+                    .dropdown-menu 
+                        ul.submenu
+                            li.active  
+                                a(href="javascript:void(0);") Ручной инструмент
+                            li  
+                                a(href="javascript:void(0);") Пневматический упаковочный инструмент
+                            li  
+                                a(href="javascript:void(0);") Комбинированный инструмент
+                            li  
+                                a(href="javascript:void(0);") Аккумуляторный инструмент
+                .tab 
+                    a.tab__item(href="javascript:void(0);") Все
+                    a.tab__item.active(href="javascript:void(0);") Натяжитель ленты
+                    a.tab__item(href="javascript:void(0);") Замковой ручной инструмент
+                    a.tab__item(href="javascript:void(0);") Замковой инструмент для тяжелых грузов
+                    a.tab__item(href="javascript:void(0);") Ножницы для резки
+                .aside.aside--reverse
+                    .aside__sidebar
+                        form#ds_filter_catalog.filter
+                            .filter__box
+                                .filter__bloc
+                                    .filter__title Наличие
+                                    .filter__group 
+                                        label.checkbox(for="ch1")
+                                            input#ch1.checkbox__input(type="checkbox" name="check" value="ch1")
+                                            .checkbox__label Сейчас в наличии
+                                        label.checkbox(for="ch2")
+                                            input#ch2.checkbox__input(type="checkbox" name="check" value="ch2")
+                                            .checkbox__label Неликвид
+                                        label.checkbox(for="ch3")
+                                            input#ch3.checkbox__input(type="checkbox" name="check" value="ch3")
+                                            .checkbox__label Спецпредложения
+                                        label.checkbox(for="ch4")
+                                            input#ch4.checkbox__input(type="checkbox" name="check" value="ch4")
+                                            .checkbox__label Товары второго сорта
+                                .filter__bloc
+                                    .filter__title Тип ленты
+                                    .filter__group 
+                                        label.checkbox(for="ch5")
+                                            input#ch5.checkbox__input(type="checkbox" name="check" value="ch5")
+                                            .checkbox__label Стандарт (UMC)
+                                        label.checkbox(for="ch6")
+                                            input#ch6.checkbox__input(type="checkbox" name="check" value="ch6")
+                                            .checkbox__label Патентированная (UMC HE)
+                                        label.checkbox(for="ch7")
+                                            input#ch7.checkbox__input(type="checkbox" name="check" value="ch7")
+                                            .checkbox__label Патентированная особопрочная(UMC USLМ)
+                                .filter__bloc
+                                    .filter__title ГОСТ (Виды и марки)
+                                    .filter__group 
+                                        label.checkbox(for="ch8")
+                                            input#ch8.checkbox__input(type="checkbox" name="check" value="ch8")
+                                            .checkbox__label ГОСТ 380-2005
+                                        label.checkbox(for="ch9")
+                                            input#ch9.checkbox__input(type="checkbox" name="check" value="ch9")
+                                            .checkbox__label ГОСТ 1050-2013
+                                        label.checkbox(for="ch10")
+                                            input#ch10.checkbox__input(type="checkbox" name="check" value="ch10")
+                                            .checkbox__label ГОСТ 14637-89
+                                .filter__bloc
+                                    .filter__title
+                                        span Отделка поверхности
+                                        a.tooltip.tooltip--finish(href="javascript:void(0);")
+                                            .tooltip__icon
+                                                +icon('help_circle_outline')
+                                            .tooltip__content
+                                                span Отделка
+                                                | — окончательная обработка собранного изделия с целью улучшения его внешнего вида и защиты от действия влаги, повреждения насекомыми и пр. Отделка изделия включает в себя несколько операций: зачистку поверхностей, покрытие красителями, нанесение рисунков путем выжигания и т. д.
+                                    .filter__group 
+                                        label.checkbox(for="ch11")
+                                            input#ch11.checkbox__input(type="checkbox" name="check" value="ch11")
+                                            .checkbox__label Без отделки поверхности (С)
+                                        label.checkbox(for="ch12")
+                                            input#ch12.checkbox__input(type="checkbox" name="check" value="ch12")
+                                            .checkbox__label С обработкой (О)
+                                        label.checkbox(for="ch13")
+                                            input#ch13.checkbox__input(type="checkbox" name="check" value="ch13")
+                                            .checkbox__label Окрашенная (К)
+                                        label.checkbox(for="ch14")
+                                            input#ch14.checkbox__input(type="checkbox" name="check" value="ch14")
+                                            .checkbox__label С защитным восковымпокрытием (В)
+                                        label.checkbox(for="ch15")
+                                            input#ch15.checkbox__input(type="checkbox" name="check" value="ch15")
+                                            .checkbox__label С нанесением логотипаи надписи (Л)
+                                .filter__bloc
+                                    .filter__title Толщина ленты, мм
+                                    .filter__group 
+                                        label.checkbox(for="ch16")
+                                            input#ch16.checkbox__input(type="checkbox" name="check" value="ch16")
+                                            .checkbox__label 0,4
+                                        label.checkbox(for="ch17")
+                                            input#ch17.checkbox__input(type="checkbox" name="check" value="ch17")
+                                            .checkbox__label 0,5
+                                        label.checkbox(for="ch18")
+                                            input#ch18.checkbox__input(type="checkbox" name="check" value="ch18")
+                                            .checkbox__label 0,6
+                                        label.checkbox(for="ch19")
+                                            input#ch19.checkbox__input(type="checkbox" name="check" value="ch19")
+                                            .checkbox__label 0,7
+                                .filter__bloc
+                                    .filter__title Ширина ленты, мм
+                                    .filter__group 
+                                        label.checkbox(for="ch20")
+                                            input#ch20.checkbox__input(type="checkbox" name="check" value="ch20")
+                                            .checkbox__label 9,5
+                                        label.checkbox(for="ch21")
+                                            input#ch21.checkbox__input(type="checkbox" name="check" value="ch21")
+                                            .checkbox__label 12,7
+                                        label.checkbox(for="ch22")
+                                            input#ch22.checkbox__input(type="checkbox" name="check" value="ch22")
+                                            .checkbox__label 16
+                                        label.checkbox(for="ch23")
+                                            input#ch23.checkbox__input(type="checkbox" name="check" value="ch23")
+                                            .checkbox__label 19
+                                .filter__bloc
+                                    .filter__title
+                                        span Стандарт на продукт
+                                        a.tooltip.tooltip--finish(href="javascript:void(0);")
+                                            .tooltip__icon
+                                                +icon('help_circle_outline')
+                                            .tooltip__content 
+                                                span Стандарт на продукт 
+                                                | — нормативный документ, определяющий требования, которым должен соответствовать конкретный продукт или группа идентичной продукции. Стандартизация существенно упрощает производственный процесс, поскольку ее применение позволяет достичь единого высокого качества продукции.
+                                    .filter__group 
+                                        label.checkbox(for="ch27")
+                                            input#ch27.checkbox__input(type="checkbox" name="check" value="ch27")
+                                            .checkbox__label ГОСТ 380-2005
+                                        label.checkbox(for="ch28")
+                                            input#ch28.checkbox__input(type="checkbox" name="check" value="ch28")
+                                            .checkbox__label ГОСТ 1050-2013
+                                        label.checkbox(for="ch29")
+                                            input#ch29.checkbox__input(type="checkbox" name="check" value="ch29")
+                                            .checkbox__label ГОСТ 14637-89
+                                .filter__bloc
+                                    .filter__title Категории
+                                    .filter__group 
+                                        label.checkbox(for="ch24")
+                                            input#ch24.checkbox__input(type="checkbox" name="check" value="ch24")
+                                            .checkbox__label Все
+                                        label.checkbox(for="ch25")
+                                            input#ch25.checkbox__input(type="checkbox" name="check" value="ch25")
+                                            .checkbox__label Замковой ручной инструмент
+                                        label.checkbox(for="ch26")
+                                            input#ch26.checkbox__input(type="checkbox" name="check" value="ch26")
+                                            .checkbox__label Ножницы для резки
+                            button.btn.js-clear-filter(type="reset") Очистить фильтр
+                    .aside__main
+                        .subject
+                            .subject__cover
+                                .subject__item
+                                    .subject__header 
+                                        .subject__icon
+                                            +icon("ic-coll")
+                                        .subject__box
+                                            a.subject__title(href="product.html") Натяжитель ленты ГОСТ 380-2005
+                                    .subject__main
+                                        .subject__row
+                                            .subject__col
+                                                .subject__subtitle Тип ленты:
+                                                .subject__txt Стандарт (UMC)
+                                            .subject__col
+                                                .subject__subtitle ГОСТ (Виды и марки):
+                                                .subject__txt ГОСТ 380-2005
+                                            .subject__col
+                                                .subject__subtitle Толщина ленты, мм:
+                                                .subject__txt 0,4
+                                            .subject__col
+                                                .subject__subtitle Ширина ленты, мм:
+                                                .subject__txt 9,5
+                                        .subject__row
+                                            .subject__col
+                                                .subject__subtitle Вид поставки:
+                                                .subject__txt Лента
+                                            .subject__col
+                                                .subject__subtitle Марка стали:
+                                                .subject__txt 08пс
+                                            .subject__col
+                                                .subject__subtitle Прочность:
+                                                .subject__txt К270В
+                                            .subject__col
+                                                .subject__subtitle Категория плоскостности:
+                                                .subject__txt ПВ
+                                    .subject__footer
+                                        .subject__bloc 
+                                            .subject__unit 
+                                                .subject__subtitle На складе:
+                                                .subject__qty 
+                                                    span.js-qty 350
+                                                    span т
+                                            .subject__unit
+                                                .subject__subtitle Стоимость:
+                                                .subject__price
+                                                    span.js-cost 50 000
+                                                    span.mf-symbol ₽
+                                        .product-actions
+                                            .count
+                                                input#quantity.count__input.js-count-input(type="number" name="quantity" min="1"  value="1" placeholder="1 т")
+                                            a.btn.btn--basic.btn--w127.btn--h47 В корзину
+                                .subject__item&attributes({'data-discounts': '10'})
+                                    .subject__header 
+                                        .subject__icon
+                                            +icon("ic-coll")
+                                        .subject__box
+                                            a.subject__title(href="product.html") Натяжитель ленты ГОСТ 380-2005
+                                            span.event Скидка 10%
+                                    .subject__main
+                                        .subject__row
+                                            .subject__col
+                                                .subject__subtitle Тип ленты:
+                                                .subject__txt Стандарт (UMC)
+                                            .subject__col
+                                                .subject__subtitle ГОСТ (Виды и марки):
+                                                .subject__txt ГОСТ 380-2005
+                                            .subject__col
+                                                .subject__subtitle Толщина ленты, мм:
+                                                .subject__txt 0,4
+                                            .subject__col
+                                                .subject__subtitle Ширина ленты, мм:
+                                                .subject__txt 9,5
+                                        .subject__row
+                                            .subject__col
+                                                .subject__subtitle Вид поставки:
+                                                .subject__txt Лента
+                                            .subject__col
+                                                .subject__subtitle Марка стали:
+                                                .subject__txt 08пс
+                                            .subject__col
+                                                .subject__subtitle Прочность:
+                                                .subject__txt К270В
+                                            .subject__col
+                                                .subject__subtitle Категория плоскостности:
+                                                .subject__txt ПВ
+                                    .subject__footer
+                                        .subject__bloc 
+                                            .subject__unit 
+                                                .subject__subtitle На складе:
+                                                .subject__qty
+                                                    span.js-qty 350
+                                                    span т
+                                            .subject__unit
+                                                .subject__subtitle Стоимость:
+                                                .subject__price
+                                                    span.js-cost 50 000
+                                                    span.mf-symbol ₽
+                                        .product-actions
+                                            .count
+                                                input#quantity.count__input.js-count-input(type="number" name="quantity" min="1" value="1" placeholder="1 т")
+                                            a.btn.btn--basic.btn--w127.btn--h47 В корзину
+                            .pagination-filter
+                                .pagination-filter__box
+                                    .pagination-filter__txt Показывать по:
+                                    ul.pagination-filter__items 
+                                        li.pagination-filter__item.active
+                                            a(href="javascript:void(0);") 20
+                                        li.pagination-filter__item
+                                            a(href="javascript:void(0);") 50
+                                        li.pagination-filter__item
+                                            a(href="javascript:void(0);") 100
+                                include common/pagination
+                .include
+                    .include__container.container
+                        h2.title-2 Ручной инструмент
+                        p Внезапно, базовые сценарии поведения пользователей являются только методом политического участия и обнародованы. Лишь тщательные исследования конкурентов, превозмогая сложившуюся непростую экономическую ситуацию, подвергнуты целой серии независимых исследований. Разнообразный и богатый опыт говорит нам, что внедрение современных методик предоставляет широкие возможности для позиций, занимаемых участниками в отношении поставленных задач.
+                        p Являясь всего лишь частью общей картины, тщательные исследования конкурентов неоднозначны и будут превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. Таким образом, семантический разбор внешних противодействий в значительной степени обусловливает важность новых принципов формирования материально-технической и кадровой базы. Равным образом, базовый вектор развития в значительной степени обусловливает важность своевременного выполнения сверхзадачи. Идейные соображения высшего порядка, а также сложившаяся структура организации однозначно определяет каждого участника как способного принимать собственные решения касаемо экспериментов, поражающих по своей масштабности и грандиозности. Укрепление и развитие внутренней структуры создаёт предпосылки для анализа существующих паттернов поведения.
+                        p Равным образом, новая модель организационной деятельности говорит о возможностях новых принципов формирования материально-технической и кадровой базы. Лишь элементы политического процесса набирают популярность среди определенных слоев населения, а значит, должны быть ограничены исключительно образом мышления.
+                        p Современные технологии достигли такого уровня, что глубокий уровень погружения предполагает независимые способы реализации поставленных обществом задач. Разнообразный и богатый опыт говорит нам, что экономическая повестка сегодняшнего дня требует от нас анализа направлений прогрессивного развития. Банальные, но неопровержимые выводы, а также независимые государства представлены в исключительно положительном свете.
+                .catalog-list.catalog-list--catalog-page
+                    .catalog-list__container.container 
+                        .catalog-list__grid 
+                            .catalog-list__bloc.catalog-list__bloc--b1
+                                a.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Продукция для упаковки
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Лента упаковочная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента для упаковки марки «UMC»
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента упаковочная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента упаковочная ГОСТ 3560-73
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Замки упаковочные для стальных лент
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Упаковочный инструмент
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Ручной инструмент
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Пневматический упаковочный инструмент
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Комбинированный инструмент
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Аккумуляторный инструмент
+                            .catalog-list__bloc.catalog-list__bloc--b2
+                                a.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Профиль для строительства
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Фасадный профиль
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") С-образный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Z-образный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Г-образный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") П-образный
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Профиль армирующий
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Профиль армирующий П-образныйе
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Профиль армирующий Г-образный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Профиль армирующий замкнутый
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Профиль армирующий С-образный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Армирующий профиль нестандартный
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Профиль для гипсокартона
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Потолочный профиль
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Профиль стоечный
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Направляющий профиль
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Профиль для отделки
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Замкнутый профиль
+                            .catalog-list__bloc.catalog-list__bloc--b3
+                                a.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Лента стальная (штрипс)
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Лента оцинкованная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента оцинкованная ГОСТ Р 52246-2004
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента оцинкованная ГОСТ 14918-80
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента оцинкованная ГОСТ 3559-75
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Лента стальная холоднокатанная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента холоднокатаная ГОСТ 503-81
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента холоднокатаная ГОСТ 19851-74
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента холоднокатаная ГОСТ 16523-97
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента холоднокатаная ГОСТ 9045-93
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента холоднокатаная ГОСТ 2284-79
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Штрипс горячекатаный
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Лента с полимерным покрытием
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Лента упаковочная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента для упаковки марки «UMC»
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента упаковочная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Лента упаковочная ГОСТ 3560-73
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);") Замки упаковочные для стальных лент
+                            .catalog-list__bloc.catalog-list__bloc--b4
+                                a.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Труба стальная
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Труба профильная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);")  Труба квадратная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);")  Труба прямоугольная
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Труба электрическая
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);")  Труба водогазопроводная
+                                a.catalog-list__link.catalog-list__link_small(href="javascript:void(0);")  Труба прямошовная
+                                .catalog-list__box 
+                                a.catalog-list__link.catalog-list__link_middle(href="javascript:void(0);") Замкнутый профиль
+                            .catalog-list__bloc.catalog-list__bloc--b5
+                                a.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Спецпредложения

@@ -19,8 +19,10 @@
         .product-specs__item
             .product-specs__name
                 span Стандарт на продукт
-                a.tooltip(href="#")
-                    +icon('help_circle_outline')
+                a.tooltip(href="javascript:void(0);")
+                    .tooltip__icon
+                        +icon('help_circle_outline')
+                    .tooltip__content Стандарт на продукт
             .product-specs__value ГОСТ 380-2005
         .product-specs__item
             .product-specs__name Класс покрытия

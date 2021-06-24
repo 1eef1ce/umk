@@ -1,0 +1,33 @@
+extends common/layout
+
+block content
+    main.main
+        .lk
+            .lk__container.container
+                form.lk-call.lk-call--call
+                    h1.title-1 Обратная связь
+                    p В своём стремлении улучшить пользовательский опыт мы упускаем, что независимые государства набирают популярность среди определенных слоев населения, а значит, должны быть в равной степени предоставлены сами себе.
+                    .lk-call__grid.lk-call__grid--call
+                        .lk-call__col.lk-call__col--name
+                            .form-group
+                                label.form-group__label(for="name") Имя*
+                                input#name.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--phone
+                            .form-group
+                                label.form-group__label(for="phone") Телефон*
+                                input#phone.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--company
+                            .form-group
+                                label.form-group__label(for="company") Компания
+                                input#company.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--email
+                            .form-group
+                                label.form-group__label(for="email") Email*
+                                input#email.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--description
+                            textarea(name="comment" placeholder="Введите описание претензии")
+                    label.checkbox(for="agree")
+                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                        .checkbox__label
+                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить

@@ -2,20 +2,23 @@ extends common/layout
 
 block content
     main.main
+        include common/topmenu
         .tender
             .container
+                include common/breadcrumb
                 h1.title-1 Тендер
                 ol.tender__items
                     li.tender__item
-                        a.tender__title(href="#") Тендер 1 56226-548ОПНт59
+                        a.tender__title(href="javascript:void(0);") Тендер 1 56226-548ОПНт59
                         .tender__text.
                             Акционеры крупнейших компаний и по сей день остаются уделом либералов, которые жаждут быть
                             рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Равным образом,
                             укрепление и развитие внутренней структуры в значительной степени обусловливает важность дальнейших.
                         .tender__date 12 декабря 2020
                     li.tender__item
-                        a.tender__title(href="#") Тендер 3584
+                        a.tender__title(href="javascript:void(0);") Тендер 3584
                         .tender__text.
                             Кстати, элементы политического процесса призывают нас к новым свершениям, которые, в свою
                             очередь, должны быть преданы социально-демократической.
                         .tender__date 12 декабря 2020
+                include common/pagination

@@ -1,36 +1,44 @@
 .delivery {
   padding: 50px 0;
 
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
   &:nth-of-type(2n) {
     background: $gray-3;
   }
 
   &__list {
     display: flex;
-  }
 
-  ul {
-    list-style: none;
-    margin: 15px 50px 0 0;
+    ul {
+      list-style: none;
+      margin: 15px 50px 0 0;
 
-    li {
+      li {
 
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        border-radius: 100%;
-        background: $purple-1;
-        margin: 0 15px 0.2em 0;
-      }
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 4px;
+          height: 4px;
+          border-radius: 100%;
+          background: $purple-1;
+          margin: 0 15px 0.2em 0;
+        }
 
-      &:not(:first-of-type) {
-        margin-top: 8px;
-      }
+        &:not(:first-of-type) {
+          margin-top: 8px;
+        }
 
-      span {
-        font-weight: 600;
+        span {
+          font-weight: 600;
+        }
       }
     }
   }
@@ -43,32 +51,31 @@
     }
   }
 
-  &__item {
+  &-unit {
     padding: 16px 20px;
     border: 2px solid rgba(217, 217, 217, 0.35);
     margin-top: 50px;
-  }
 
-  &__title {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  &__text {
-    margin-top: 12px;
-
-    span,
-    a {
+    &__title {
       font-weight: 600;
-      color: $purple-1;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    a {
-      &:hover {
-        color: $red-1;
+    &__text {
+      margin-top: 12px;
+
+      span,
+      a {
+        font-weight: 600;
+        color: $purple-1;
+      }
+
+      a {
+        &:hover {
+          color: $red-1;
+        }
       }
     }
   }
-
 }

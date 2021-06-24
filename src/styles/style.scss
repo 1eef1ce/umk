@@ -1,166 +1,94 @@
+@import "libs/libs";
 @import "common/global";
-
 @import "common/header/header";
-
-@import "common/footer";
-
-@import "common/link";
-
-@import "common/btn";
-
-@import "common/helper";
-
-@import "common/slider";
-
-@import "common/social";
-
-@import "common/dropdown";
-
-@import "common/menu-btn";
-
-@import "common/search-input";
-
+@import "common/header/menu-mobile";
 @import "common/header/header-link";
-
-@import "common/menu-popup";
-
-@import "common/input";
-
-@import "common/share";
-
 @import "common/aside";
-
-@import "common/tooltip";
-
-@import "common/form";
-
+@import "common/breadcrumb";
+@import "common/btn";
 @import "common/checkbox";
-
+@import "common/close-btn";
+@import "common/count";
+@import "common/dropdown";
 @import "common/file";
-
+@import "common/footer";
+@import "common/form";
+@import "common/helper";
+@import "common/input";
+@import "common/link";
+@import "common/menu-btn";
+@import "common/menu-popup";
 @import "common/modal";
-
-@import "includes/index/view";
-
-@import "includes/index/service";
-
-@import "includes/index/advantage";
-
-@import "includes/index/novation";
-
-@import "includes/index/slider-partner";
-
-@import "includes/index/inset";
-
-@import "includes/index/call";
-
-@import "includes/index/layer";
-
-@import "includes/auth/auth";
-
-@import "includes/auth/auth-popup";
-
-@import "includes/catalog/catalog-list";
-
-@import "includes/404";
-
-@import "includes/delivery";
-
+@import "common/pagination";
+@import "common/pagination-filter";
+@import "common/search";
+@import "common/select";
+@import "common/share";
+@import "common/sidemenu";
+@import "common/slider";
+@import "common/social";
+@import "common/table";
+@import "common/tabs";
+@import "common/tooltip";
+@import "common/topmenu";
 @import "includes/about/about";
-
 @import "includes/about/activity";
-
 @import "includes/about/mission";
-
-@import "includes/vacancy-detail";
-
+@import "includes/auth/auth";
+@import "includes/auth/auth-popup";
+@import "includes/catalog/catalog-list";
+@import "includes/index/advantage";
+@import "includes/index/call";
+@import "includes/index/inset";
+@import "includes/index/layer";
+@import "includes/index/novation";
+@import "includes/index/service";
+@import "includes/index/slider-partner";
+@import "includes/index/view";
+@import "includes/404";
+@import "includes/delivery";
 @import "includes/news";
-
 @import "includes/news-detail";
-
 @import "includes/notification";
-
+@import "includes/purchase";
 @import "includes/standard";
-
+@import "includes/supply";
 @import "includes/tender";
-
 @import "includes/tender-detail";
-
-@import "includes/search";
-
+@import "includes/vacancy-detail";
+@import "includes/search-page";
 @import "includes/product/product";
-
 @import "includes/product/product-info";
-
 @import "includes/product/product-related";
-
 @import "includes/product/product-specs";
+@import "common/header/header-search";
+@import "includes/catalog/catalog-grid";
+@import "includes/catalog/catalog";
+@import "includes/catalog/catalog-service";
+@import "includes/subject/subject";
+@import "includes/catalog/include";
+@import "common/tab";
+@import "common/filter";
+@import "common/overlay";
+@import "includes/history/history";
+@import "includes/history/history-slider";
+@import "includes/lk/lk-menu";
+@import "includes/lk/lk";
+@import "includes/lk/lk-profile";
+@import "includes/lk/lk-edit";
+@import "includes/lk/lk-form";
+@import "includes/lk/lk-order";
+@import "includes/order/order";
+@import "includes/order/order-card";
+@import "includes/lk/lk-documentation";
+@import "includes/lk/lk-cart";
+@import "includes/lk/lk-radio";
+@import "includes/lk/lk-call";
+@import "includes/order/order-detaile";
+@import "includes/delivery-way";
+@import "includes/order/order-info";
+@import "common/modal-delivery";
 
-.on-focus {
-    label {
-        font-size: 12px;
-        transform: translate3d(0, -10px, 0);
-    }
-}
-
-.checkbox-other {
-    display: block;
-    margin: 0 0 10px 0;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-}
-
-.checkbox-other input[type="checkbox"] {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    display: block;
-    width: 0;
-    height: 0;
-}
-
-.checkbox-other span {
-    display: inline-block;
-    position: relative;
-    padding: 0 0 0 35px;
-    max-width: 285px;
-    width: 100%;
-    bottom: 4px;
-    line-height: 1.4;
-}
-
-.checkbox-other span::before {
-    content: "";
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    border: 1.5px solid $red-1;
-    box-sizing: border-box;
-}
-
-.checkbox-other span::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: 3px;
-    top: 10px;
-    width: 18px;
-    height: 15px;
-    box-sizing: border-box;
-    background: url("/img/icons/ic-ok.svg") no-repeat center;
-}
-
-.checkbox-other input[type="checkbox"]:checked+span::before {
-    background-color: $red-1;
-}
-
-.checkbox-other input[type="checkbox"]:checked+span::after {
-    background: url("/img/icons/ic-ok.svg") no-repeat center;
-}
 
 .icon-stroke {
     stroke: currentColor;
@@ -169,4 +97,56 @@
 .icon-md {
     height: 3rem;
     width: 3rem;
+}
+
+.swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--num {
+        margin: 0 20px;
+
+        .swiper-pagination-bullet {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: transparent;
+            opacity: 1;
+            color: $gray-2;
+        }
+
+        .swiper-pagination-bullet:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: $basic;
+        }
+    }
+}
+
+.back {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $basic;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        margin: auto;
+        transition: 0.3 ease-in-out;
+    }
+
+    &:hover {
+        color: $purple-1;
+    }
+
+    &:hover::after {
+        background-color: $purple-1;
+    }
 }

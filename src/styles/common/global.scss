@@ -4,11 +4,14 @@
 @import "../utils/fonts.scss";
 @import "../utils/variables.scss";
 
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+:root {
+    --wScroll: 0px;
 }
 
 h1,
@@ -31,6 +34,10 @@ body {
     color: $basic;
 }
 
+html {
+    padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+}
+
 img {
     max-width: 100%;
 }
@@ -46,6 +53,10 @@ a {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+
+    @media(max-width: 1024px) {
+        padding: 0 20px;
+    }
 
     &--full {
         max-width: 1920px;
@@ -76,13 +87,32 @@ a {
     line-height: 1.35;
 }
 
+.subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: $purple-1;
+}
+
 svg {
     display: block;
     transition: .3s ease-in-out;
 }
 
 .icon {
-    display: block;
+    fill: currentColor;
+    height: auto;
+    width: auto;
+
+    & svg {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.icon,
+svg {
+    height: 100%;
+    width: 100%;
 }
 
 p {
@@ -96,19 +126,41 @@ ol {
     margin: 0;
 }
 
-input[type=search],
-input[type=text] {
-    border: none;
-    background: none;
+input,
+textarea {
     outline: none;
-    padding: 0;
 }
 
-// input[type="search"]::-webkit-search-decoration,
-// input[type="search"]::-webkit-search-cancel-button,
-// input[type="search"]::-webkit-search-results-button,
-// input[type="search"]::-webkit-search-results-decoration {
-//     display: none;
-// textarea {
-//     resize: none;
-// }
+.swiper-pagination-bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+}
+
+textarea {
+    resize: none;
+}
+
+.back {
+    font-size: 14px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input, textarea {
+    font-size: 16px;
+
+    &::placeholder {
+        font-family: 'MyriadPro', Arial, sans-serif;
+        font-weight: 400;
+        color: $gray-2;
+    }
+}

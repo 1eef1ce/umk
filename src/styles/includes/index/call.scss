@@ -20,52 +20,32 @@
         grid-row-gap: 24px;
     }
 
-    &__field {
-        position: relative;
-        height: 65px;
-        background-color: red;
-
-        label {
-            position: absolute;
-            line-height: 64px;
-            transition: .3s ease-in-out;
-            opacity: .5;
-            color: $basic;
-            z-index: 1;
-            left: 26px;
-            pointer-events: none;
-        }
-
-        input {
-            border: 0;
-            outline: 0;
-            font-size: 16px;
-            background: #fff;
-            padding: 20px 26px 0px;
-            height: 65px;
-            line-height: 25px;
-            width: 100%;
-            border: 2px solid $gray-1;
-            transition: .3s ease-in-out;
-            color: $basic;
-
-            &:hover {
-                border-color: $basic;
-            }
-
-            &:focus {
-                border-color: $basic;
-            }
-        }
-    }
-
     &__col {
-        height: 65px;
 
         &--submit {
             .btn {
                 width: 100%;
             }
+        }
+
+        &--check {
+            max-width: 80%;
+
+            .checkbox {
+                margin-top: 0;
+
+                &__label {
+                    align-items: normal;
+
+                    span {
+                        margin-top: -0.3em;
+                    }
+                }
+            }
+        }
+
+        .form-group {
+            margin-top: 0;
         }
 
         &--accord {

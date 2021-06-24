@@ -1,0 +1,60 @@
+.lk-form {
+    background: url(../img/decor/bg-requisite.svg) no-repeat center;
+    background-size: cover;
+    padding-top: 33px;
+
+    &__ref {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        margin-top: 23px;
+    }
+
+    &__form {
+        padding-top: 26px;
+        max-width: 845px;
+        width: 100%;
+    }
+
+    &__txt {
+        font-weight: 400;
+    }
+
+    &__doc {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        padding: 6px 12px 5px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+        color: white;
+        background: $purple-1;
+        margin-left: 12px;
+
+        &:hover {
+            background-color: $red-1;
+        }
+    }
+
+    &__func {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+
+        .btn {
+            &:first-child {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    .form-group {
+        margin-top: 0;
+
+        &:not(:first-child) {
+            margin-top: 26px;
+        }
+    }
+}

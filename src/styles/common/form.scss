@@ -7,23 +7,31 @@
     flex-direction: column;
     margin-top: 25px;
 
-    &__label {
-      position: absolute;
-      top: 32px;
-      left: 26px;
-      transform: translateY(-50%);
-      line-height: 1.2;
-      color: $gray-2;
-      transition: 0.2s;
+    &.on-focus {
 
-      &.active {
-        top: 20px;
+      .form-group__label {
+        transform: translate3d(0px, -10px, 0px);
         font-size: 12px;
+        line-height: 65px;
+        opacity: 1;
       }
+    }
 
-      &.disabled {
+    &.disabled {
+
+      .form-group__label {
         color: $gray-1;
       }
+    }
+
+    &__label {
+      position: absolute;
+      line-height: 65px;
+      transition: .5s;
+      z-index: 1;
+      left: 26px;
+      pointer-events: none;
+      color: $gray-2;
 
       &+.form-group__input {
 

@@ -1,8 +1,252 @@
 .tooltip {
+  position: relative;
   display: inline-block;
   margin-left: 5px;
 
-  svg {
-    fill: $purple-1;
+  &--requ {
+    .icon {
+      fill: $green-1;
+    }
+
+    .tooltip__content {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: -25px;
+      margin-left: -133px;
+      width: calc(266px - -6px);
+      transition: .25s ease-in-out;
+      font-size: 14px;
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &--finish {
+    font-size: 14px;
+    font-weight: 400;
+
+    .tooltip__content {
+      min-width: 254px;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &--contract {
+    .icon {
+      fill: $red-1;
+    }
+
+    .tooltip__content {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: -30px;
+      margin-left: -133px;
+      width: calc(266px - -6px);
+      transition: .25s ease-in-out;
+      font-size: 14px;
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &--steps {
+    .tooltip {
+      &__content {
+        min-width: 308px;
+        width: 100%;
+        padding: 20px 19px;
+        left: 50%;
+        top: 1775%;
+        margin-left: -150px;
+
+        &:before {
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          background-color: white;
+        }
+      }
+
+      &__col {
+
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+
+          &.active {
+            i {
+              background-color: $purple-1;
+            }
+          }
+        }
+
+        &:last-child {
+          padding-bottom: 13px;
+        }
+      }
+
+      &__ic {
+        width: 20px;
+        height: 20px;
+
+        .icon {
+          fill: $purple-1;
+        }
+
+        &--basic {
+          .icon {
+            fill: $gray-1;
+          }
+        }
+      }
+
+      &__row {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        grid-column-gap: 8px;
+
+        &:last-child,
+        &:first-child {
+          i {
+            display: none;
+          }
+        }
+      }
+
+      &__caption {
+        font-weight: 600;
+        line-height: 1;
+        font-size: 16px;
+        padding-top: 3px;
+      }
+
+      &__info {
+        color: $gray-2;
+        margin-top: 3px;
+        line-height: 1.3;
+      }
+    }
+
+    i {
+      width: 2px;
+      flex: 1;
+      background-color: $gray-5;
+      align-self: center;
+    }
+  }
+
+  &--delivery {
+    .icon {
+      fill: $green-1;
+    }
+
+    .tooltip__content {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: -25px;
+      transition: .25s ease-in-out;
+      font-size: 14px;
+      margin-left: -139px;
+      width: calc(278px - -5px);
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &--self {
+    .icon {
+      fill: $red-1;
+    }
+
+    .tooltip__content {
+      top: -40px;
+      transition: .25s ease-in-out;
+      font-size: 14px;
+      margin-left: -154px;
+      width: calc(308px - -6px);
+      left: 50%;
+
+      &:before {
+        right: 0;
+        left: 0;
+        bottom: -7px;
+        top: auto;
+        margin: auto;
+        background-color: white;
+      }
+    }
+  }
+
+  &:hover {
+    .tooltip__content {
+      display: block;
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+
+    svg {
+      fill: $purple-1;
+    }
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    width: 200px;
+    padding: 10px 15px 10px;
+    text-align: center;
+    line-height: 1;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+
+    &:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: #fff;
+      transform: translateY(-50%) translateX(-50%) rotate(45deg);
+    }
   }
 }

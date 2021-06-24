@@ -1,28 +1,30 @@
 extends common/layout
 
 block content
-  main.main
-    .auth
-      .auth__container.container 
-        .auth__box 
-          .auth-popup
-            .auth-popup__header 
-              .auth-popup__link.js-form-reg Регистрация
-              .auth-popup__link.js-form-auth.active Вход
-            .auth-popup__cover
-              form.auth-popup__form.show
-                .input
-                    label(for="email") E-mail
-                    input#email.js-input(type="text" name="email")
-                .input
-                    label(for="pass") Пароль
-                    input#pass.js-input(type="password" name="password")
-                .btn.btn--basic(type="submit") Войти
-                a.auth-popup__ref.link(href="javascript:void(0);") Забыли пароль?
-              form.auth-popup__form
-                .input
-                    label(for="email_reg") E-mail
-                    input#email.js-input(type="text" name="email")
-                #email_reg.btn.btn--basic(type="submit") Войти
-                .auth-popup__info При создании учётной записи вы автоматически соглашаетесь с  
-                  a.link(href="javascript:void(0);") “Политикой конфиденциальности”
+    main.main
+        .auth
+            .auth__container.container
+                .auth__box
+                    .auth-popup
+                        .auth-popup__header
+                            .auth-popup__link.js-form-reg Регистрация
+                            .auth-popup__link.js-form-auth.active Вход
+                        .auth-popup__cover
+                            form.auth-popup__form.show
+                                .form-group
+                                    label.form-group__label(for="email") E-mail
+                                    input#email.form-group__input.js-input(type="text" name="email")
+                                .form-group
+                                    label.form-group__label(for="pass") Пароль
+                                    input#pass.form-group__input.js-input(type="password" name="password")
+                                button.btn.btn--basic(type="submit") Войти
+                                a.auth-popup__ref.link(href="restore.html") Забыли пароль?
+                            form.auth-popup__form
+                                .form-group
+                                    label.form-group__label(for="email_reg") E-mail
+                                    input#email_reg.form-group__input.js-input(type="text" name="email")
+                                button.btn.btn--basic(type="submit") Войти
+                                .auth-popup__info
+                                    | При создании учётной записи вы автоматически соглашаетесь с
+                                    |
+                                    a.link(href="javascript:void(0);") “Политикой конфиденциальности”

@@ -2,9 +2,11 @@ extends common/layout
 
 block content
     main.main
+        include common/topmenu
         .tender-detail
             .container
                 .tender-detail__container
+                    include common/breadcrumb
                     h1.title-1 Тендер 1 56226-548ОПНт59
                     .tender-detail__content
                         p.
@@ -32,29 +34,30 @@ block content
                         p Конкурсная документация прилагается.
                         .tender-detail__download
                             span Скачать архив:
-                            a.tender-detail__link(href="#")
+                            a.tender-detail__link(href="javascript:void(0);")
                                 +icon('download')
                                 |
                                 | Attachments_o.savin@uralmetalcompany.ru_2018-12-06_08-36-05
                     .tender-detail__form
                         h2.title-3 Заполните заявку
-                        form.form(data-form)
-                            .form-group(data-form-group)
-                                label.form-group__label(for="name" data-form-label) Имя*
-                                input#name.form-group__input(type="text" name="name" data-form-field)
-                            .form-group(data-form-group)
-                                label.form-group__label(for="phone" data-form-label) Телефон*
-                                input#phone.form-group__input(type="tel" name="phone" data-form-field)
-                            .form-group(data-form-group)
-                                label.form-group__label(for="email" data-form-label) E-mail*
-                                input#email.form-group__input(type="text" name="email" data-form-field)
-                            .form-group(data-form-group)
-                                label.form-group__label(for="company" data-form-label) Компания
-                                input#company.form-group__input(type="text" name="company" data-form-field)
-                            .form-group(data-form-group)
-                                label.form-group__label(for="text" data-form-label) Поле ввода
-                                textarea#text.form-group__input(name="text" data-form-field)
-                            label.checkbox(for="agree" data-form-label)
-                                input#agree.checkbox__input(type="checkbox" name="check" value="agree" data-form-check)
-                                .checkbox__label Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
-                            button.btn.btn--basic(type="submit" name="submit" data-form-button) Отправить
+                        form.form
+                            .form-group
+                                label.form-group__label(for="name") Имя*
+                                input#name.form-group__input.js-input(type="text" name="name")
+                            .form-group
+                                label.form-group__label(for="phone") Телефон*
+                                input#phone.form-group__input.js-input(type="tel" name="phone")
+                            .form-group
+                                label.form-group__label(for="email") E-mail*
+                                input#email.form-group__input.js-input(type="text" name="email")
+                            .form-group
+                                label.form-group__label(for="company") Компания
+                                input#company.form-group__input.js-input(type="text" name="company")
+                            .form-group
+                                label.form-group__label(for="text") Поле ввода
+                                textarea#text.form-group__input.js-input(name="text")
+                            label.checkbox(for="agree")
+                                input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                                .checkbox__label
+                                    span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                            button.btn.btn--basic(type="submit" name="submit") Отправить

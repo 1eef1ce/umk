@@ -1,0 +1,65 @@
+.tab {
+    display: flex;
+    align-items: center;
+    margin: 28px 0;
+
+    &__item {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 7px 14px;
+        border: 1px solid $purple-1;
+        box-sizing: border-box;
+        color: $purple-1;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $purple-1;
+            color: white;
+        }
+
+        &:not(:last-child) {
+            margin-right: 17px;
+        }
+
+        &.active {
+            background-color: $purple-1;
+            color: white;
+        }
+    }
+
+    &--year {
+        margin: 18px 0;
+
+        .tab {
+            &__item {
+                padding: 7px 7px;
+                min-width: 57px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 14px;
+                background-color: $gray-3;
+                border: none;
+                color: $basic;
+                font-weight: 400;
+                min-height: 29px;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: $purple-1;
+                    color: white;
+                }
+
+                &.active {
+                    background-color: $purple-1;
+                    color: white;
+                    padding: 7px 7px;
+                }
+            }
+        }
+    }
+}

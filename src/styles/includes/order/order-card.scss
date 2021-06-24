@@ -1,0 +1,113 @@
+.order-card {
+    border: 2px solid rgba(217, 217, 217, 0.35);
+    background-color: white;
+
+    &:not(:first-child) {
+        margin-top: 45px;
+    }
+
+    &__bloc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--bottom {
+            margin-top: 4px;
+        }
+    }
+
+    &__unit {
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        .tooltip__icon {
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-right: 11px;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-size: 14px;
+    }
+
+    &__top {
+        background-color: $gray-3;
+        padding: 19px 26px;
+    }
+
+    &__txt {
+        font-size: 14px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #9ccff326;
+
+        .icon {
+            fill: $blue-2;
+            width: 25px;
+            height: 27px;
+        }
+    }
+
+    &__content {
+        padding: 29px 26px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 40px minmax(606px, 1fr) minmax(65px, 1fr) minmax(24px, 49px);
+        align-items: center;
+        grid-column-gap: 15px;
+
+        &:not(:first-child) {
+            margin-top: 21px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        padding: 26px 17px;
+        padding-right: 29px;
+        border-top: 2px solid rgba(217, 217, 217, 0.35);
+
+        .btn {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            &--order-info {
+                position: relative;
+                margin-left: auto;
+                padding: 0;
+                height: auto;
+                font-size: 13px;
+                transform: translateY(-2px);
+
+
+            }
+        }
+    }
+}

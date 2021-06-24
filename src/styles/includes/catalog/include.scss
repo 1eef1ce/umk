@@ -1,0 +1,17 @@
+.include {
+    background-color: $gray-3;
+    width: 99vw;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+
+    &__container {
+        padding-top: 63px;
+        padding-bottom: 70px;
+    }
+
+    p {
+        &:not(:first-child) {
+            margin: 9px 0 0;
+        }
+    }
+}

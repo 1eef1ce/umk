@@ -93,6 +93,7 @@
 
             &__bloc {
                 margin-top: 0;
+                opacity: 0;
             }
         }
 
@@ -105,5 +106,9 @@
         .link--small:not(:first-child) {
             margin-top: 12px;
         }
+    }
+
+    &--catalog-page {
+        padding: 72px 0 0;
     }
 }

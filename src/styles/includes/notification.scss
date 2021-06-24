@@ -1,7 +1,18 @@
 .notification {
+  background: url("/img/decor/bg-notification.svg") no-repeat 100% 30%;
+  background-size: cover;
 
   &__container {
     max-width: 997px;
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 34px;
+  }
+
+  &__button {
+    width: 162px;
   }
 
   &__items {

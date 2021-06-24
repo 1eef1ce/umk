@@ -1,0 +1,41 @@
+.order-detaile {
+    display: grid;
+    grid-template-columns: minmax(649px, 1fr) minmax(491px, 1fr);
+    grid-column-gap: 60px;
+    margin-top: 38px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__box {
+        padding-left: 20px;
+        margin-top: 24px;
+
+        .form-group {
+            margin-top: 24px;
+        }
+    }
+
+    &__bloc {
+        &:not(:first-child) {
+            margin-top: 35px
+        }
+    }
+
+    &__store {
+        margin-top: -20px;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 166px;
+        border-color: $gray-1;
+        font-family: 'MyriadPro', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px 24px;
+    }
+}

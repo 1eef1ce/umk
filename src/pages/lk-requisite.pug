@@ -1,0 +1,24 @@
+extends common/layout
+
+block content
+    main.main
+        .lk-form
+            .lk-form__container.container
+                h1.title-1 Реквизиты компании 
+                form.lk-form__form
+                    .form-group
+                        label.form-group__label(for="inn") ИНН, адрес или ОГРН*
+                        input#inn.form-group__input.js-input(type="text")
+                    .form-group
+                        label.form-group__label(for="fio") ФИО для связи*
+                        input#fio.form-group__input.js-input(type="text")
+                    .form-group
+                        label.form-group__label(for="phone") Телефон
+                        input#phone.form-group__input.js-input(type="tel")
+                    label.checkbox(for="agree")
+                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                        .checkbox__label
+                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    .lk-form__func 
+                        button.btn.btn--basic.btn--w275(type="submit") Отправить
+                        button.btn.btn--w170.btn--transparent.js-btn-reset(type="reset") Отменить

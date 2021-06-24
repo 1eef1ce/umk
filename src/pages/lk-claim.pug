@@ -1,0 +1,42 @@
+extends common/layout
+
+block content
+    main.main
+        .lk
+            .lk__container.container
+                form.lk-call
+                    h1.title-1 Претензии
+                    .lk-call__grid
+                        .lk-call__col.lk-call__col--name
+                            .form-group
+                                label.form-group__label(for="name") Имя*
+                                input#name.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--phone
+                            .form-group
+                                label.form-group__label(for="phone") Телефон*
+                                input#phone.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--company
+                            .form-group
+                                label.form-group__label(for="company") Компания
+                                input#company.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--email
+                            .form-group
+                                label.form-group__label(for="email") Email*
+                                input#email.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--order-num
+                            .form-group
+                                label.form-group__label(for="order") Номер заказа*
+                                input#order.form-group__input.js-input(type="text")
+                        .lk-call__col.lk-call__col--description
+                            textarea(name="comment" placeholder="Введите описание претензии")
+                    .lk-call__file
+                        label.file(for="file")
+                            input#file.file__input(type="file" name="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
+                            +icon('file_new')
+                            .file__label Прикрепить файлы: резюме, фото и т.п.
+                        .lk-call__subinfo В именах файла рекомендуем использовать только символы английского алфавита, цифры, дефис и знак подчеркивания. Типы&nbsp;файлов для загрузки: *jpeg, *gif, *png. Общий объём файлов не может превышать 10 МБ.
+                    label.checkbox(for="agree")
+                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                        .checkbox__label
+                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить

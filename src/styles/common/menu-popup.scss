@@ -7,7 +7,7 @@
     background-color: white;
     overflow: auto;
     z-index: 110;
-    transform: translateY(-100%);
+    opacity: 0;
 
     &__backdrop {
         position: absolute;
@@ -24,10 +24,18 @@
 
     &__title {
         text-align: center;
+        opacity: 0;
     }
 
     &__content {
         padding-top: 17px;
+    }
+
+    &__search {
+        width: 508px;
+        flex-shrink: 0;
+        margin: 47px auto 0;
+        opacity: 0;
     }
 
     &__logo {

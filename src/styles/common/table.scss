@@ -1,0 +1,55 @@
+.table {
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+
+  &__row {
+    display: table-row;
+
+    &:not(.table__row--head) {
+
+      &:hover {
+
+        .table__cell {
+          background: rgba(183, 221, 250, 0.2);
+        }
+      }
+    }
+
+    &--head {
+
+      .table__cell {
+        padding: 29px 15px;
+        background: $purple-1;
+        font-weight: 600;
+        color: #fff;
+
+        &:not(:last-of-type) {
+          border-right: 1px solid $gray-1;
+        }
+
+        &:first-of-type {
+          border-left: 1px solid $purple-1;
+        }
+
+        &:last-of-type {
+          border-right: 1px solid $purple-1;
+        }
+      }
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    padding: 11px 15px;
+    background: #fff;
+    border: solid $gray-1;
+    border-width: 0 1px 1px 0;
+    text-align: center;
+    transition: 0.2s;
+
+    &:first-of-type {
+      border-left-width: 1px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.close-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transform-origin: center;
+    transition: .3s ease-in-out;
+
+
+    &:hover {
+        transform: rotate(90deg)
+    }
+
+    &__icon {
+        position: relative;
+        width: 47px;
+        height: 47px;
+        z-index: 2;
+        transition: .25s ease-in-out;
+
+        &:before,
+        &:after {
+            background: $purple-1;
+            content: "";
+            position: absolute;
+            z-index: 2;
+            transition: .25s ease-in-out;
+            height: 100%;
+            width: 4px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+    }
+}

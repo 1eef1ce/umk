@@ -1,0 +1,37 @@
+extends common/layout
+
+block content
+    main.main
+        .search-page
+            .container
+                include common/breadcrumb
+                h1.title-1 Результаты поиска
+                form.search.search-page__search(action="#" method="get")
+                    input.search__field(name="s" placeholder="Поиск" type="search")
+                    button.btn.btn--basic.search-page__button.mf-search(type="submit")
+                        .btn__icon
+                            +icon('ic-search')
+                        span Найти
+                .search-page__note По запросу «Натяжитель ленты» найдено результатов: 88
+                .tabs
+                    ul.tabs__list
+                        li.tabs__item
+                            a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="1") Все (0)
+                        li.tabs__item
+                            a.tabs__link.active.js-tab-btn(href="javascript:void(0);" data-tab-btn="2") Каталог товаров (80)
+                .tabs-content
+                    .tabs-content__body.js-tab-body(data-tab-body="1")
+                        .search-page__text.search-page__text--single Извините, запрос не найден
+                    .tabs-content__body.active.js-tab-body(data-tab-body="2")
+                        ol.search-page__items
+                            li.search-page__item
+                                .search-page__text.
+                                    Холоднокатаный прокат электротехнических изотропных сталей, марки 2013, толщина 0.50 мм,
+                                    ширина 100-499 мм, по ГОСТ 21427.2-83, Лента
+                                a.search-page__link(href="javascript:void(0);") Продукция для упаковки
+                            li.search-page__item
+                                .search-page__text.
+                                    Холоднокатаный прокат электротехнических анизотропных сталей, марки NV27S-105L, толщина
+                                    0.27 мм, ширина 100-499 мм, по СТО 05757665-008-2016, Лента
+                                a.search-page__link(href="javascript:void(0);") Продукция для упаковки
+                        include common/pagination

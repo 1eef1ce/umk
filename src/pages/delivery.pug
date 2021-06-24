@@ -2,8 +2,10 @@ extends common/layout
 
 block content
     main.main
+        include common/topmenu
         .delivery
             .container
+                include common/breadcrumb
                 h1.title-1 Доставка
                 p.
                     ООО «УМК» производственная компания, отгружающая металлопрокат и металлоизделия (в рулонах и пачках
@@ -40,26 +42,27 @@ block content
         .delivery
             .container
                 h2.title-3 Вид используемого транспорта:
-                ul
-                    li
-                        span Железнодорожный:
-                        |
-                        | полувагоны.
-                    li
-                        span Автомобильный:
-                        |
-                        | закрытый тентованный с верхней загрузкой, открытый бортовой (имеем опыт погрузки рефрижераторов).
-                .delivery__item
-                    .delivery__title Отдел логистики:
-                    .delivery__text
+                .delivery__list
+                    ul
+                        li
+                            span Железнодорожный:
+                            |
+                            | полувагоны.
+                        li
+                            span Автомобильный:
+                            |
+                            | закрытый тентованный с верхней загрузкой, открытый бортовой (имеем опыт погрузки рефрижераторов).
+                .delivery-unit
+                    .delivery-unit__title Отдел логистики:
+                    .delivery-unit__text
                         | Специалист по логистике:
                         |
                         span Наталья Бандяева
-                    .delivery__text
+                    .delivery-unit__text
                         | Специалист по логистике:
                         |
                         span Ольга Мацапей
-                    .delivery__text
+                    .delivery-unit__text
                         | Телефон:
                         |
                         a(href="tel:+73517013320") +7 (3517) 01-33-20
