@@ -1,0 +1,153 @@
+.lk-documentation {
+    padding-top: 27px;
+
+    &__date {
+        display: block;
+        font-size: 14px;
+        width: max-content;
+        margin-top: 32px;
+    }
+
+    &__grid {
+        margin-top: 33px;
+    }
+
+    &__col {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:last-child {
+            padding-top: 10px;
+            padding-bottom: 60px;
+        }
+
+        .btn {
+            margin-top: 31px;
+            border-color: $gray-1;
+            color: $gray-1;
+            pointer-events: none;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+        border-radius: 29px;
+
+        .icon {
+            width: 36px;
+            height: 36px;
+            transform: translateY(2px) translateX(1px);
+            fill: white;
+        }
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 58px minmax(766px, 1fr);
+        grid-column-gap: 22px;
+
+        &--active {
+            .lk-documentation {
+                &__icon {
+                    circle {
+                        fill: $purple-1;
+                        stroke: $purple-1;
+                    }
+
+                    path {
+                        fill: white;
+                    }
+                }
+
+                &__ic {
+                    .icon {
+                        fill: $purple-1;
+                    }
+
+                    circle {
+                        fill: $purple-1;
+                        stroke: $purple-1;
+                    }
+
+                    path {
+                        fill: white;
+                    }
+                }
+
+                &__col {
+                    i {
+                        background: $purple-1;
+                        width: 4px;
+                        flex: 1;
+                        align-self: center;
+                    }
+
+                    .btn {
+                        border-color: $purple-1;
+                        color: $purple-1;
+                        pointer-events: initial;
+
+                        &:hover {
+                            border-color: $red-1;
+                            color: $red-1;
+                        }
+                    }
+                }
+
+                &__row {
+                    &:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+
+            &.lk-documentation__row--contract {
+                .btn {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__txt {
+        margin-top: 7px;
+    }
+
+    &__text {
+        line-height: 1;
+    }
+
+    &__items {
+        margin-top: 22px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 21px;
+        }
+    }
+
+    &__ic {
+        width: 21px;
+        height: 21px;
+        margin-right: 7px;
+    }
+
+    .title-1 {
+        margin-top: 9px;
+    }
+}

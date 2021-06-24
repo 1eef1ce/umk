@@ -76,6 +76,18 @@
 @import "includes/lk/lk";
 @import "includes/lk/lk-profile";
 @import "includes/lk/lk-edit";
+@import "includes/lk/lk-form";
+@import "includes/lk/lk-order";
+@import "includes/order/order";
+@import "includes/order/order-card";
+@import "includes/lk/lk-documentation";
+@import "includes/lk/lk-cart";
+@import "includes/lk/lk-radio";
+@import "includes/order/order-detaile";
+@import "includes/delivery-way";
+@import "includes/order/order-info";
+@import "common/modal-delivery";
+
 
 .icon-stroke {
     stroke: currentColor;
@@ -101,14 +113,39 @@
             background-color: transparent;
             opacity: 1;
             color: $gray-2;
+        }
 
-            &:not(:last-child) {
-                margin-right: 20px;
-            }
+        .swiper-pagination-bullet:not(:last-child) {
+            margin-right: 20px;
         }
 
         .swiper-pagination-bullet-active {
             color: $basic;
         }
+    }
+}
+
+.back {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $basic;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        margin: auto;
+        transition: 0.3 ease-in-out;
+    }
+
+    &:hover {
+        color: $purple-1;
+    }
+
+    &:hover::after {
+        background-color: $purple-1;
     }
 }

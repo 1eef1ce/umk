@@ -1,0 +1,109 @@
+.modal-delivery {
+    margin-top: 28px;
+
+    &__btn {
+        padding: 19px 26px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-color: $gray-1;
+        color: $gray-1;
+
+        &:hover {
+            border-color: $purple-1;
+            color: $purple-1;
+        }
+
+        &.active {
+            color: white;
+            background-color: $purple-1;
+            border-color: $purple-1;
+            pointer-events: none;
+        }
+    }
+
+    &__ic {
+        display: flex;
+    }
+
+    &__box {
+        margin-top: 25px;
+
+        .btn {
+            width: 100%;
+        }
+
+        &.disable {
+            .modal-delivery {
+
+                &__subtitle,
+                &__title,
+                &__cost {
+                    color: $gray-2;
+                }
+
+
+            }
+
+            .lk-radio+label {
+                color: $gray-2;
+            }
+
+            .lk-radio+label::before {
+                border-color: $gray-2;
+                background-color: white;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                color: $gray-2;
+            }
+        }
+    }
+
+    &__panel {
+        padding: 26px;
+        padding: 21px 26px;
+        border: 1px solid $gray-1;
+        border-top: none;
+
+        &+.btn {
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 17px;
+    }
+
+    &__cover {
+        display: flex;
+        align-items: center;
+        margin-top: 14px;
+    }
+
+    &__bloc {
+        margin-top: 23px;
+    }
+
+    &__unit {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__cost {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 10px;
+
+        .num {
+            margin-right: 6px;
+        }
+    }
+
+    .select2-dropdown {
+        z-index: 2000;
+    }
+}

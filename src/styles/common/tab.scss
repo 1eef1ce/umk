@@ -27,4 +27,39 @@
             color: white;
         }
     }
+
+    &--year {
+        margin: 18px 0;
+
+        .tab {
+            &__item {
+                padding: 7px 7px;
+                min-width: 57px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 14px;
+                background-color: $gray-3;
+                border: none;
+                color: $basic;
+                font-weight: 400;
+                min-height: 29px;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: $purple-1;
+                    color: white;
+                }
+
+                &.active {
+                    background-color: $purple-1;
+                    color: white;
+                    padding: 7px 7px;
+                }
+            }
+        }
+    }
 }

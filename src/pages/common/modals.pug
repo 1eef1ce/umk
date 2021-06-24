@@ -10,3 +10,42 @@
             br
             | нами в ближайшее время
         a.link.link--underline.js-close-modal(href="javascript:void(0);") Закрыть
+
+.modal.modal--delivery.js-modal-delivery
+    .modal__content
+        a.modal__close.js-close-modal(href="javascript:void(0);")
+            +icon('close_big')
+        .modal__title Выберите способ получения
+        form.modal-delivery
+            .modal-delivery__btn.btn.btn--transparent.active
+                .modal-delivery__txt Самовывоз
+                .modal-delivery__ic
+                    img(src="img/icons/ic-ok.png" alt="")
+            .modal-delivery__box.disable 
+                .modal-delivery__btn.btn.btn--transparent.js-delivery-way
+                    .modal-delivery__txt Доставка по адресу
+                    .modal-delivery__ic
+                        img(src="img/icons/ic-ok.png" alt="")
+                .modal-delivery__panel 
+                    .modal-delivery__subtitle Укажите город:
+                    select.js-select(style="width: 100%;")
+                        option Объявленные 1
+                        option Объявленные 2
+                        option Объявленные 3
+                        option Объявленные 4
+                    .modal-delivery__bloc
+                        .modal-delivery__title Выберите транспорт:
+                        .modal-delivery__cover
+                            .modal-delivery__unit
+                                input#delivery_g.lk-radio(type="radio" name="delivery" value="delivery_g" disabled="disabled")
+                                label(for="delivery_g") Доставка ж/д
+                            .modal-delivery__unit
+                                input#delivery_c.lk-radio(type="radio" name="delivery" value="delivery_c" disabled="disabled")
+                                label(for="delivery_c") Доставка машиной
+                    .modal-delivery__bloc
+                        .modal-delivery__title Стоимость:
+                        .modal-delivery__cost 
+                            span.num 0
+                            span.symbol ₽
+                button.btn.btn--transparent(type="submit") Сохранить изменения
+

@@ -121,7 +121,6 @@ const projectFunc = {
                                 tabsEl[index].style.display = 'block';
                                 mainBloc.style.maxHeight = 191 + tabsEl[index].scrollHeight + `px`;
                                 tabsEl[index].style.display = 'none';
-                                console.log(mainBloc.style.maxHeight);
                             },
                             100
                         );
@@ -148,7 +147,6 @@ const projectFunc = {
                         '+=0.1'
                     );
                 showForm.play();
-                console.log(index);
             } catch (err) {
                 console.log(err);
             }
@@ -406,7 +404,7 @@ const projectFunc = {
     },
     popupShow: function (form, status) {
         if ($(form).exists()) {
-            const element = document.querySelector(form);
+            const element = form;
 
             const formShowTl = new TimelineMax({
                 reversed: true,
@@ -505,6 +503,7 @@ const projectFunc = {
     lockedDOM(status) {
         if (status) {
             $('html').css('overflow', 'hidden');
+            projectFunc.scrollbarPage();
         } else {
             $('html').css('overflow', 'auto');
         }
@@ -628,7 +627,6 @@ const projectFunc = {
 const showService = (element) => {
     if ($(element).exists()) {
         const serviceHover = (element, state) => {
-            console.log(1);
             const serviceBg = new TimelineMax({
                 reversed: true,
                 paused: true,
@@ -650,7 +648,7 @@ const showService = (element) => {
                         color: 'white',
                         ease: Back.easeOut.config(1.7)
                     }
-                )
+                );
 
             serviceBgLeave
                 .to(
@@ -661,7 +659,7 @@ const showService = (element) => {
                         color: '#38393F',
                         ease: Back.easeOut.config(1.7)
                     }
-                )
+                );
 
             if (state) {
                 serviceBg.play();
@@ -690,7 +688,6 @@ function init() {
     projectFunc.createSlider();
     projectFunc.sendFilter();
     projectFunc.initCost();
-    projectFunc.scrollbarPage();
     showService('.lk-menu__item');
 }
 
@@ -700,6 +697,7 @@ window.addEventListener('load', function () {
     if ($('.js-portfolio').exists()) {
 
         if (window.addEventListener) {
+            projectFunc.scrollbarPage();
             window.addEventListener('DOMMouseScroll', wheel, false);
         }
 
@@ -735,7 +733,53 @@ window.addEventListener('load', function () {
                 } else {
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
-            }
+            };
+        }
+    }
+
+    if ($('.lk-cart__item').exists()) {
+        try {
+            const cartItem = document.querySelectorAll('.lk-cart__item');
+            let btn = '';
+            let panel = '';
+            let content = '';
+            let btnTxt = '';
+
+
+            cartItem.forEach((item, _) => {
+                btn = item.querySelectorAll('.js-btn-cartInfo');
+                panel = item.querySelectorAll('.lk-cart__detail');
+
+                // btnComment = item.querySelector('.js-btn-comment')[0];
+                // btnTxt = item.querySelector('.js-btn-txt');
+
+                btn.forEach((item, index) => {
+                    panel.forEach((pEl, indexP) => {
+                        item.addEventListener('click', function () {
+                            if (index == indexP) {
+                                this.classList.toggle('is-open');
+
+                                if (this.classList.contains('btn--delivery') && this.classList.contains('is-open')) {
+                                    console.log($(this).find('.js-btn-txt'));
+                                    $(this).find('.js-btn-txt').text('Удалить доставку');
+                                } else if (this.classList.contains('btn--delivery') && !this.classList.contains('is-open')) {
+                                    $(this).find('.js-btn-txt').text('Добавить доставку');
+                                }
+
+                                content = panel[index];
+                                if (content.style.maxHeight) {
+                                    content.style.maxHeight = null;
+                                } else {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                }
+                            }
+                        });
+                    });
+                });
+            });
+        }
+        catch (err) {
+            console.log(err);
         }
     }
 
@@ -771,8 +815,6 @@ window.addEventListener('load', function () {
                     let content = $(accordions[i]).find('.lk-profile__row').next().find('.lk-edit')[0];
                     let box = $(accordions[i]).find('.lk-profile__row').next()[0];
 
-                    console.log(accordions[i]);
-
                     box.style.maxHeight = null;
                     $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
                 };
@@ -796,10 +838,10 @@ window.addEventListener('load', function () {
 
     if ($('.js-overlay').exists()) {
         $('.js-overlay').on('click', () => {
-            projectFunc.showOverlay('.js-menu-mobile', false);
+            projectFunc.showOverlay('.js-modal-order', false);
             projectFunc.showOverlay('.js-modal-success', false);
             projectFunc.showOverlay('.js-modal-resume', false);
-        })
+        });
     }
 
     if ($('.js-select').exists()) {
@@ -839,7 +881,6 @@ window.addEventListener('load', function () {
                     }
                 } else {
                     if (!$('.menu-btn').hasClass('open')) {
-                        console.log('false');
                         projectFunc.showOverlay('.js-menu-mobile', false);
                     } else {
                         projectFunc.showOverlay('.js-menu-mobile', true);
@@ -881,6 +922,14 @@ window.addEventListener('load', function () {
         } catch (err) {
             console.log(err);
         }
+    }
+
+    if ($('.js-btn-reset').exists()) {
+        $('.js-btn-reset').on('click', () => {
+            $('.form-group').each((_, element) => {
+                $(element).removeClass('on-focus');
+            });
+        });
     }
 
     if ($('.service__bloc').exists()) {
@@ -945,7 +994,16 @@ window.addEventListener('load', function () {
         $('.js-close-modal').on('click', () => {
             projectFunc.showOverlay('.js-modal-success', false);
             projectFunc.showOverlay('.js-modal-resume', false);
+            projectFunc.showOverlay('.js-modal-order', false);
         });
+    }
+
+    if ($('.lk-documentation__row--contract').exists()) {
+        const date = document.querySelector('.js-dogovor-date').dataset.date;
+        const dogovorBloc = document.querySelector('.lk-documentation__row--contract');
+        let title = dogovorBloc.querySelector('.lk-documentation__title');
+
+        title.textContent = `Договор действителен до ${date}`;
     }
 
     if ($('.js-accordion-head').exists()) {
@@ -978,6 +1036,80 @@ window.addEventListener('load', function () {
         $('.js-btn-success').on('click', () => {
             event.preventDefault();
             projectFunc.showOverlay('.js-modal-success', true);
-        })
+        });
+    }
+
+    if ($('.js-btn-delivery').exists()) {
+        $('.js-btn-delivery').on('click', () => {
+            event.preventDefault();
+            projectFunc.showOverlay('.js-modal-delivery', true);
+        });
+    }
+
+    const stateRadio = (radio, status) => {
+        let radioEl = document.querySelectorAll(radio);
+        if (radioEl) {
+            radioEl.forEach((item, _) => {
+                console.log(item);
+            });
+        }
+    };
+
+    if ($('.js-modal-delivery').exists()) {
+        const panelBloc = document.querySelector('.modal-delivery__box');
+        let btn = this.document.querySelectorAll('.modal-delivery__btn');
+
+        if (panelBloc) {
+            if (panelBloc.classList.contains('disable')) {
+                $('.js-select').prop("disabled", true);
+            }
+        }
+
+        if (btn) {
+            btn.forEach((item, i) => {
+                item.addEventListener('click', function () {
+                    this.classList.add('active');
+                    btn.forEach((el, index) => {
+                        if (index !== i) {
+                            el.classList.remove('active');
+                        }
+                    });
+
+                    if (this.classList.contains('js-delivery-way')) {
+                        if (panelBloc.classList.contains('disable')) {
+                            panelBloc.classList.remove('disable');
+                            $('.js-select').prop("disabled", false);
+                            stateRadio('.lk-radio', true);
+                        }
+                    } else {
+                        panelBloc.classList.add('disable');
+                        $('.js-select').prop("disabled", true);
+                    }
+                });
+            });
+        }
+    }
+
+    // .js-btn-delivery
+
+    // if ($('.js-order-info').exists()) {
+    //     $('.js-order-info').on('click', () => {
+    //         projectFunc.showOverlay('.js-modal-order', true);
+    //     });
+    // }
+
+    if ($('.order-card').exists()) {
+        const card = document.querySelectorAll('.order-card');
+        let orderInfo = '';
+        let modal = '';
+
+        card.forEach((item, _) => {
+            orderInfo = item.querySelector('.js-order-info');
+
+            orderInfo.addEventListener('click', function () {
+                modal = item.querySelector('.modal');
+                projectFunc.showOverlay(modal, true);
+            });
+        });
     }
 });

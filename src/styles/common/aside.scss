@@ -40,5 +40,25 @@
         width: calc(100% - 222px - 35px);
       }
     }
+
+    .sidemenu,
+    .delivery-unit {
+      background-color: white;
+    }
+  }
+
+  &--lk_order {
+    .aside {
+      &__sidebar {
+        margin-right: 60px;
+        width: 222px;
+        margin-left: 0;
+      }
+
+      &__main {
+        width: calc(100% - 222px - 60px);
+        max-width: 918px;
+      }
+    }
   }
 }
