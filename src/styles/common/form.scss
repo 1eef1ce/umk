@@ -1,11 +1,27 @@
 .form {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 32px;
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
 
   &-group {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-top: 25px;
+
+    @media (max-width: 1024px) {
+      width: 48.215%;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+      margin-top: 20px;
+    }
 
     &.on-focus {
 
@@ -62,13 +78,30 @@
       }
     }
 
+    &--textarea {
+      width: 100%;
+    }
+
     textarea {
       height: 160px;
+
+      @media (max-width: 620px) {
+        height: 122px;
+      }
     }
   }
 
   .btn {
     width: 426px;
     margin-top: 25px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      font-size: 14px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 15px;
+    }
   }
 }

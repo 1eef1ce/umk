@@ -8,6 +8,9 @@ block content
                 include common/breadcrumb
                 .aside
                     .aside__main
+                        .aside__btn.js-btn-sidemenu
+                            | Выбрать ГОСТы и ТУ
+                            +icon('chevron_down')
                         h1.title-1 Арматура, катанка
                         p.
                             Внезапно, независимые государства могут быть в равной степени предоставлены сами себе. Противоположная
@@ -26,8 +29,9 @@ block content
                                     a.standard__doc(href="javascript:void(0);") PDF
                                 .standard__text Сталь арматурная термомеханически упрочненная для железобетонных конструкций (технические условия).
                         include common/pagination
-                    .aside__sidebar
+                    .aside__sidebar.js-sidemenu-popup
                         .sidemenu
+                            .sidemenu__name Выбрать ГОСТы и ТУ
                             .sidemenu__section.js-accordion-item
                                 .sidemenu__head.js-accordion-head
                                     .sidemenu__title Сортовой прокат
@@ -80,3 +84,17 @@ block content
                                             a.sidemenu__link(href="javascript:void(0);") ГОСТы
                                         li.sidemenu__item
                                             a.sidemenu__link.active(href="javascript:void(0);") Арматура, катанка
+                        .delivery-unit
+                            .delivery-unit__title Отдел логистики:
+                            .delivery-unit__text
+                                | Специалист по логистике:
+                                br
+                                span Наталья Бандяева
+                            .delivery-unit__text
+                                | Специалист по логистике:
+                                br
+                                span Ольга Мацапей
+                            .delivery-unit__text
+                                | Телефон:
+                                br
+                                a(href="tel:+73517013320") +7 (3517) 01-33-20

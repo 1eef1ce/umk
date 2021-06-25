@@ -596,4 +596,10 @@ window.addEventListener('load', function () {
         });
     }
 
+    if ($('.js-btn-sidemenu').exists()) {
+        $('.js-btn-sidemenu').click(function () {
+            $('.js-sidemenu-popup').addClass('open');
+        });
+    }
+
 });
