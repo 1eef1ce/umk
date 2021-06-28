@@ -1,6 +1,6 @@
 .call {
-    @media(max-width: 1235px) {
-        padding-top: 23px;
+    @media(max-width: 1024px) {
+        padding-top: 22px;
     }
 
     &__txt {
@@ -41,13 +41,41 @@
         grid-row-gap: 24px;
 
         @media(max-width: 1235px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                'name company'
+                'email phone'
+                'check check'
+                'submit submit';
+            grid-template-columns: auto;
         }
     }
 
     &__col {
 
+        &--company {
+            @media(max-width: 1235px) {
+                grid-area: company;
+            }
+        }
+
+        &--email {
+            @media(max-width: 1235px) {
+                grid-area: email;
+            }
+        }
+
+        &--phone {
+            @media(max-width: 1235px) {
+                grid-area: phone;
+            }
+        }
+
         &--submit {
+
+            @media(max-width: 1235px) {
+                grid-area: submit;
+            }
+
             .btn {
                 width: 100%;
             }
@@ -55,6 +83,15 @@
 
         &--check {
             max-width: 80%;
+
+            @media(max-width: 1235px) {
+                grid-area: check;
+            }
+
+            @media(max-width: 1024px) {
+                max-width: 100%;
+                margin-top: -3px;
+            }
 
             .checkbox {
                 margin-top: 0;
@@ -64,6 +101,12 @@
 
                     span {
                         margin-top: -0.3em;
+
+                        @media(max-width: 1235px) {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 0;
+                        }
                     }
                 }
             }
@@ -112,6 +155,15 @@
     &__column {
         &:last-child {
             transform: translateY(5px);
+
+            @media(max-width: 1235px) {
+                transform: none;
+                margin-top: 30px;
+            }
+
+            @media(max-width: 1024px) {
+                margin-top: 0;
+            }
         }
     }
 
