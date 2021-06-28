@@ -747,6 +747,24 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('.js-footer-acc').exists()) {
+        let accordions = document.getElementsByClassName("js-footer-acc");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function () {
+                this.classList.toggle('is-open');
+
+                let content = $(this).find('.footer__list')[0];
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            };
+        }
+    }
+
     if ($('.lk-cart__item').exists()) {
         try {
             const cartItem = document.querySelectorAll('.lk-cart__item');
@@ -1065,11 +1083,11 @@ window.addEventListener('load', function () {
     const stateRadio = (radio, status) => {
         let radioEl = document.querySelectorAll(radio);
         if (radioEl) {
-            if(status) {
+            if (status) {
                 radioEl.forEach((item, index) => {
                     item.disabled = false;
 
-                    if(index === 0) {
+                    if (index === 0) {
                         item.checked = true;
                     }
                 });

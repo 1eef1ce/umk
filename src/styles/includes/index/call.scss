@@ -1,12 +1,33 @@
 .call {
+    @media(max-width: 1235px) {
+        padding-top: 23px;
+    }
+
     &__txt {
         max-width: 274px;
         margin-top: 22px;
+
+        @media(max-width: 1235px) {
+            max-width: 720px;
+        }
     }
 
     &__grid {
         display: grid;
         grid-template-columns: minmax(390px, 1fr) minmax(755px, 1fr);
+
+        @media(max-width: 1300px) {
+            grid-column-gap: 30px;
+            grid-template-columns: minmax(390px, 1fr) minmax(697px, 1fr);
+        }
+
+        @media(max-width: 1235px) {
+            grid-template-columns: 1fr;
+        }
+
+        @media(max-width: 1024px) {
+            grid-row-gap: 28px;
+        }
     }
 
     &__subgrid {
@@ -18,6 +39,10 @@
             'submit accord';
         grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
         grid-row-gap: 24px;
+
+        @media(max-width: 1235px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__col {
@@ -87,6 +112,21 @@
     &__column {
         &:last-child {
             transform: translateY(5px);
+        }
+    }
+
+    &__title {
+        @media(max-width: 1024px) {
+            text-align: center;
+        }
+    }
+
+    &__txt {
+        @media(max-width: 1024px) {
+            text-align: center;
+            max-width: 622px;
+            width: 100%;
+            margin: 11px auto 0;
         }
     }
 }

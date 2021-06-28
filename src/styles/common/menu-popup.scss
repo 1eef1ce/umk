@@ -6,7 +6,7 @@
     left: 0;
     background-color: white;
     overflow: auto;
-    z-index: 110;
+    z-index: 300;
     opacity: 0;
 
     &__backdrop {
@@ -36,6 +36,10 @@
         flex-shrink: 0;
         margin: 47px auto 0;
         opacity: 0;
+
+        @media(max-width: 1235px) {
+            margin: 30px auto 0;
+        }
     }
 
     &__logo {

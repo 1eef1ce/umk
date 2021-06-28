@@ -1,10 +1,21 @@
 .advantage {
     padding: 75px 0;
 
+    @media(max-width: 1024px) {
+        padding: 61px 0 60px;
+    }
+
     &__img {
         width: 48%;
         min-width: 465px;
         height: 353px;
+
+
+        @media(max-width: 1024px) {
+            width: 37%;
+            min-width: 275px;
+            height: 280px;
+        }
 
         img {
             width: 100%;
@@ -16,6 +27,12 @@
     &__num {
         display: flex;
         margin-right: 11px;
+
+        @media(max-width: 1024px) {
+            width: 51px;
+            height: 38px;
+            margin-right: 8px;
+        }
     }
 
     &__content {
@@ -26,10 +43,18 @@
         padding: 0;
         box-sizing: content-box;
         max-width: 406px;
+
+        @media(max-width: 1024px) {
+            width: 51.7%;
+        }
     }
 
     &__items {
         margin-top: -50px;
+
+        @media(max-width: 1024px) {
+            margin-top: -45px;
+        }
     }
 
     &__item {
@@ -38,6 +63,50 @@
         margin-top: 50px;
         max-width: 961px;
         width: 100%;
+
+        @media(max-width: 1024px) {
+            margin-top: 45px;
+            max-width: 660px;
+        }
+
+        &:first-child {
+            .advantage {
+                &__num {
+                    @media(max-width: 1024px) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            max-width: 1020px;
+
+            @media(max-width: 1024px) {
+                max-width: 720px;
+            }
+
+            .advantage {
+                &__content {
+                    width: 46%;
+                    max-width: initial;
+
+                    @media(max-width: 1024px) {
+                        width: 55.7%;
+                        padding-bottom: 27px;
+                    }
+                }
+
+                &__img {
+                    max-width: 465px;
+                    width: 45%;
+
+                    @media(max-width: 1024px) {
+                        max-width: 275px;
+                    }
+                }
+            }
+        }
 
         &:nth-of-type(2n) {
             flex-direction: row-reverse;
@@ -77,6 +146,11 @@
         font-size: 35px;
         font-weight: 600;
         margin-top: 20px;
+
+        @media(max-width: 1024px) {
+            font-size: 30px;
+            margin-top: 8px;
+        }
     }
 
     &__txt {
@@ -84,9 +158,18 @@
         width: 100%;
         margin-top: 8px;
         line-height: 1.4475em;
+
+        @media(max-width: 1024px) {
+            line-height: 1.68;
+            margin-top: 2px;
+        }
     }
 
     &__info {
         font-weight: 600;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+        }
     }
 }
