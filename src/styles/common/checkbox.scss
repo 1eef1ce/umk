@@ -85,6 +85,10 @@
     font-size: 14px;
     line-height: 1.45;
 
+    @media(max-width: 620px) {
+      font-size: 12px;
+    }
+
     &::before {
       content: '';
       display: inline-block;
@@ -116,6 +120,12 @@
       border: solid #fff;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
+
+      @media(max-width: 620px) {
+        top: 2px;
+        left: 6px;
+        height: 12px;
+      }
     }
   }
 }

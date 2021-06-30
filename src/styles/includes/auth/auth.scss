@@ -1,7 +1,13 @@
 .auth {
     background: url(../img/decor/grid4.svg) no-repeat 50% 28%/auto;
-    margin-bottom: -105px;
-    min-height: 773px;
+    min-height: 677px;
+    margin-bottom: -102px;
+    height: calc(100vh - 558px);
+
+    @media(max-width: 1024px) {
+        min-height: 592px;
+        margin-bottom: -70px;
+    }
 
     &__box {
         height: 100vh;
@@ -13,23 +19,32 @@
         background-color: white;
         margin: auto;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
-
         /* изначально блок свёрнут */
         overflow: hidden;
         /* полностью скрывает дочерний блок */
         transition: max-height 0.5s;
         /* время анимации можно менять по желанию */
+
+        @media(max-width: 1024px) {
+            max-width: 648px;
+        }
     }
 
     &__container {
         padding-top: 100px;
-        min-height: 665px;
-        padding-bottom: 202px;
+
+        @media(max-width: 1024px) {
+            padding-top: 48px;
+        }
     }
 
     &--restore {
-        min-height: initial;
-        background: url(../img/decor/grid5.svg) no-repeat 50% -25%/auto;
+        background: url(../img/decor/grid5.svg) no-repeat 50% -12%;
+        min-height: 520px;
+
+        @media(max-width: 1024px) {
+            min-height: 422px;
+        }
 
         .auth-popup {
             padding: 0;
@@ -51,11 +66,22 @@
                 text-align: center;
                 line-height: 1.5;
                 margin-top: 15px;
+
+                @media(max-width: 1024px) {
+                    max-width: 462px;
+                    width: 100%;
+                    margin: 13px auto 0;
+                }
             }
 
             &__cover {
                 max-width: 426px;
                 margin: 42px auto 0;
+
+                @media(max-width: 1024px) {
+                    max-width: initial;
+                    margin: 36px auto 0;
+                }
             }
         }
 
@@ -65,11 +91,15 @@
                 box-shadow: none;
                 max-height: initial;
                 height: auto;
+
+                @media(max-width: 1024px) {
+                    max-width: 538px;
+                }
             }
 
             &__container {
-                padding-bottom: 225px;
                 min-height: initial;
+                height: 100%;
             }
         }
     }

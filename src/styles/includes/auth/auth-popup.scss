@@ -2,13 +2,25 @@
     flex: 1;
     padding: 46px 65px 60px;
 
+    @media(max-width: 1024px) {
+        padding: 37px 55px 60px;
+    }
+
     &__cover {
         margin-top: 31px;
+
+        @media(max-width: 1024px) {
+            margin-top: 25px;
+        }
     }
 
     &__ref {
         margin-top: 19px;
         color: $gray-2;
+
+        @media(max-width: 1024px) {
+            font-size: 14px;
+        }
     }
 
     &__form {
@@ -22,6 +34,10 @@
         .btn {
             width: 100%;
             margin-top: 24px;
+
+            @media(max-width: 1024px) {
+                margin-top: 26px;
+            }
         }
 
         &.show {
@@ -38,11 +54,19 @@
         color: $gray-2;
         cursor: pointer;
 
+        @media(max-width: 1024px) {
+            font-size: 30px;
+        }
+
         &.active {
             color: $basic !important;
             font-size: 45px;
             transform: translateY(0);
             pointer-events: none;
+
+            @media(max-width: 1024px) {
+                font-size: 40px;
+            }
         }
 
         &:hover {

@@ -52,6 +52,11 @@
             width: 112px;
             height: auto;
         }
+
+        @media(max-width: 620px) {
+            width: 145px;
+            height: 40px;
+        }
     }
 
     &__grid {
@@ -104,6 +109,10 @@
                 margin-right: 36px;
             }
 
+            @media(max-width: 620px) {
+                margin-right: 28px;
+            }
+
             .icon {
                 fill: $purple-1;
             }
@@ -139,6 +148,10 @@
             @media(max-width: 1024px) {
                 margin-left: 0;
                 margin-right: 22px;
+            }
+
+            @media(max-width: 620px) {
+                margin-right: 19px;
             }
         }
     }

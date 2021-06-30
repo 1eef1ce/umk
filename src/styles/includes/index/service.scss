@@ -9,6 +9,10 @@
         padding: 40px 0 60px;
     }
 
+    @media(max-width: 620px) {
+        padding: 35px 0 40px;
+    }
+
     &__title {
         text-align: center;
     }
@@ -24,8 +28,14 @@
         }
 
         @media(max-width: 1235px) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, calc(50% - 16px));
             grid-gap: 30px 30px;
+        }
+
+        @media(max-width: 620px) {
+            grid-template-columns: repeat(2, calc(50% - 13px));
+            grid-gap: 25px 25px;
+            margin-top: 24px;
         }
     }
 
@@ -33,6 +43,20 @@
         margin: 12px auto 0;
         max-width: 636px;
         text-align: center;
+
+        @media(max-width: 620px) {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @media(max-width: 620px) {
+                margin: 9px auto 0;
+                display: block;
+                line-height: 1.7;
+            }
+        }
     }
 
     &__bloc {
@@ -47,6 +71,11 @@
         @media(max-width: 1024px) {
             min-height: 179px;
             padding: 20px 24px 26px;
+        }
+
+        @media(max-width: 620px) {
+            min-height: 155px;
+            padding: 17px 15px 15px;
         }
 
         &--special {
@@ -126,6 +155,12 @@
             height: 48px;
         }
 
+        @media(max-width: 620px) {
+            width: 40px;
+            height: 40px;
+        }
+
+
         .icon {
             width: 20px;
             height: 23px;
@@ -137,9 +172,16 @@
         font-weight: 600;
         font-size: 24px;
         line-height: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
         @media(max-width: 1024px) {
             font-size: 22px;
+        }
+
+        @media(max-width: 620px) {
+            font-size: 14px;
         }
     }
 
@@ -147,9 +189,16 @@
         margin-top: 0.687em;
         pointer-events: none;
 
+        @media(max-width: 620px) {
+            margin-top: 8px;
+        }
+
         &__txt {
             transition: none;
 
+            @media(max-width: 620px) {
+                font-size: 13px;
+            }
         }
     }
 

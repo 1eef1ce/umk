@@ -5,6 +5,10 @@
         padding: 61px 0 60px;
     }
 
+    @media(max-width: 620px) {
+        padding: 48px 0 44px;
+    }
+
     &__img {
         width: 48%;
         min-width: 465px;
@@ -15,6 +19,16 @@
             width: 37%;
             min-width: 275px;
             height: 280px;
+        }
+
+        @media(max-width:767px) {
+            width: 230px;
+            min-width: initial;
+        }
+
+        @media(max-width: 620px) {
+            width: 117px;
+            height: 292px;
         }
 
         img {
@@ -33,6 +47,10 @@
             height: 38px;
             margin-right: 8px;
         }
+
+        @media(max-width: 620px) {
+            display: none;
+        }
     }
 
     &__content {
@@ -47,6 +65,14 @@
         @media(max-width: 1024px) {
             width: 51.7%;
         }
+
+        @media(max-width: 767px) {
+            width: calc(100% - 230px - 28px);
+        }
+
+        @media(max-width: 620px) {
+            width: calc(100% - 117px - 28px);
+        }
     }
 
     &__items {
@@ -54,6 +80,10 @@
 
         @media(max-width: 1024px) {
             margin-top: -45px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: -25px;
         }
     }
 
@@ -66,7 +96,12 @@
 
         @media(max-width: 1024px) {
             margin-top: 45px;
-            max-width: 660px;
+            max-width: max-content;
+        }
+
+        @media(max-width: 620px) {
+            width: calc(100% + 20px);
+            margin-top: 25px;
         }
 
         &:first-child {
@@ -95,6 +130,15 @@
                         width: 55.7%;
                         padding-bottom: 27px;
                     }
+
+                    @media(max-width: 767px) {
+                        width: calc(100% - 230px - 28px);
+                    }
+
+                    @media(max-width: 620px) {
+                        width: calc(100% - 117px - 28px);
+                        padding-bottom: 0px;
+                    }
                 }
 
                 &__img {
@@ -104,6 +148,25 @@
                     @media(max-width: 1024px) {
                         max-width: 275px;
                     }
+
+                    @media(max-width: 620px) {
+                        width: 117px;
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            @media(max-width: 767px) {
+                margin-left: -20px;
+            }
+
+            .advantage {
+                &__img {
+                    @media(max-width: 767px) {
+                        margin-right: 28px;
+                    }
                 }
             }
         }
@@ -111,6 +174,18 @@
         &:nth-of-type(2n) {
             flex-direction: row-reverse;
             margin-left: auto;
+
+            @media(max-width: 767px) {
+                margin-right: -20px;
+            }
+
+            .advantage {
+                &__img {
+                    @media(max-width: 767px) {
+                        margin-left: 28px;
+                    }
+                }
+            }
         }
     }
 
@@ -120,6 +195,10 @@
         color: $purple-1;
         font-weight: 600;
         transform: translateX(4px);
+
+        @media(max-width: 620px) {
+            transform: translateX(0px);
+        }
 
         span {
             display: inline-block;
@@ -151,6 +230,12 @@
             font-size: 30px;
             margin-top: 8px;
         }
+
+        @media(max-width: 620px) {
+            font-size: 23px;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
     }
 
     &__txt {
@@ -163,6 +248,10 @@
             line-height: 1.68;
             margin-top: 2px;
         }
+
+        @media(max-width: 620px) {
+            line-height: 1.7;
+        }
     }
 
     &__info {
@@ -170,6 +259,19 @@
 
         @media(max-width: 1024px) {
             font-size: 14px;
+        }
+
+        @media(max-width: 620px) {
+            font-size: 16px;
+        }
+    }
+
+    &__symbol {
+        display: none;
+
+        @media(max-width: 620px) {
+            display: block;
+            margin-right: 6px;
         }
     }
 }

@@ -31,8 +31,21 @@ const projectFunc = {
         if ($('.js-slider-partners').exists()) {
             const partnerSlider = new Slider('.js-slider-partners', 3, 0);
             partnerSlider.createSlider();
+            partnerSlider.updateSlider('loop', true);
             partnerSlider.updateSlider('arrow');
             partnerSlider.updateSlider('pagination');
+
+            $(window).resize(function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 621) {
+                    partnerSlider.updateSlider('view', 1.9);
+                    partnerSlider.updateSlider('center', true);
+                } else if ($(this).width() <= 621 && $(this).width() >= 320) {
+                    partnerSlider.updateSlider('view', 1.4);
+                    partnerSlider.updateSlider('center', true);
+                } else {
+                    partnerSlider.updateSlider('view', 3);
+                }
+            });
         }
 
         if ($('.product-related__items').exists()) {
@@ -84,7 +97,7 @@ const projectFunc = {
                                 btnTab[i],
                                 0.3,
                                 {
-                                    fontSize: '35px',
+                                    //fontSize: '35px',
                                     color: '#AAAAAA',
                                     ease: Power1.inOut
                                 }
@@ -101,7 +114,6 @@ const projectFunc = {
                             );
 
                         hideForm.play();
-
                     }
                 });
             } catch (err) {
@@ -142,7 +154,7 @@ const projectFunc = {
                         btnTab[index],
                         0.3,
                         {
-                            fontSize: '45px',
+                            //fontSize: '45px',
                             color: '#38393F',
                             ease: Power1.inOut
                         }

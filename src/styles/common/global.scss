@@ -24,8 +24,8 @@ h4 {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
     margin: 0;
     font-family: 'MyriadPro', Arial, sans-serif;
     font-weight: 400;
@@ -38,7 +38,7 @@ body {
     }
 
     @media (max-width: 620px) {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.8;
     }
 }
@@ -138,6 +138,15 @@ a {
     font-size: 24px;
     font-weight: 600;
     color: $purple-1;
+
+    @media(max-width: 1024px) {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    @media(max-width: 620px) {
+        font-size: 18px;
+    }
 }
 
 svg {
@@ -205,7 +214,8 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input, textarea {
+input,
+textarea {
     font-size: 16px;
 
     &::placeholder {
@@ -213,4 +223,8 @@ input, textarea {
         font-weight: 400;
         color: $gray-2;
     }
+}
+
+.main {
+    flex: 1 0 auto;
 }

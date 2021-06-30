@@ -7,12 +7,20 @@
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
         margin-top: 36px;
 
+        @media(max-width: 620px) {
+            margin-top: 26px;
+        }
+
         .swiper-slide {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 274px;
+
+            @media(max-width: 620px) {
+                min-height: 185px;
+            }
 
             &:not(:last-child) {
                 &:after {
@@ -28,6 +36,11 @@
 
             img {
                 transform: translateY(-10px);
+
+                @media(max-width: 620px) {
+                    max-width: 41%;
+                    height: auto;
+                }
             }
         }
 
@@ -39,8 +52,17 @@
             background-color: $gray-1;
             opacity: 1;
 
+            @media(max-width: 620px) {
+                width: 6px;
+                height: 6px;
+            }
+
             &:not(:last-child) {
                 margin-right: 25px;
+
+                @media(max-width: 620px) {
+                    margin-right: 20px;
+                }
             }
 
             &:hover {
@@ -61,8 +83,16 @@
             width: 100%;
             bottom: 0;
 
+            @media(max-width: 1024px) {
+                justify-content: center;
+            }
+
             &__cover {
                 display: flex;
+
+                @media(max-width: 1024px) {
+                    display: none;
+                }
             }
 
             &__link {
