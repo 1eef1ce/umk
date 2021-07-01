@@ -49,19 +49,46 @@
                             span.symbol ₽
                 button.btn.btn--transparent(type="submit") Сохранить изменения
 
-.modal.modal--auth_enter.js-modal-auth
+.modal.modal--auth.modal--auth_enter.js-modal-auth
     .modal__content
-        //- a.modal__close.js-close-modal(href="javascript:void(0);")
-        //-     +icon('close_big')
         .modal__header
             .modal__title Вход
             .modal__close.js-close-modal
-        .modal__form 
+        form.modal__form 
             .form-group
-                label.form-group__label(for="name") Ваше имя*
-                input#name.form-group__input.js-input(type="text")
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
             .form-group
-                label.form-group__label(for="name") Ваше имя*
-                input#name.form-group__input.js-input(type="text")
+                label.form-group__label(for="pass") Пароль
+                input#pass.form-group__input.js-input(type="password")
+            button.btn.btn--basic(type="submit") Отправить
+        .modal__bottom 
+            a.link.js-open-reg(href="javascript:void(0);") Регистрация
+            a.link.js-open-res(href="javascript:void(0);") Забыли пароль?
+
+.modal.modal--auth.modal--auth_reg.js-modal-reg
+    .modal__content
+        .modal__header
+            .modal__title Регистрация
+            .modal__close.js-close-modal
+        form.modal__form 
+            .form-group
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
+            button.btn.btn--basic(type="submit") Отправить
+        .modal__note При создании учётной записи вы автоматически соглашаетесь с  “Политикой конфиденциальности”
+        .modal__bottom 
+            a.link.js-open-auth(href="javascript:void(0);") Вход
+
+.modal.modal--auth.modal--auth_res.js-modal-res
+    .modal__content
+        .modal__header
+            .modal__title Восстановить пароль
+            .modal__close.js-close-modal
+        .modal__note Если вы забыли пароль, введите E-mail. Ваши региcтрационные данные (пароль) будут высланы на этот адрес электронной почты.
+        form.modal__form 
+            .form-group
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
             button.btn.btn--basic(type="submit") Отправить
 

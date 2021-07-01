@@ -916,10 +916,52 @@ window.addEventListener('load', function () {
         try {
             $(window).on('resize load', function () {
                 if ($(window).width() <= 620) {
-                    const ref = document.querySelector('.js-open-auth');
+                    const refs = document.querySelectorAll('.js-open-auth');
+
+                    refs.forEach((item, index) => {
+                        console.log(item);
+                        item.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            projectFunc.showOverlay('.js-modal-reg', false);
+                            projectFunc.showOverlay('.js-modal-auth', true);
+                        }, false);
+                    });
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.js-open-reg').exists()) {
+        try {
+            $(window).on('resize load', function () {
+                if ($(window).width() <= 620) {
+                    const ref = document.querySelector('.js-open-reg');
                     ref.addEventListener('click', function (event) {
                         event.preventDefault();
-                        projectFunc.showOverlay('.js-modal-auth', true);
+                        projectFunc.showOverlay('.js-modal-reg', true);
+                        projectFunc.showOverlay('.js-modal-auth', false);
+                    }, false);
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.js-open-res').exists()) {
+        try {
+            $(window).on('resize load', function () {
+                if ($(window).width() <= 620) {
+                    const ref = document.querySelector('.js-open-res');
+                    ref.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        projectFunc.showOverlay('.js-modal-res', true);
+                        projectFunc.showOverlay('.js-modal-auth', false);
+                        projectFunc.showOverlay('.js-modal-reg', false);
                     }, false);
                 }
             });
@@ -1059,6 +1101,9 @@ window.addEventListener('load', function () {
             projectFunc.showOverlay('.js-modal-resume', false);
             projectFunc.showOverlay('.js-modal-order', false);
             projectFunc.showOverlay('.js-modal-delivery', false);
+            projectFunc.showOverlay('.js-modal-auth', false);
+            projectFunc.showOverlay('.js-modal-reg', false);
+            projectFunc.showOverlay('.js-modal-res', false);
         });
     }
 
@@ -1138,7 +1183,7 @@ window.addEventListener('load', function () {
 
         if (panelBloc) {
             if (panelBloc.classList.contains('disable')) {
-                $('.js-select').prop("disabled", true);
+                // $('.js-select').prop("disabled", true);
             }
         }
 
@@ -1155,12 +1200,12 @@ window.addEventListener('load', function () {
                     if (this.classList.contains('js-delivery-way')) {
                         if (panelBloc.classList.contains('disable')) {
                             panelBloc.classList.remove('disable');
-                            $('.js-select').prop("disabled", false);
+                            // $('.js-select').prop("disabled", false);
                             stateRadio('.lk-radio', true);
                         }
                     } else {
                         panelBloc.classList.add('disable');
-                        $('.js-select').prop("disabled", true);
+                        // $('.js-select').prop("disabled", true);
                         stateRadio('.lk-radio', false);
                     }
                 });
