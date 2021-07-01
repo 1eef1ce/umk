@@ -1155,7 +1155,91 @@ window.addEventListener('load', function () {
         });
     }
 
+    if ($('#map').exists()) {
+        ymaps.ready(init);
 
+        function init() {
+
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                center: [53.437095, 59.074866],
+                zoom: 15.5,
+                controls: []
+            });
+
+            const mark = new ymaps.Placemark([53.436705, 59.075600], {
+                balloonContentHeader: 'ООО "Уральская Металлообрабатывающая Компания"',
+                balloonContentBody: '<div class="mark1-content"><p>Адрес: Коммунальная улица, 10с1, Магнитогорск</p>' +
+                    '<p>E-mail: uralmetalcompany.ru</p>' +
+                    '<p>График работы: Пн-Чт 08:30–17.30; Пт 08:30–16:15; Сб-Вс - выходной</p><div>'
+            }, {
+                preset: "islands#lightBlueDotIcon",
+                hideIconOnBalloonOpen: false,
+                balloonOffset: [3, -40],
+                balloonPanelMaxMapArea: 0,
+                balloonShadow: false,
+                balloonMaxWidth: 1200
+            });
+
+            const mark2 = new ymaps.Placemark([53.441818, 59.082698], {
+                // Зададим содержимое заголовка балуна.
+                balloonContentHeader: '<a href = "#">Рога и копыта</a><br>' +
+                    '<span class="description">Сеть кинотеатров</span>',
+                // Зададим содержимое основной части балуна.
+                balloonContentBody: '<img src="img/cinema.jpg" height="150" width="200"> <br/> ' +
+                    '<a href="tel:+7-123-456-78-90">+7 (123) 456-78-90</a><br/>' +
+                    '<b>Ближайшие сеансы</b> <br/> Сеансов нет.',
+                // Зададим содержимое нижней части балуна.
+                balloonContentFooter: 'Информация предоставлена:<br/>OOO "Рога и копыта"',
+                // Зададим содержимое всплывающей подсказки.
+                hintContent: 'Рога и копыта'
+            }, {
+                preset: "islands#redDotIcon",
+                // Балун открывается, метка при этом не закрывается
+                hideIconOnBalloonOpen: false,
+                balloonOffset: [-50, -50],
+            });
+
+            const myGeoObject = new ymaps.GeoObject({
+                // Описываем геометрию геообъекта.
+                geometry: {
+                    // Тип геометрии - "Ломаная линия".
+                    type: "LineString",
+                    // Указываем координаты вершин ломаной.
+                    coordinates: [
+                        [53.442172, 59.082912],
+                        [53.436741, 59.077092],
+                        [53.436611, 59.075810]
+                    ]
+                },
+                // Описываем свойства геообъекта.
+                properties: {
+                    // Содержимое хинта.
+                    hintContent: "Я геообъект",
+                    // Содержимое балуна.
+                    balloonContent: "Меня можно перетащить"
+                }
+            }, {
+                // Задаем опции геообъекта.
+                // Включаем возможность перетаскивания ломаной.
+                draggable: true,
+                // Цвет линии.
+                strokeColor: "#D81A27",
+                // Ширина линии.
+                strokeWidth: 5
+            });
+
+            myMap.geoObjects.add(myGeoObject);
+            myMap.geoObjects.add(mark);
+            myMap.geoObjects.add(mark2);
+            myMap.behaviors.disable('scrollZoom');
+
+            var position = myMap.getGlobalPixelCenter();
+            myMap.setGlobalPixelCenter([position[0] + 100, position[1] - 120]);
+        }
+    }
 
     const stateRadio = (radio, status) => {
         let radioEl = document.querySelectorAll(radio);
