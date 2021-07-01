@@ -882,6 +882,7 @@ window.addEventListener('load', function () {
             projectFunc.showOverlay('.js-modal-success', false);
             projectFunc.showOverlay('.js-modal-resume', false);
             projectFunc.showOverlay('.js-modal-delivery', false);
+            projectFunc.showOverlay('.js-menu-mobile', false);
         });
     }
 
@@ -909,6 +910,23 @@ window.addEventListener('load', function () {
 
     if ($('.js-example-basic-single').exists()) {
         $('.js-example-basic-single').select2();
+    }
+
+    if ($('.js-open-auth').exists()) {
+        try {
+            $(window).on('resize load', function () {
+                if ($(window).width() <= 620) {
+                    const ref = document.querySelector('.js-open-auth');
+                    ref.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        projectFunc.showOverlay('.js-modal-auth', true);
+                    }, false);
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
     if ($('.js-btn-menu').exists()) {
@@ -1091,6 +1109,8 @@ window.addEventListener('load', function () {
             projectFunc.showOverlay('.js-modal-delivery', true);
         });
     }
+
+
 
     const stateRadio = (radio, status) => {
         let radioEl = document.querySelectorAll(radio);

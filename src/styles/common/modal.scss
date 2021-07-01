@@ -126,4 +126,13 @@
       }
     }
   }
+
+  &--auth_enter {
+    .modal {
+      &__content {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
 }

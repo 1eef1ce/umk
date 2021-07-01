@@ -49,3 +49,19 @@
                             span.symbol ₽
                 button.btn.btn--transparent(type="submit") Сохранить изменения
 
+.modal.modal--auth_enter.js-modal-auth
+    .modal__content
+        //- a.modal__close.js-close-modal(href="javascript:void(0);")
+        //-     +icon('close_big')
+        .modal__header
+            .modal__title Вход
+            .modal__close.js-close-modal
+        .modal__form 
+            .form-group
+                label.form-group__label(for="name") Ваше имя*
+                input#name.form-group__input.js-input(type="text")
+            .form-group
+                label.form-group__label(for="name") Ваше имя*
+                input#name.form-group__input.js-input(type="text")
+            button.btn.btn--basic(type="submit") Отправить
+
