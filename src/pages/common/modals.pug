@@ -53,7 +53,7 @@
     .modal__content
         .modal__header
             .modal__title Вход
-            .modal__close.js-close-modal
+            .modal__close.js-close-modal_auth
         form.modal__form 
             .form-group
                 label.form-group__label(for="email") E-mail
@@ -70,13 +70,15 @@
     .modal__content
         .modal__header
             .modal__title Регистрация
-            .modal__close.js-close-modal
+            .modal__close.js-close-modal_auth
         form.modal__form 
             .form-group
                 label.form-group__label(for="email") E-mail
                 input#email.form-group__input.js-input(type="text")
             button.btn.btn--basic(type="submit") Отправить
-        .modal__note При создании учётной записи вы автоматически соглашаетесь с  “Политикой конфиденциальности”
+        .modal__note
+            | При создании учётной записи вы автоматически соглашаетесь с&nbsp;&nbsp;  
+            a.link(href="javascript:void(0);") “Политикой конфиденциальности”
         .modal__bottom 
             a.link.js-open-auth(href="javascript:void(0);") Вход
 
@@ -84,7 +86,7 @@
     .modal__content
         .modal__header
             .modal__title Восстановить пароль
-            .modal__close.js-close-modal
+            .modal__close.js-close-modal_auth
         .modal__note Если вы забыли пароль, введите E-mail. Ваши региcтрационные данные (пароль) будут высланы на этот адрес электронной почты.
         form.modal__form 
             .form-group

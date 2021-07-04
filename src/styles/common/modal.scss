@@ -231,6 +231,32 @@
       &__bottom {
         margin-top: 16px;
       }
+
+      &__note {
+        .link {
+          color: $gray-2;
+          position: relative;
+
+          &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: transparent;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            margin: auto;
+            transition: .3s ease-in-out;
+          }
+
+          &:hover {
+            &:after {
+              background-color: $gray-2;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -251,6 +277,8 @@
         margin-top: 13px;
         line-height: 1.7;
         color: $basic;
+
+
       }
 
       &__form {

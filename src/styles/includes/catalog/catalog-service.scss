@@ -3,12 +3,30 @@
     background-size: cover;
 
     p {
+        @media(max-width: 620px) {
+            margin-top: 5px;
+        }
+
         &:not(:first-of-type) {
             margin-top: 13px;
 
             @media(max-width: 1024px) {
                 margin-top: 10px;
             }
+
+            @media(max-width: 620px) {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .catalog-grid {
+        @media(max-width: 1024px) {
+            margin-top: 34px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 24px;
         }
     }
 }

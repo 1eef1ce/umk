@@ -74,22 +74,149 @@
     transform: translateX(-50%);
     height: 650px;
 
+    @media(max-width: 1024px) {
+      height: 550px;
+    }
+
+    @media(max-width: 620px) {
+      height: 450px;
+    }
+
     .ymaps-2-1-78-balloon-content__header {
       font-size: 18px;
       font-family: 'MyriadPro', Arial, sans-serif;
       font-weight: 600;
+      color: $basic;
     }
 
-    .ymaps-2-1-78-balloon__content {
-      padding: 34px 38px;
-    }
+    // .ymaps-2-1-78-balloon__close {
+    //   position: relative;
+    //   right: 8px;
+    // }
 
-    .mark1-content {
+
+
+    .mark {
       font-family: 'MyriadPro', Arial, sans-serif;
+      color: $basic;
+      background-color: white;
+      min-width: 548px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      min-width: 547px;
+      // padding: 20px;
+
+      @media(max-width:620px) {
+        min-width: 335px;
+      }
+
+      .close {
+        z-index: 1;
+        font-size: 27px;
+        transform: translateY(7px) translateX(-18px);
+        color: $gray-1;
+        transition: .3s ease-in-out;
+        height: 34px;
+
+        &:hover {
+          color: $basic;
+        }
+      }
+
+      &__inner {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          width: 10px;
+          height: 10px;
+          bottom: -20px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border: 10px solid transparent;
+          border-top: 10px solid white;
+        }
+      }
+
+      &__header {
+        font-size: 18px;
+      }
+
+      &__box {
+        margin-top: 17px;
+      }
 
       p {
         font-size: 16px;
+        margin: 15px 0 0;
+
+        @media(max-width: 620px) {
+          line-height: 1.6;
+        }
+
+        a {
+          font-weight: normal;
+          color: $basic;
+
+          &:hover {
+            color: $purple-1;
+          }
+        }
       }
+
+      &--mark2 {
+        .mark {
+          &__box {
+            margin-top: 0;
+            font: 600 18px MyriadPro, Arial, sans-serif;
+            line-height: 1.5;
+          }
+
+          &__inner {
+            padding: 35px 0 43px 41px;
+
+            @media(max-width: 620px) {
+              padding: 21px 0 21px 21px;
+            }
+
+            &:after {
+              @media(max-width: 620px) {
+                left: 71px;
+              }
+            }
+          }
+        }
+      }
+
+      &--mark1 {
+        .mark {
+          &__inner {
+            padding: 35px 0px 48px 39px;
+
+            @media(max-width: 620px) {
+              padding: 21px 0 21px 21px;
+            }
+
+            .mark__box {
+              margin-top: 18px;
+            }
+          }
+
+          &__header {
+            @media(max-width: 620px) {
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+
+    .mark2-content {
+      font: 600 18px MyriadPro, Arial, sans-serif;
+      color: #38393f;
     }
   }
 }
