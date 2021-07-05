@@ -15,8 +15,16 @@
     .header {
         min-height: 68px;
 
+        @media(max-width: 1024px) {
+            min-height: 65px;
+        }
+
         &__inner {
             min-height: 68px;
+
+            @media(max-width: 1024px) {
+                min-height: 65px;
+            }
         }
 
         &__top {
@@ -32,6 +40,12 @@
         &__logo {
             width: 106px;
             margin-right: 21px;
+
+            @media(max-width: 1024px) {
+                width: 91px;
+                min-width: 91px;
+                margin-right: 0;
+            }
         }
 
         &__container {
@@ -62,9 +76,10 @@
     background-color: $blue-1;
     color: $purple-1;
     border-radius: 50%;
-    font-size: 12px;
-    padding: 0.37em;
-    line-height: .5;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px;
+    line-height: 0.58;
     bottom: 8px;
     right: -5px;
 

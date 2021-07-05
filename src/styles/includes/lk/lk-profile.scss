@@ -3,9 +3,19 @@
     max-height: 540px;
     padding-left: 25px;
 
+    &__field {
+        position: relative;
+        height: 25px;
+    }
+
+    &__group {
+        padding-bottom: 13px;
+        border-bottom: 2px solid #38393f80;
+    }
+
     &__row {
         display: grid;
-        grid-template-columns: minmax(143px, 211px) minmax(93px, 236px) minmax(21px, 1fr);
+        grid-template-columns: minmax(143px, 211px) 1fr;
         align-items: center;
         grid-gap: 31px;
     }
@@ -14,6 +24,12 @@
         &--tooltip {
             display: flex;
             align-items: center;
+        }
+
+        &--subgrid {
+            display: grid;
+            grid-template-columns: 1fr 21px;
+            position: relative;
         }
     }
 
@@ -62,9 +78,22 @@
     }
 
     &__sub {
-        max-height: 0;
-        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
         transition: .4s ease-in-out;
+        background-color: white;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__wrapper {

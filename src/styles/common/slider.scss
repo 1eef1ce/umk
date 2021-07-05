@@ -125,6 +125,11 @@
             transition: .3s ease-in-out;
             border: 2px solid transparent;
 
+            @media(max-width: 620px) {
+                width: 65px;
+                height: 65px;
+            }
+
             &--next {
                 transform: scale(-1, 1);
             }
@@ -182,9 +187,20 @@
             }
         }
 
+        &__cover {
+            @media(max-width: 620px) {
+                margin-top: 25px;
+            }
+        }
+
         svg {
             width: 33px;
             height: 19px;
+
+            @media(max-width: 620px) {
+                width: 28px;
+                height: auto;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
 
     &__row {
         display: grid;
-        grid-template-columns: minmax(143px, 211px) minmax(675px, 1fr);
+        grid-template-columns: 1fr;
         grid-column-gap: 31px;
         grid-row-gap: 21px;
 
@@ -31,6 +31,7 @@
         height: 100%;
         border: none;
         padding-right: 15%;
+        padding-left: 0;
 
         &::placeholder {
             font: 600 16px MyriadPro, Arial, sans-serif;

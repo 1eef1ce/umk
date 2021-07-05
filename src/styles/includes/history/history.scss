@@ -2,8 +2,17 @@
     background: url(../img/decor/bg-history.svg) no-repeat center;
     background-size: cover;
 
+    @media(max-width: 620px) {
+        background: none;
+    }
+
     p {
         max-width: 915px;
         width: 100%;
+
+        @media(max-width: 620px) {
+            margin-top: 7px;
+            line-height: 1.7;
+        }
     }
 }

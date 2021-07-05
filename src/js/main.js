@@ -562,11 +562,22 @@ const projectFunc = {
         });
 
         if (searchBloc.length > 0) {
-            showSearch
-                .to(searchBloc, 0.7, { width: '100%', ease: 'sine.inOut' });
+            if ($(window).width() > 620) {
+                console.log("object");
+                showSearch
+                    .to(searchBloc, 0.7, { width: '100%', ease: 'sine.inOut' });
 
-            hideSearch
-                .to(searchBloc, 0.7, { width: '0%', ease: 'slow(0.1, 0.1, true)' });
+                hideSearch
+                    .to(searchBloc, 0.7, { width: '0%', ease: 'slow(0.1, 0.1, true)' });
+            } else {
+                console.log("object2");
+                showSearch
+                    .to(searchBloc, 0.7, { width: '100vw', ease: 'sine.inOut' });
+
+                hideSearch
+                    .to(searchBloc, 0.7, { width: '0vw', ease: 'slow(0.1, 0.1, true)' });
+            }
+
         }
 
         if (state) {
@@ -1208,40 +1219,47 @@ window.addEventListener('load', function () {
     if ($('.lk-profile__item').exists()) {
         let accordions = document.getElementsByClassName('lk-profile__item');
         let btn = '';
+        let sub = '';
+        let btnClose = '';
+        let input = ''
 
         for (let i = 0; i < accordions.length; i++) {
             if (!accordions[i].classList.contains('disable')) {
                 btn = accordions[i].querySelector('.js-btn-edit');
+                btnClose = accordions[i].querySelector('.js-close-edit');
 
                 btn.onclick = function () {
-                    accordions[i].classList.toggle('is-open');
-                    let content = $(this).closest('.lk-profile__row').next().find('.lk-edit')[0];
-                    let box = $(this).closest('.lk-profile__row').next()[0];
+                    input = accordions[i].querySelector('.js-edit-input');
+                    sub = accordions[i].querySelector('.js-sub-edit');
+                    sub.classList.add('active');
 
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        box.style.maxHeight = content.scrollHeight + "px";
-                    }
+                    setTimeout(function () {
+                        input.focus();
+                        input.setSelectionRange(input.value.length, input.value.length);
+                    }, 100);
 
-                    $(this).closest('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(this).closest('.lk-profile__row').css('overflowY', 'hidden'); $(content).find('input').focus(); } });
+                };
+
+                btnClose.onclick = function () {
+                    sub = accordions[i].querySelector('.js-sub-edit');
+                    sub.classList.remove('active');
                 };
             }
         }
 
-        if ($('.js-close-edit').exists()) {
-            let closeEdit = document.querySelectorAll('.js-close-edit');
-            for (let i = 0; i < closeEdit.length; i++) {
-                closeEdit[i].onclick = function () {
-                    accordions[i].classList.toggle('is-open');
-                    let content = $(accordions[i]).find('.lk-profile__row').next().find('.lk-edit')[0];
-                    let box = $(accordions[i]).find('.lk-profile__row').next()[0];
+        // if ($('.js-close-edit').exists()) {
+        //     let closeEdit = document.querySelectorAll('.js-close-edit');
+        //     for (let i = 0; i < closeEdit.length; i++) {
+        //         closeEdit[i].onclick = function () {
+        //             accordions[i].classList.toggle('is-open');
+        //             let content = $(accordions[i]).find('.lk-profile__row').next().find('.lk-edit')[0];
+        //             let box = $(accordions[i]).find('.lk-profile__row').next()[0];
 
-                    box.style.maxHeight = null;
-                    $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
-                };
-            }
-        }
+        //             box.style.maxHeight = null;
+        //             $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
+        //         };
+        //     }
+        // }
     }
 
     if ($('.js-clear-filter').exists()) {

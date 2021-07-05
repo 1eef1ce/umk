@@ -30,114 +30,93 @@ block content
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Название компании:
-                                            .lk-profile__col
-                                                .lk-profile__info ООО "Аверс"
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="company") Название компании:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="company")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info ООО 'Аверс'
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="company" value="ООО 'Аверс'")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
                                     .lk-profile__item 
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Руководитель:
-                                            .lk-profile__col
+                                            .lk-profile__col.lk-profile__col--subgrid
                                                 .lk-profile__info Иванов Иван Иванович
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="leader") Руководитель:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="leader")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
-                                    .lk-profile__item.disable
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="leader" value="Иванов Иван Иванович")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
+                                    .lk-profile__item 
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Сотрудник:
-                                            .lk-profile__col
-                                                .lk-profile__info Информация не указана
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="worker") Сотрудник:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="worker")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
-                                    .lk-profile__item.disable
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info -
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="worker" value="-")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
+                                    .lk-profile__item 
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Должность:
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info -
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="post" value="-")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit
+                                    .lk-profile__item 
+                                        .lk-profile__row
                                             .lk-profile__col
-                                                .lk-profile__info Информация не указана
+                                                .lk-profile__caption Логин:
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info Аверс@mail.ru
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="login" value="Аверс@mail.ru")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
+                                    .lk-profile__item.lk-profile__item--acc 
+                                        .lk-profile__row
                                             .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
+                                                .lk-profile__caption Изменение пароля:
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info ********
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
                                         .lk-profile__sub
                                             .lk-edit
                                                 .lk-edit__row
-                                                    label.lk-edit__caption(for="post") Должность:
+                                                    label.lk-edit__caption(for="post") Телефон руководителя:
                                                     .lk-edit__group
                                                         .lk-edit__field 
                                                             input#company.lk-edit__input(type="text" name="post")
                                                             .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
-                                    .lk-profile__item
-                                        .lk-profile__row
-                                            .lk-profile__col
-                                                .lk-profile__caption Логин:
-                                            .lk-profile__col
-                                                .lk-profile__info Аверс@mail.ru
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="login") Логин:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="login")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
-                                    .lk-profile__item
-                                        .lk-profile__row
-                                            .lk-profile__col
-                                                .lk-profile__caption Пароль:
-                                            .lk-profile__col
-                                                .lk-profile__info ******
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="old_pass") Старый пароль:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="old_pass")
-                                                            .close.js-close-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="new_pass") Новый пароль:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="new_pass")
                                                     button.btn.btn--basic.btn--w149.btn--h47 Сохранить
                             .lk-profile__bloc
                                 h4.title-4 Контакты
@@ -146,35 +125,29 @@ block content
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Телефон:
-                                            .lk-profile__col
+                                            .lk-profile__col.lk-profile__col--subgrid
                                                 .lk-profile__info +7 (586) 682-78-15
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="phone") Телефон:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="phone")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="text" name="phone" value="+7 (586) 682-78-15")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
                                     .lk-profile__item 
                                         .lk-profile__row
                                             .lk-profile__col
                                                 .lk-profile__caption Почта:
-                                            .lk-profile__col
+                                            .lk-profile__col.lk-profile__col--subgrid
                                                 .lk-profile__info Аверс@mail.ru
-                                            .lk-profile__col
-                                                .lk-profile__icon.js-btn-edit 
-                                                    +icon("ic-edit")
-                                        .lk-profile__sub
-                                            .lk-edit
-                                                .lk-edit__row
-                                                    label.lk-edit__caption(for="mail") Почта:
-                                                    .lk-edit__group
-                                                        .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="mail")
-                                                            .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
+                                                .lk-profile__sub.js-sub-edit 
+                                                    .lk-edit
+                                                        .lk-edit__group
+                                                            .lk-edit__field 
+                                                                input.lk-edit__input.js-edit-input(type="email" name="phone" value="Аверс@mail.ru")
+                                                                .close.js-close-edit
+                                                .lk-profile__col
+                                                    .lk-profile__icon.js-btn-edit 
+                                                        +icon("ic-edit")
