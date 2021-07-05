@@ -1,6 +1,5 @@
 .lk-profile {
     margin-top: 29px;
-    max-height: 540px;
     padding-left: 25px;
 
     &__field {
@@ -75,6 +74,33 @@
                 pointer-events: none;
             }
         }
+
+        &--acc{
+            .lk-profile__sub {
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .lk-profile__row {
+                max-height: 24px;
+            }
+
+            .lk-edit {
+                &__row {
+                    grid-template-columns: minmax(143px,211px) 1fr;
+                }
+            }
+
+            &.is-open {
+                .lk-profile__row {
+                    max-height: 0;
+                    overflow: hidden;    
+                }
+            }
+        }
     }
 
     &__sub {
@@ -125,5 +151,15 @@
     .scrollbar-thumb {
         background-color: $purple-1;
         width: 2px;
+    }
+
+    .btn {
+        opacity: 0;
+        visibility: hidden;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }

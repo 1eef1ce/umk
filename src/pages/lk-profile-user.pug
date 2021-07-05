@@ -81,7 +81,7 @@ block content
                                                     .lk-edit
                                                         .lk-edit__group
                                                             .lk-edit__field 
-                                                                input.lk-edit__input.js-edit-input(type="text" name="post" value="-")
+                                                                input.lk-edit__input.js-edit-input(type="text" name="vacancy" value="-")
                                                                 .close.js-close-edit
                                                 .lk-profile__col
                                                     .lk-profile__icon.js-btn-edit
@@ -107,17 +107,21 @@ block content
                                             .lk-profile__col.lk-profile__col--subgrid
                                                 .lk-profile__info ********
                                                 .lk-profile__col
-                                                    .lk-profile__icon.js-btn-edit 
+                                                    .lk-profile__icon.js-btn-edit
                                                         +icon("ic-edit")
                                         .lk-profile__sub
                                             .lk-edit
                                                 .lk-edit__row
-                                                    label.lk-edit__caption(for="post") Телефон руководителя:
+                                                    label.lk-edit__caption(for="post") Новый пароль:
                                                     .lk-edit__group
                                                         .lk-edit__field 
-                                                            input#company.lk-edit__input(type="text" name="post")
+                                                            input.lk-edit__input.js-edit-input(type="text" name="new_pass")
                                                             .close.js-close-edit
-                                                    button.btn.btn--basic.btn--w149.btn--h47 Сохранить
+                                                .lk-edit__row
+                                                    label.lk-edit__caption(for="post") Старый пароль:
+                                                    .lk-edit__group
+                                                        .lk-edit__field 
+                                                            input.lk-edit__input(type="text" name="old_pass")
                             .lk-profile__bloc
                                 h4.title-4 Контакты
                                 .lk-profile__wrapper 
@@ -141,13 +145,14 @@ block content
                                             .lk-profile__col
                                                 .lk-profile__caption Почта:
                                             .lk-profile__col.lk-profile__col--subgrid
-                                                .lk-profile__info Аверс@mail.ru
+                                                .lk-profile__info test@mail.ru
                                                 .lk-profile__sub.js-sub-edit 
                                                     .lk-edit
                                                         .lk-edit__group
                                                             .lk-edit__field 
-                                                                input.lk-edit__input.js-edit-input(type="email" name="phone" value="Аверс@mail.ru")
+                                                                input.lk-edit__input.js-edit-input(type="text" name="post" value="test@mail.ru")
                                                                 .close.js-close-edit
                                                 .lk-profile__col
                                                     .lk-profile__icon.js-btn-edit 
                                                         +icon("ic-edit")
+                            button.btn.btn--basic.js-btn-save(type="submit") Сохранить                                

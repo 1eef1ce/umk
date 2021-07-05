@@ -1109,37 +1109,13 @@ window.addEventListener('load', function () {
         }
     }
 
-    if ($('.js-portfolio').exists()) {
-
-        if (window.addEventListener) {
-            projectFunc.scrollbarPage();
-            window.addEventListener('DOMMouseScroll', wheel, false);
-        }
-
-        function wheel(event) {
-            event.preventDefault();
-            event.returnValue = false;
-        };
-
-        Scrollbar.init(document.querySelector('.js-portfolio'));
-
-        const blocPortfolio = document.querySelector('.js-portfolio');
-
-        blocPortfolio.addEventListener('mouseenter', function () {
-            projectFunc.lockedDOM(true);
-        });
-
-        blocPortfolio.addEventListener('mouseleave', function () {
-            projectFunc.lockedDOM(false);
-        });
-    }
 
     if ($('.js-dropdown').exists()) {
         let accordions = document.getElementsByClassName("js-dropdown");
 
         for (let i = 0; i < accordions.length; i++) {
             accordions[i].onclick = function () {
-                this.classList.toggle('is-open');
+               
 
                 let content = $(this).find('.menu-mobile__sub')[0];
 
@@ -1216,50 +1192,112 @@ window.addEventListener('load', function () {
         }
     }
 
-    if ($('.lk-profile__item').exists()) {
-        let accordions = document.getElementsByClassName('lk-profile__item');
-        let btn = '';
-        let sub = '';
-        let btnClose = '';
-        let input = ''
+    if($('.js-portfolio').exists()) {
+        const form = document.querySelector('.js-portfolio');
+        const isCheckboxOrRadio = type => ['checkbox', 'radio'].includes(type);
+        const data = {};
 
-        for (let i = 0; i < accordions.length; i++) {
-            if (!accordions[i].classList.contains('disable')) {
-                btn = accordions[i].querySelector('.js-btn-edit');
-                btnClose = accordions[i].querySelector('.js-close-edit');
+        for (let field of form) {
+            const {name} = field;
+            if (name) {
+                const {type, checked, value} = field;
+                data[name] = isCheckboxOrRadio(type) ? checked : value;
+            }
+        } 
 
-                btn.onclick = function () {
-                    input = accordions[i].querySelector('.js-edit-input');
-                    sub = accordions[i].querySelector('.js-sub-edit');
-                    sub.classList.add('active');
+        console.log(data);
 
-                    setTimeout(function () {
-                        input.focus();
-                        input.setSelectionRange(input.value.length, input.value.length);
-                    }, 100);
+        if ($('.lk-profile__item').exists()) {
+            let accordions = document.getElementsByClassName('lk-profile__item');
+            let btn = '';
+            let sub = '';
+            let btnClose = '';
+            let input = ''
+            let subs = document.querySelectorAll('.lk-profile__sub');
+            const btnSave = form.querySelector('.js-btn-save');
+    
+            for (let i = 0; i < accordions.length; i++) {
+                if (!accordions[i].classList.contains('disable')) {
+                   
+                    btnClose = accordions[i].querySelector('.js-close-edit');
+    
+                    if($('.js-btn-edit').exists()){
+                        btn = accordions[i].querySelector('.js-btn-edit');
+                        btn.onclick = function () {
+                            input = accordions[i].querySelector('.js-edit-input');
+                            sub = accordions[i].querySelector('.js-sub-edit');
+                            sub.classList.add('active');
+    
+                            setTimeout(function () {
+                                input.focus();
+                                input.setSelectionRange(input.value.length, input.value.length);
+                            }, 100);
+                         };
+                    }
+                    
+                    btnClose.onclick = function () {
+                        input = accordions[i].querySelector('.js-edit-input');
+                        sub = accordions[i].querySelector('.js-sub-edit');
+                        sub.classList.remove('active');
 
-                };
+                        Object.keys(data).forEach((item) => {   
+                            if(input.name == item) {
+                                input.value = data[item];
+                                input.setAttribute('value', input.value);
+                            }
+                        });
 
-                btnClose.onclick = function () {
-                    sub = accordions[i].querySelector('.js-sub-edit');
-                    sub.classList.remove('active');
-                };
+                        subs.forEach((item, _) => {
+                            if(!item.classList.contains('active')){
+                                btnSave.classList.remove('show');
+                            }
+                        });
+                    };
+                }
+    
+                if(accordions[i].classList.contains('lk-profile__item--acc')){
+                    const sub = accordions[i].querySelector('.lk-profile__sub');
+                    const field = accordions[i].querySelector('.lk-profile__row');
+    
+                    btnClose = accordions[i].querySelector('.js-close-edit');
+    
+                    btn = accordions[i].querySelector('.js-btn-edit');
+                   
+                    btn.onclick = function () {
+                        accordions[i].classList.add('is-open');
+    
+                        let content = sub;
+    
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            input = accordions[i].querySelector('.js-edit-input');
+                            setTimeout(function () {
+                                input.focus();
+                                input.setSelectionRange(input.value.length, input.value.length);
+                            }, 100);
+    
+                            $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'hidden'); } });
+                        }
+                    };
+    
+                    btnClose.onclick = function () {
+                        let content = sub;
+                        accordions[i].classList.toggle('is-open');
+                        content.style.maxHeight = null;
+                        $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
+                    };
+                }
+
+                input = accordions[i].querySelector('.js-edit-input');
+
+                input.addEventListener('input', function(){
+                    btnSave.classList.add('show');
+                    this.setAttribute('value', this.value);
+                });
             }
         }
-
-        // if ($('.js-close-edit').exists()) {
-        //     let closeEdit = document.querySelectorAll('.js-close-edit');
-        //     for (let i = 0; i < closeEdit.length; i++) {
-        //         closeEdit[i].onclick = function () {
-        //             accordions[i].classList.toggle('is-open');
-        //             let content = $(accordions[i]).find('.lk-profile__row').next().find('.lk-edit')[0];
-        //             let box = $(accordions[i]).find('.lk-profile__row').next()[0];
-
-        //             box.style.maxHeight = null;
-        //             $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
-        //         };
-        //     }
-        // }
     }
 
     if ($('.js-clear-filter').exists()) {
