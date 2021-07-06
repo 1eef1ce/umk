@@ -1115,7 +1115,7 @@ window.addEventListener('load', function () {
 
         for (let i = 0; i < accordions.length; i++) {
             accordions[i].onclick = function () {
-               
+
 
                 let content = $(this).find('.menu-mobile__sub')[0];
 
@@ -1192,107 +1192,102 @@ window.addEventListener('load', function () {
         }
     }
 
-    if($('.js-portfolio').exists()) {
+    if ($('.js-portfolio').exists()) {
         const form = document.querySelector('.js-portfolio');
         const isCheckboxOrRadio = type => ['checkbox', 'radio'].includes(type);
         const data = {};
 
         for (let field of form) {
-            const {name} = field;
+            const { name } = field;
             if (name) {
-                const {type, checked, value} = field;
+                const { type, checked, value } = field;
                 data[name] = isCheckboxOrRadio(type) ? checked : value;
             }
-        } 
-
-        console.log(data);
+        }
 
         if ($('.lk-profile__item').exists()) {
             let accordions = document.getElementsByClassName('lk-profile__item');
             let btn = '';
             let sub = '';
             let btnClose = '';
-            let input = ''
+            let input = '';
             let subs = document.querySelectorAll('.lk-profile__sub');
             const btnSave = form.querySelector('.js-btn-save');
-    
+            let status = 0;
+
             for (let i = 0; i < accordions.length; i++) {
                 if (!accordions[i].classList.contains('disable')) {
-                   
                     btnClose = accordions[i].querySelector('.js-close-edit');
-    
-                    if($('.js-btn-edit').exists()){
+
+                    if ($('.js-btn-edit').exists()) {
                         btn = accordions[i].querySelector('.js-btn-edit');
                         btn.onclick = function () {
+                            console.log('1');
                             input = accordions[i].querySelector('.js-edit-input');
                             sub = accordions[i].querySelector('.js-sub-edit');
                             sub.classList.add('active');
-    
+
                             setTimeout(function () {
                                 input.focus();
                                 input.setSelectionRange(input.value.length, input.value.length);
                             }, 100);
-                         };
+
+                            if (accordions[i].classList.contains('lk-profile__item--acc')) {
+                                accordions[i].classList.add('is-open');
+                                const sub = accordions[i].querySelector('.lk-profile__sub');
+                                let content = sub;
+
+                                if (content.style.maxHeight) {
+                                    content.style.maxHeight = null;
+                                } else {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                    $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflow', 'hidden'); } });
+                                }
+                            }
+                        };
                     }
-                    
+
                     btnClose.onclick = function () {
                         input = accordions[i].querySelector('.js-edit-input');
                         sub = accordions[i].querySelector('.js-sub-edit');
                         sub.classList.remove('active');
 
-                        Object.keys(data).forEach((item) => {   
-                            if(input.name == item) {
+                        if (accordions[i].classList.contains('lk-profile__item--acc')) {
+                            const sub = accordions[i].querySelector('.lk-profile__sub');
+                            let content = sub;
+                            accordions[i].classList.toggle('is-open');
+                            content.style.maxHeight = null;
+                            $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflow', 'visible'); } });
+                        }
+
+                        Object.keys(data).forEach((item) => {
+                            if (input.name === item) {
                                 input.value = data[item];
                                 input.setAttribute('value', input.value);
                             }
                         });
-
+                        console.clear();
                         subs.forEach((item, _) => {
-                            if(!item.classList.contains('active')){
-                                btnSave.classList.remove('show');
+                            // console.clear();
+
+                            if (item.classList.contains('active')) {
+                                status = 1;
+                                console.log(item);
                             }
                         });
-                    };
-                }
-    
-                if(accordions[i].classList.contains('lk-profile__item--acc')){
-                    const sub = accordions[i].querySelector('.lk-profile__sub');
-                    const field = accordions[i].querySelector('.lk-profile__row');
-    
-                    btnClose = accordions[i].querySelector('.js-close-edit');
-    
-                    btn = accordions[i].querySelector('.js-btn-edit');
-                   
-                    btn.onclick = function () {
-                        accordions[i].classList.add('is-open');
-    
-                        let content = sub;
-    
-                        if (content.style.maxHeight) {
-                            content.style.maxHeight = null;
+
+                        if (status) {
+                            btnSave.classList.add('show');
+                            status = 0;
                         } else {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                            input = accordions[i].querySelector('.js-edit-input');
-                            setTimeout(function () {
-                                input.focus();
-                                input.setSelectionRange(input.value.length, input.value.length);
-                            }, 100);
-    
-                            $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'hidden'); } });
+                            btnSave.classList.remove('show');
                         }
-                    };
-    
-                    btnClose.onclick = function () {
-                        let content = sub;
-                        accordions[i].classList.toggle('is-open');
-                        content.style.maxHeight = null;
-                        $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflowY', 'visible'); } });
                     };
                 }
 
                 input = accordions[i].querySelector('.js-edit-input');
 
-                input.addEventListener('input', function(){
+                input.addEventListener('input', function () {
                     btnSave.classList.add('show');
                     this.setAttribute('value', this.value);
                 });

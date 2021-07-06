@@ -3,6 +3,15 @@
     background-size: cover;
     padding-top: 36px;
 
+    @media(max-width: 1024px) {
+        background: none;
+        padding-top: 18px;
+    }
+
+    @media(max-width: 620px) {
+        padding-top: 15px;
+    }
+
     &--basic {
         background: transparent;
     }

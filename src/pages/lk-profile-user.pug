@@ -1,12 +1,12 @@
 extends common/layout
 
 block content
-    main.main
+    main.main.main--lk
         .lk.lk--basic
             .lk__container.container
                 .aside.aside--lk
                     .aside__sidebar
-                        include common/sidemenu
+                        include common/sidemenu-lk
                         .delivery-unit
                             .delivery-unit__title Ваш менеджер:
                             .delivery-unit__text
@@ -22,6 +22,7 @@ block content
                                 br
                                 a(href="tel:+7(999)985-48-56") +7 (999) 985-48-56
                     .aside__main
+                        include common/breadcrumb
                         form.lk-profile.js-portfolio
                             .lk-profile__bloc
                                 h1.title-1 Личный профиль
@@ -85,6 +86,7 @@ block content
                                                                 .close.js-close-edit
                                                 .lk-profile__col
                                                     .lk-profile__icon.js-btn-edit
+                                                        +icon("ic-edit")
                                     .lk-profile__item 
                                         .lk-profile__row
                                             .lk-profile__col
@@ -109,19 +111,19 @@ block content
                                                 .lk-profile__col
                                                     .lk-profile__icon.js-btn-edit
                                                         +icon("ic-edit")
-                                        .lk-profile__sub
+                                        .lk-profile__sub.js-sub-edit
                                             .lk-edit
                                                 .lk-edit__row
                                                     label.lk-edit__caption(for="post") Новый пароль:
                                                     .lk-edit__group
                                                         .lk-edit__field 
-                                                            input.lk-edit__input.js-edit-input(type="text" name="new_pass")
+                                                            input.lk-edit__input.js-edit-input(type="password" name="new_pass")
                                                             .close.js-close-edit
                                                 .lk-edit__row
                                                     label.lk-edit__caption(for="post") Старый пароль:
                                                     .lk-edit__group
                                                         .lk-edit__field 
-                                                            input.lk-edit__input(type="text" name="old_pass")
+                                                            input.lk-edit__input.js-edit-input(type="password" name="old_pass")
                             .lk-profile__bloc
                                 h4.title-4 Контакты
                                 .lk-profile__wrapper 
@@ -155,4 +157,4 @@ block content
                                                 .lk-profile__col
                                                     .lk-profile__icon.js-btn-edit 
                                                         +icon("ic-edit")
-                            button.btn.btn--basic.js-btn-save(type="submit") Сохранить                                
+                            button.btn.btn--basic.js-btn-save.btn--w275(type="submit") Сохранить изменения                                

@@ -46,14 +46,18 @@
     }
 
     &__group {
-        padding-bottom: 13px;
+        padding-bottom: 12px;
         border-bottom: 2px solid #38393f80;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 14px;
+        }
     }
 
     .close {
         position: absolute;
-        width: 16px;
-        height: 16px;
+        width: 21px;
+        height: 21px;
         top: 0;
         bottom: 0;
         right: 0;

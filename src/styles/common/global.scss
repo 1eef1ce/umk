@@ -227,4 +227,22 @@ textarea {
 
 .main {
     flex: 1 0 auto;
+
+    &--lk {
+        &+.footer {
+            @media(max-width: 1024px) {
+                padding-bottom: 65px;
+            }
+        }
+
+        @media(max-width: 1024px) {
+            margin-bottom: -70px;
+        }
+
+        @media(max-width: 620px) {
+            margin-bottom: -50px;
+        }
+    }
+
+
 }

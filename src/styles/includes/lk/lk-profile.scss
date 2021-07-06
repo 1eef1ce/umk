@@ -1,6 +1,9 @@
 .lk-profile {
     margin-top: 29px;
-    padding-left: 25px;
+
+    @media(max-width: 1024px) {
+        margin-top: 15px;
+    }
 
     &__field {
         position: relative;
@@ -17,6 +20,16 @@
         grid-template-columns: minmax(143px, 211px) 1fr;
         align-items: center;
         grid-gap: 31px;
+
+        @media(max-width: 1024px) {
+            grid-template-columns: 143px 1fr;
+            grid-gap: 80px;
+        }
+
+        @media(max-width: 620px) {
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+        }
     }
 
     &__col {
@@ -29,14 +42,25 @@
             display: grid;
             grid-template-columns: 1fr 21px;
             position: relative;
+
+            @media(max-width: 620px) {
+                margin-top: 4px;
+            }
         }
     }
 
     &__icon {
         width: 17px;
         height: 17px;
-        margin-left: auto;
         cursor: pointer;
+        margin-right: 2px;
+        margin-top: 3px;
+
+
+        @media(max-width: 1024px) {
+            margin-right: 0px;
+            margin-top: 8px;
+        }
 
         &:hover {
             .icon {
@@ -51,6 +75,10 @@
 
     &__caption {
         font-weight: 400;
+
+        @media(max-width: 620px) {
+            font-size: 14px;
+        }
     }
 
     &__info {
@@ -58,11 +86,19 @@
     }
 
     &__item {
-        padding-bottom: 15px;
-        border-bottom: 1px solid $gray-5;
+        padding-bottom: 13px;
+        border-bottom: 2px solid $gray-5;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 13px;
+        }
 
         &:not(:first-child) {
-            margin-top: 11px;
+            margin-top: 12px;
+
+            @media(max-width: 1024px) {
+                margin-top: 10px;
+            }
         }
 
         &.disable {
@@ -75,29 +111,53 @@
             }
         }
 
-        &--acc{
+        &--acc {
             .lk-profile__sub {
                 position: relative;
                 opacity: 1;
                 visibility: visible;
                 max-height: 0;
                 overflow: hidden;
+                transition: max-height .4s ease-in-out;
             }
 
-            .lk-profile__row {
-                max-height: 24px;
+            .lk-profile__info {
+                @media(max-width: 620px) {
+                    line-height: 1;
+                    padding-top: 8px;
+                }
             }
 
             .lk-edit {
                 &__row {
-                    grid-template-columns: minmax(143px,211px) 1fr;
+                    grid-template-columns: minmax(143px, 211px) 1fr;
+                    align-items: center;
+                    grid-auto-rows: 40px;
+
+                    @media(max-width: 1024px) {
+                        grid-template-columns: 143px 1fr;
+                        grid-gap: 80px;
+                    }
+
+                    @media(max-width: 620px) {
+                        grid-template-columns: 1fr;
+                        grid-gap: 0px;
+                        grid-auto-rows: auto;
+                    }
+                }
+
+                &__caption {
+                    @media(max-width: 620px) {
+                        font-size: 14px;
+                    }
                 }
             }
 
             &.is-open {
                 .lk-profile__row {
-                    max-height: 0;
-                    overflow: hidden;    
+                    // max-height: 0;
+                    // overflow: hidden;max-height: 0;
+                    // overflow: hidden;
                 }
             }
         }
@@ -127,15 +187,41 @@
 
         &:first-of-type {
             margin-top: 29px;
+
+            @media(max-width: 1024px) {
+                margin-top: 17px;
+            }
         }
     }
 
     &__bloc {
         &:not(:first-child) {
-            margin-top: 36px;
+            margin-top: 20px;
+
+            @media(max-width: 1024px) {
+                margin-top: 31px;
+            }
+
+            @media(max-width: 620px) {
+                margin-top: 26px;
+            }
 
             .lk-profile__wrapper {
                 margin-top: 24px;
+
+                @media(max-width: 1024px) {
+                    margin-top: 16px;
+                }
+
+                @media(max-width: 620px) {
+                    margin-top: 12px;
+                }
+            }
+        }
+
+        & .title-4 {
+            @media(max-width: 1024px) {
+                font-size: 23px;
             }
         }
     }
@@ -156,8 +242,11 @@
     .btn {
         opacity: 0;
         visibility: hidden;
+        margin-top: 40px;
+        display: none;
 
         &.show {
+            display: inline-flex;
             opacity: 1;
             visibility: visible;
         }
