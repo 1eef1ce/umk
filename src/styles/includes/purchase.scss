@@ -3,9 +3,129 @@
   &__form {
     display: flex;
     margin: 35px 0 45px;
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      margin: 23px 0 40px;
+    }
+
+    @media (max-width: 620px) {
+      margin: 15px 0 30px;
+    }
+
+    .select {
+      display: flex;
+      width: 100%;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
+
+      &__inner {
+        margin: 0 -10px;
+
+        @media (max-width: 1024px) {
+          width: calc(100% + 20px);
+        }
+
+        @media (max-width: 620px) {
+          width: 100%;
+          margin: 10px 0 -10px;
+        }
+      }
+    }
+
+    .select2-container {
+      margin: 0 10px;
+
+      @media (max-width: 620px) {
+        margin: 10px 0;
+      }
+    }
+
+    .js-select {
+      width: 200px;
+
+      @media (max-width: 1024px) {
+        width: calc(33.33% - 20px);
+      }
+
+      @media (max-width: 620px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__button {
+    width: 200px;
+    margin-left: 20px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      margin: 20px 0 0;
+    }
   }
 
   &__table {
     margin-top: 20px;
+    overflow: auto;
+
+    table {
+      min-width: 958px;
+
+      tr {
+
+        td {
+
+          &:nth-of-type(1) {
+            width: 185px;
+
+            @media (max-width: 1024px) {
+              width: 128px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            width: 255px;
+
+            @media (max-width: 1024px) {
+              width: 182px;
+            }
+          }
+
+          &:nth-of-type(3) {
+            width: 140px;
+
+            @media (max-width: 1024px) {
+              width: 134px;
+            }
+          }
+
+          &:nth-of-type(4) {
+            width: 140px;
+
+            @media (max-width: 1024px) {
+              width: 134px;
+            }
+          }
+
+          &:nth-of-type(5) {
+            width: 280px;
+
+            @media (max-width: 1024px) {
+              width: 210px;
+            }
+          }
+
+          &:nth-of-type(6) {
+            width: 195px;
+
+            @media (max-width: 1024px) {
+              width: 165px;
+            }
+          }
+        }
+      }
+    }
   }
 }

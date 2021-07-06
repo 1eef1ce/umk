@@ -2,6 +2,53 @@
 
   &__table {
     margin-top: 20px;
+    overflow: auto;
+
+    @media (max-width: 1024px) {
+      margin-top: 16px;
+    }
+
+    table {
+
+      @media (max-width: 1024px) {
+        min-width: 728px;
+        table-layout: fixed;
+      }
+
+      tr {
+
+        td {
+
+          &:nth-of-type(1) {
+
+            @media (max-width: 1024px) {
+              width: 17%;
+            }
+          }
+
+          &:nth-of-type(2) {
+
+            @media (max-width: 1024px) {
+              width: 27%;
+            }
+          }
+
+          &:nth-of-type(3) {
+
+            @media (max-width: 1024px) {
+              width: 13%;
+            }
+          }
+
+          &:nth-of-type(4) {
+
+            @media (max-width: 1024px) {
+              width: 13%;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__header {
@@ -12,8 +59,21 @@
     background-position: right;
     margin-bottom: 48px;
 
+    @media (max-width: 1024px) {
+      height: auto;
+      background: none!important;
+      margin-bottom: 0;
+    }
+
     .breadcrumb {
       margin-top: 0;
+    }
+
+    .title-1 {
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
 
@@ -21,6 +81,10 @@
 
     &:not(:first-child) {
       margin-top: 24px;
+
+      @media (max-width: 1024px) {
+        margin-top: 21px;
+      }
     }
   }
 

@@ -8,16 +8,24 @@ block content
                 include common/breadcrumb
                 h1.title-1 Закупки
                 form.purchase__form
-                    select.js-select
-                        option Объявленные
-                        option Объявленные
-                    select.js-select
-                        option Все материалы
-                        option Все материалы
-                    select.js-select
-                        option По 20 записей
-                        option По 50 записей
-                    button.btn.btn--basic.btn--w200(type="submit") Применить
+                    .filter-btn.js-hide-filter.open
+                        .filter-btn__container
+                            .filter-btn__text.filter-btn__text--closed Развернуть фильтр
+                            .filter-btn__text.filter-btn__text--opened Свернуть фильтр
+                        .filter-btn__icon
+                            +icon('chevron_down')
+                    .select
+                        .select__inner
+                            select.js-select
+                                option Объявленные
+                                option Объявленные
+                            select.js-select
+                                option Все материалы
+                                option Все материалы
+                            select.js-select
+                                option По 20 записей
+                                option По 50 записей
+                        button.btn.btn--basic.purchase__button(type="submit") Применить
                 .purchase__table
                     table
                         tr

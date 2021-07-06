@@ -602,4 +602,11 @@ window.addEventListener('load', function () {
         });
     }
 
+    if ($('.js-hide-filter').exists()) {
+        $('.js-hide-filter').click(function () {
+            $(this).toggleClass('open');
+            $(this).next('.select').slideToggle();
+        });
+    }
+
 });

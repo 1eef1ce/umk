@@ -8,10 +8,6 @@
     height: 65px;
     cursor: pointer;
 
-    @media (max-width: 1024px) {
-        font-size: 14px;
-    }
-
     &--basic {
         background-color: $purple-1;
         color: white;
@@ -88,6 +84,30 @@
 
         .icon {
             fill: white;
+        }
+    }
+
+    &--cart {
+
+        @media (max-width: 620px) {
+            display: none;
+        }
+    }
+
+    &--cart-mobile {
+
+        display: none;
+
+        @media (max-width: 620px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+        }
+
+        svg {
+            width: 26px;
+            height: 26px;
         }
     }
 }

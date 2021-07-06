@@ -157,4 +157,37 @@
             height: 19px;
         }
     }
+
+    &--product {
+
+        .arrow {
+
+            svg {
+                width: 16px;
+                height: 8px;
+                fill: $purple-1;
+            }
+
+            &__link {
+
+                @media (max-width: 1024px) {
+                    display: none;
+                }
+
+                &:hover {
+
+                    svg {
+                        fill: $red-1;
+                    }
+                }
+
+                &:active {
+
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
