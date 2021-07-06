@@ -15,4 +15,10 @@
     &--basic {
         background: transparent;
     }
+
+    &__container {
+        .breadcrumb {
+            margin-top: 0;
+        }
+    }
 }

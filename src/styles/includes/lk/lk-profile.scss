@@ -78,6 +78,7 @@
 
         @media(max-width: 620px) {
             font-size: 14px;
+            color: $gray-2;
         }
     }
 
@@ -249,6 +250,59 @@
             display: inline-flex;
             opacity: 1;
             visibility: visible;
+        }
+    }
+
+    &--company {
+        .lk-profile {
+
+            &__item {
+                &--doc {
+                    .lk-profile__row {
+                        @media(max-width: 620px) {
+                            grid-template-columns: 167px 1fr;
+                        }
+                    }
+                }
+            }
+
+            &__bloc {
+                &:not(:first-child) {
+                    margin-top: 36px;
+
+                    @media(max-width: 1024px) {
+                        margin-top: 30px;
+                    }
+                }
+
+                &:last-child {
+                    .title-4 {
+                        @media(max-width: 1024px) {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+
+            &__row {
+                grid-template-columns: 211px 1fr;
+                grid-gap: 12px;
+
+                @media(max-width: 1024px) {
+                    grid-template-columns: 1fr;
+                }
+
+                @media(max-width: 620px) {
+                    grid-gap: 0px;
+                }
+            }
+
+            &__col {
+                .tooltip {
+                    margin-left: 8px;
+                    margin-top: 2px;
+                }
+            }
         }
     }
 }

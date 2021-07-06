@@ -4,6 +4,7 @@ block content
     main.main
         .lk
             .lk__container.container
+                include common/breadcrumb
                 form.lk-call.lk-call--call
                     h1.title-1 Обратная связь
                     p В своём стремлении улучшить пользовательский опыт мы упускаем, что независимые государства набирают популярность среди определенных слоев населения, а значит, должны быть в равной степени предоставлены сами себе.
@@ -30,4 +31,6 @@ block content
                         input#agree.checkbox__input(type="checkbox" name="check" value="agree")
                         .checkbox__label
                             span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
-                    button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить
+                    .lk-call__func
+                        button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить
+                        button.btn.btn--w275.btn--transparent.js-btn-reset(type="reset") Отменить

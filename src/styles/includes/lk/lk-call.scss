@@ -4,6 +4,10 @@
     max-width: 845px;
     width: 100%;
 
+    @media(max-width: 1024px) {
+        max-width: 100%;
+    }
+
     &__grid {
         display: grid;
         grid-gap: 25px;
@@ -15,11 +19,35 @@
                     'order order'
                     'description description';
 
+        @media(max-width: 1024px) {
+            margin-top: 23px;
+        }
+
+        @media(max-width: 620px) {
+            grid-gap: 20px;
+            grid-template-areas:
+                    'name'
+                    'phone'
+                    'company'
+                    'email'
+                    'order'
+                    'description';
+        }
+
         &--call {
             grid-template-areas:
             'name phone'
             'company email'
             'description description'; 
+
+            @media(max-width: 620px) {
+                grid-template-areas:
+                    'name'
+                    'phone'
+                    'company'
+                    'email'
+                    'description';
+            }
         }
     }
 
@@ -54,6 +82,10 @@
                 padding: 23px 26px 14px;
                 transition: .2s;
 
+                @media(max-width: 620px) {
+                    padding: 23px 22px 14px;
+                }
+
                 &:hover {
                     border-color: $basic;
                 }
@@ -72,19 +104,78 @@
         max-width: 775px;
         width: 100%;
         color: $gray-2;
+
+        @media(max-width: 1024px) {
+            line-height: 1.5;
+        }
+
+        @media(max-width: 620px) {
+            line-height: 1.6;
+            margin-top: 1px;
+            font-size: 12px;
+        }
+    }
+
+    &__func {
+        display: flex;
+
+        @media(max-width: 620px) {
+            flex-direction: column;
+            margin-top: 16px;
+        }
     }
 
     .btn {
         margin-top: 25px;
+
+        @media(max-width: 1024px) {
+            width: 100%;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 16px;
+        }
+
+        &:not(:last-child){
+            margin-right: 26px;
+
+            @media(max-width: 620px) {
+                margin-right: 0;
+            }
+        }
     }
 
     .file {
         margin-top: 17px;
         margin-left: -4px;
+
+        @media(max-width: 620px) {
+            margin-top: 4px;
+        }
     }
 
     .checkbox {
         margin-top: 23px;
+
+        @media(max-width: 1024px) {
+            margin-top: 25px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 10px;
+        }
+
+        &__label {
+            @media(max-width: 620px) {
+                line-height: 1.5;
+            }
+
+            &:after {
+                @media(max-width: 620px) {
+                    top: 10px;
+                }
+            }
+        }
     }
 
     &--call {
@@ -92,6 +183,40 @@
         
         .checkbox {
             margin-top: 9px;
+
+            @media(max-width: 620px) {
+                margin-top: 0px;
+            }
+        }
+
+        .lk-call {
+            &__grid {
+                @media(max-width: 1024px) {
+                    margin-top: 31px;
+                }
+
+                @media(max-width: 620px) {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        
+        p {
+            @media(max-width: 620px) {
+                margin: 7px 0 0;
+            }
+        }
+
+        .btn {
+            @media(max-width: 620px) {
+                margin-top: 0;
+            }
+            &:not(:first-child) {
+                @media(max-width: 620px) {
+                    margin-top: 20px;
+                }
+            }
         }
     }
 }
