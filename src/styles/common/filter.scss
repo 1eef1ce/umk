@@ -7,6 +7,21 @@
         justify-content: space-between;
         font-size: 16px;
         font-weight: 600;
+        line-height: 1;
+    }
+
+    &__panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    &__icon {
+        width: 22px;
+        height: 22px;
+        transform-origin: center;
+        transition: .4s ease-in-out;
     }
 
     &__group {
@@ -15,12 +30,25 @@
         margin-top: 15px;
     }
 
+    &__list {
+        max-height: 0;
+        overflow: hidden;
+        transition: .4s ease-in-out;
+    }
+
     &__bloc {
-        padding: 12px 0;
+        padding: 19px 23px;
+        border-bottom: 1px solid #aaaaaa80;
+
+        &.is-open {
+            .filter__icon {
+                transform: scale(1, -1);
+            }
+        }
     }
 
     &__box {
-        padding: 17px 23px 39px;
+        padding: 0;
         border: 2px solid rgba(217, 217, 217, 0.35);
         border-bottom: none;
     }

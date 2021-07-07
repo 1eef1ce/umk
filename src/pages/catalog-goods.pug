@@ -29,131 +29,163 @@ block content
                     .aside__sidebar.js-menu-filter
                         form#ds_filter_catalog.filter
                             .filter__box
-                                .filter__bloc
-                                    .filter__title Наличие
-                                    .filter__group 
-                                        label.checkbox(for="ch1")
-                                            input#ch1.checkbox__input(type="checkbox" name="check" value="ch1")
-                                            .checkbox__label Сейчас в наличии
-                                        label.checkbox(for="ch2")
-                                            input#ch2.checkbox__input(type="checkbox" name="check" value="ch2")
-                                            .checkbox__label Неликвид
-                                        label.checkbox(for="ch3")
-                                            input#ch3.checkbox__input(type="checkbox" name="check" value="ch3")
-                                            .checkbox__label Спецпредложения
-                                        label.checkbox(for="ch4")
-                                            input#ch4.checkbox__input(type="checkbox" name="check" value="ch4")
-                                            .checkbox__label Товары второго сорта
-                                .filter__bloc
-                                    .filter__title Тип ленты
-                                    .filter__group 
-                                        label.checkbox(for="ch5")
-                                            input#ch5.checkbox__input(type="checkbox" name="check" value="ch5")
-                                            .checkbox__label Стандарт (UMC)
-                                        label.checkbox(for="ch6")
-                                            input#ch6.checkbox__input(type="checkbox" name="check" value="ch6")
-                                            .checkbox__label Патентированная (UMC HE)
-                                        label.checkbox(for="ch7")
-                                            input#ch7.checkbox__input(type="checkbox" name="check" value="ch7")
-                                            .checkbox__label Патентированная особопрочная(UMC USLМ)
-                                .filter__bloc
-                                    .filter__title ГОСТ (Виды и марки)
-                                    .filter__group 
-                                        label.checkbox(for="ch8")
-                                            input#ch8.checkbox__input(type="checkbox" name="check" value="ch8")
-                                            .checkbox__label ГОСТ 380-2005
-                                        label.checkbox(for="ch9")
-                                            input#ch9.checkbox__input(type="checkbox" name="check" value="ch9")
-                                            .checkbox__label ГОСТ 1050-2013
-                                        label.checkbox(for="ch10")
-                                            input#ch10.checkbox__input(type="checkbox" name="check" value="ch10")
-                                            .checkbox__label ГОСТ 14637-89
-                                .filter__bloc
-                                    .filter__title
-                                        span Отделка поверхности
-                                        a.tooltip.tooltip--finish(href="javascript:void(0);")
-                                            .tooltip__icon
-                                                +icon('help_circle_outline')
-                                            .tooltip__content
-                                                span Отделка
-                                                | — окончательная обработка собранного изделия с целью улучшения его внешнего вида и защиты от действия влаги, повреждения насекомыми и пр. Отделка изделия включает в себя несколько операций: зачистку поверхностей, покрытие красителями, нанесение рисунков путем выжигания и т. д.
-                                    .filter__group 
-                                        label.checkbox(for="ch11")
-                                            input#ch11.checkbox__input(type="checkbox" name="check" value="ch11")
-                                            .checkbox__label Без отделки поверхности (С)
-                                        label.checkbox(for="ch12")
-                                            input#ch12.checkbox__input(type="checkbox" name="check" value="ch12")
-                                            .checkbox__label С обработкой (О)
-                                        label.checkbox(for="ch13")
-                                            input#ch13.checkbox__input(type="checkbox" name="check" value="ch13")
-                                            .checkbox__label Окрашенная (К)
-                                        label.checkbox(for="ch14")
-                                            input#ch14.checkbox__input(type="checkbox" name="check" value="ch14")
-                                            .checkbox__label С защитным восковымпокрытием (В)
-                                        label.checkbox(for="ch15")
-                                            input#ch15.checkbox__input(type="checkbox" name="check" value="ch15")
-                                            .checkbox__label С нанесением логотипаи надписи (Л)
-                                .filter__bloc
-                                    .filter__title Толщина ленты, мм
-                                    .filter__group 
-                                        label.checkbox(for="ch16")
-                                            input#ch16.checkbox__input(type="checkbox" name="check" value="ch16")
-                                            .checkbox__label 0,4
-                                        label.checkbox(for="ch17")
-                                            input#ch17.checkbox__input(type="checkbox" name="check" value="ch17")
-                                            .checkbox__label 0,5
-                                        label.checkbox(for="ch18")
-                                            input#ch18.checkbox__input(type="checkbox" name="check" value="ch18")
-                                            .checkbox__label 0,6
-                                        label.checkbox(for="ch19")
-                                            input#ch19.checkbox__input(type="checkbox" name="check" value="ch19")
-                                            .checkbox__label 0,7
-                                .filter__bloc
-                                    .filter__title Ширина ленты, мм
-                                    .filter__group 
-                                        label.checkbox(for="ch20")
-                                            input#ch20.checkbox__input(type="checkbox" name="check" value="ch20")
-                                            .checkbox__label 9,5
-                                        label.checkbox(for="ch21")
-                                            input#ch21.checkbox__input(type="checkbox" name="check" value="ch21")
-                                            .checkbox__label 12,7
-                                        label.checkbox(for="ch22")
-                                            input#ch22.checkbox__input(type="checkbox" name="check" value="ch22")
-                                            .checkbox__label 16
-                                        label.checkbox(for="ch23")
-                                            input#ch23.checkbox__input(type="checkbox" name="check" value="ch23")
-                                            .checkbox__label 19
-                                .filter__bloc
-                                    .filter__title
-                                        span Стандарт на продукт
-                                        a.tooltip.tooltip--finish(href="javascript:void(0);")
-                                            .tooltip__icon
-                                                +icon('help_circle_outline')
-                                            .tooltip__content 
-                                                span Стандарт на продукт 
-                                                | — нормативный документ, определяющий требования, которым должен соответствовать конкретный продукт или группа идентичной продукции. Стандартизация существенно упрощает производственный процесс, поскольку ее применение позволяет достичь единого высокого качества продукции.
-                                    .filter__group 
-                                        label.checkbox(for="ch27")
-                                            input#ch27.checkbox__input(type="checkbox" name="check" value="ch27")
-                                            .checkbox__label ГОСТ 380-2005
-                                        label.checkbox(for="ch28")
-                                            input#ch28.checkbox__input(type="checkbox" name="check" value="ch28")
-                                            .checkbox__label ГОСТ 1050-2013
-                                        label.checkbox(for="ch29")
-                                            input#ch29.checkbox__input(type="checkbox" name="check" value="ch29")
-                                            .checkbox__label ГОСТ 14637-89
-                                .filter__bloc
-                                    .filter__title Категории
-                                    .filter__group 
-                                        label.checkbox(for="ch24")
-                                            input#ch24.checkbox__input(type="checkbox" name="check" value="ch24")
-                                            .checkbox__label Все
-                                        label.checkbox(for="ch25")
-                                            input#ch25.checkbox__input(type="checkbox" name="check" value="ch25")
-                                            .checkbox__label Замковой ручной инструмент
-                                        label.checkbox(for="ch26")
-                                            input#ch26.checkbox__input(type="checkbox" name="check" value="ch26")
-                                            .checkbox__label Ножницы для резки
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title Наличие
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch1")
+                                                input#ch1.checkbox__input(type="checkbox" name="check" value="ch1")
+                                                .checkbox__label Сейчас в наличии
+                                            label.checkbox(for="ch2")
+                                                input#ch2.checkbox__input(type="checkbox" name="check" value="ch2")
+                                                .checkbox__label Неликвид
+                                            label.checkbox(for="ch3")
+                                                input#ch3.checkbox__input(type="checkbox" name="check" value="ch3")
+                                                .checkbox__label Спецпредложения
+                                            label.checkbox(for="ch4")
+                                                input#ch4.checkbox__input(type="checkbox" name="check" value="ch4")
+                                                .checkbox__label Товары второго сорта
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title Тип ленты
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch5")
+                                                input#ch5.checkbox__input(type="checkbox" name="check" value="ch5")
+                                                .checkbox__label Стандарт (UMC)
+                                            label.checkbox(for="ch6")
+                                                input#ch6.checkbox__input(type="checkbox" name="check" value="ch6")
+                                                .checkbox__label Патентированная (UMC HE)
+                                            label.checkbox(for="ch7")
+                                                input#ch7.checkbox__input(type="checkbox" name="check" value="ch7")
+                                                .checkbox__label Патентированная особопрочная(UMC USLМ)
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title ГОСТ (Виды и марки)
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch8")
+                                                input#ch8.checkbox__input(type="checkbox" name="check" value="ch8")
+                                                .checkbox__label ГОСТ 380-2005
+                                            label.checkbox(for="ch9")
+                                                input#ch9.checkbox__input(type="checkbox" name="check" value="ch9")
+                                                .checkbox__label ГОСТ 1050-2013
+                                            label.checkbox(for="ch10")
+                                                input#ch10.checkbox__input(type="checkbox" name="check" value="ch10")
+                                                .checkbox__label ГОСТ 14637-89
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title
+                                            span Отделка поверхности
+                                            a.tooltip.tooltip--finish(href="javascript:void(0);")
+                                                .tooltip__icon
+                                                    +icon('help_circle_outline')
+                                                .tooltip__content
+                                                    span Отделка
+                                                    | — окончательная обработка собранного изделия с целью улучшения его внешнего вида и защиты от действия влаги, повреждения насекомыми и пр. Отделка изделия включает в себя несколько операций: зачистку поверхностей, покрытие красителями, нанесение рисунков путем выжигания и т. д.
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch11")
+                                                input#ch11.checkbox__input(type="checkbox" name="check" value="ch11")
+                                                .checkbox__label Без отделки поверхности (С)
+                                            label.checkbox(for="ch12")
+                                                input#ch12.checkbox__input(type="checkbox" name="check" value="ch12")
+                                                .checkbox__label С обработкой (О)
+                                            label.checkbox(for="ch13")
+                                                input#ch13.checkbox__input(type="checkbox" name="check" value="ch13")
+                                                .checkbox__label Окрашенная (К)
+                                            label.checkbox(for="ch14")
+                                                input#ch14.checkbox__input(type="checkbox" name="check" value="ch14")
+                                                .checkbox__label С защитным восковымпокрытием (В)
+                                            label.checkbox(for="ch15")
+                                                input#ch15.checkbox__input(type="checkbox" name="check" value="ch15")
+                                                .checkbox__label С нанесением логотипаи надписи (Л)
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title Толщина ленты, мм
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch16")
+                                                input#ch16.checkbox__input(type="checkbox" name="check" value="ch16")
+                                                .checkbox__label 0,4
+                                            label.checkbox(for="ch17")
+                                                input#ch17.checkbox__input(type="checkbox" name="check" value="ch17")
+                                                .checkbox__label 0,5
+                                            label.checkbox(for="ch18")
+                                                input#ch18.checkbox__input(type="checkbox" name="check" value="ch18")
+                                                .checkbox__label 0,6
+                                            label.checkbox(for="ch19")
+                                                input#ch19.checkbox__input(type="checkbox" name="check" value="ch19")
+                                                .checkbox__label 0,7
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title Ширина ленты, мм
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch20")
+                                                input#ch20.checkbox__input(type="checkbox" name="check" value="ch20")
+                                                .checkbox__label 9,5
+                                            label.checkbox(for="ch21")
+                                                input#ch21.checkbox__input(type="checkbox" name="check" value="ch21")
+                                                .checkbox__label 12,7
+                                            label.checkbox(for="ch22")
+                                                input#ch22.checkbox__input(type="checkbox" name="check" value="ch22")
+                                                .checkbox__label 16
+                                            label.checkbox(for="ch23")
+                                                input#ch23.checkbox__input(type="checkbox" name="check" value="ch23")
+                                                .checkbox__label 19
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title
+                                            span Стандарт на продукт
+                                            a.tooltip.tooltip--finish(href="javascript:void(0);")
+                                                .tooltip__icon
+                                                    +icon('help_circle_outline')
+                                                .tooltip__content 
+                                                    span Стандарт на продукт 
+                                                    | — нормативный документ, определяющий требования, которым должен соответствовать конкретный продукт или группа идентичной продукции. Стандартизация существенно упрощает производственный процесс, поскольку ее применение позволяет достичь единого высокого качества продукции.
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch27")
+                                                input#ch27.checkbox__input(type="checkbox" name="check" value="ch27")
+                                                .checkbox__label ГОСТ 380-2005
+                                            label.checkbox(for="ch28")
+                                                input#ch28.checkbox__input(type="checkbox" name="check" value="ch28")
+                                                .checkbox__label ГОСТ 1050-2013
+                                            label.checkbox(for="ch29")
+                                                input#ch29.checkbox__input(type="checkbox" name="check" value="ch29")
+                                                .checkbox__label ГОСТ 14637-89
+                                .filter__bloc.js-filter-acc
+                                    .filter__panel
+                                        .filter__title Категории
+                                        .filter__icon
+                                            +icon('chevron_down')
+                                    .filter__list
+                                        .filter__group 
+                                            label.checkbox(for="ch24")
+                                                input#ch24.checkbox__input(type="checkbox" name="check" value="ch24")
+                                                .checkbox__label Все
+                                            label.checkbox(for="ch25")
+                                                input#ch25.checkbox__input(type="checkbox" name="check" value="ch25")
+                                                .checkbox__label Замковой ручной инструмент
+                                            label.checkbox(for="ch26")
+                                                input#ch26.checkbox__input(type="checkbox" name="check" value="ch26")
+                                                .checkbox__label Ножницы для резки
                             button.btn.js-clear-filter(type="reset") Очистить фильтр
                     .aside__main
                         button.filter-btn.js-btn-filter

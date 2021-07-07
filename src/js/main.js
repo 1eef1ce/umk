@@ -8,16 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
         ds = document.getElementById('ds_filter_catalog');
         const values = JSON.parse(localStorage.getItem(ds.id));
 
-        if (values.length > 0) {
-            for (let i = 0; i < values.length; ++i) {
-                const el = ds[values[i][1]];
+        console.log(values);
 
-                if (el.type === 'checkbox') {
-                    el.setAttribute('checked', 'checked');
-                } else {
-                    el.value = values[i][1];
+        if(values) {
+            if (values.length > 0) {
+                for (let i = 0; i < values.length; ++i) {
+                    const el = ds[values[i][1]];
+
+                    if (el.type === 'checkbox') {
+                        el.setAttribute('checked', 'checked');
+                    } else {
+                        el.value = values[i][1];
+                    }
                 }
-            }
+            } 
         }
     }
 });
@@ -1144,15 +1148,87 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('.js-filter-acc').exists()) {
+        let accordions = document.getElementsByClassName("js-filter-acc");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function () {
+                this.classList.toggle('is-open');
+
+                let content = $(this).find('.filter__list')[0];
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            };
+        }
+    }
+
     if ($('.js-btn-filter').exists()) {
         const btnFilter = document.querySelector('.js-btn-filter');
         const panel = document.querySelector('.js-menu-filter');
+        const overlay = document.querySelector('.overlay-filter');
 
         const formShowTl = new TimelineMax({
             reversed: true,
             paused: true,
-            defaults: { duration: 0.5 }
+            defaults: { duration: 0.5 },
         });
+
+        const formHideTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 },
+        });
+
+        const overlayShow = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 },
+            onComplete: () => {
+                formShowTl.play();
+            }
+        });
+
+        const overlayHide = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 },
+            onComplete: () => {
+                formHideTl.play();
+            }
+        });
+
+        overlayShow
+            .to (
+                overlay,
+                {
+                    autoAlpha: 0.5,
+                    ease: 'power4.out'
+                }
+            )
+
+        overlayHide
+            .to (
+                overlay,
+                {
+                    autoAlpha: 0,
+                    ease: 'power2.out'
+                }
+            )
+
+        formHideTl
+            .to(
+                panel,
+                {
+                    autoAlpha: 0,
+                    xPercent: 100,
+                    //xPercent: -50,
+                    ease: 'power2.out'
+                }
+            );
 
         formShowTl
             .set(
@@ -1167,12 +1243,19 @@ window.addEventListener('load', function () {
                     xPercent: -100,
                     //xPercent: -50,
                     ease: 'power2.out'
-                }
+                },
             );
 
         btnFilter.addEventListener('click', function () {
-            formShowTl.play();
+            overlayShow.play();
             projectFunc.lockedDOM(true);
+        });
+
+        overlay.addEventListener('click', function(){
+            overlayHide.play();
+            overlayShow.reverse();
+            formShowTl.reverse();
+            projectFunc.lockedDOM(false);
         });
     }
 
