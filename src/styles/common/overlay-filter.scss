@@ -1,0 +1,13 @@
+.overlay-filter {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 100;
+    opacity: 0.5;
+}

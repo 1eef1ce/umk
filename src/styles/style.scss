@@ -45,6 +45,7 @@
 @import "includes/catalog/catalog-grid";
 @import "includes/catalog/catalog-list";
 @import "includes/catalog/catalog-service";
+@import "includes/catalog/catalog-goods";
 @import "includes/index/advantage";
 @import "includes/index/call";
 @import "includes/index/inset";
@@ -95,6 +96,8 @@
 @import "includes/order/order-info";
 @import "common/modal-delivery";
 @import "includes/lk/sidemenu-lk";
+@import "common/filter-btn";
+@import "common/overlay-filter";
 
 .icon-stroke {
     stroke: currentColor;

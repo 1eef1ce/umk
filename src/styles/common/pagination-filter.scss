@@ -5,12 +5,32 @@
     margin-top: 25px;
     font-weight: 600;
 
+    @media(max-width: 1024px) {
+        margin-top: 0;
+        padding: 29px 0;
+        background-color: $gray-3;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media(max-width: 620px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__txt {
         margin-right: 16px;
     }
 
     &__box {
         display: flex;
+
+        @media(max-width: 620px) {
+            display: none;
+        }
     }
 
     &__items {
@@ -55,5 +75,21 @@
     .pagination {
         margin-top: 0;
         margin-left: auto;
+
+        @media(max-width: 620px) {
+            margin: auto;
+        }
+
+        &__item {
+            @media(max-width: 1024px) {
+                margin: 0 17px;
+            }
+        }
+
+        &__link {
+            @media(max-width: 1024px) {
+                background-color: transparent;
+            }
+        }
     }
 }

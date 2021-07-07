@@ -53,14 +53,45 @@
             min-width: 421px;
             top: 48px;
 
+            @media(max-width: 1024px) {
+                min-width: 381px;
+                padding-top: 12px;
+            }
+
+            @media(max-width: 620px) {
+                max-width: 335px;
+                min-width: 335px;
+                padding-top: 0px;
+                top: 47px;
+            }
+
             a {
                 padding: 20px 27px 21px;
                 font-size: 16px;
+
+                @media(max-width: 1024px) {
+                    padding: 18px 27px 21px;
+                }
+
+                @media(max-width: 620px) {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    padding: 18px 27px 19px;
+                }
             }
         }
 
         .dropdown-label {
             padding-right: 22px;
+
+            @media(max-width: 1024px) {
+                padding-right: 27px;
+            }
+
+            @media(max-width: 620px) {
+                padding-right: 70px;
+            }
 
             &:after {
                 width: 15px;
@@ -74,6 +105,14 @@
                 font-weight: 600;
                 line-height: 1;
                 color: $gray-4;
+
+                @media(max-width: 1024px) {
+                    font-size: 40px;
+                }
+
+                @media(max-width: 620px) {
+                    font-size: 30px;
+                }
             }
         }
 

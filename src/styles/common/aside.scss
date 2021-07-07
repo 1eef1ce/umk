@@ -24,6 +24,14 @@
         margin-left: 0;
         margin-right: 23px;
       }
+
+      &__main {
+        width: calc(100% - 285px - 23px);
+
+        @media(max-width: 1024px) {
+          width: 100%;
+        }
+      }
     }
   }
 

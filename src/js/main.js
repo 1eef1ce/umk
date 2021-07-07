@@ -563,16 +563,14 @@ const projectFunc = {
 
         if (searchBloc.length > 0) {
             if ($(window).width() > 620) {
-                console.log("object");
                 showSearch
                     .to(searchBloc, 0.7, { width: '100%', ease: 'sine.inOut' });
 
                 hideSearch
                     .to(searchBloc, 0.7, { width: '0%', ease: 'slow(0.1, 0.1, true)' });
             } else {
-                console.log("object2");
                 showSearch
-                    .to(searchBloc, 0.7, { width: '100vw', ease: 'sine.inOut' });
+                    .to(searchBloc, 0.7, { width: 'calc(100vw - 40px)', ease: 'sine.inOut' });
 
                 hideSearch
                     .to(searchBloc, 0.7, { width: '0vw', ease: 'slow(0.1, 0.1, true)' });
@@ -1144,6 +1142,38 @@ window.addEventListener('load', function () {
                 }
             };
         }
+    }
+
+    if ($('.js-btn-filter').exists()) {
+        const btnFilter = document.querySelector('.js-btn-filter');
+        const panel = document.querySelector('.js-menu-filter');
+
+        const formShowTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 }
+        });
+
+        formShowTl
+            .set(
+                panel, {
+                xPercent: 100,
+            }
+            )
+            .to(
+                panel,
+                {
+                    autoAlpha: 1,
+                    xPercent: -100,
+                    //xPercent: -50,
+                    ease: 'power2.out'
+                }
+            );
+
+        btnFilter.addEventListener('click', function () {
+            formShowTl.play();
+            projectFunc.lockedDOM(true);
+        });
     }
 
     if ($('.lk-cart__item').exists()) {
