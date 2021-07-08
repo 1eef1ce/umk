@@ -41,6 +41,17 @@
     display: flex;
     align-items: center;
     margin-top: 12px;
+
+    @media (max-width: 620px) {
+      display: block;
+    }
+
+    span {
+
+      @media (max-width: 620px) {
+        margin-right: 4px;
+      }
+    }
   }
 
   &__link {
@@ -49,11 +60,24 @@
     font-weight: 600;
     color: $red-1;
     margin-left: 4px;
+    word-break: break-word;
+
+    @media (max-width: 620px) {
+      align-items: flex-start;
+      margin-left: 0;
+    }
 
     svg {
       width: 18px;
       height: 18px;
       fill: $red-1;
+      flex-shrink: 0;
+
+      @media (max-width: 620px) {
+        width: 14px;
+        height: 14px;
+        margin-top: 0.3em;
+      }
     }
   }
 
@@ -62,13 +86,38 @@
     margin-top: 50px;
 
     @media (max-width: 1024px) {
+      max-width: 100%;
       margin-top: 22px;
     }
 
     .form {
+      margin-top: 7px;
 
       @media (max-width: 1024px) {
         margin-top: -6px;
+      }
+
+      &-group {
+
+        @media (max-width: 1024px) {
+          width: 48.215%;
+        }
+
+        @media (max-width: 620px) {
+          width: 100%;
+        }
+
+        &--textarea {
+          width: 100%;
+        }
+      }
+
+      .btn {
+        width: 426px;
+
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
       }
     }
   }

@@ -3,13 +3,47 @@
   &__tabs {
     margin-top: 32px;
 
+    @media (max-width: 1024px) {
+      margin-top: 28px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 24px;
+    }
+
     .tabs__list {
       border-bottom-color: transparent;
+    }
+
+    .tabs__item {
+
+      &:not(:last-of-type) {
+        margin-right: 43px;
+
+        @media (max-width: 1024px) {
+          margin-right: 25px;
+        }
+
+        @media (max-width: 620px) {
+          margin-right: 20px;
+        }
+      }
     }
 
     .tabs__link {
       font-size: 18px;
       line-height: 1.6;
+
+      @media (max-width: 1024px) {
+        padding-bottom: 18px;
+        font-size: 20px;
+        line-height: 1.55;
+      }
+
+      @media (max-width: 620px) {
+        padding-bottom: 11px;
+        font-size: 18px;
+      }
 
       &:hover {
         color: $purple-1;
@@ -33,10 +67,68 @@
   }
 
   &__table {
-    margin-top: 35px;
+    margin: 33px 0 27px;
+    overflow: auto;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 620px) {
+      margin: 28px 0 16px;
+    }
+
+    table {
+
+      @media (max-width: 1024px) {
+        min-width: 1049px;
+      }
+
+      tr {
+
+        td {
+
+          &:nth-of-type(1) {
+            width: 238px;
+
+            @media (max-width: 1024px) {
+              width: 208px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            width: 224px;
+
+            @media (max-width: 1024px) {
+              width: 208px;
+            }
+          }
+
+          &:nth-of-type(3) {
+            width: 420px;
+
+            @media (max-width: 1024px) {
+              width: 354px;
+            }
+          }
+
+          &:nth-of-type(4) {
+            width: 315px;
+
+            @media (max-width: 1024px) {
+              width: 276px;
+            }
+          }
+        }
+      }
+    }
   }
 
   p {
+
+    @media (max-width: 620px) {
+      margin: 8px 0 0;
+    }
 
     a {
       font-weight: 600;
@@ -46,22 +138,50 @@
 
   &__section {
     margin-top: 60px;
+
+    @media (max-width: 1024px) {
+      margin-top: 38px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 28px;
+    }
   }
 
   &__items {
     margin-top: 18px;
+
+    @media (max-width: 1024px) {
+      width: 85%;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+      margin-top: 16px;
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
     margin-top: 8px;
+
+    @media (max-width: 1024px) {
+      align-items: flex-start;
+      margin-top: 12px;
+    }
   }
 
   &__img {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    flex-shrink: 0;
+
+    @media (max-width: 1024px) {
+      margin-top: 3px;
+    }
 
     svg {
       fill: $purple-1;
@@ -70,6 +190,7 @@
 
   &__map {
     width: 99vw;
+    height: 650px;
     margin: 25px 0 0 50%;
     transform: translateX(-50%);
     height: 650px;

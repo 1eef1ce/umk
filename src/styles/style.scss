@@ -148,7 +148,7 @@
         right: 0;
         bottom: -3px;
         margin: auto;
-        transition: 0.3 ease-in-out;
+        transition: 0.3s ease-in-out;
     }
 
     &:hover {
@@ -158,8 +158,4 @@
     &:hover::after {
         background-color: $purple-1;
     }
-}
-
-.select2-container {
-    width: auto !important;
 }

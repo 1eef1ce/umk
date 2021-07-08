@@ -5,8 +5,20 @@
   list-style: none;
   margin: 40px -10px 0;
 
+  @media (max-width: 1024px) {
+    margin: 37px -17px 0;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 28px -17px 0;
+  }
+
   &__item {
     margin: 0 10px;
+
+    @media (max-width: 1024px) {
+      margin: 0 17px;
+    }
 
     &.disabled {
 
@@ -26,6 +38,10 @@
     line-height: 1.2;
     color: $gray-2;
 
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+
     &:hover,
     &:focus,
     &.active {
@@ -41,6 +57,10 @@
       height: 41px;
       background: #fff;
       border: 2px solid transparent;
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
 
       &:hover {
         border-color: $red-1;

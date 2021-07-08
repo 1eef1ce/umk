@@ -9,12 +9,18 @@
                 position: fixed;
                 z-index: 200;
                 top: 65px;
-                height: calc(100vh - 65px);
+                max-height: calc(100vh - 65px);
                 overflow: scroll;
                 transform: translateX(100%);
                 right: -23px;
                 width: 368px;
+                display: block;
             }
+        }
+
+        &__btn {
+            margin: 0;
+            width: 100%;
         }
     }
 

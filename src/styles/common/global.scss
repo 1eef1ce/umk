@@ -38,7 +38,6 @@ body {
     }
 
     @media (max-width: 620px) {
-        font-size: 16px;
         line-height: 1.7;
     }
 }
@@ -55,6 +54,11 @@ a {
     text-decoration: none;
     color: $basic;
     transition: .3s ease-in-out;
+}
+
+button {
+    font-family: 'MyriadPro', Arial, sans-serif;
+    padding: 0;
 }
 
 .container {
@@ -84,6 +88,14 @@ a {
 
     @media (max-width: 620px) {
         font-size: 30px;
+    }
+
+    &--hidden {
+        display: none;
+
+        @media (max-width: 1024px) {
+            display: block;
+        }
     }
 }
 

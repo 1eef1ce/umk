@@ -7,23 +7,59 @@
   &__date {
     color: $gray-2;
     margin-top: 24px;
+
+    @media (max-width: 1024px) {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 18px;
+    }
   }
 
   &__img {
-    margin: 25px 0;
+    width: 100%;
+    height: 556px;
+    margin: 25px 0 30px;
+
+    @media (max-width: 1024px) {
+      height: 406px;
+      margin: 20px 0 25px;
+    }
+
+    @media (max-width: 620px) {
+      height: 187px;
+      margin: 20px 0;
+    }
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
 
   &__btn {
+    width: 275px;
     margin: 33px 0 36px;
+
+    @media (max-width: 1024px) {
+      width: 250px;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
   }
 
   &__item {
     margin-top: 24px;
+
+    @media (max-width: 620px) {
+      margin-top: 20px;
+    }
 
     p {
       margin-top: 12px;
@@ -46,11 +82,19 @@
       counter-reset: numbers-counter;
       margin-top: 8px;
 
+      @media (max-width: 620px) {
+        margin-top: 14px;
+      }
+
       li {
         counter-increment: numbers-counter;
 
         &:not(:first-of-type) {
           margin-top: 12px;
+
+          @media (max-width: 620px) {
+            margin-top: 6px;
+          }
         }
 
         &::before {

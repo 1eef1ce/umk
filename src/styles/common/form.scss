@@ -1,11 +1,21 @@
 .form {
-  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
 
   &-group {
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-top: 25px;
+
+    @media (max-width: 620px) {
+      margin-top: 20px;
+    }
 
     &.on-focus {
 
@@ -72,11 +82,22 @@
 
     textarea {
       height: 160px;
+
+      @media (max-width: 620px) {
+        height: 141px;
+      }
     }
   }
 
   .btn {
-    width: 426px;
     margin-top: 25px;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 15px;
+    }
   }
 }

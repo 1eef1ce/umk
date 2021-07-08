@@ -2,29 +2,29 @@ import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
 import Scrollbar from 'smooth-scrollbar';
 
-document.addEventListener('DOMContentLoaded', () => {
-    if ($('#ds_filter_catalog').exists()) {
-        let ds = '';
-        ds = document.getElementById('ds_filter_catalog');
-        const values = JSON.parse(localStorage.getItem(ds.id));
+// document.addEventListener('DOMContentLoaded', () => {
+//     if ($('#ds_filter_catalog').exists()) {
+//         let ds = '';
+//         ds = document.getElementById('ds_filter_catalog');
+//         const values = JSON.parse(localStorage.getItem(ds.id));
 
-        console.log(values);
+//         console.log(values);
 
-        if (values) {
-            if (values.length > 0) {
-                for (let i = 0; i < values.length; ++i) {
-                    const el = ds[values[i][1]];
+//         if (values) {
+//             if (values.length > 0) {
+//                 for (let i = 0; i < values.length; ++i) {
+//                     const el = ds[values[i][1]];
 
-                    if (el.type === 'checkbox') {
-                        el.setAttribute('checked', 'checked');
-                    } else {
-                        el.value = values[i][1];
-                    }
-                }
-            }
-        }
-    }
-});
+//                     if (el.type === 'checkbox') {
+//                         el.setAttribute('checked', 'checked');
+//                     } else {
+//                         el.value = values[i][1];
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// });
 
 
 $.fn.exists = function () {
@@ -1150,18 +1150,22 @@ window.addEventListener('load', function () {
 
     if ($('.js-filter-acc').exists()) {
         let accordions = document.getElementsByClassName("js-filter-acc");
+        let select = '';
 
         for (let i = 0; i < accordions.length; i++) {
             accordions[i].onclick = function () {
-                this.classList.toggle('is-open');
+                select = $(accordions[i]).next(".js-filter-list");
+                $(this).parent().toggleClass('is-open');
+                $(select).slideToggle();
 
-                let content = $(this).find('.filter__list')[0];
 
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
+                // let content = $(this).find('.filter__list')[0];
+
+                // if (content.style.maxHeight) {
+                //     content.style.maxHeight = null;
+                // } else {
+                //     content.style.maxHeight = content.scrollHeight + "px";
+                // }
             };
         }
     }
@@ -1695,6 +1699,19 @@ window.addEventListener('load', function () {
             $('.js-tab-body').removeClass('active');
             const tabID = $(this).attr('data-tab-btn');
             $('.js-tab-body[data-tab-body="' + tabID + '"]').addClass('active');
+        });
+    }
+
+    if ($('.js-btn-sidemenu').exists()) {
+        $('.js-btn-sidemenu').click(function () {
+            $('.js-sidemenu-popup').addClass('open');
+        });
+    }
+
+    if ($('.js-hide-filter').exists()) {
+        $('.js-hide-filter').click(function () {
+            $(this).toggleClass('open');
+            $(this).next('.select').slideToggle();
         });
     }
 

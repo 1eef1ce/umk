@@ -8,10 +8,6 @@
     height: 65px;
     cursor: pointer;
 
-    @media (max-width: 1024px) {
-        font-size: 14px;
-    }
-
     &--basic {
         background-color: $purple-1;
         color: white;
@@ -26,34 +22,22 @@
         height: 47px;
     }
 
-    &--w200 {
-        width: 200px;
-
-        @media (max-width: 1024px) {
-            width: 168px;
-        }
-
-        @media (max-width: 620px) {
-            width: 50px;
-        }
-    }
-
     &--w239 {
         width: 239px;
     }
 
-    &--w250 {
-        width: 250px;
+    // &--w250 {
+    //     width: 250px;
 
-        @media (max-width: 620px) {
-            width: 100%;
-        }
-    }
+    //     @media (max-width: 620px) {
+    //         width: 100%;
+    //     }
+    // }
 
-    &--w157 {
-        width: 157px;
-        min-width: 157px;
-    }
+    // &--w157 {
+    //     width: 157px;
+    //     min-width: 157px;
+    // }
 
     &--w275 {
         width: 275px;
@@ -135,6 +119,36 @@
         }
     }
 
+    &--cart {
+        width: 200px;
+
+        @media (max-width: 1024px) {
+            width: 188px;
+        }
+
+        @media (max-width: 620px) {
+            display: none;
+        }
+    }
+
+    &--cart-mobile {
+
+        display: none;
+
+        @media (max-width: 620px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 47px;
+        }
+
+        svg {
+            width: 26px;
+            height: 26px;
+        }
+    }
+
     &--order-info {
         position: relative;
         background-color: transparent;
@@ -154,10 +168,9 @@
             position: absolute;
             content: "";
             width: 100%;
-            bottom: 0;
+            bottom: -3px;
             height: 1px;
             background-color: $basic;
-            bottom: -3px;
         }
     }
 
