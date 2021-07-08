@@ -3,6 +3,10 @@
   margin-top: 15px;
   cursor: pointer;
 
+  @media (max-width: 620px) {
+    margin-top: 10px;
+  }
+
   &__input {
     position: absolute;
     z-index: -1;
@@ -85,8 +89,13 @@
     font-size: 14px;
     line-height: 1.45;
 
-    @media(max-width: 620px) {
+    @media (max-width: 1024px) {
+      line-height: 1.75;
+    }
+
+    @media (max-width: 620px) {
       font-size: 12px;
+      line-height: 1.55;
     }
 
     &::before {
@@ -102,9 +111,10 @@
       background-color: white;
       transition: 0.2s;
 
-      @media(max-width: 1024px) {
+      @media (max-width: 1024px) {
         width: 20px;
         height: 20px;
+        margin-right: 10px;
       }
     }
 
@@ -121,10 +131,14 @@
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
 
-      @media(max-width: 620px) {
-        top: 2px;
-        left: 6px;
+      @media (max-width: 1024px) {
+        left: 8px;
+        width: 5px;
         height: 12px;
+      }
+
+      @media (max-width: 620px) {
+        top: 10px;
       }
     }
   }

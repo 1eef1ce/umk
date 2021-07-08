@@ -3,6 +3,7 @@
   p {
 
     a {
+      display: inline-block;
       font-weight: 600;
       color: $red-1;
     }
@@ -10,15 +11,36 @@
 
   .title-4 {
     margin-top: 26px;
+
+    @media (max-width: 1024px) {
+      margin-top: 21px;
+    }
   }
 
   &__table {
-    margin-top: 20px;
+    margin-top: 22px;
+    overflow: auto;
+
+    @media (max-width: 1024px) {
+      margin-top: 16px;
+    }
+
+    table {
+      min-width: 436px;
+    }
 
     td {
 
       &:last-of-type {
         width: 200px;
+
+        @media (max-width: 1024px) {
+          width: 170px;
+        }
+
+        @media (max-width: 620px) {
+          width: 112px;
+        }
       }
     }
   }

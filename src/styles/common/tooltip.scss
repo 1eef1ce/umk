@@ -210,7 +210,9 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+
     .tooltip__content {
       display: block;
     }
@@ -230,13 +232,18 @@
     position: absolute;
     top: 50%;
     left: calc(100% + 10px);
-    width: 200px;
-    padding: 10px 15px 10px;
-    text-align: center;
-    line-height: 1;
+    width: 255px;
+    padding: 10px 15px;
     transform: translateY(-50%);
     background: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+    font-weight: 400;
+
+    @media (max-width: 620px) {
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+    }
 
     &:before {
       content: "";
@@ -247,6 +254,15 @@
       left: 0;
       background-color: #fff;
       transform: translateY(-50%) translateX(-50%) rotate(45deg);
+
+      @media (max-width: 620px) {
+        top: 0;
+        left: 50%;
+      }
+    }
+
+    b {
+      font-weight: 600;
     }
   }
 }

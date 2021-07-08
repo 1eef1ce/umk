@@ -6,12 +6,28 @@
     margin-top: 12px;
     list-style: none;
     counter-reset: numbers-counter;
+
+    @media (max-width: 1024px) {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 0;
+    }
   }
 
   &__item {
     position: relative;
     padding: 20px 0 17px 35px;
     counter-increment: numbers-counter;
+
+    @media (max-width: 1024px) {
+      padding: 21px 0 22px 28px;
+    }
+
+    @media (max-width: 620px) {
+      padding: 20px 0 16px 28px;
+    }
 
     &:not(:last-of-type) {
       border-bottom: 2px solid rgba(217, 217, 217, 0.35);
@@ -25,6 +41,16 @@
       font-weight: 600;
       font-size: 18px;
       line-height: 1.6;
+
+      @media (max-width: 1024px) {
+        top: 21px;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 620px) {
+        top: 18px;
+        font-size: 18px;
+      }
     }
   }
 
@@ -39,6 +65,14 @@
     font-size: 18px;
     line-height: 1.6;
 
+    @media (max-width: 1024px) {
+      line-height: 1.65;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 18px;
+    }
+
     &:hover {
       color: $purple-1;
     }
@@ -49,13 +83,22 @@
     align-items: center;
     justify-content: center;
     height: 25px;
-    padding: 6px 12px 5px;
+    padding: 6px 11px 5px;
     font-weight: 600;
     font-size: 14px;
     line-height: 1;
     color: #fff;
     background: $purple-1;
     margin-left: 12px;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      margin-left: 8px;
+    }
+
+    @media (max-width: 620px) {
+      font-size: 14px;
+    }
 
     &:hover {
       background: $red-1;
@@ -64,5 +107,13 @@
 
   &__text {
     margin-top: 6px;
+
+    @media (max-width: 1024px) {
+      width: 90%;
+    }
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
   }
 }

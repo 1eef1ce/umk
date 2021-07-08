@@ -1,19 +1,20 @@
 .not-found {
   background-image: url("/img/404.png");
   background-repeat: no-repeat;
-  background-position: 116% 260%;
+  background-position: 116% 72%;
+  padding: 70px 0 74px;
 
   @media (max-width: 1024px) {
     max-width: 590px;
-    padding: 45px 0 368px;
+    padding: 36px 0 298px;
     margin: 0 auto;
     background-size: 97%;
-    background-position: 100% 85%;
+    background-position: 100% 97%;
 
     @media (max-width: 620px) {
-      padding: 50px 0 248px;
-      background-size: 95%;
-      background-position: 100% 86%;
+      padding: 35px 0 187px;
+      background-size: 93%;
+      background-position: 100% 98%;
     }
   }
 
@@ -54,16 +55,15 @@
 
     @media (max-width: 620px) {
       font-size: 30px;
-      margin-top: 8px;
+      margin-top: 11px;
     }
   }
 
   &__text {
-    margin-top: 1em;
+    margin-top: 16px;
 
-    @media (max-width: 620px) {
-      max-width: 86%;
-      margin: 1em auto;
+    @media (max-width: 1024px) {
+      margin-top: 12px;
     }
 
     a {
@@ -81,7 +81,8 @@
     }
   }
 
-  .btn {
+  &__btn {
+    width: 250px;
     margin-top: 40px;
 
     @media (max-width: 1024px) {
@@ -89,8 +90,7 @@
     }
 
     @media (max-width: 620px) {
-      width: 250px;
-      margin-top: 20px;
+      margin-top: 28px;
     }
   }
 }

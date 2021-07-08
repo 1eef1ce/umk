@@ -10,15 +10,12 @@
     @media (max-width: 1024px) {
       margin-top: 0;
     }
-
-    @media (max-width: 620px) {
-      margin-top: 7px;
-    }
   }
 
   &__item {
     position: relative;
     padding: 15px 0 20px 35px;
+    border-bottom: 2px solid rgba(217, 217, 217, 0.35);
     counter-increment: numbers-counter;
 
     @media (max-width: 1024px) {
@@ -26,11 +23,7 @@
     }
 
     @media (max-width: 620px) {
-      padding: 13px 0 20px 28px;
-    }
-
-    &:not(:last-of-type) {
-      border-bottom: 2px solid rgba(217, 217, 217, 0.35);
+      padding: 20px 0 20px 28px;
     }
 
     &::before {
@@ -43,13 +36,12 @@
       line-height: 1.6;
 
       @media (max-width: 1024px) {
-        top: 22px;
+        top: 21px;
         line-height: 1.65;
       }
 
       @media (max-width: 620px) {
-        top: 13px;
-        font-size: 16px;
+        top: 20px;
       }
     }
   }
@@ -64,10 +56,6 @@
       line-height: 1.65;
     }
 
-    @media (max-width: 620px) {
-      font-size: 16px;
-    }
-
     &:hover {
       color: $purple-1;
     }
@@ -75,6 +63,10 @@
 
   &__text {
     margin-top: 4px;
+
+    @media (max-width: 1024px) {
+      line-height: 1.65;
+    }
 
     @media (max-width: 620px) {
       display: -webkit-box;
@@ -97,8 +89,7 @@
     }
 
     @media (max-width: 620px) {
-      font-size: 12px;
-      line-height: 1.55;
+      margin-top: 12px;
     }
   }
 }

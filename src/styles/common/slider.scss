@@ -187,4 +187,62 @@
             height: 19px;
         }
     }
+
+    &--product {
+
+        .arrow {
+
+            &--box {
+                margin-bottom: 40px;
+
+                @media (max-width: 1024px) {
+                    margin-top: 46px;
+                }
+
+                @media (max-width: 620px) {
+                    margin-top: 37px;
+                }
+            }
+
+            svg {
+                width: 16px;
+                height: 8px;
+                fill: $purple-1;
+            }
+
+            &__link {
+
+                @media (max-width: 1024px) {
+                    display: none;
+                }
+
+                &:hover {
+
+                    svg {
+                        fill: $red-1;
+                    }
+                }
+
+                &:active {
+
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination--num {
+
+            .swiper-pagination-bullet {
+
+                &:not(:last-child) {
+
+                    @media(max-width: 1024px) {
+                        margin-right: 35px;
+                    }
+                }
+            }
+        }
+    }
 }

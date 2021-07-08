@@ -1141,6 +1141,19 @@ window.addEventListener('load', function () {
         });
     }
 
+    if ($('.js-btn-sidemenu').exists()) {
+        $('.js-btn-sidemenu').click(function () {
+            $('.js-sidemenu-popup').addClass('open');
+        });
+    }
+
+    if ($('.js-hide-filter').exists()) {
+        $('.js-hide-filter').click(function () {
+            $(this).toggleClass('open');
+            $(this).next('.select').slideToggle();
+        });
+    }
+
     if ($('.js-btn-success').exists()) {
         $('.js-btn-success').on('click', () => {
             event.preventDefault();
@@ -1154,8 +1167,6 @@ window.addEventListener('load', function () {
             projectFunc.showOverlay('.js-modal-delivery', true);
         });
     }
-
-
 
     const stateRadio = (radio, status) => {
         let radioEl = document.querySelectorAll(radio);

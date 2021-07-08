@@ -12,7 +12,7 @@
 
   &__form {
     display: flex;
-    margin-top: 34px;
+    margin-top: 28px;
 
     @media (max-width: 1024px) {
       flex-wrap: wrap;
@@ -23,7 +23,7 @@
       margin: 0 -10px;
 
       @media (max-width: 1024px) {
-        width: 66.66%;
+        width: calc(66.66% + 10px);
       }
 
       @media (max-width: 620px) {
@@ -49,7 +49,7 @@
     margin-left: 20px;
 
     @media (max-width: 1024px) {
-      width: 33.33%;
+      width: calc(33.33% - 10px);
     }
 
     @media (max-width: 620px) {
@@ -74,17 +74,14 @@
 
   &__item {
     padding: 17px 0;
+    border-bottom: 2px solid rgba(217, 217, 217, 0.35);
 
     @media (max-width: 1024px) {
-      padding: 13px 0 18px;
+      padding: 12px 0 17px;
     }
 
     @media (max-width: 620px) {
       padding: 18px 0;
-    }
-
-    &:not(:last-of-type) {
-      border-bottom: 2px solid rgba(217, 217, 217, 0.35);
     }
   }
 
@@ -107,11 +104,7 @@
     margin-top: 8px;
 
     @media (max-width: 1024px) {
-      margin-top: 12px;
-    }
-
-    @media (max-width: 620px) {
-      line-height: 1.8;
+      margin-top: 9px;
     }
   }
 }

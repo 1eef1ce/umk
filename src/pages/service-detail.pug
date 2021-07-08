@@ -10,6 +10,10 @@ block content
             .container
                 .aside
                     .aside__main
+                        .aside__btn.js-btn-sidemenu
+                            | Выбрать плоский прокат
+                            +icon('chevron_down')
+                        h1.title-1.title-1--hidden Горячекатаный рулон
                         h2.title-4 Общие характеристики
                         p.
                             Внутренний диаметр рулона со станов горячей прокатки «2000» и «2500» составляет 850 мм.
@@ -70,8 +74,9 @@ block content
                         p.
                             Условия поставки, конкретные типоразмеры и марочный состав согласовываются индивидуально
                             при оформлении заказа.
-                    .aside__sidebar
+                    .aside__sidebar.js-sidemenu-popup
                         .sidemenu
+                            .sidemenu__name Выбрать плоский прокат
                             a.sidemenu__section(href="javascript:void(0);")
                                 .sidemenu__head
                                     .sidemenu__title Горячекатаный рулон

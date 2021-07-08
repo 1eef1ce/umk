@@ -1,7 +1,55 @@
 .service-detail {
 
   &__table {
-    margin-top: 20px;
+    margin: 22px 0 30px;
+    overflow: auto;
+
+    @media (max-width: 1024px) {
+      margin: 16px 0 20px;
+    }
+
+    table {
+      min-width: 728px;
+      table-layout: fixed;
+
+      tr {
+
+        td {
+
+          &:nth-of-type(1) {
+            width: 202px;
+
+            @media (max-width: 1024px) {
+              width: 174px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            width: 327px;
+
+            @media (max-width: 1024px) {
+              width: 282px;
+            }
+          }
+
+          &:nth-of-type(3) {
+            width: 151px;
+
+            @media (max-width: 1024px) {
+              width: 140px;
+            }
+          }
+
+          &:nth-of-type(4) {
+            width: 162px;
+
+            @media (max-width: 1024px) {
+              width: 130px;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__header {
@@ -12,15 +60,36 @@
     background-position: right;
     margin-bottom: 48px;
 
+    @media (max-width: 1024px) {
+      height: auto;
+      background: none!important;
+      margin: 18px 0 0;
+    }
+
     .breadcrumb {
       margin-top: 0;
+    }
+
+    .title-1 {
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
 
   .title-4 {
 
-    &:not(:first-child) {
-      margin-top: 24px;
+    @media (max-width: 1024px) {
+      margin-top: 21px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 25px;
+
+      @media (max-width: 1024px) {
+        margin-top: 21px;
+      }
     }
   }
 
