@@ -48,7 +48,19 @@
     }
 
     &--year {
-        margin: 18px 0;
+        margin: 19px 0 32px;
+
+        @media(max-width: 1024px) {
+            margin: 25px 0 30px;
+        }
+
+        @media(max-width: 640px) {
+            margin: 25px 0 22px;
+        }
+
+        @media(max-width: 620px) {
+            margin: 19px 0 22px;
+        }
 
         .tab {
             &__item {
@@ -62,7 +74,7 @@
                 border: none;
                 color: $basic;
                 font-weight: 400;
-                min-height: 29px;
+                height: 25px;
 
                 &:not(:last-child) {
                     margin-right: 10px;

@@ -324,6 +324,12 @@
             background: rgba(217, 217, 217, .1);
             padding: 19px 20px 22px;
         }
+
+        .count {
+            &__input {
+                height: 47px;
+            }
+        }
     }
 
     &__box {

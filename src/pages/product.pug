@@ -23,8 +23,9 @@ block content
                     .product-actions
                          .count
                             input#quantity.count__input(type="number" name="quantity" placeholder="1 т")
-                         a.btn.btn--basic.btn--cart В корзину
-                         a.btn.btn--basic.btn--cart-mobile
-                            +icon('shopping-cart')
+                         button.btn.btn--basic.btn--w127.btn--c_cart 
+                            .btn__txt В корзину
+                            .btn__ic
+                                +icon('ic-cart')
                 include includes/product/product-info
                 include includes/product/product-related

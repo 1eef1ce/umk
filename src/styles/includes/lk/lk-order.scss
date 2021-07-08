@@ -2,10 +2,23 @@
     &__top {
         margin-top: 28px;
 
+        @media(max-width: 1024px) {
+            margin-top: 22px;
+        }
+
         select {
             max-width: 300px;
             width: 100%;
             margin-right: initial;
+
+            @media(max-width: 1024px) {
+                max-width: 230px;
+            }
+
+            @media(max-width: 620px) {
+                max-width: 100%;
+                width: 100%;
+            }
         }
     }
 }

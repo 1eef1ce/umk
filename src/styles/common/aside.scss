@@ -202,6 +202,11 @@
       &__main {
         width: calc(100% - 222px - 60px);
         max-width: 918px;
+
+        @media(max-width: 1024px) {
+          width: 100%;
+          max-width: 100%;
+        }
       }
     }
   }

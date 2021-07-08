@@ -1130,6 +1130,19 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('.order-card').exists()) {
+        let card = document.querySelectorAll('.order-card');
+        let btn = document.querySelectorAll('.order-btn');
+        let acc = '';
+
+        for (let i = 0; i < card.length; i++) {
+            btn[i].addEventListener('click', function () {
+                acc = card[i].querySelector('.order-card__acc');
+                $(acc).slideToggle();
+            });
+        }
+    }
+
     if ($('.js-footer-acc').exists()) {
         let accordions = document.getElementsByClassName("js-footer-acc");
 
