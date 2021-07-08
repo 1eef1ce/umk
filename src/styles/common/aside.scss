@@ -32,7 +32,7 @@
     &.open {
       display: block;
       position: absolute;
-      top: 0;
+      top: 64px;
       right: 0;
     }
 
@@ -47,7 +47,7 @@
       }
 
       @media (max-width: 620px) {
-        padding: 18px 20px 20px;
+        padding: 16px 20px 20px;
       }
 
       &__text {
@@ -55,10 +55,6 @@
         @media (max-width: 1024px) {
           color: $gray-2;
           margin-top: 9px;
-        }
-
-        @media (max-width: 620px) {
-          margin-top: 3px;
         }
 
         span,
@@ -100,7 +96,6 @@
   }
 
   &--reverse {
-    border: 1px solid red;
     padding: 13px 0 64px;
 
     .aside {
@@ -108,9 +103,40 @@
         margin-left: 0;
         margin-right: 23px;
       }
+    }
+  }
+
+  &--lk {
+    .aside {
+      &__sidebar {
+        margin-left: 0;
+        margin-right: 35px;
+        width: 222px;
+        padding-top: 7px;
+      }
 
       &__main {
-        width: calc(100% - 285px - 23px);
+        width: calc(100% - 222px - 35px);
+      }
+    }
+
+    .sidemenu,
+    .delivery-unit {
+      background-color: white;
+    }
+  }
+
+  &--lk_order {
+    .aside {
+      &__sidebar {
+        margin-right: 60px;
+        width: 222px;
+        margin-left: 0;
+      }
+
+      &__main {
+        width: calc(100% - 222px - 60px);
+        max-width: 918px;
       }
     }
   }

@@ -19,6 +19,15 @@
 
   &:nth-of-type(2n) {
     background: $gray-3;
+    padding-bottom: 58px;
+
+    @media (max-width: 1024px) {
+      padding-bottom: 23px;
+    }
+
+    @media (max-width: 620px) {
+      padding-bottom: 19px;
+    }
   }
 
   &__list {
@@ -31,10 +40,10 @@
     ul {
       list-style: none;
       min-width: 233px;
-      margin: 15px 50px 0 0;
+      margin: 17px 50px 0 0;
 
       @media (max-width: 1024px) {
-        margin: 15px 40px 0 0;
+        margin: 16px 40px 0 0;
         line-height: 1.6;
       }
 

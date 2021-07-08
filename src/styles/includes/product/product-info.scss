@@ -52,11 +52,11 @@
 
   &__body {
     display: none;
-    padding: 25px 28px 38px;
+    padding: 25px 28px 32px;
     border: 2px solid rgba(217, 217, 255, 0.3);
 
     @media (max-width: 1024px) {
-      padding: 15px 20px 20px 20px;
+      padding: 15px 20px 22px 20px;
     }
 
     @media (max-width: 620px) {
@@ -67,10 +67,10 @@
   &__row {
 
     &:not(:first-of-type) {
-      margin-top: 22px;
+      margin-top: 24px;
 
       @media (max-width: 1024px) {
-        margin-top: 9px;
+        margin-top: 14px;
       }
 
       @media (max-width: 620px) {

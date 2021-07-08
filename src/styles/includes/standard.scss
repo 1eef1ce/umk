@@ -10,6 +10,10 @@
     @media (max-width: 1024px) {
       margin-top: 5px;
     }
+
+    @media (max-width: 620px) {
+      margin-top: 0;
+    }
   }
 
   &__item {
@@ -22,7 +26,7 @@
     }
 
     @media (max-width: 620px) {
-      padding: 18px 0 16px 28px;
+      padding: 20px 0 16px 28px;
     }
 
     &:not(:last-of-type) {
@@ -45,7 +49,7 @@
 
       @media (max-width: 620px) {
         top: 18px;
-        font-size: 16px;
+        font-size: 18px;
       }
     }
   }
@@ -66,7 +70,7 @@
     }
 
     @media (max-width: 620px) {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     &:hover {
@@ -79,7 +83,7 @@
     align-items: center;
     justify-content: center;
     height: 25px;
-    padding: 6px 12px 5px;
+    padding: 6px 11px 5px;
     font-weight: 600;
     font-size: 14px;
     line-height: 1;
@@ -110,12 +114,6 @@
 
     @media (max-width: 620px) {
       width: 100%;
-      display: -webkit-box;
-      max-height: 50px;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
 }

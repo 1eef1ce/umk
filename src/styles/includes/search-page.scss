@@ -45,6 +45,12 @@
     @media (max-width: 1024px) {
       line-height: 1.45;
     }
+
+    @media (max-width: 620px) {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-top: 12px;
+    }
   }
 
   &__items {
@@ -55,7 +61,7 @@
     counter-reset: numbers-counter;
 
     @media (max-width: 1024px) {
-      margin-top: 16px;
+      margin-top: 13px;
     }
   }
 
@@ -66,7 +72,8 @@
     counter-increment: numbers-counter;
 
     @media (max-width: 1024px) {
-      margin: 6px 0;
+      padding-left: 24px;
+      margin: 7px 0;
     }
 
     &::before {
@@ -83,6 +90,10 @@
 
     &--single {
       margin-top: 30px;
+
+      @media (max-width: 1024px) {
+        margin-top: 20px;
+      }
     }
   }
 
@@ -93,10 +104,12 @@
 
     @media (max-width: 1024px) {
       margin-top: 5px;
+      font-size: 14px;
+      line-height: 1.75;
     }
 
     @media (max-width: 620px) {
-      margin-top: 7px;
+      margin-top: 4px;
     }
 
     &:hover {

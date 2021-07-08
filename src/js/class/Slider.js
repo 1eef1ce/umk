@@ -30,6 +30,11 @@ class Slider {
     updateSlider(props, res = '') {
 
         switch (props) {
+            case 'loop':
+                this.settings.loop = res;
+                this.slider.destroy();
+                this.slider = new Swiper(this.name, this.settings);
+                break;
             case 'space':
                 this.slider.params.spaceBetween = res;
                 this.slider.update();
@@ -75,6 +80,14 @@ class Slider {
             case 'autoHeight':
                 this.slider.params.autoHeight = res;
                 this.slider.update();
+                break;
+            case 'effect':
+                this.settings.effect = res;
+                this.settings.fadeEffect = {
+                    crossFade: true
+                }
+                this.slider.destroy();
+                this.slider = new Swiper(this.name, this.settings);
                 break;
             case 'pagination':
                 let pagEl = $(this.name).find('.swiper-pagination')[0];

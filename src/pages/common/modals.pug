@@ -1,4 +1,4 @@
-.modal.js-modal-success.modal--success
+.modal.modal--success.js-modal-success
     .modal__content
         a.modal__close.js-close-modal(href="javascript:void(0);")
             +icon('close_big')
@@ -10,3 +10,85 @@
             br
             | нами в ближайшее время
         a.link.link--underline.js-close-modal(href="javascript:void(0);") Закрыть
+
+.modal.modal--delivery.js-modal-delivery
+    .modal__content
+        a.modal__close.js-close-modal(href="javascript:void(0);")
+            +icon('close_big')
+        .modal__title Выберите способ получения
+        form.modal-delivery
+            .modal-delivery__btn.btn.btn--transparent.active
+                .modal-delivery__txt Самовывоз
+                .modal-delivery__ic
+                    img(src="img/icons/ic-ok.png" alt="")
+            .modal-delivery__box.disable 
+                .modal-delivery__btn.btn.btn--transparent.js-delivery-way
+                    .modal-delivery__txt Доставка по адресу
+                    .modal-delivery__ic
+                        img(src="img/icons/ic-ok.png" alt="")
+                .modal-delivery__panel 
+                    .modal-delivery__subtitle Укажите город:
+                    select.js-select(style="width: 100%;")
+                        option Объявленные 1
+                        option Объявленные 2
+                        option Объявленные 3
+                        option Объявленные 4
+                    .modal-delivery__bloc
+                        .modal-delivery__title Выберите транспорт:
+                        .modal-delivery__cover
+                            .modal-delivery__unit
+                                input#delivery_g.lk-radio(type="radio" name="delivery" value="delivery_g" disabled="disabled")
+                                label(for="delivery_g") Доставка ж/д
+                            .modal-delivery__unit
+                                input#delivery_c.lk-radio(type="radio" name="delivery" value="delivery_c" disabled="disabled")
+                                label(for="delivery_c") Доставка машиной
+                    .modal-delivery__bloc
+                        .modal-delivery__title Стоимость:
+                        .modal-delivery__cost 
+                            span.num 0
+                            span.symbol ₽
+                button.btn.btn--transparent(type="submit") Сохранить изменения
+
+.modal.modal--auth.modal--auth_enter.js-modal-auth
+    .modal__content
+        .modal__header
+            .modal__title Вход
+            .modal__close.js-close-modal
+        form.modal__form 
+            .form-group
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
+            .form-group
+                label.form-group__label(for="pass") Пароль
+                input#pass.form-group__input.js-input(type="password")
+            button.btn.btn--basic(type="submit") Отправить
+        .modal__bottom 
+            a.link.js-open-reg(href="javascript:void(0);") Регистрация
+            a.link.js-open-res(href="javascript:void(0);") Забыли пароль?
+
+.modal.modal--auth.modal--auth_reg.js-modal-reg
+    .modal__content
+        .modal__header
+            .modal__title Регистрация
+            .modal__close.js-close-modal
+        form.modal__form 
+            .form-group
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
+            button.btn.btn--basic(type="submit") Отправить
+        .modal__note При создании учётной записи вы автоматически соглашаетесь с  “Политикой конфиденциальности”
+        .modal__bottom 
+            a.link.js-open-auth(href="javascript:void(0);") Вход
+
+.modal.modal--auth.modal--auth_res.js-modal-res
+    .modal__content
+        .modal__header
+            .modal__title Восстановить пароль
+            .modal__close.js-close-modal
+        .modal__note Если вы забыли пароль, введите E-mail. Ваши региcтрационные данные (пароль) будут высланы на этот адрес электронной почты.
+        form.modal__form 
+            .form-group
+                label.form-group__label(for="email") E-mail
+                input#email.form-group__input.js-input(type="text")
+            button.btn.btn--basic(type="submit") Отправить
+

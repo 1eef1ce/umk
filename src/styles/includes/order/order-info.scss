@@ -1,0 +1,60 @@
+.order-info {
+    background-color: white;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    padding: 33px 50px 50px;
+
+    &__txt {
+        font-size: 35px;
+        font-weight: 600;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 43px;
+
+        &:not(:first-child) {
+            margin-top: 28px;
+
+            .num {
+                margin-right: 5px;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-top: 22px;
+        }
+    }
+
+    &__col {
+        &:first-child {
+            .order-info__text {
+                font-weight: 600;
+            }
+        }
+
+        &:last-child {
+            justify-self: end;
+            text-align: right;
+        }
+    }
+
+    &__subtext {
+        margin-top: 7px;
+    }
+
+    .symbol {
+        font-weight: 400;
+    }
+
+    .num {
+        margin-right: 8px;
+        font-weight: 600;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 41px;
+    }
+}

@@ -1,0 +1,107 @@
+extends common/layout
+
+block content
+    main.main
+        .lk.lk--basic
+            .lk__container.container
+                h1.title-1 Оформление зявки на заказ
+                form.order-detaile
+                    .order-detaile__left 
+                        .order-detaile__bloc
+                            .order-detaile__title 1. Ваши данные
+                            .order-detaile__box
+                                .form-group
+                                    label.form-group__label(for="inn") ИНН, адрес или ОГРН*
+                                    input#inn.form-group__input.js-input(type="text")
+                                .form-group
+                                    label.form-group__label(for="fio") ФИО для связи*
+                                    input#fio.form-group__input.js-input(type="text")
+                                .form-group
+                                    label.form-group__label(for="phone") Телефон
+                                    input#phone.form-group__input.js-input(type="tel")
+                        .order-detaile__bloc
+                            .order-detaile__title 2. Способ получения
+                            .order-detaile__box
+                                .delivery-way.delivery-way--rail
+                                    .delivery-way__left
+                                        .delivery-way__bloc 
+                                            .delivery-way__title Доставка по адресу с помощью ж/д
+                                            a.tooltip.tooltip--delivery(href="javascript:void(0);")
+                                                .tooltip__icon
+                                                    +icon('ic-ok')
+                                                .tooltip__content Безопасная сделка, страховка в подарок
+                                        .delivery-way__txt Компания:  ООО “Аверс” обл.&nbsp;Свердловская, г. Екатеринбург
+                                    .delivery-way__right
+                                        .delivery-way__edit.js-btn-delivery Изменить
+                                //- .delivery-way.delivery-way--self
+                                //-     .delivery-way__cover
+                                //-         .delivery-way__left
+                                //-             .delivery-way__bloc 
+                                //-                 .delivery-way__title Самовывоз
+                                //-                 a.tooltip.tooltip--self(href="javascript:void(0);")
+                                //-                     .tooltip__icon
+                                //-                         +icon('ic-warrning')
+                                //-                     .tooltip__content При самовывозе товара клиент берет всю ответственность на себя. Для получения бесплатной страховки оформите доставку.
+                                //-             .delivery-way__txt Компания:  ООО “Аверс” обл.&nbsp;Челябинская, г. Магнитогорск
+                                //-         .delivery-way__right
+                                //-             .delivery-way__edit.js-btn-delivery Изменить
+                                //-     .delivery-way__links 
+                                //-         .delivery-way__link
+                                //-             +icon('download')
+                                //-             | Правила самовывоза
+                                //-         .delivery-way__link
+                                //-             +icon('download')
+                                //-             | Доверенность
+
+                        .order-detaile__bloc
+                            .order-detaile__title 3. Можно забрать с 29 января
+                            .order-detaile__box
+                                .order-detaile__store Склад 1 (г. Екатеринбург), 4 товара, 150 т
+                        .order-detaile__bloc
+                            .order-detaile__title 4. Комментарий к заказу
+                            .order-detaile__box
+                                textarea.order-detaile__textarea(name="comment")
+                    .order-detaile__right
+                        .order-detaile__bloc
+                            .order-detaile__title 5. Оформление заявки
+                            .order-info
+                                .order-info__row.order-info__row--caption
+                                    .order-info__col
+                                        .order-info__txt Итого:
+                                    .order-info__col
+                                        .order-info__txt
+                                            span.num 4 769 866
+                                            span.symbol ₽
+                                .order-info__row
+                                    .order-info__col
+                                        .order-info__text Труба, 3 шт.
+                                        .order-info__subtext Скидка
+                                    .order-info__col
+                                        .order-info__text
+                                            span.num 4 847 016
+                                            span.synbol ₽
+                                        .order-info__subtext (2%)  77 150 ₽    
+                                .order-info__row
+                                    .order-info__col
+                                        .order-info__text Штрипс, 1 шт.
+                                        .order-info__subtext Скидка
+                                    .order-info__col
+                                        .order-info__text
+                                            span.num 354 016
+                                            span.symbol ₽
+                                        .order-info__subtext (1%)  32 150 ₽
+                                .order-info__row
+                                    .order-info__col
+                                        .order-info__text Доставка
+                                        .order-info__subtext г. Екатеринбург
+                                    .order-info__col
+                                        .order-info__text
+                                            span.num 25 000
+                                            span.symbol ₽
+                                .order-info__row
+                                    .order-info__col
+                                        .order-info__text Общий вес
+                                    .order-info__col
+                                        .order-info__text
+                                            span.num 150 т
+                                button.btn.btn--basic.js-btn-success(type="submit") Отправить заявку на заказ

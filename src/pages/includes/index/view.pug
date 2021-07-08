@@ -3,11 +3,11 @@
         .view__grid
             .view__bloc.view__bloc--title
                 .view__title Крупнейший металлмаркет России
-            .view__bloc.view__bloc--about
+            .view__bloc.view__bloc--about.view__bloc--factory
                 .view__ic
                     img(src="img/icons/ic-factory.svg" alt="")
                 .view__txt Занимаем ведущие позиции на российском и&nbsp;европейском рынке.
-            .view__bloc.view__bloc--about
+            .view__bloc.view__bloc--about.view__bloc--offer
                 .view__txt Мы – одна из крупнейших металлообрабатывающих компаний, производящая широкий спектр продуктов.
                 a.link.link--detail(href="javascript:void(0);")
                     .link__txt Спецпредложения
@@ -16,21 +16,21 @@
             .view__bloc.view__bloc--list 
                 .view__item
                     .view__article 15 000 позиций в наличии
-                    a.link.link--detail(href="javascript:void(0);")
+                    a.link.link--detail(href="catalog.html")
                         .link__txt Каталог
                         .link__ic
                             +icon('ic-arrow')
                 .view__item
                     .view__article 855 000 т продукции сделано
-                    a.link.link--detail(href="javascript:void(0);")
+                    a.link.link--detail(href="supply.html")
                         .link__txt Поставщикам
                         .link__ic
                             +icon('ic-arrow')
                 .view__item
                     .view__article 10 000 раз оказано услуг
-                    a.link.link--detail(href="javascript:void(0);")
+                    a.link.link--detail(href="catalog-service.html")
                         .link__txt Сервис
                         .link__ic
                             +icon('ic-arrow')
-            .view__bloc.view__bloc--slider 
+            a.view__bloc.view__bloc--slider(href="catalog.html") 
                 canvas

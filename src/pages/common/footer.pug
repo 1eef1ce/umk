@@ -3,43 +3,71 @@ footer.footer
         .footer__container.container 
             .footer__grid 
                 .footer__column
-                    a(href="javascript:void(0);").footer__link.footer__link--title.active Контакты
-                    a(href="javascript:void(0);").footer__link.footer__link--title Каталог
-                    .footer__box 
-                        a(href="javascript:void(0);").footer__link.footer__link--small.active Продукция для упаковки
-                        a(href="javascript:void(0);").footer__link.footer__link--small Лента стальная (штрипс)
-                        a(href="javascript:void(0);").footer__link.footer__link--small Трубы
-                        a(href="javascript:void(0);").footer__link.footer__link--small Профиль для строительства
-                    .footer__link.footer__link--title Спецпредложения
+                    .footer__acc
+                        a(href="javascript:void(0);").footer__link.footer__link--title.footer__btn.active Контакты
+                    .footer__acc.js-footer-acc
+                        a(href="javascript:void(0);").footer__btn
+                            .footer__link.footer__link--title Каталог
+                            .footer__ic
+                                +icon("chevron_down")
+                        .footer__box.footer__list
+                            .footer__content
+                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile.active Каталог
+                                a(href="javascript:void(0);").footer__link.footer__link--small Продукция для упаковки
+                                a(href="javascript:void(0);").footer__link.footer__link--small Лента стальная (штрипс)
+                                a(href="javascript:void(0);").footer__link.footer__link--small Трубы
+                                a(href="javascript:void(0);").footer__link.footer__link--small Профиль для строительства
+                                a(href="javascript:void(0);").footer__link.footer__link--title Спецпредложения
                 .footer__column
-                    a(href="javascript:void(0);").footer__link.footer__link--title Сервис
-                    .footer__box 
-                        a(href="javascript:void(0);").footer__link.footer__link--small Плоский прокат
-                        a(href="javascript:void(0);").footer__link.footer__link--small Гнутый и фасонный профиль
-                        a(href="javascript:void(0);").footer__link.footer__link--small Сортовой прокат
-                        a(href="javascript:void(0);").footer__link.footer__link--small Метизная продукция
-                        a(href="javascript:void(0);").footer__link.footer__link--small Дополнительные услуги
-                .footer__column 
-                    a(href="javascript:void(0);").footer__link.footer__link--title ГОСТы и ТУ
-                    a(href="javascript:void(0);").footer__link.footer__link--title Поставщикам
-                    a(href="javascript:void(0);").footer__link.footer__link--title Доставка
-                    a(href="javascript:void(0);").footer__link.footer__link--title Закупки
-                    a(href="javascript:void(0);").footer__link.footer__link--title Тендер
-                .footer__column 
-                    a(href="javascript:void(0);").footer__link.footer__link--title Компания
-                    .footer__box 
-                        a(href="javascript:void(0);").footer__link.footer__link--small О нас
-                        a(href="javascript:void(0);").footer__link.footer__link--small История
-                        a(href="javascript:void(0);").footer__link.footer__link--small Карьера
-                    a(href="javascript:void(0);").footer__link.footer__link--title Новости
-                    a(href="javascript:void(0);").footer__link.footer__link--title Оповещение о НМУ
-                .footer__column 
+                    .footer__acc.js-footer-acc
+                        a(href="javascript:void(0);").footer__btn
+                            .footer__link.footer__link--title Сервис
+                            .footer__ic
+                                +icon("chevron_down")
+                        .footer__box.footer__list
+                            .footer__content
+                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Сервис
+                                a(href="javascript:void(0);").footer__link.footer__link--small Плоский прокат
+                                a(href="javascript:void(0);").footer__link.footer__link--small Гнутый и фасонный профиль
+                                a(href="javascript:void(0);").footer__link.footer__link--small Сортовой прокат
+                                a(href="javascript:void(0);").footer__link.footer__link--small Метизная продукция
+                                a(href="javascript:void(0);").footer__link.footer__link--small Дополнительные услуги
+                                a(href="javascript:void(0);").footer__link.footer__link--title.footer__link--laptop Обратная связь
+                .footer__column
+                    .footer__acc.js-footer-acc
+                        a(href="javascript:void(0);").footer__btn
+                            .footer__link.footer__link--title Информация
+                            .footer__ic
+                                +icon("chevron_down") 
+                        .footer__list
+                            .footer__content
+                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Информация
+                                a(href="javascript:void(0);").footer__link.footer__link--title ГОСТы и ТУ
+                                a(href="javascript:void(0);").footer__link.footer__link--title Поставщикам
+                                a(href="javascript:void(0);").footer__link.footer__link--title Доставка
+                                a(href="javascript:void(0);").footer__link.footer__link--title Закупки
+                                a(href="javascript:void(0);").footer__link.footer__link--title Тендер
+                .footer__column
+                    .footer__acc.js-footer-acc
+                        a(href="javascript:void(0);").footer__btn
+                            .footer__link.footer__link--title Компания
+                            .footer__ic
+                                +icon("chevron_down") 
+                        .footer__box.footer__list
+                            .footer__content
+                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Компания
+                                a(href="javascript:void(0);").footer__link.footer__link--small О нас
+                                a(href="javascript:void(0);").footer__link.footer__link--small История
+                                a(href="javascript:void(0);").footer__link.footer__link--small Карьера
+                                a(href="javascript:void(0);").footer__link.footer__link--title Новости
+                                a(href="javascript:void(0);").footer__link.footer__link--title Оповещение о НМУ
+                .footer__column.footer__column--desk 
                     a(href="javascript:void(0);").footer__link.footer__link--title Обратная связь
                     a(href="javascript:void(0);").footer__link.footer__link--title Карта сайта
     .footer__bottom 
         .footer__container.container 
             .footer__cover 
-                .footer__col 
+                .footer__col.footer__col--logo
                     a(href="javascript:void(0);").footer__logo 
                         <svg width="146" height="63" viewBox="0 0 146 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 16.8857L0 15.3857L8 11.3857L44.5 2.38574H87C94.5 4.38574 109.6 8.48574 110 8.88574C110.4 9.28574 122.167 16.3857 128 19.8857L131.5 31.3857L128 29.3857C125 15.8857 98 5.88573 58.5 5.38573C26.9 4.98573 7 12.8857 1 16.8857Z" fill="#B9B9B9"/>
@@ -55,11 +83,9 @@ footer.footer
                             <path d="M56 48.3857L54 45.8857H47L48.5 48.3857H56Z" fill="#B9B9B9"/>
                             <path d="M44 48.3857L42.5 45.8857H33L34.5 48.3857H44Z" fill="#B9B9B9"/>
                         </svg>
-
-                    .footer__info 
-                        a(href="javascript:void(0);").footer__link.footer__link--small ​Политика конфиденциальности и персональных данных
-                        .footer__copy © 2021 ООО “УМК”
-                .footer__col
+                .footer__col.footer__col--agree
+                    a(href="javascript:void(0);").footer__link.footer__link--small ​Политика конфиденциальности и персональных данных
+                .footer__col.footer__col--share
                     .footer__wrapper
                         .social
                             a(href="javascript:void(0);").social__item.social__item--fb
@@ -70,5 +96,8 @@ footer.footer
                                 +icon('ic-linkedin')
                             a(href="javascript:void(0);").social__item.social__item--gg 
                                 +icon('ic-google')
-                        a(href="javascript:void(0);").footer__link.footer__link--small Разработано в Uralmedias
+                .footer__col.footer__col--year
+                    .footer__copy © 2021 ООО “УМК”
+                .footer__col.footer__col--company
+                    a(href="javascript:void(0);").footer__link.footer__link--small Разработано в Uralmedias
 include menu-popup

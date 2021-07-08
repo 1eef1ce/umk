@@ -9,6 +9,10 @@
     margin: 37px -17px 0;
   }
 
+  @media (max-width: 1024px) {
+    margin: 28px -17px 0;
+  }
+
   &__item {
     margin: 0 10px;
 

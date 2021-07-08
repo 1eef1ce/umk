@@ -1,0 +1,100 @@
+.lk-profile {
+    margin-top: 29px;
+    max-height: 540px;
+    padding-left: 25px;
+
+    &__row {
+        display: grid;
+        grid-template-columns: minmax(143px, 211px) minmax(93px, 236px) minmax(21px, 1fr);
+        align-items: center;
+        grid-gap: 31px;
+    }
+
+    &__col {
+        &--tooltip {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__icon {
+        width: 17px;
+        height: 17px;
+        margin-left: auto;
+        cursor: pointer;
+
+        &:hover {
+            .icon {
+                fill: $purple-1;
+            }
+        }
+
+        .icon {
+            fill: $gray-1;
+        }
+    }
+
+    &__caption {
+        font-weight: 400;
+    }
+
+    &__info {
+        font-weight: 600;
+    }
+
+    &__item {
+        padding-bottom: 15px;
+        border-bottom: 1px solid $gray-5;
+
+        &:not(:first-child) {
+            margin-top: 11px;
+        }
+
+        &.disable {
+            .lk-profile__info {
+                color: $gray-2;
+            }
+
+            .lk-profile__icon {
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__sub {
+        max-height: 0;
+        overflow: hidden;
+        transition: .4s ease-in-out;
+    }
+
+    &__wrapper {
+        margin-top: 24px;
+
+        &:first-of-type {
+            margin-top: 29px;
+        }
+    }
+
+    &__bloc {
+        &:not(:first-child) {
+            margin-top: 36px;
+
+            .lk-profile__wrapper {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    .scrollbar-track-y {
+        width: 2px;
+    }
+
+    .scroll-content {
+        padding-right: 25px;
+    }
+
+    .scrollbar-thumb {
+        background-color: $purple-1;
+        width: 2px;
+    }
+}

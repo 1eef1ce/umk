@@ -78,9 +78,10 @@
         height: 64px;
         margin-right: 30px;
 
-        &__txt {
+        span {
             font-weight: 600;
             font-size: 15px;
+            line-height: 2;
         }
 
         &__icon {

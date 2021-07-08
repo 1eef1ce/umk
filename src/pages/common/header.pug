@@ -1,7 +1,7 @@
 header.header
   .header__inner
     .header__container.container.container--full
-      a(href="javascript:void(0);").header__logo 
+      a(href="/").header__logo 
         <svg width="146" height="63" viewBox="0 0 146 63" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 16.8857L0 15.3857L8 11.3857L44.5 2.38574H87C94.5 4.38574 109.6 8.48574 110 8.88574C110.4 9.28574 122.167 16.3857 128 19.8857L131.5 31.3857L128 29.3857C125 15.8857 98 5.88573 58.5 5.38573C26.9 4.98573 7 12.8857 1 16.8857Z" fill="#B9B9B9"/>
             <path d="M79 62.3857C50.6 63.9857 33.8333 59.3857 29 56.8857L35.5 57.8857L49 58.8857L69.5 59.3857L90.5 57.8857L111 52.3857L123 44.8857L132 38.3857C133 33.5524 135 23.7857 135 23.3857C135 22.9857 122.667 13.8857 116.5 9.38574C119.667 10.0524 128.2 12.9857 137 19.3857C148 27.3857 147 38.8857 138.5 45.8857C130 52.8857 114.5 60.3857 79 62.3857Z" fill="#8B8B8B"/>
@@ -41,8 +41,7 @@ header.header
                   li.active  
                     a(href="javascript:void(0);") Ru
                   li  
-                    a(href="javascript:void(0);") En
-                  
+                    a(href="javascript:void(0);") En         
         .header__bottom
           .header__bloc.header__bloc--popup-menu.js-btn-menu 
             .menu-btn
@@ -72,23 +71,28 @@ header.header
                     a(href="javascript:void(0);") 8(958)548-97-21
                   li  
                     a(href="javascript:void(0);") 8(958)548-88-24
-            a(href="tel:8(958)548-78-56").header-link
+            a(href="javascript:void(0);").header-link.header-link--cart
                 .header-link__icon
                   +icon('ic-cart')
+                  span.mf-count 2
                 .header-link__txt Корзина
-            .dropdown.dropdown--user
-              .dropdown-label
-                .dropdown-label__icon
+            //- .dropdown.dropdown--user
+            //-   .dropdown-label
+            //-     .dropdown-label__icon
+            //-       +icon('ic-users')
+            //-     .dropdown-label__txt Личный кабинет
+            //-   .dropdown-menu 
+            //-     ul.submenu
+            //-       li.active  
+            //-         a(href="javascript:void(0);") Иван Иванов
+            //-       li  
+            //-         a(href="javascript:void(0);") Иван Иванов
+            //-       li  
+            //-         a(href="javascript:void(0);") Иван Иванов
+            a(href="auth.html").header-link.header-link--user
+                .header-link__icon
                   +icon('ic-users')
-                .dropdown-label__txt Личный кабинет
-              .dropdown-menu 
-                ul.submenu
-                  li.active  
-                    a(href="javascript:void(0);") Иван Иванов
-                  li  
-                    a(href="javascript:void(0);") Иван Иванов
-                  li  
-                    a(href="javascript:void(0);") Иван Иванов
+                .header-link__txt Личный кабинет
           button(class="btn btn--search js-btn-search")
             +icon('ic-search')
         form.header-search
@@ -99,5 +103,5 @@ header.header
             span Найти
           .close-btn.js-close-search
             .close-btn__icon
-
+    include ./menu-mobile
 

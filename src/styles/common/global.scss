@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --wScroll: 0px;
+}
+
 h1,
 h2,
 h3,
@@ -20,8 +24,8 @@ h4 {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
     margin: 0;
     font-family: 'MyriadPro', Arial, sans-serif;
     font-weight: 400;
@@ -36,6 +40,10 @@ body {
     @media (max-width: 620px) {
         line-height: 1.7;
     }
+}
+
+html {
+    padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 }
 
 img {
@@ -142,6 +150,15 @@ button {
     font-size: 24px;
     font-weight: 600;
     color: $purple-1;
+
+    @media(max-width: 1024px) {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    @media(max-width: 620px) {
+        font-size: 18px;
+    }
 }
 
 svg {
@@ -197,4 +214,29 @@ textarea {
 
 textarea {
     resize: none;
+}
+
+.back {
+    font-size: 14px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input,
+textarea {
+    font-size: 16px;
+
+    &::placeholder {
+        font-family: 'MyriadPro', Arial, sans-serif;
+        font-weight: 400;
+        color: $gray-2;
+    }
+}
+
+.main {
+    flex: 1 0 auto;
 }

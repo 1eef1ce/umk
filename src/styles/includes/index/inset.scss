@@ -1,11 +1,53 @@
 .inset {
     padding: 75px 0 77px;
 
+    @media(max-width: 1024px) {
+        padding: 48px 0 22px;
+    }
+
+    @media(max-width: 620px) {
+        padding: 31px 0 12px;
+    }
+
     &__left {
         position: relative;
         width: 465px;
         height: 403px;
         margin-right: 90px;
+
+        @media(max-width: 1300px) {
+            margin-right: 45px;
+            width: 357px;
+        }
+
+        @media(max-width: 1024px) {
+            width: calc(100% + 40px);
+            margin-right: 0;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 19px;
+        }
+
+        .link {
+            display: none;
+
+            @media(max-width: 1024px) {
+                display: flex;
+                margin: auto;
+                margin-top: 28px;
+                padding-right: 0;
+            }
+
+            @media(max-width: 620px) {
+                margin-top: 21px;
+            }
+        }
 
         img {
             width: 100%;
@@ -21,6 +63,17 @@
         top: 0;
         bottom: 0;
         margin: auto;
+
+        @media(max-width: 1024px) {
+            position: relative;
+            width: 100%;
+            left: 0;
+            height: 464px;
+        }
+
+        @media(max-width: 620px) {
+            height: 300px;
+        }
     }
 
     &__right {
@@ -28,25 +81,65 @@
         height: 100%;
         padding-bottom: 6px;
 
+        @media(max-width: 1300px) {
+            width: calc(100% - 357px - 45px);
+        }
+
+        @media(max-width: 1024px) {
+            width: 100%;
+        }
+
         .link {
             margin-top: 44px;
             font-size: 18px;
+
+            @media(max-width: 1024px) {
+                display: none;
+            }
         }
     }
 
     &__grid {
         display: flex;
         align-items: center;
+
+        @media(max-width: 1024px) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__box {
         margin-top: 22px;
 
+        @media(max-width: 1024px) {
+            text-align: center;
+            max-width: 657px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        @media(max-width: 620px) {
+            text-align: left;
+        }
+
         p {
+            @media(max-width: 620px) {
+                line-height: 1.7;
+            }
 
             &:not(:first-child) {
                 margin-top: 11px;
             }
+        }
+    }
+
+    &__title {
+        @media(max-width: 1024px) {
+            text-align: center;
+        }
+
+        @media(max-width: 620px) {
+            text-align: left;
         }
     }
 }

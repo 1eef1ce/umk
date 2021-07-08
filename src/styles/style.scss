@@ -1,6 +1,7 @@
 @import "libs/libs";
 @import "common/global";
 @import "common/header/header";
+@import "common/header/menu-mobile";
 @import "common/header/header-link";
 @import "common/header/header-search";
 @import "common/aside";
@@ -34,6 +35,7 @@
 @import "common/tooltip";
 @import "common/topmenu";
 @import "common/video";
+@import "common/lng";
 @import "includes/about/about";
 @import "includes/about/activity";
 @import "includes/about/mission";
@@ -72,6 +74,26 @@
 @import "includes/tender";
 @import "includes/tender-detail";
 @import "includes/vacancy-detail";
+@import "includes/catalog/include";
+@import "common/overlay";
+@import "includes/history/history";
+@import "includes/history/history-slider";
+@import "includes/lk/lk-menu";
+@import "includes/lk/lk";
+@import "includes/lk/lk-profile";
+@import "includes/lk/lk-edit";
+@import "includes/lk/lk-form";
+@import "includes/lk/lk-order";
+@import "includes/order/order";
+@import "includes/order/order-card";
+@import "includes/lk/lk-documentation";
+@import "includes/lk/lk-cart";
+@import "includes/lk/lk-radio";
+@import "includes/lk/lk-call";
+@import "includes/order/order-detaile";
+@import "includes/delivery-way";
+@import "includes/order/order-info";
+@import "common/modal-delivery";
 
 .icon-stroke {
     stroke: currentColor;
@@ -97,15 +119,39 @@
             background-color: transparent;
             opacity: 1;
             color: $gray-2;
+        }
 
-
-            &:not(:last-child) {
-                margin-right: 20px;
-            }
+        .swiper-pagination-bullet:not(:last-child) {
+            margin-right: 20px;
         }
 
         .swiper-pagination-bullet-active {
             color: $basic;
         }
+    }
+}
+
+.back {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $basic;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        margin: auto;
+        transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: $purple-1;
+    }
+
+    &:hover::after {
+        background-color: $purple-1;
     }
 }

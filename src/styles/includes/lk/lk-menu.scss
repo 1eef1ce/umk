@@ -1,0 +1,36 @@
+.lk-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 38px;
+    margin-top: 33px;
+
+    &__item {
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
+        padding: 47px;
+        padding: 35px 47px 47px;
+        transition: linear .3s;
+        background-color: white;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        background-color: red;
+        border-radius: 46px;
+        margin-top: 31px;
+        background-color: $blue-1;
+
+        .icon {
+            width: 20px;
+            fill: white;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+}

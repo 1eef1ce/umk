@@ -1,14 +1,14 @@
 .mission {
   background: url("/img/decor/bg-about-bottom.svg") no-repeat center;
   background-size: cover;
-  padding: 60px 0;
+  padding-top: 65px;
 
   @media (max-width: 1024px) {
-    padding: 50px 0;
+    padding-top: 50px;
   }
 
   @media (max-width: 620px) {
-    padding: 32px 0;
+    padding-top: 32px;
   }
 
   &__items {
@@ -86,6 +86,14 @@
 
     @media (max-width: 620px) {
       margin-top: -7px;
+    }
+
+    p {
+      margin: 13px 0 0;
+
+      @media (max-width: 1024px) {
+        margin: 11px 0 0;
+      }
     }
   }
 }

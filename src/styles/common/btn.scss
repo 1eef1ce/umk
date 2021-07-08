@@ -22,24 +22,8 @@
         height: 47px;
     }
 
-    &--w200 {
-        width: 200px;
-
-        @media (max-width: 1024px) {
-            width: 168px;
-        }
-
-        @media (max-width: 620px) {
-            width: 50px;
-        }
-    }
-
-    &--w250 {
-        width: 250px;
-
-        @media (max-width: 620px) {
-            width: 100%;
-        }
+    &--w239 {
+        width: 239px;
     }
 
     &--w275 {
@@ -48,6 +32,30 @@
 
     &--w127 {
         width: 127px;
+    }
+
+    &--w149 {
+        width: 149px;
+    }
+
+    &--w170 {
+        width: 170px;
+    }
+
+    &--w175 {
+        width: 175px;
+    }
+
+    &--w218 {
+        width: 218px;
+    }
+
+    &--w181 {
+        width: 181px;
+    }
+
+    &--w187 {
+        width: 187px;
     }
 
     &__icon {
@@ -61,6 +69,17 @@
 
         @media (max-width: 620px) {
             margin-right: 0;
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border: 1px solid $purple-1;
+        color: $purple-1;
+
+        &:hover {
+            color: $red-1;
+            border-color: $red-1;
         }
     }
 
@@ -88,6 +107,11 @@
     }
 
     &--cart {
+        width: 200px;
+
+        @media (max-width: 1024px) {
+            width: 188px;
+        }
 
         @media (max-width: 620px) {
             display: none;
@@ -103,11 +127,37 @@
             align-items: center;
             justify-content: center;
             width: 50px;
+            height: 47px;
         }
 
         svg {
             width: 26px;
             height: 26px;
+        }
+    }
+
+    &--order-info {
+        position: relative;
+        background-color: transparent;
+        border: none;
+        font-weight: normal;
+        font-size: 14px;
+
+        &:hover {
+            color: $purple-1
+        }
+
+        &:hover::before {
+            background-color: $purple-1;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            bottom: -3px;
+            height: 1px;
+            background-color: $basic;
         }
     }
 }

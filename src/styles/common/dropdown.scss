@@ -21,6 +21,10 @@
             left: -100px;
             min-width: 248px;
         }
+
+        @media(max-width: 1024px) {
+            display: none;
+        }
     }
 
 

@@ -23,25 +23,26 @@
   }
 
   &__inner {
-    padding: 23px 20px 80px;
+    padding: 23px 20px 85px;
 
     @media (max-width: 1024px) {
-      padding: 10px 20px 40px;
+      padding: 10px 20px 34px;
     }
 
     @media (max-width: 620px) {
-      padding: 20px 20px 36px;
+      padding: 20px 20px 30px;
     }
   }
 
   p {
-    margin: 13px 0 0;
+    margin: 12px 0 0;
     font-size: 14px;
     line-height: 1.45;
 
     @media (max-width: 1024px) {
-      margin: 9px 0 0;
-      line-height: 1.75;
+      margin: 8px 0 0;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     span {
@@ -72,8 +73,7 @@
     line-height: 1.45;
 
     @media (max-width: 1024px) {
-      font-size: 12px;
-      line-height: 1.55;
+      line-height: 1.75;
     }
   }
 
@@ -84,7 +84,11 @@
     @media (max-width: 1024px) {
       font-size: 22px;
       line-height: 1.55;
-      margin-top: 6px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 620px) {
+      margin-top: 0;
     }
   }
 

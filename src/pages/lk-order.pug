@@ -1,0 +1,345 @@
+extends common/layout
+
+block content
+    main.main
+        .lk
+            .lk__container.container
+                .aside.aside--lk_order
+                    .aside__sidebar
+                        include common/sidemenu
+                        .delivery-unit
+                            .delivery-unit__title Ваш менеджер:
+                            .delivery-unit__text
+                                | Специалист:
+                                br
+                                span Иванов Иван Иванович
+                            .delivery-unit__text
+                                | Почта:
+                                br
+                                a(href="mailto:sdefefvr@mail.ru") sdefefvr@mail.ru
+                            .delivery-unit__text
+                                | Телефон:
+                                br
+                                a(href="tel:+7(999)985-48-56") +7 (999) 985-48-56
+                    .aside__main
+                        h1.title-1 Заказы
+                        .lk-order
+                            .lk-order__top
+                                select.js-select
+                                    option Все заказы
+                                    option Объявленные
+                                .tab.tab--year 
+                                    a.tab__item.active(href="javascript:void(0);") 2021 г.
+                                    a.tab__item(href="javascript:void(0);") 2020 г.
+                                    a.tab__item(href="javascript:void(0);") 2019 г.
+                                    a.tab__item(href="javascript:void(0);") 2018 г.
+                        .order
+                            .order-card
+                                .order-card__top
+                                    .order-card__bloc 
+                                        .order-card__unit
+                                            .order-card__title Заказ №0155-3213543
+                                            .order-card__date от 24 декабря 2021 г.
+                                        .order-card__unit
+                                            .order-card__price 386 000 ₽
+                                    .order-card__bloc.order-card__bloc--bottom
+                                        .order-card__box 
+                                            .order-card__txt Подписание счета
+                                            a.tooltip.tooltip--steps(href="javascript:void(0);")
+                                                .tooltip__icon
+                                                    +icon('ic-warrning2')
+                                                .tooltip__content
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic
+                                                                +icon('ic-step-active')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Подписание договора
+                                                            .tooltip__info И нет сомнений, что тщательные исследования конкурентов объединены в целые кластеры себе.
+                                                    .tooltip__row
+                                                        .tooltip__col.active
+                                                            .tooltip__ic
+                                                                +icon('ic-step-active')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Спецификация
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Счет
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Оплата
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Доставка
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Получено
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты 
+
+                                        .order-card__box Отсрочка оплаты. Осталось 25 д. 18 ч.
+                                .order-card__content
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                .order-card__bottom 
+                                    a.btn.btn--basic.btn--w175.btn--h47(href="javascript:void(0);") Документооборот
+                                    a.btn.btn--transparent.btn--w175.btn--h47(href="javascript:void(0);") Обратная связь
+                                    a.btn.btn--transparent.btn--w175.btn--h47(href="javascript:void(0);") Претензия
+                                    button.btn.btn--order-info.js-order-info Информация о заказе
+                                .modal.modal--order.js-modal-order
+                                    .modal__content
+                                        a.modal__close.js-close-modal(href="javascript:void(0);")
+                                            +icon('close_big')
+                                        .modal__title.title-2 Информация о заказе
+                                        .modal__subtitle №0155-3213543
+                                        .modal__grid 
+                                            .modal__row 
+                                                span Получатель:
+                                                | ООО "Аверс"
+                                            .modal__row 
+                                                span Ответственный за заказ:
+                                                | Иванов Иван Иванович
+                                            .modal__row 
+                                                span Адрес доставки:
+                                                | 454119, Россия, г.Челябинск, Копейское шоссе, 38, оф.13
+                                            .modal__row 
+                                                span Тоннаж: 
+                                                | 150 т
+                                            .modal__row 
+                                                span Оплата: 
+                                                | Онлайн
+                                            .modal__row 
+                                                span Товары: 
+                                                | 3 500 000 ₽
+                                            .modal__row 
+                                                span Доставка: 
+                                                | 60 000 ₽
+                                            .modal__row 
+                                                span Скидка: 
+                                                | 71 200 ₽
+                                            .modal__row 
+                                                span Итого: 
+                                                | 3 488 800
+                            .order-card
+                                .order-card__top
+                                    .order-card__bloc 
+                                        .order-card__unit
+                                            .order-card__title Заказ №0155-3213543
+                                            .order-card__date от 24 декабря 2021 г.
+                                        .order-card__unit
+                                            .order-card__price 386 000 ₽
+                                    .order-card__bloc.order-card__bloc--bottom
+                                        .order-card__box 
+                                            .order-card__txt Подписание счета
+                                            a.tooltip.tooltip--steps(href="javascript:void(0);")
+                                                .tooltip__icon
+                                                    +icon('ic-warrning2')
+                                                .tooltip__content
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic
+                                                                +icon('ic-step-active')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Подписание договора
+                                                            .tooltip__info И нет сомнений, что тщательные исследования конкурентов объединены в целые кластеры себе.
+                                                    .tooltip__row
+                                                        .tooltip__col.active
+                                                            .tooltip__ic
+                                                                +icon('ic-step-active')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Спецификация
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Счет
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Оплата
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Доставка
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                                    .tooltip__row
+                                                        .tooltip__col
+                                                            .tooltip__ic.tooltip__ic--basic
+                                                                +icon('ic-step')
+                                                            i
+                                                        .tooltip__col
+                                                            .tooltip__caption Получено
+                                                            .tooltip__info Сделанные на базе нтернет-аналитики выводы указаны как претенденты
+                                        .order-card__box Отсрочка оплаты. Осталось 25 д. 18 ч.
+                                .order-card__content
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                    .order-card__row 
+                                        .order-card__col
+                                            .order-card__icon
+                                                +icon('ic-coll')
+                                        .order-card__col
+                                            .order-card__name Натяжитель ленты ГОСТ 380-2005
+                                        .order-card__col
+                                            .order-card__cost 150 000 ₽
+                                        .order-card__col
+                                            .order-card__weight 10 т
+                                .order-card__bottom 
+                                    a.btn.btn--basic.btn--w175.btn--h47(href="javascript:void(0);") Документооборот
+                                    a.btn.btn--transparent.btn--w175.btn--h47(href="javascript:void(0);") Обратная связь
+                                    a.btn.btn--transparent.btn--w175.btn--h47(href="javascript:void(0);") Претензия
+                                    button.btn.btn--order-info.js-order-info Информация о заказе
+                                .modal.modal--order.js-modal-order
+                                    .modal__content
+                                        a.modal__close.js-close-modal(href="javascript:void(0);")
+                                            +icon('close_big')
+                                        .modal__title.title-2 Информация о заказе 2
+                                        .modal__subtitle №0155-3213543
+                                        .modal__grid 
+                                            .modal__row 
+                                                span Получатель:
+                                                | ООО "Аверс"
+                                            .modal__row 
+                                                span Ответственный за заказ:
+                                                | Иванов Иван Иванович
+                                            .modal__row 
+                                                span Адрес доставки:
+                                                | 454119, Россия, г.Челябинск, Копейское шоссе, 38, оф.13
+                                            .modal__row 
+                                                span Тоннаж: 
+                                                | 150 т
+                                            .modal__row 
+                                                span Оплата: 
+                                                | Онлайн
+                                            .modal__row 
+                                                span Товары: 
+                                                | 3 500 000 ₽
+                                            .modal__row 
+                                                span Доставка: 
+                                                | 60 000 ₽
+                                            .modal__row 
+                                                span Скидка: 
+                                                | 71 200 ₽
+                                            .modal__row 
+                                                span Итого: 
+                                                | 3 488 800

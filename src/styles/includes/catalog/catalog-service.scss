@@ -5,6 +5,10 @@
     p {
         &:not(:first-of-type) {
             margin-top: 13px;
+
+            @media(max-width: 1024px) {
+                margin-top: 10px;
+            }
         }
     }
 }

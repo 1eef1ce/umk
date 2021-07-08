@@ -1,6 +1,22 @@
 .catalog-list {
     padding: 69px 0;
 
+    @media(max-width: 1235px) {
+        padding: 59px 0;
+    }
+
+    @media(max-width: 1024px) {
+        padding: 59px 0 55px;
+    }
+
+    @media(max-width: 767px) {
+        grid-column-gap: 30px;
+    }
+
+    @media(max-width: 620px) {
+        padding: 51px 0 51px;
+    }
+
     &__grid {
         display: grid;
         grid-column-gap: 105px;
@@ -12,6 +28,28 @@
             "b1 b2 b3"
             "b4 b2 b3"
             "b4 . b5";
+
+        @media(max-width: 1235px) {
+            grid-column-gap: 50px;
+        }
+
+        @media(max-width: 1024px) {
+            grid-column-gap: 62px;
+            justify-content: space-between;
+        }
+
+        @media(max-width: 620px) {
+            max-width: 495px;
+            grid-column-gap: 15px;
+            grid-template-areas:
+                "b4 b1"
+                "b2 b3"
+                "b5 b3";
+        }
+
+        @media(max-width: 375px) {
+            grid-column-gap: 0;
+        }
     }
 
     &__link {
@@ -22,6 +60,15 @@
             font-weight: 600;
             color: $red-1;
 
+            @media(max-width: 1024px) {
+                font-size: 22px;
+                line-height: 1.6;
+            }
+
+            @media(max-width: 620px) {
+                font-size: 18px;
+            }
+
             &:hover {
                 color: $purple-1;
             }
@@ -29,6 +76,14 @@
 
         &_middle {
             font-size: 18px;
+
+            @media(max-width: 1024px) {
+                font-size: 16px;
+            }
+
+            @media(max-width: 620px) {
+                font-size: 14px;
+            }
 
             &:hover {
                 color: $gray-2;
@@ -40,6 +95,10 @@
             margin-top: 4px;
             color: $gray-2;
 
+            @media(max-width: 1024px) {
+                display: none;
+            }
+
             &:hover {
                 opacity: 0.8;
             }
@@ -48,10 +107,26 @@
 
     &__box {
         margin-top: 14px;
+
+        @media(max-width: 1024px) {
+            margin-top: 13px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 8px;
+        }
     }
 
     &__bloc {
         margin-top: 29px;
+
+        @media(max-width: 1024px) {
+            margin-top: 30px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 15px;
+        }
 
         &--b1 {
             grid-area: b1;
@@ -89,6 +164,10 @@
                 margin-top: 0px;
                 grid-template-areas:
                     "b1 b2 b3 b4";
+
+                @media(max-width: 1235px) {
+                    grid-column-gap: 70px;
+                }
             }
 
             &__bloc {
@@ -106,5 +185,9 @@
         .link--small:not(:first-child) {
             margin-top: 12px;
         }
+    }
+
+    &--catalog-page {
+        padding: 72px 0 0;
     }
 }
