@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(values);
 
-        if(values) {
+        if (values) {
             if (values.length > 0) {
                 for (let i = 0; i < values.length; ++i) {
                     const el = ds[values[i][1]];
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         el.value = values[i][1];
                     }
                 }
-            } 
+            }
         }
     }
 });
@@ -1202,7 +1202,7 @@ window.addEventListener('load', function () {
         });
 
         overlayShow
-            .to (
+            .to(
                 overlay,
                 {
                     autoAlpha: 0.5,
@@ -1211,7 +1211,7 @@ window.addEventListener('load', function () {
             )
 
         overlayHide
-            .to (
+            .to(
                 overlay,
                 {
                     autoAlpha: 0,
@@ -1251,7 +1251,7 @@ window.addEventListener('load', function () {
             projectFunc.lockedDOM(true);
         });
 
-        overlay.addEventListener('click', function(){
+        overlay.addEventListener('click', function () {
             overlayHide.play();
             overlayShow.reverse();
             formShowTl.reverse();

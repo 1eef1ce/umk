@@ -9,10 +9,11 @@
                 position: fixed;
                 z-index: 200;
                 top: 65px;
-                right: -23px;
                 height: calc(100vh - 65px);
                 overflow: scroll;
                 transform: translateX(100%);
+                right: -23px;
+                width: 368px;
             }
         }
     }

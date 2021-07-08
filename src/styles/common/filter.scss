@@ -1,6 +1,10 @@
 .filter {
     background-color: $gray-3;
 
+    @media(max-width: 1024px) {
+        background-color: white;
+    }
+
     &__title {
         display: flex;
         align-items: center;
@@ -8,6 +12,12 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 1;
+
+        .tooltip {
+            @media(max-width: 1024px) {
+                display: none;
+            }
+        }
     }
 
     &__panel {
@@ -15,6 +25,12 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+        padding: 19px 23px;
+
+        @media(max-width: 1024px) {
+            padding: 18px 11px 17px;
+            padding-right: 5px;
+        }
     }
 
     &__icon {
@@ -27,7 +43,11 @@
     &__group {
         display: flex;
         flex-direction: column;
-        margin-top: 15px;
+        padding: 0px 23px 19px;
+
+        @media(max-width: 1024px) {
+            padding: 0px 11px 18px;
+        }
     }
 
     &__list {
@@ -37,8 +57,9 @@
     }
 
     &__bloc {
-        padding: 19px 23px;
-        border-bottom: 1px solid #aaaaaa80;
+        &:not(:last-child) {
+            border-bottom: 1px solid #aaaaaa80;
+        }
 
         &.is-open {
             .filter__icon {
@@ -51,6 +72,10 @@
         padding: 0;
         border: 2px solid rgba(217, 217, 217, 0.35);
         border-bottom: none;
+
+        @media(max-width: 1024px) {
+            border: none;
+        }
     }
 
     .checkbox {
@@ -68,6 +93,11 @@
             line-height: 1.2;
             max-width: 208px;
             color: $basic;
+            white-space: nowrap;
+
+            @media(max-width: 1024px) {
+                align-items: center;
+            }
 
             &:after {
                 top: 1px;
@@ -75,6 +105,11 @@
                 width: 5px;
                 height: 10px;
                 border-width: 0 1px 1px 0;
+
+                @media(max-width: 1024px) {
+                    top: 2px;
+                    left: 6px;
+                }
             }
 
             &:before {
@@ -83,6 +118,11 @@
                 margin-right: 10px;
                 position: relative;
                 background-color: rgba(44, 67, 161, 0);
+
+                @media(max-width: 1024px) {
+                    width: 17px;
+                    height: 17px;
+                }
             }
 
             span {
@@ -111,6 +151,21 @@
             background-color: $purple-1;
             color: white;
             border-color: $purple-1;
+        }
+
+        &--basic {
+            display: none;
+            background-color: $purple-1;
+            color: white;
+
+            @media(max-width: 1024px) {
+                display: flex;
+                border: none;
+            }
+
+            &:hover {
+                background-color: $red-1;
+            }
         }
     }
 }
