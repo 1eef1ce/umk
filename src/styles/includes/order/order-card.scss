@@ -20,7 +20,7 @@
     }
 
     &__acc {
-        @media(max-width: 640px) {
+        @media(max-width: 710px) {
             display: none;
         }
     }
@@ -66,7 +66,9 @@
             }
 
             .tooltip__icon svg {
+              @media(max-width: 640px) {
                 fill: white;
+              }
             }
         }
 
@@ -277,11 +279,10 @@
             }
 
             &--doc {
+                margin-right: 20px;
                 @media(max-width: 710px) {
                     min-width: initial;
                     max-width: 100%;
-
-                    margin-right: 20px;
 
                     @media(max-width: 1235px) {
                         margin-right: 10px;
@@ -327,6 +328,10 @@
                     }
                 }
             }
+        }
+
+        .js-oi-obj {
+            margin-left: auto;
         }
     }
 

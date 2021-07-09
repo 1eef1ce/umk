@@ -32,6 +32,24 @@ $.fn.exists = function () {
 };
 
 const projectFunc = {
+    objAd(element, place) {
+        if ($(element).exists()) {
+            $(element).each(function (index) {
+                let adObj = $(this).html();
+                let out = adObj;
+                $(place).html(out);
+                $(this).remove();
+            });
+        }
+    },
+
+    objReturn(element, place) {
+        if ($(element).exists()) {
+            var t = '';
+            t = $(element).html();
+            return $(element);
+        }
+    },
     createSlider() {
         if ($('.js-slider-partners').exists()) {
             const partnerSlider = new Slider('.js-slider-partners', 3, 0);
@@ -1137,10 +1155,23 @@ window.addEventListener('load', function () {
 
         for (let i = 0; i < card.length; i++) {
             btn[i].addEventListener('click', function () {
+                this.classList.toggle('is-open');
                 acc = card[i].querySelector('.order-card__acc');
                 $(acc).slideToggle();
             });
         }
+    }
+
+    if($('.js-oi-include').exists()){
+        $(window).on('resize', function(){
+            if($(window).width() <= 710) {
+                console.log('true');
+                projectFunc.objAd('.js-oi-obj', '.js-oi-include');
+            } else {
+                // projectFunc.objReturn('.js-oi-include', '.order-card__bottom');
+                projectFunc.objReturn('.js-oi-include', '.order-card__bottom');
+            }
+        });
     }
 
     if ($('.js-footer-acc').exists()) {

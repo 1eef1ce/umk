@@ -1,15 +1,26 @@
 .order-btn {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     padding: 18px 20px 19px;
 
+    @media(max-width: 710px) {
+        display: flex;
+    }
+
     &__ic {
         width: 22px;
         height: 22px;
+        transition: .4s ease-in-out;
     }
 
     &__txt {
         font-size: 14px;
+    }
+
+    &.is-open {
+        .order-btn__ic {
+            transform: scale(1,-1);
+        }
     }
 }
