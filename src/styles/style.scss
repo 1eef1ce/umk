@@ -99,6 +99,7 @@
 @import "common/filter-btn";
 @import "common/overlay-filter";
 @import "includes/order/order-btn";
+@import "common/menu-app";
 
 .icon-stroke {
     stroke: currentColor;
@@ -138,6 +139,7 @@
 
 .back {
     position: relative;
+    display: inline-block;
 
     &::after {
         position: absolute;
@@ -150,6 +152,10 @@
         bottom: -3px;
         margin: auto;
         transition: 0.3s ease-in-out;
+
+        @media(max-width: 1024px) {
+            bottom: 1px;
+        }
     }
 
     &:hover {
@@ -158,5 +164,9 @@
 
     &:hover::after {
         background-color: $purple-1;
+    }
+
+    @media(max-width: 1024px) {
+        margin-top: 15px;
     }
 }

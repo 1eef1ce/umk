@@ -1,15 +1,36 @@
 .lk-documentation {
     padding-top: 27px;
+    background: none;
+
+    @media(max-width: 1024px) {
+        padding-top: 18px;
+    }
+
+    @media(max-width: 620px) {
+        padding-top: 13px;
+    }
 
     &__date {
         display: block;
         font-size: 14px;
         width: max-content;
         margin-top: 32px;
+
+        @media(max-width: 620px) {
+            margin-top: 29px;
+        }
     }
 
     &__grid {
         margin-top: 33px;
+
+        @media(max-width: 1024px) {
+            margin-top: 23px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 22px;
+        }
     }
 
     &__col {
@@ -21,6 +42,16 @@
         &:last-child {
             padding-top: 10px;
             padding-bottom: 60px;
+
+            @media(max-width: 1024px) {
+                padding-top: 6px;
+                padding-bottom: 44px;
+            }
+
+            @media(max-width: 620px) {
+                padding-top: 2px;
+                padding-bottom: 40px;
+            }
         }
 
         .btn {
@@ -28,12 +59,25 @@
             border-color: $gray-1;
             color: $gray-1;
             pointer-events: none;
+
+            @media(max-width: 620px) {
+                width: 100%;
+                margin-top: 25px;
+            }
         }
     }
 
     &__title {
         font-weight: 600;
         font-size: 24px;
+
+        @media(max-width: 1024px) {
+            font-size: 22px;
+        }
+
+        @media(max-width: 620px) {
+            font-size: 20px;
+        }
     }
 
     &__icon {
@@ -43,6 +87,18 @@
         width: 58px;
         height: 58px;
         border-radius: 29px;
+
+        @media(max-width: 1024px) {
+            width: 52px;
+            height: 52px;
+            border-radius: 26px;
+        }
+
+        @media(max-width: 620px) {
+            width: 38px;
+            height: 38px;
+            border-radius: 19px;
+        }
 
         .icon {
             width: 36px;
@@ -56,6 +112,16 @@
         display: grid;
         grid-template-columns: 58px minmax(766px, 1fr);
         grid-column-gap: 22px;
+
+        @media(max-width: 1024px) {
+            grid-template-columns: 52px 1fr;
+            grid-column-gap: 17px;
+        }
+
+        @media(max-width: 620px) {
+            grid-template-columns: 38px 1fr;
+            grid-column-gap: 10px;
+        }
 
         &--active {
             .lk-documentation {
@@ -91,6 +157,10 @@
                         width: 4px;
                         flex: 1;
                         align-self: center;
+
+                        @media(max-width: 620px) {
+                            width: 2px;
+                        }
                     }
 
                     .btn {
@@ -118,26 +188,95 @@
                 }
             }
         }
+
+        &:last-child {
+            .lk-documentation {
+                &__col {
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &--billing {
+            .lk-documentation {
+                &__col {
+                    &:last-child {
+                        .lk-documentation__item {
+                            @media(max-width: 450px) {
+                                align-items: flex-start;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &--itog {
+            .lk-documentation {
+                &__col {
+                    &:last-child {
+                        .lk-documentation__text {
+                            @media(max-width: 500px) {
+                                transform: translateY(-3px);
+                            }
+                        }
+                    }
+                }
+
+                &__ic {
+                    @media(max-width: 450px) {
+                        transform: translateX(2px) translateY(0px);
+                    }
+                }
+            }
+        }
     }
 
     &__txt {
         margin-top: 7px;
+
+        @media(max-width: 620px) {
+            margin-top: 2px;
+            line-height: 1.5;
+        }
     }
 
     &__text {
         line-height: 1;
+
+        @media(max-width: 500px) {
+            line-height: 1.5;
+        }
     }
 
     &__items {
         margin-top: 22px;
+
+        @media(max-width: 1024px) {
+            margin-top: 20px;
+        }
     }
 
     &__item {
         display: flex;
         align-items: center;
 
+        @media(max-width: 450px) {
+            align-items: flex-start;
+        }
+
         &:not(:first-child) {
             margin-top: 21px;
+
+            @media(max-width: 1024px) {
+                margin-top: 20px;
+            }
+
+            @media(max-width: 620px) {
+                margin-top: 13px;
+            }
         }
     }
 
@@ -145,9 +284,32 @@
         width: 21px;
         height: 21px;
         margin-right: 7px;
+        flex-shrink: 0;
+
+        @media(max-width: 1024px) {
+            transform: translateX(2px);
+        }
+
+        @media(max-width: 620px) {
+            margin-right: 10px;
+            width: 17px;
+            height: 17px;
+        }
+
+        @media(max-width: 450px) {
+            transform: translateX(2px) translateY(3px);
+        }
     }
 
     .title-1 {
         margin-top: 9px;
+
+        @media(max-width: 1024px) {
+            margin-top: 4px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 14px;
+        }
     }
 }

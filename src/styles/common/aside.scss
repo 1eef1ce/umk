@@ -189,6 +189,12 @@
         }
       }
     }
+
+    .sidemenu {
+      @media(max-width: 1024px) {
+        display: none;
+      }
+    }
   }
 
   &--lk_order {

@@ -36,8 +36,7 @@ const projectFunc = {
         if ($(element).exists()) {
             $(element).each(function (index) {
                 let adObj = $(this).html();
-                let out = adObj;
-                $(place).html(out);
+                $(place).html(adObj);
                 $(this).remove();
             });
         }
@@ -47,6 +46,7 @@ const projectFunc = {
         if ($(element).exists()) {
             var t = '';
             t = $(element).html();
+            console.log(t);
             return $(element);
         }
     },
@@ -1162,16 +1162,31 @@ window.addEventListener('load', function () {
         }
     }
 
+    function moveTo(source, target) {
+        if (!source || !target) {
+          return false;
+        } else {
+          var children = source.childNodes;
+          while (children.length) {
+            target.appendChild(children[0]);
+          }
+          source.parentNode.removeChild(source);
+        }
+      }
+
     if($('.js-oi-include').exists()){
-        $(window).on('resize', function(){
+        const card = document.querySelectorAll('.order-card');
+        let include = '';
+        let link = '';
+
+        for(let i = 0; i < card.length; i++){
+            include = card[i].querySelector('.js-oi-include');
+            link = card[i].querySelector('.js-oi-obj');
+
             if($(window).width() <= 710) {
-                console.log('true');
-                projectFunc.objAd('.js-oi-obj', '.js-oi-include');
-            } else {
-                // projectFunc.objReturn('.js-oi-include', '.order-card__bottom');
-                projectFunc.objReturn('.js-oi-include', '.order-card__bottom');
+                moveTo(link, include);
             }
-        });
+        }
     }
 
     if ($('.js-footer-acc').exists()) {

@@ -185,12 +185,12 @@
     &__content {
         padding: 26px 24px 32px;
 
-        @media(max-width: 10024px) {
+        @media(max-width: 1024px) {
             padding: 26px 20px 28px;
         }
 
-        @media(max-width: 620px) {
-            padding: 26px 20px 21px;
+        @media(max-width: 710px) {
+            padding: 14px 20px 25px;
         }
     }
 
@@ -226,7 +226,7 @@
             }
 
             @media(max-width: 620px) {
-                margin-top: 9px;
+                margin-top: 8px;
             }
         }
     }
@@ -248,10 +248,6 @@
             border-top: none;
         }
 
-        @media(max-width: 620px) {
-            padding: 0px 20px 13px;
-        }
-
         .btn {
             &--w175 {
                 @media(max-width: 1235px) {
@@ -265,40 +261,25 @@
                 }
             }
 
-            &--order-info {
-                position: relative;
-                margin-left: auto;
-                padding: 0;
-                height: auto;
-                font-size: 14px;
-                transform: translateY(-2px);
-
-                @media(max-width: 1235px) {
-                    font-size: 13px;
-                }
-            }
-
             &--doc {
                 margin-right: 20px;
+
+                @media(max-width: 1235px) {
+                    margin-right: 10px;
+                }
+
+                @media(max-width: 1024px) {
+                    margin-right: 21px;
+                }
+
+                @media(max-width: 767px) {
+                    margin-right: 10px;
+                }
+
                 @media(max-width: 710px) {
+                    margin-right: 0;
                     min-width: initial;
                     max-width: 100%;
-
-                    @media(max-width: 1235px) {
-                        margin-right: 10px;
-                    }
-
-                    @media(max-width: 1024px) {
-                        margin-right: 21px;
-                    }
-
-                    @media(max-width: 767px) {
-                        margin-right: 10px;
-                    }
-
-                    @media(max-width: 710px) {
-                        margin-right: 0;
-                    }
                 }
             }
 
@@ -359,5 +340,27 @@
             text-overflow: ellipsis;
             overflow: hidden;
         }
+    }
+
+    .btn {
+        &--order-info {
+                position: relative;
+                margin-left: auto;
+                padding: 0;
+                height: auto;
+                font-size: 14px;
+                transform: translateY(-2px);
+
+                @media(max-width: 1235px) {
+                    font-size: 13px;
+                }
+
+                @media(max-width: 710px) {
+                    height: auto;
+                    transform: none;                    
+                    font-size: 14px;
+                    margin-bottom: 21px;
+                }
+            }
     }
 }
