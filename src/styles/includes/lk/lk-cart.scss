@@ -1,5 +1,5 @@
 .lk-cart {
-    padding-top: 36px;
+    background: none;
 
     &__company {
         font-weight: 600;
@@ -8,11 +8,26 @@
 
     &__wrapper {
         padding-top: 18px;
+
+        @media(max-width: 1024px) {
+            padding-top: 24px;
+        }
     }
 
     &__content {
         display: flex;
         padding-top: 38px;
+    }
+
+    &__sub {
+        display: none;
+        font-size: 14px;
+        color: $gray-2;
+
+        @media(max-width: 1024px) {
+            display: block;
+            margin-right: 6px;
+        }
     }
 
     &__subtitle {
@@ -119,9 +134,16 @@
         font-size: 14px;
         color: #37383e80;
         margin-top: 4px;
+
+        @media(max-width: 1024px) {
+            margin-top: 7px;
+        }
     }
 
     &__finish {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-size: 22px;
         font-weight: 600;
 
@@ -132,18 +154,33 @@
     }
 
     &__discount {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         color: $red-1;
         margin-top: 3px;
     }
 
     &__nds {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 5px;
+    }
+
+    &__s {
+        margin-right: 5px;
     }
 
     &__box {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @media(max-width: 1024px) {
+            width: 100%;
+            align-items: normal;
+        }
     }
 
     &__cover {
@@ -178,6 +215,11 @@
     }
 
     &__col {
+
+        @media(max-width: 1024px) {
+            display: flex;
+        }
+
         input {
             max-width: 120px;
             width: 100%;
@@ -188,6 +230,12 @@
             border: 1px solid $gray-1;
             color: $basic;
             transition: .2s;
+
+            @media(max-width: 1024px) {
+                min-width: 200px;
+                max-width: 100%;
+                height: 47px;
+            }
 
             &:hover {
                 border-color: $basic;
@@ -203,6 +251,54 @@
         &--title {
             display: flex;
             align-items: center;
+        }
+
+        &--summ {
+            @media(max-width: 1024px) {
+                grid-area: summ;
+                display: block;
+                padding-top: 0;
+            }
+
+            .lk-cart {
+                &__sub {
+                    @media(max-width: 1024px) {
+                        margin-right: 0;
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+        }
+
+        &--name {
+            @media(max-width: 1024px) {
+                grid-area: name;
+            }
+        }
+
+        &--qty {
+            @media(max-width: 1024px) {
+                grid-area: qty;
+            }
+        }
+
+        &--nds {
+            @media(max-width: 1024px) {
+                grid-area: nds;
+            }
+        }
+
+        &--wnds {
+            @media(max-width: 1024px) {
+                grid-area: wnds;
+            }
+        }
+
+        &--close {
+            @media(max-width: 1024px) {
+                grid-area: close;
+                justify-self: end;
+            }
         }
     }
 
@@ -224,6 +320,10 @@
 
     &__items {
         margin-top: 38px;
+
+        @media(max-width: 1024px) {
+            margin-top: 23px;
+        }
     }
 
     &__ic {
@@ -273,11 +373,15 @@
     }
 
     &__top {
-        width: 99vw;
+        width: 99.9vw;
         margin: 0 0 0 50%;
         transform: translateX(-50%);
         background-color: $gray-3;
         padding: 19px 0 22px;
+
+        @media(max-width: 1024px) {
+            padding: 16px 0 19px;
+        }
 
         .container {
             display: flex;
@@ -299,14 +403,31 @@
     }
 
     &__txt {
+        @media(max-width: 1024px) {
+            font-size: 14px;
+        }
+
+        &--name {
+            font-size: 16px;
+        }
+
         &--newprice {
             color: $red-1;
+
+            @media(max-width: 1024px) {
+                font-size: 12px;
+                padding-top: 5px;
+            }
         }
 
         &--oldprice {
             font-size: 14px;
             text-decoration: line-through;
             padding-top: 5px;
+
+            @media(max-width: 1024px) {
+                margin-right: 8px;
+            }
         }
 
         span {
@@ -332,27 +453,68 @@
         }
     }
 
+    &__cover {
+        @media(max-width: 1024px) {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+    }
+
     &__row {
         display: grid;
-        grid-template-columns: minmax(549px, 1fr) minmax(120px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) 31px;
+        grid-template-columns: minmax(549px, 1fr) minmax(120px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) 26px;
         align-items: center;
         grid-column-gap: 40px;
         min-height: 80px;
 
+        @media(max-width: 1300px) {
+            grid-template-columns: 289px repeat(4, minmax(100px, 120px)) 26px;
+            justify-content: space-between;
+        }
+
+        @media(max-width: 1024px) {
+            grid-template-areas:
+                "name name close"
+                "nds wnds ."
+                "qty summ .";
+
+            grid-template-columns: max-content;
+            justify-content: normal;
+            grid-row-gap: 16px;
+            grid-column-gap: 30px;
+            margin-bottom: 25px;
+            padding-bottom: 23px;
+        }
+
         &:not(:first-child) {
             border-bottom: 1px solid $gray-3;
+            // padding-top: 26px;
         }
 
         &--delivery {
-            grid-template-columns: minmax(528px, 1fr) minmax(120px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) 26px;
             grid-column-gap: 40px;
+            grid-template-columns: minmax(549px, 1fr) 100px 26px;
+
+            @media(max-width: 1024px) {
+                display: none;
+            }
         }
 
         &--header {
-            grid-template-columns: minmax(549px, 1fr) minmax(120px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) 31px;
+            grid-template-columns: minmax(549px, 1fr) minmax(120px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) 26px;
             margin-bottom: 6px;
             min-height: 24px;
             grid-column-gap: 40px;
+
+            @media(max-width: 1300px) {
+                grid-template-columns: 289px repeat(4, minmax(100px, 120px)) 26px;
+                justify-content: space-between;
+            }
+
+            @media(max-width: 1024px) {
+                display: none;
+            }
 
             .lk-cart {
                 &__txt {

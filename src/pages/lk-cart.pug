@@ -1,9 +1,10 @@
 extends common/layout
 
 block content
-    main.main
-        .lk-cart
-            .lk-cart__container.container
+    main.main.main--lk
+        .lk.lk-cart
+            .lk__container.container
+                include common/breadcrumb
                 h1.lk-cart__title.title-1 В корзине 
                     span 6
                     | товаров
@@ -19,7 +20,7 @@ block content
                         .lk-cart__wrapper 
                             .lk-cart__row.lk-cart__row--header
                                 .lk-cart__col
-                                    .lk-cart__txt Наименование товара
+                                    .lk-cart__txt.lk-cart__txt--name Наименование товара
                                 .lk-cart__col
                                     .lk-cart__txt Количество
                                 .lk-cart__col
@@ -29,69 +30,78 @@ block content
                                 .lk-cart__col
                                     .lk-cart__txt Сумма
                             .lk-cart__row
-                                .lk-cart__col.lk-cart__col--title
+                                .lk-cart__col.lk-cart__col--title.lk-cart__col--name
                                     .lk-cart__ic 
                                             +icon('ic-coll')
-                                    .lk-cart__txt Натяжитель ленты ГОСТ 380-2005
-                                .lk-cart__col
+                                    .lk-cart__txt.lk-cart__txt--name Натяжитель ленты ГОСТ 380-2005
+                                .lk-cart__col.lk-cart__col--qty
                                     input(type="number" placeholder="50 т" min="1")
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--nds
+                                    .lk-cart__sub С НДС (1 т):
                                     .lk-cart__txt 
                                         span.js-price-nds 110 790
                                         span ₽
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--wnds
+                                    .lk-cart__sub Без НДС (1 т):
                                     .lk-cart__txt
                                         span.js-price-wnds  98 587
                                         span ₽
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--summ
+                                    .lk-cart__sub Суммв:
                                     .lk-cart__txt
                                         span.js-price-sum 1 607 338
                                         span ₽
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--close
                                     .lk-cart__delete
                                         +icon('ic-delete')
                             .lk-cart__row
-                                .lk-cart__col.lk-cart__col--title
+                                .lk-cart__col.lk-cart__col--title.lk-cart__col--name
                                     .lk-cart__ic 
                                         +icon('ic-coll')
                                     .lk-cart__txt Натяжитель ленты ГОСТ 380-2005
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--qty
                                     input(type="number" placeholder="50 т" min="1")
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--nds
+                                    .lk-cart__sub С НДС (1 т):
                                     .lk-cart__txt 
                                         span.js-price-nds 110 790
                                         span ₽
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--wnds
+                                    .lk-cart__sub Без НДС (1 т):
                                     .lk-cart__txt
                                         span.js-price-wnds 98 587
                                         span ₽
-                                .lk-cart__col
-                                    .lk-cart__txt.lk-cart__txt--oldprice
-                                        span.js-price-oldsum 1 607 338
-                                        span ₽
-                                    .lk-cart__txt.lk-cart__txt--newprice
-                                        span.js-price-newsum 1 607 338
-                                        span ₽
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--summ
+                                    .lk-cart__sub Суммв:
+                                    .lk-cart__cover
+                                        .lk-cart__txt.lk-cart__txt--oldprice
+                                            span.js-price-oldsum 1 607 338
+                                            span ₽
+                                        .lk-cart__txt.lk-cart__txt--newprice
+                                            span.js-price-newsum 1 607 338
+                                            span ₽
+                                .lk-cart__col.lk-cart__col--close
                                     .lk-cart__delete
                                         +icon('ic-delete')
                             .lk-cart__row.lk-cart__row--delivery
                                 .lk-cart__col
                                     .lk-cart__txt Доставка в г. Челябинск (ж/д)
-                                .lk-cart__col
-                                .lk-cart__col
-                                .lk-cart__col
-                                .lk-cart__col
+                                .lk-cart__col.lk-cart__col--itog
                                     .lk-cart__txt 30 000 ₽
                                 .lk-cart__col
                                     .lk-cart__delete
                                         +icon('ic-delete')
                             .lk-cart__itog
                                 .lk-cart__box
-                                    .lk-cart__finish ИТОГО: 4 952 016
-                                        span ₽
-                                    .lk-cart__discount Скидка: 1 607 338 ₽
-                                    .lk-cart__nds В том числе НДС: 101 550 ₽
+                                    .lk-cart__finish
+                                        .lk-cart__s ИТОГО: 
+                                        .lk-cart__n 4 952 016 ₽
+                                    .lk-cart__discount
+                                        .lk-cart__s Скидка: 
+                                        .lk-cart__n 1 607 338 ₽
+                                    .lk-cart__nds
+                                        .lk-cart__s В том числе НДС: 
+                                        .lk-cart__n 101 550 ₽
                             .lk-cart__bottom 
                                 a.btn.btn--delivery.btn--cart-info.btn--transparent.btn--w218.js-btn-cartInfo(href="javascript:void(0);") 
                                     span
