@@ -1149,16 +1149,27 @@ window.addEventListener('load', function () {
     }
 
     if ($('.order-card').exists()) {
-        let card = document.querySelectorAll('.order-card');
-        let btn = document.querySelectorAll('.order-btn');
-        let acc = '';
+        try {
+            let card = document.querySelectorAll('.order-card');
+            let btn = document.querySelectorAll('.js-btn-oi');
+            let acc = '';
 
-        for (let i = 0; i < card.length; i++) {
-            btn[i].addEventListener('click', function () {
-                this.classList.toggle('is-open');
-                acc = card[i].querySelector('.order-card__acc');
-                $(acc).slideToggle();
-            });
+            for (let i = 0; i < card.length; i++) {
+                btn[i].addEventListener('click', function () {
+                    this.classList.toggle('is-open');
+                    acc = card[i].querySelector('.order-card__acc');
+                    $(acc).slideToggle();
+
+                    if(this.classList.contains('is-open')){
+                        $(this).find('.order-btn__txt').text('Свернуть подробную информацию');
+                    } else {
+                        $(this).find('.order-btn__txt').text('Развернуть подробную информацию');
+                    }
+                });
+            }
+        }
+        catch(err){
+            console.log(err);
         }
     }
 
@@ -1207,6 +1218,25 @@ window.addEventListener('load', function () {
         }
     }
 
+    if($('.js-list-phone').exists()){
+        try {
+            let links = document.querySelectorAll('.js-list-phone li');
+            const phone = document.querySelector('.js-label-phone');
+            const phoneText = document.querySelector('.dropdown-label__txt');
+
+            $(links).each((_, item) => {
+                $(item).on('click', function(){
+                    phone.setAttribute('href', `tel:${item.textContent}`);
+                    phoneText.textContent = item.textContent;
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+            });
+        }
+        catch(err) {
+            console.log(err);
+        }
+    }
+
     if ($('.js-filter-acc').exists()) {
         let accordions = document.getElementsByClassName("js-filter-acc");
         let select = '';
@@ -1216,15 +1246,6 @@ window.addEventListener('load', function () {
                 select = $(accordions[i]).next(".js-filter-list");
                 $(this).parent().toggleClass('is-open');
                 $(select).slideToggle();
-
-
-                // let content = $(this).find('.filter__list')[0];
-
-                // if (content.style.maxHeight) {
-                //     content.style.maxHeight = null;
-                // } else {
-                //     content.style.maxHeight = content.scrollHeight + "px";
-                // }
             };
         }
     }
@@ -1249,7 +1270,7 @@ window.addEventListener('load', function () {
         const overlayShow = new TimelineMax({
             reversed: true,
             paused: true,
-            defaults: { duration: 0.5 },
+            defaults: { duration: 0.7 },
             onComplete: () => {
                 formShowTl.play();
             }
@@ -1258,7 +1279,7 @@ window.addEventListener('load', function () {
         const overlayHide = new TimelineMax({
             reversed: true,
             paused: true,
-            defaults: { duration: 0.5 },
+            defaults: { duration: 0.7 },
             onComplete: () => {
                 formHideTl.play();
             }
@@ -1310,11 +1331,20 @@ window.addEventListener('load', function () {
             );
 
         btnFilter.addEventListener('click', function () {
+            $('.menu-btn').addClass('open');
             overlayShow.play();
             projectFunc.lockedDOM(true);
         });
 
         overlay.addEventListener('click', function () {
+            $('.menu-btn').removeClass('open');
+            overlayHide.play();
+            overlayShow.reverse();
+            formShowTl.reverse();
+            projectFunc.lockedDOM(false);
+        });
+
+        $('.js-btn-menu').on('click', function(){
             overlayHide.play();
             overlayShow.reverse();
             formShowTl.reverse();
@@ -1349,6 +1379,13 @@ window.addEventListener('load', function () {
                                     $(this).find('.js-btn-txt').text('Удалить доставку');
                                 } else if (this.classList.contains('btn--delivery') && !this.classList.contains('is-open')) {
                                     $(this).find('.js-btn-txt').text('Добавить доставку');
+                                }
+
+                                if (this.classList.contains('btn--comment') && this.classList.contains('is-open')) {
+                                    console.log($(this).find('.js-btn-txt'));
+                                    $(this).find('.js-btn-txt').text('Удалить комментарий');
+                                } else if (this.classList.contains('btn--comment') && !this.classList.contains('is-open')) {
+                                    $(this).find('.js-btn-txt').text('Добавить комментарий');
                                 }
 
                                 content = panel[index];
@@ -1398,7 +1435,6 @@ window.addEventListener('load', function () {
                     if ($('.js-btn-edit').exists()) {
                         btn = accordions[i].querySelector('.js-btn-edit');
                         btn.onclick = function () {
-                            console.log('1');
                             input = accordions[i].querySelector('.js-edit-input');
                             sub = accordions[i].querySelector('.js-sub-edit');
                             sub.classList.add('active');
@@ -1413,12 +1449,10 @@ window.addEventListener('load', function () {
                                 const sub = accordions[i].querySelector('.lk-profile__sub');
                                 let content = sub;
 
-                                if (content.style.maxHeight) {
-                                    content.style.maxHeight = null;
-                                } else {
-                                    content.style.maxHeight = content.scrollHeight + "px";
-                                    $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "0px", "opacity": "0" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflow', 'hidden'); } });
-                                }
+                                $(content).slideToggle({complete: function (e) {
+                                    console.log($(accordions[i]).find('.lk-profile__row'));
+                                    $(accordions[i]).find('.lk-profile__row').slideToggle({queue: false}); 
+                                }});
                             }
                         };
                     }
@@ -1432,8 +1466,11 @@ window.addEventListener('load', function () {
                             const sub = accordions[i].querySelector('.lk-profile__sub');
                             let content = sub;
                             accordions[i].classList.toggle('is-open');
-                            content.style.maxHeight = null;
-                            $(accordions[i]).find('.lk-profile__row').animate({ "maxHeight": "24px", "opacity": "1" }, { duration: 500, queue: false, complete: function (e) { $(accordions[i]).find('.lk-profile__row').css('overflow', 'visible'); } });
+                           
+                            $(content).slideToggle({complete: function (e) {
+                                console.log($(accordions[i]).find('.lk-profile__row'));
+                                $(accordions[i]).find('.lk-profile__row').slideToggle({queue: false}); 
+                            }});
                         }
 
                         Object.keys(data).forEach((item) => {
@@ -1442,10 +1479,7 @@ window.addEventListener('load', function () {
                                 input.setAttribute('value', input.value);
                             }
                         });
-                        console.clear();
                         subs.forEach((item, _) => {
-                            // console.clear();
-
                             if (item.classList.contains('active')) {
                                 status = 1;
                                 console.log(item);
@@ -1585,6 +1619,7 @@ window.addEventListener('load', function () {
 
         $(window).on('resize load', function () {
             $('.js-btn-menu').on('click', () => {
+
                 if ($(window).width() > 1024) {
                     if (popup) {
                         $('.menu-btn').addClass('open');
@@ -1614,6 +1649,10 @@ window.addEventListener('load', function () {
 
     $('.menu-btn').click(function () {
         $('.menu-btn').toggleClass('open');
+
+        if(!$('.menu-btn').hasClass('open')){
+            $('.js-sidemenu-popup').removeClass('open');
+        }
     });
 
     if ($('.js-input').exists()) {
@@ -1650,6 +1689,14 @@ window.addEventListener('load', function () {
             });
 
             item.addEventListener('mouseleave', function () {
+                projectFunc.serviceHover(item, false);
+            });
+
+            item.addEventListener('touchenter', function () {
+                projectFunc.serviceHover(item, true);
+            });
+
+            item.addEventListener('touchleave', function () {
                 projectFunc.serviceHover(item, false);
             });
         });
@@ -1764,6 +1811,7 @@ window.addEventListener('load', function () {
     if ($('.js-btn-sidemenu').exists()) {
         $('.js-btn-sidemenu').click(function () {
             $('.js-sidemenu-popup').addClass('open');
+            $('.menu-btn').addClass('open');
         });
     }
 

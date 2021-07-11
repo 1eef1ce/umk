@@ -1,31 +1,86 @@
 .order-detaile {
     display: grid;
-    grid-template-columns: minmax(649px, 1fr) minmax(491px, 1fr);
+    grid-template-columns: minmax(54%,649px) minmax(38%,491px);
     grid-column-gap: 60px;
     margin-top: 38px;
+
+    @media(max-width: 1235px) {
+        grid-column-gap: 30px
+    }
+
+    @media(max-width: 1024px) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        margin-top: 21px;
+    }
 
     &__title {
         font-size: 18px;
         font-weight: 600;
+
+        @media(max-width: 620px) {
+            font-size: 16px;
+        }
     }
 
     &__box {
         padding-left: 20px;
         margin-top: 24px;
 
+        @media(max-width: 1024px) {
+            margin-top: 19px;
+            padding: 0;
+        }
+
         .form-group {
             margin-top: 24px;
+
+            @media(max-width: 1024px) {
+                margin-top: 0;
+            }
+
+            &:not(:first-child) {
+                @media(max-width: 1024px) {
+                    margin-top: 26px;
+                }
+
+                @media(max-width: 620px) {
+                    margin-top: 20px;
+                }
+            }
         }
     }
 
     &__bloc {
         &:not(:first-child) {
-            margin-top: 35px
+            margin-top: 35px;
+
+            @media(max-width: 1024px) {
+                margin-top: 31px;
+            }
+
+            @media(max-width: 620px) {
+                margin-top: 26px;
+            }
         }
     }
 
     &__store {
         margin-top: -20px;
+
+        @media(max-width: 620px) {
+            margin-top: -14px;
+        }
+    }
+
+    &__right {
+        @media(max-width: 1024px) {
+            margin-top: 23px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 19px;
+        }
     }
 
     &__textarea {
@@ -37,5 +92,9 @@
         font-size: 16px;
         line-height: 1.5;
         padding: 20px 24px;
+
+        @media(max-width: 620px) {
+            height: 283px;
+        }
     }
 }

@@ -117,9 +117,10 @@
                 position: relative;
                 opacity: 1;
                 visibility: visible;
-                max-height: 0;
-                overflow: hidden;
+                // max-height: 0;
+                // overflow: hidden;
                 transition: max-height .4s ease-in-out;
+                display: none;
             }
 
             .lk-profile__info {

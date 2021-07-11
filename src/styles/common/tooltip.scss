@@ -88,6 +88,17 @@
           padding: 23px 19px;
         }
 
+        @media(max-width: 640px) {
+          margin-left: -347px;
+          top: 280px;
+          transform: translateY(-50%);
+        }
+
+        @media(max-width: 400px) {
+          margin-left: -370px;
+          min-width: 100vw;
+        }
+
         &:before {
           top: 0;
           left: 0;
@@ -98,6 +109,15 @@
           @media(max-width: 1024px) {
             left: 27px;
             right: auto;
+          }
+
+          @media(max-width: 640px) {
+            left: auto;
+            right: 0;
+          }
+
+          @media(max-width: 620px) {
+            right: 22px;
           }
         }
       }
@@ -197,6 +217,17 @@
       margin-left: -139px;
       width: calc(278px - -5px);
 
+      @media(max-width: 1024px) {
+        margin-left: -46px;
+        top: -31px;
+        width: 278px;
+      }
+
+      @media(max-width: 620px) {
+        margin-left: -95px;
+        top: -52px;
+      }
+
       &:before {
         right: 0;
         left: 0;
@@ -204,6 +235,16 @@
         top: auto;
         margin: auto;
         background-color: white;
+
+        @media(max-width: 1024px) {
+          right: auto;
+          left: 45px;
+        }
+
+        @media(max-width: 620px) {
+          right: 38px;
+          left: auto;
+        }
       }
     }
   }
@@ -213,13 +254,32 @@
       fill: $red-1;
     }
 
+    .tooltip__icon {
+      @media(max-width: 620px) {
+        transform: translateY(-2px);
+      }
+    }
+
     .tooltip__content {
-      top: -40px;
+      top: -50px;
       transition: .25s ease-in-out;
       font-size: 14px;
       margin-left: -154px;
       width: calc(308px - -6px);
       left: 50%;
+
+      @media(max-width: 1024px) {
+        top: -57px;
+        margin-left: -44px;
+        width: calc(308px - 0px);
+        text-align: center;
+      }
+
+      @media(max-width: 620px) {
+        top: -97px;
+        margin-left: 45px;
+        line-height: 1.5;
+      }
 
       &:before {
         right: 0;
@@ -228,6 +288,16 @@
         top: auto;
         margin: auto;
         background-color: white;
+
+        @media(max-width: 1024px) {
+          right: auto;
+          left: 43px;
+        }
+
+        @media(max-width: 620px) {
+          right: auto;
+          left: 108px;
+        }
       }
     }
   }

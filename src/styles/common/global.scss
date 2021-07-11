@@ -257,7 +257,15 @@ textarea {
 
         .breadcrumb {
             margin-top: 0;
+
+            @media(max-width: 620px) {
+                margin-bottom: 12px;
+            }
         }
+    }
+
+    &--special {
+        margin-bottom: initial;
     }
 
 

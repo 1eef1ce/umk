@@ -28,8 +28,7 @@
         padding: 19px 23px;
 
         @media(max-width: 1024px) {
-            padding: 18px 11px 17px;
-            padding-right: 5px;
+            padding: 18px 20px 17px;
         }
     }
 
@@ -46,8 +45,13 @@
         padding: 0px 23px 19px;
 
         @media(max-width: 1024px) {
-            padding: 0px 11px 18px;
+            padding: 0px 20px 18px;
         }
+    }
+
+    &__select {
+        font-size: 22px;
+        font-weight: 600;
     }
 
     &__bloc {
@@ -58,6 +62,15 @@
         &.is-open {
             .filter__icon {
                 transform: scale(1, -1);
+            }
+        }
+
+        &--select {
+            display: none;
+            padding: 13px 20px 16px;
+
+            @media(max-width: 1024px) {
+                display: block;
             }
         }
     }
@@ -156,6 +169,7 @@
             @media(max-width: 1024px) {
                 display: flex;
                 border: none;
+                margin-top: auto;
             }
 
             &:hover {
