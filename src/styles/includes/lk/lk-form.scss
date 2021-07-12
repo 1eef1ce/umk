@@ -3,7 +3,7 @@
     background-size: cover;
     padding-top: 33px;
 
-    @media(max-width: 620px){
+    @media(max-width: 620px) {
         padding-top: 18px;
     }
 
@@ -21,6 +21,10 @@
 
         @media(max-width: 1024px) {
             padding-top: 23px;
+        }
+
+        .checkmark {
+            margin-top: 15px;
         }
     }
 

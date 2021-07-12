@@ -8,6 +8,7 @@
   visibility: hidden;
   left: 50%;
   top: 50%;
+  max-height: 84vh;
 
   &.open {
     display: block;
@@ -15,22 +16,63 @@
 
   &--success {
 
-    .modal__content {
-      max-width: 414px;
-      text-align: center;
+    .modal {
+      &__content {
+        max-width: 414px;
+        width: 100vw;
+        text-align: center;
+        padding: 61px 77px 84px;
 
-      .link {
-        margin-top: 60px;
+        @media(max-width: 1024px) {
+          padding: 57px 67px 77px;
+          max-width: 394px;
+        }
+
+        @media(max-width: 620px) {
+          max-width: 335px;
+          padding: 43px 30px 61px;
+        }
+
+        .link {
+          margin-top: 60px;
+
+          @media(max-width: 1024px) {
+            margin-top: 45px;
+          }
+
+          @media(max-width: 620px) {
+            margin-top: 38px;
+          }
+        }
+      }
+
+      &__img {
+        @media(max-width: 1024px) {
+          width: 91px;
+          height: 91px;
+        }
+
+        @media(max-width:620px) {
+          width: 82px;
+          height: 82px;
+        }
       }
     }
   }
 
   &--order {
-
     .modal {
 
       &__grid {
         margin-top: 25px;
+
+        @media(max-width: 1024px) {
+          margin-top: 28px;
+        }
+
+        @media(max-width: 620px) {
+          margin-top: 15px;
+        }
       }
 
       &__title {
@@ -42,12 +84,29 @@
         font-size: 24px;
         font-weight: 600;
         margin-top: 16px;
+
+        @media(max-width: 1024px) {
+          font-size: 22px;
+        }
+
+        @media(max-width: 620px) {
+          font-size: 18px;
+          margin-top: 12px;
+        }
       }
 
       &__row {
 
         &:not(:first-child) {
           margin-top: 20px;
+
+          @media(max-width: 1024px) {
+            margin-top: 18px;
+          }
+
+          @media(max-width: 620px) {
+            margin-top: 14px;
+          }
         }
 
         span {
@@ -66,14 +125,26 @@
       &__content {
         max-width: 555px;
         margin: auto;
-        padding: 54px 67px 54px;
+        padding: 54px 67px 61px;
+        background: url(../img/decor/bg-modal-order.svg) #fff no-repeat 100% center;
+        background-size: auto;
+
+        @media(max-width: 1024px) {
+          padding: 48px 60px 53px;
+        }
+
+        @media(max-width: 620px) {
+          max-width: 335px;
+          padding: 34px 20px 38px;
+          background: url(../img/decor/bg-modal-order.svg) #fff no-repeat -72% center;
+        }
       }
     }
   }
 
   &__content {
     position: relative;
-    width: 100%;
+    width: 100vw;
     background: #fff;
     margin: auto;
     padding: 65px 77px 77px;
@@ -90,6 +161,11 @@
     right: 10px;
     width: 30px;
     height: 30px;
+
+    @media(max-width: 620px) {
+      width: 26px;
+      height: 26px;
+    }
 
     &:hover {
 
@@ -118,15 +194,29 @@
     width: 100%;
     height: 84vh;
 
+    @media(max-width: 1024px) {
+      max-width: 648px;
+    }
+
+    @media(max-width: 620px) {
+      max-width: 335px;
+    }
+
     .modal {
       &__title {
-        font-size: 40px;
-        font-weight: 600;
         text-align: center;
       }
 
       &__content {
         padding: 48px 66px 63px;
+
+        @media(max-width: 1024px) {
+          padding: 54px 66px 65px;
+        }
+
+        @media(max-width: 620px) {
+          padding: 31px 20px 35px;
+        }
       }
     }
   }
@@ -309,6 +399,67 @@
 
       &__content {
         max-width: 580px;
+
+        @media(max-width: 1024px) {
+          padding: 58px 77px 77px;
+        }
+
+        @media(max-width: 620px) {
+          max-width: 335px;
+          padding: 32px 20px 33px;
+        }
+
+
+        .form-group {
+          margin-top: 0;
+
+          &:not(:first-child) {
+            margin-top: 25px;
+
+            @media(max-width: 620px) {
+              margin-top: 20px;
+            }
+          }
+
+          textarea {
+            height: 141px;
+          }
+        }
+
+        .form {
+          margin-top: 37px;
+
+          @media(max-width: 620px) {
+            margin-top: 20px;
+          }
+
+          .btn {
+            @media(max-width: 620px) {
+              margin-top: 28px;
+            }
+          }
+        }
+
+        .title-2,
+        p {
+          text-align: center;
+        }
+
+        .file__label {
+          @media(max-width: 620px) {
+            font-size: 14px;
+            margin-left: -1px;
+            margin-top: 3px;
+          }
+        }
+
+        .file {
+          .icon {
+            @media(max-width: 620px) {
+              transform: translateX(-4px);
+            }
+          }
+        }
       }
     }
 

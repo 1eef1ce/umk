@@ -2,7 +2,7 @@ extends common/layout
 
 block content
     main.main.main--lk.main--special
-        .lk
+        .lk.lk--claim
             .lk__container.container
                 include common/breadcrumb
                 form.lk-call
@@ -36,9 +36,8 @@ block content
                             +icon('file_new')
                             .file__label Прикрепить файлы: резюме, фото и т.п.
                         .lk-call__subinfo В именах файла рекомендуем использовать только символы английского алфавита, цифры, дефис и знак подчеркивания. Типы&nbsp;файлов для загрузки: *jpeg, *gif, *png. Общий объём файлов не может превышать 10 МБ.
-                    label.checkbox(for="agree")
-                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
-                        .checkbox__label
-                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                        input(type="checkbox" name="check" value="agree")
+                        span.checkmark__flag
                     button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить
         include common/menu-app

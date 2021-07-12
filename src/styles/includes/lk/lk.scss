@@ -13,12 +13,20 @@
     }
 
     &--basic {
-        background: transparent;
+        background-image: none;
     }
 
     &__container {
         .breadcrumb {
             margin-top: 0;
         }
+    }
+
+    &--claim {
+        background: url(../img/decor/bg-lk-claim.svg) no-repeat center;
+    }
+
+    &--call {
+        background: url(../img/decor/bg-lk-call.svg) no-repeat center;
     }
 }

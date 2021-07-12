@@ -84,7 +84,7 @@ block content
         .modal__content
             a.modal__close.js-close-modal(href="javascript:void(0);")
                 +icon('close_big')
-            h2.title-2 Отправьте резюме,
+            .title-2 Отправьте резюме,
             p и наш специалист свяжется с Вами в ближайшее время.
             form.form
                 .form-group
@@ -104,17 +104,3 @@ block content
                     +icon('file_new')
                     .file__label Прикрепить файлы: резюме, фото и т.п.
                 button.btn.btn--basic(type="submit" name="submit") Отправить
-
-//-
-    .modal.js-modal.modal--success
-        .modal__content
-            a.modal__close.js-close-modal(href="javascript:void(0);")
-                +icon('close_big')
-            .modal__img
-                +icon('check_all_big')
-            h2.title-2 Спасибо!
-            p
-                | Ваше резюме будет обработано
-                br
-                | нами в ближайшее время
-            a.link.link--underline.js-close-modal(href="javascript:void(0);") Закрыть

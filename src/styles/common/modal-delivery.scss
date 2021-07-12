@@ -1,6 +1,14 @@
 .modal-delivery {
     margin-top: 28px;
 
+    @media(max-width: 1024px) {
+        margin-top: 30px;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 21px;
+    }
+
     &__btn {
         padding: 19px 26px;
         width: 100%;
@@ -30,8 +38,18 @@
     &__box {
         margin-top: 25px;
 
+        @media(max-width: 620px) {
+            margin-top: 20px;
+        }
+
         .btn {
             width: 100%;
+        }
+
+        label {
+            @media(max-width: 620px) {
+                line-height: 20px;
+            }
         }
 
         &.disable {
@@ -67,9 +85,17 @@
         border: 1px solid $gray-1;
         border-top: none;
 
+        @media(max-width: 620px) {
+            padding: 18px 19px;
+        }
+
         &+.btn {
             margin-top: 30px;
             text-align: center;
+
+            @media(max-width: 1024px) {
+                margin-top: 23px;
+            }
         }
     }
 
@@ -81,15 +107,39 @@
         display: flex;
         align-items: center;
         margin-top: 14px;
+
+        @media(max-width: 620px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 6px;
+        }
     }
 
     &__bloc {
         margin-top: 23px;
+
+        @media(max-width: 1024px) {
+            margin-top: 20px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 14px;
+        }
     }
 
     &__unit {
         &:not(:last-child) {
             margin-right: 30px;
+
+            @media(max-width: 620px) {
+                margin-right: 0;
+            }
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 620px) {
+                margin-top: 4px;
+            }
         }
     }
 
@@ -97,6 +147,10 @@
         font-size: 18px;
         font-weight: 600;
         margin-top: 10px;
+
+        @media(max-width: 620px) {
+            margin-top: 5px;
+        }
 
         .num {
             margin-right: 6px;

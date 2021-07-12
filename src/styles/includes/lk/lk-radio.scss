@@ -28,6 +28,10 @@
     background: 0 0 no-repeat;
     border-radius: 50%;
     border: 2px solid $purple-1;
+
+    @media(max-width: 620px) {
+        bottom: 0;
+    }
 }
 
 .lk-radio+label::after {

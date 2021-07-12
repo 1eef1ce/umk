@@ -26,7 +26,10 @@
               .call__col.call__col--submit
                 button.btn.btn--basic.js-btn-success(type="submit") Отправить
               .call__col.call__col--check
-                label.checkbox(for="agree")
-                  input#agree.checkbox__input(type="checkbox" name="check" value="agree")
-                  .checkbox__label
-                    span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                  input(type="checkbox" name="check" value="agree")
+                  span.checkmark__flag
+                //- label.checkbox(for="agree")
+                //-   input#agree.checkbox__input(type="checkbox" name="check" value="agree")
+                //-   .checkbox__label
+                //-     span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных

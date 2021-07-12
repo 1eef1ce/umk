@@ -64,7 +64,7 @@
       &+.checkbox__label {
 
         &::before {
-          background-color: red;
+          background-color: $red-1;
           border-color: $red-1;
         }
       }
@@ -137,9 +137,9 @@
         height: 12px;
       }
 
-      @media (max-width: 620px) {
-        top: 10px;
-      }
+      // @media (max-width: 620px) {
+  //   top: 10px;
+  // }
     }
   }
 }

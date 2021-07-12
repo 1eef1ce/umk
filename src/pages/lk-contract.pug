@@ -1,7 +1,7 @@
 extends common/layout
 
 block content
-    main.main.main--lk
+    main.main.main--lk.main--special
         .lk-form
             .lk-form__container.container
                 h1.title-1 Типовой договор
@@ -21,10 +21,9 @@ block content
                     .form-group
                         label.form-group__label(for="phone") Телефон
                         input#phone.form-group__input.js-input(type="tel")
-                    label.checkbox(for="agree")
-                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
-                        .checkbox__label
-                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                        input(type="checkbox" name="check" value="agree")
+                        span.checkmark__flag
                     .lk-form__func 
                         button.btn.btn--basic.btn--w275(type="submit") Отправить
                         button.btn.btn--w170.btn--transparent.js-btn-reset(type="reset") Отменить

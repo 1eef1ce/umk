@@ -56,8 +56,7 @@ block content
                             .form-group.form-group--textarea
                                 label.form-group__label(for="text") Поле ввода
                                 textarea#text.form-group__input.js-input(name="text")
-                            label.checkbox(for="agree")
-                                input#agree.checkbox__input(type="checkbox" name="check" value="agree")
-                                .checkbox__label
-                                    span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                            label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                                input(type="checkbox" name="check" value="agree")
+                                span.checkmark__flag
                             button.btn.btn--basic(type="submit" name="submit") Отправить

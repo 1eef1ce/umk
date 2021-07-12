@@ -1,8 +1,8 @@
 extends common/layout
 
 block content
-    main.main.main--lk.main--basic
-        .lk
+    main.main.main--lk.main--special
+        .lk.lk--call
             .lk__container.container
                 include common/breadcrumb
                 form.lk-call.lk-call--call
@@ -27,10 +27,9 @@ block content
                                 input#email.form-group__input.js-input(type="text")
                         .lk-call__col.lk-call__col--description
                             textarea(name="comment" placeholder="Введите описание претензии")
-                    label.checkbox(for="agree")
-                        input#agree.checkbox__input(type="checkbox" name="check" value="agree")
-                        .checkbox__label
-                            span Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                    label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
+                        input(type="checkbox" name="check" value="agree")
+                        span.checkmark__flag
                     .lk-call__func
                         button.btn.btn--basic.btn--w275.js-btn-success(type="submit") Отправить
                         button.btn.btn--w170.btn--transparent.js-btn-reset(type="reset") Отменить

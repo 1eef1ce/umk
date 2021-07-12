@@ -135,6 +135,10 @@
                 &__label {
                     align-items: normal;
 
+                    @media(max-width: 1024px) {
+                        align-items: center;
+                    }
+
                     span {
                         margin-top: -0.3em;
 
@@ -225,6 +229,26 @@
             max-width: 622px;
             width: 100%;
             margin: 11px auto 0;
+        }
+    }
+
+    .checkmark {
+        transform: translateY(-4px);
+
+        &__flag {
+            top: 4px;
+
+            @media(max-width: 1235px) {
+                top: -2px;
+            }
+
+            @media(max-width: 1024px) {
+                top: 0;
+            }
+
+            @media(max-width: 620px) {
+                top: 5px;
+            }
         }
     }
 }

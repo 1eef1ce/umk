@@ -14,10 +14,10 @@
         margin-top: 27px;
 
         grid-template-areas:
-                    'name phone'
-                    'company email'
-                    'order order'
-                    'description description';
+            'name phone'
+            'company email'
+            'order order'
+            'description description';
 
         @media(max-width: 1024px) {
             margin-top: 23px;
@@ -26,19 +26,19 @@
         @media(max-width: 620px) {
             grid-gap: 20px;
             grid-template-areas:
-                    'name'
-                    'phone'
-                    'company'
-                    'email'
-                    'order'
-                    'description';
+                'name'
+                'phone'
+                'company'
+                'email'
+                'order'
+                'description';
         }
 
         &--call {
             grid-template-areas:
-            'name phone'
-            'company email'
-            'description description'; 
+                'name phone'
+                'company email'
+                'description description';
 
             @media(max-width: 620px) {
                 grid-template-areas:
@@ -136,7 +136,7 @@
             margin-top: 16px;
         }
 
-        &:not(:last-child){
+        &:not(:last-child) {
             margin-right: 26px;
 
             @media(max-width: 620px) {
@@ -154,39 +154,27 @@
         }
     }
 
-    .checkbox {
-        margin-top: 23px;
-
-        @media(max-width: 1024px) {
-            margin-top: 25px;
-        }
+    .checkmark {
+        margin-top: 24px;
 
         @media(max-width: 620px) {
-            margin-top: 10px;
-        }
-
-        &__label {
-            @media(max-width: 620px) {
-                line-height: 1.5;
-            }
-
-            &:after {
-                @media(max-width: 620px) {
-                    top: 10px;
-                }
-            }
+            margin-top: 12px;
         }
     }
 
     &--call {
         background: url(../img/decor/bg-lk-call.svg) no-repeat center;
-        
+
         .checkbox {
             margin-top: 9px;
 
             @media(max-width: 620px) {
                 margin-top: 0px;
             }
+        }
+
+        .checkmark {
+            margin-top: 8px;
         }
 
         .lk-call {
@@ -201,7 +189,7 @@
             }
         }
 
-        
+
         p {
             @media(max-width: 620px) {
                 margin: 7px 0 0;
@@ -212,6 +200,7 @@
             @media(max-width: 620px) {
                 margin-top: 0;
             }
+
             &:not(:first-child) {
                 @media(max-width: 620px) {
                     margin-top: 20px;
