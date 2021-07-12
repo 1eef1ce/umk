@@ -171,3 +171,18 @@
         margin-top: 15px;
     }
 }
+
+.overlay-menu-mobile {
+    background: #000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+}

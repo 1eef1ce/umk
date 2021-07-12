@@ -183,4 +183,8 @@
             margin-right: 32px;
         }
     }
+
+    &.active {
+        z-index: 500;
+    }
 }
