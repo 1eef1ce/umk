@@ -134,6 +134,10 @@
             @media(max-width: 1024px) {
                 order: 1;
             }
+
+            .menu-btn {
+                pointer-events: none;
+            }
         }
 
         &--info {

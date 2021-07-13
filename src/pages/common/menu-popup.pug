@@ -27,39 +27,63 @@
                 button.search__button.mf-search(type="submit")
                     +icon('ic-search')
             .catalog-list.catalog-list--search
-                .catalog-list__container.container 
-                    .catalog-list__grid 
-                        .catalog-list__bloc.catalog-list__bloc--b1
-                            a.link.link--title.active(href="javascript:void(0);") Контакты
-                            a.link.link--title(href="catalog.html") Каталог
-                            .catalog-list__box 
-                                a.link.link--small.active(href="javascript:void(0);") Продукция для упаковки
-                                a.link.link--small(href="javascript:void(0);") Лента стальная (штрипс)
-                                a.link.link--small(href="javascript:void(0);") Трубы
-                                a.link.link--small(href="javascript:void(0);") Профиль для строительства
-                            a.link.link--title(href="catalog-goods.html") Спецпредложения
-                        .catalog-list__bloc.catalog-list__bloc--b2
-                            a.link.link--title(href="catalog-service.html") Сервис
-                            .catalog-list__box 
-                                a.link.link--small(href="javascript:void(0);") Плоский прокат
-                                a.link.link--small(href="javascript:void(0);") Гнутый и фасонный профиль
-                                a.link.link--small(href="javascript:void(0);") Сортовой прокат
-                                a.link.link--small(href="javascript:void(0);") Метизная продукция
-                                a.link.link--small(href="javascript:void(0);") Дополнительные услуги
-                        .catalog-list__bloc.catalog-list__bloc--b3
-                            a.link.link--title(href="standard.html") ГОСТы и ТУ
-                            a.link.link--title(href="javascript:void(0);") Поставщикам
-                            a.link.link--title(href="delivery.html") Доставка
-                            a.link.link--title(href="purchase.html") Закупки
-                            a.link.link--title(href="tender.html") Тендер
-                        .catalog-list__bloc.catalog-list__bloc--b4
-                            a.link.link--title(href="javascript:void(0);") Компания
-                            .catalog-list__box 
-                                    a.link.link--small(href="about.html") О нас
-                                    a.link.link--small(href="javascript:void(0);") История
-                                    a.link.link--small(href="javascript:void(0);") Вакансии
-                            a.link.link--title(href="news.html") Новости
-                            a.link.link--title(href="javascript:void(0);") Обратная связь
+                .catalog-list__container.container(itemscope="" itemtype="http://www.schema.org/SiteNavigationElement")
+                    .catalog-list__grid(itemscope="" itemtype="http://schema.org/ItemList")
+                        .catalog-list__bloc.catalog-list__bloc--b1(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                            a.link.link--title.active(href="javascript:void(0);" itemprop="url") Контакты
+                                meta(itemprop="name" content="Контакты")
+                            a.link.link--title(href="catalog.html" itemprop="url") Каталог
+                                meta(itemprop="name" content="Каталог")
+                            .catalog-list__box(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                                a.link.link--small.active(href="javascript:void(0);" itemprop="url") Продукция для упаковки
+                                    meta(itemprop="name" content="Продукция для упаковки")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Лента стальная (штрипс)
+                                    meta(itemprop="name" content="Лента стальная (штрипс)")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Трубы
+                                    meta(itemprop="name" content="Трубы")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Профиль для строительства
+                                    meta(itemprop="name" content="Профиль для строительства")
+                            a.link.link--title(href="catalog-goods.html" itemprop="url") Спецпредложения
+                                meta(itemprop="name" content="Спецпредложения")
+                        .catalog-list__bloc.catalog-list__bloc--b2(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                            a.link.link--title(href="catalog-service.html" itemprop="url") Сервис
+                                meta(itemprop="name" content="Сервис")
+                            .catalog-list__box(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList") 
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Плоский прокат
+                                    meta(itemprop="name" content="Плоский прокат")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Гнутый и фасонный профиль
+                                    meta(itemprop="name" content="Гнутый и фасонный профиль")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Сортовой прокат
+                                    meta(itemprop="name" content="Сортовой прокат")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Метизная продукция
+                                    meta(itemprop="name" content="Метизная продукция")
+                                a.link.link--small(href="javascript:void(0);" itemprop="url") Дополнительные услуги
+                                    meta(itemprop="name" content="Дополнительные услуги")
+                        .catalog-list__bloc.catalog-list__bloc--b3(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                            a.link.link--title(href="standard.html" itemprop="url") ГОСТы и ТУ
+                                meta(itemprop="name" content="ГОСТы и ТУ")
+                            a.link.link--title(href="javascript:void(0);" itemprop="url") Поставщикам
+                                meta(itemprop="name" content="Поставщикам")
+                            a.link.link--title(href="delivery.html" itemprop="url") Доставка
+                                meta(itemprop="name" content="Доставка")
+                            a.link.link--title(href="purchase.html" itemprop="url") Закупки
+                                meta(itemprop="name" content="Закупки")
+                            a.link.link--title(href="tender.html" itemprop="url") Тендер
+                                meta(itemprop="name" content="Тендер")
+                        .catalog-list__bloc.catalog-list__bloc--b4(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                            a.link.link--title(href="javascript:void(0);" itemprop="url") Компания
+                                meta(itemprop="name" content="Компания")
+                            .catalog-list__box(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                                    a.link.link--small(href="about.html" itemprop="url") О нас
+                                        meta(itemprop="name" content="О нас")
+                                    a.link.link--small(href="javascript:void(0);" itemprop="url") История
+                                        meta(itemprop="name" content="История")
+                                    a.link.link--small(href="javascript:void(0);" itemprop="url") Вакансии
+                                        meta(itemprop="name" content="Вакансии")
+                            a.link.link--title(href="news.html" itemprop="url") Новости
+                                meta(itemprop="name" content="Новости")
+                            a.link.link--title(href="javascript:void(0);" itemprop="url") Обратная связь
+                                meta(itemprop="name" content="Обратная связь")
                         //- .catalog-list__bloc.catalog-list__bloc--b2
                         //-     a.link.catalog-list__link.catalog-list__link_title(href="javascript:void(0);")  Продукция для упаковки
                         //-     .catalog-list__box 

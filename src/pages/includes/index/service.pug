@@ -3,8 +3,8 @@
         h2.service__title.title-2 Сервисные услуги
         .service__quote В своём стремлении повысить качество жизни, они забывают, что внедрение современных методик говорит о возможностях первоочередных требований.
         .service__quote.service__quote--mobile В своём стремлении повысить качество&nbsp;жизни, они забывают, что внедрение методик говорито возможностях первоочередных требований.
-        .service__grid
-            a(href="javascript:void(0);" title="Плоский прокат").service__bloc
+        .service__grid(itemscope="" itemtype="http://www.schema.org/SiteNavigationElement") 
+            a(href="javascript:void(0);" title="Плоский прокат" itemprop="url").service__bloc
                 .service__article Плоский прокат
                 .link.link--detail
                     .link__txt 
@@ -14,7 +14,8 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-coll')
-            a(href="javascript:void(0);" title="Гнутый и фасонный профиль").service__bloc
+                meta(itemprop="name" content="Плоский прокат")
+            a(href="javascript:void(0);" title="Гнутый и фасонный профиль" itemprop="url").service__bloc
                 .service__article Гнутый и фасонный профиль
                 .link.link--detail
                     .link__txt 
@@ -24,7 +25,8 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-flex')
-            a(href="javascript:void(0);" title="Сортовой прокат").service__bloc
+                meta(itemprop="name" content="Гнутый и фасонный профиль")
+            a(href="javascript:void(0);" title="Сортовой прокат" itemprop="url").service__bloc
                 .service__article Сортовой прокат
                 .link.link--detail
                     .link__txt 
@@ -34,7 +36,8 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-coll')
-            a(href="javascript:void(0);" title="Метизная продукция").service__bloc
+                meta(itemprop="name" content="Сортовой прокат")
+            a(href="javascript:void(0);" title="Метизная продукция" itemprop="url").service__bloc
                 .service__article Метизная продукция
                 .link.link--detail
                     .link__txt 
@@ -44,7 +47,8 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-graph')
-            a(href="javascript:void(0);" title="Дополнительные услуги").service__bloc
+                meta(itemprop="name" content="Метизная продукция")
+            a(href="javascript:void(0);" title="Дополнительные услуги" itemprop="url").service__bloc
                 .service__article Дополнительные услуги
                 .link.link--detail
                     .link__txt 
@@ -54,7 +58,8 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-share')
-            a(href="javascript:void(0);" title="Все сервисные услуги").service__bloc.service__bloc--special
+                meta(itemprop="name" content="Дополнительные услуги")
+            a(href="javascript:void(0);" title="Все сервисные услуги" itemprop="url").service__bloc.service__bloc--special
                 .service__article Все сервисные услуги
                 .link.link--detail
                     .link__txt 
@@ -63,3 +68,4 @@
                         +icon('ic-arrow-sm')
                 .service__pic 
                     +icon('ic-next')
+                meta(itemprop="name" content="Все сервисные услуги")
