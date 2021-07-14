@@ -31,6 +31,8 @@ $.fn.exists = function () {
     return $(this).length;
 };
 
+
+
 const projectFunc = {
     objAd(element, place) {
         if ($(element).exists()) {
@@ -736,9 +738,12 @@ const showService = (element) => {
             });
         });
     }
-}
+};
+
+
 
 function init() {
+    projectFunc.scrollbarPage();
     projectFunc.setTabs();
     projectFunc.createSlider();
     projectFunc.sendFilter();
@@ -1255,107 +1260,107 @@ window.addEventListener('load', function () {
         }
     }
 
-    if ($('.js-btn-filter').exists()) {
-        const btnFilter = document.querySelector('.js-btn-filter');
-        const panel = document.querySelector('.js-menu-filter');
-        const overlay = document.querySelector('.overlay-filter');
+    // if ($('.js-btn-filter').exists()) {
+    //     const btnFilter = document.querySelector('.js-btn-filter');
+    //     const panel = document.querySelector('.js-menu-filter');
+    //     const overlay = document.querySelector('.overlay-filter');
 
-        const formShowTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 },
-        });
+    //     const formShowTl = new TimelineMax({
+    //         reversed: true,
+    //         paused: true,
+    //         defaults: { duration: 0.5 },
+    //     });
 
-        const formHideTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 },
-        });
+    //     const formHideTl = new TimelineMax({
+    //         reversed: true,
+    //         paused: true,
+    //         defaults: { duration: 0.5 },
+    //     });
 
-        const overlayShow = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.7 },
-            onComplete: () => {
-                formShowTl.play();
-            }
-        });
+    //     const overlayShow = new TimelineMax({
+    //         reversed: true,
+    //         paused: true,
+    //         defaults: { duration: 0.7 },
+    //         onComplete: () => {
+    //             formShowTl.play();
+    //         }
+    //     });
 
-        const overlayHide = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.7 },
-            onComplete: () => {
-                formHideTl.play();
-            }
-        });
+    //     const overlayHide = new TimelineMax({
+    //         reversed: true,
+    //         paused: true,
+    //         defaults: { duration: 0.7 },
+    //         onComplete: () => {
+    //             formHideTl.play();
+    //         }
+    //     });
 
-        overlayShow
-            .to(
-                overlay,
-                {
-                    autoAlpha: 0.5,
-                    ease: 'power4.out'
-                }
-            )
+    //     overlayShow
+    //         .to(
+    //             overlay,
+    //             {
+    //                 autoAlpha: 0.5,
+    //                 ease: 'power4.out'
+    //             }
+    //         )
 
-        overlayHide
-            .to(
-                overlay,
-                {
-                    autoAlpha: 0,
-                    ease: 'power2.out'
-                }
-            )
+    //     overlayHide
+    //         .to(
+    //             overlay,
+    //             {
+    //                 autoAlpha: 0,
+    //                 ease: 'power2.out'
+    //             }
+    //         )
 
-        formHideTl
-            .to(
-                panel,
-                {
-                    autoAlpha: 0,
-                    xPercent: 100,
-                    //xPercent: -50,
-                    ease: 'power2.out'
-                }
-            );
+    //     formHideTl
+    //         .to(
+    //             panel,
+    //             {
+    //                 autoAlpha: 0,
+    //                 xPercent: 100,
+    //                 //xPercent: -50,
+    //                 ease: 'power2.out'
+    //             }
+    //         );
 
-        formShowTl
-            .set(
-                panel, {
-                xPercent: 100,
-            }
-            )
-            .to(
-                panel,
-                {
-                    autoAlpha: 1,
-                    xPercent: -100,
-                    //xPercent: -50,
-                    ease: 'power2.out'
-                },
-            );
+    //     formShowTl
+    //         .set(
+    //             panel, {
+    //             xPercent: 100,
+    //         }
+    //         )
+    //         .to(
+    //             panel,
+    //             {
+    //                 autoAlpha: 1,
+    //                 xPercent: -100,
+    //                 //xPercent: -50,
+    //                 ease: 'power2.out'
+    //             },
+    //         );
 
-        btnFilter.addEventListener('click', function () {
-            $('.menu-btn').addClass('open filter-open');
-            overlayShow.play();
-            projectFunc.lockedDOM(true);
-        });
+    //     btnFilter.addEventListener('click', function () {
+    //         $('.menu-btn').addClass('open filter-open');
+    //         overlayShow.play();
+    //         projectFunc.lockedDOM(true);
+    //     });
 
-        overlay.addEventListener('click', function () {
-            $('.menu-btn').removeClass('open');
-            overlayHide.play();
-            overlayShow.reverse();
-            formShowTl.reverse();
-            projectFunc.lockedDOM(false);
-        });
+    //     overlay.addEventListener('click', function () {
+    //         $('.menu-btn').removeClass('open');
+    //         overlayHide.play();
+    //         overlayShow.reverse();
+    //         formShowTl.reverse();
+    //         projectFunc.lockedDOM(false);
+    //     });
 
-        $('.js-btn-menu').on('click', function () {
-            overlayHide.play();
-            overlayShow.reverse();
-            formShowTl.reverse();
-            projectFunc.lockedDOM(false);
-        });
-    }
+    //     $('.js-btn-menu').on('click', function () {
+    //         overlayHide.play();
+    //         overlayShow.reverse();
+    //         formShowTl.reverse();
+    //         projectFunc.lockedDOM(false);
+    //     });
+    // }
 
     if ($('.lk-cart__item').exists()) {
         try {
@@ -1623,126 +1628,155 @@ window.addEventListener('load', function () {
         }
     }
 
-    if ($('.js-btn-menu').exists()) {
-        const popup = document.querySelector('.js-menu-popup');
-        gsap.set(popup, { yPercent: -100 });
+    function overlayMenu(panels, overlays, status) {
+        const panel = panels;
+        const overlay = document.querySelector(overlays);
 
-        $(window).on('resize load', function () {
-            $('.js-btn-menu').on('click', () => {
-                $('.menu-btn').toggleClass('open');
+        const overlayShow = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 1 },
+            onStart: stateMenuProps,
+            onStartParams: [panel, overlay, status],
+        });
 
-                if ($('.menu-btn').hasClass('slide-menu-open')) {
-                    $('.menu-btn').removeClass('slide-menu-open');
+        const overlayHide = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 1 },
+            onStart: stateMenuProps,
+            onStartParams: [panel, overlay, status],
+        });
+
+        overlayShow
+            .to(
+                overlay,
+                {
+                    autoAlpha: 0.5,
+                    ease: 'power4.out'
                 }
+            );
 
+        overlayHide
+            .to(
+                overlay,
+                {
+                    autoAlpha: 0,
+                    ease: 'power2.out'
+                }
+            );
+
+        if (status) {
+            $('.menu-btn').addClass('open');
+            projectFunc.lockedDOM(true);
+            overlayHide.reverse();
+            overlayShow.play();
+        } else {
+            $('.menu-btn').removeClass('open');
+            projectFunc.lockedDOM(false);
+            overlayShow.reverse();
+            overlayHide.play();
+        }
+    }
+
+    function stateMenu(panel, overlays, status) {
+        const formShowTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.7 },
+        });
+
+        const formHideTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.7 },
+        });
+
+        formShowTl
+            .set(
+                panel, {
+                xPercent: 100,
+            }
+            )
+            .to(
+                panel,
+                {
+                    autoAlpha: 1,
+                    xPercent: -100,
+                    ease: 'power2.out'
+                },
+            );
+
+        formHideTl
+            .to(
+                panel,
+                {
+                    autoAlpha: 0,
+                    xPercent: 100,
+                    //xPercent: -50,
+                    ease: 'power2.out',
+                    duration: 1
+                }
+            );
+
+        if (status) {
+            formHideTl.reverse();
+            formShowTl.play();
+
+        } else {
+            formShowTl.reverse();
+            formHideTl.play();
+        }
+    }
+
+    function stateMenuProps(panels, overlays, status) {
+        if (status) {
+            stateMenu(panels, overlays, true);
+        } else {
+            stateMenu(panels, overlays, false);
+        }
+    }
+
+    if ($('.js-btn-filter').exists()) {
+        $('.js-btn-filter').on('click', () => {
+            overlayMenu('.js-menu-filter', '.js-ovl-mm', true);
+        });
+    }
+
+    if ($('.js-btn-menu').exists()) {
+        $('.js-btn-menu').on('click', () => {
+            if ($('.menu-btn').hasClass('open')) {
+                overlayMenu('.js-menu-filter', '.js-ovl-mm', false);
+                overlayMenu('.js-menu-mobile', '.js-ovl-mm', false);
+                overlayMenu('.js-sidemenu-popup', '.js-ovl-mm', false);
+            } else {
                 if ($(window).width() > 1024) {
+                    $('.menu-btn').addClass('open');
+                    const popup = document.querySelector('.js-menu-popup');
+                    gsap.set(popup, { yPercent: -100 });
+
                     if (popup) {
                         projectFunc.formShow(popup, true);
                     }
                 } else {
-                    const panel = document.querySelector('.js-menu-mobile');
-                    const overlay = document.querySelector('.js-ovl-mm');
-
-                    const formShowTl = new TimelineMax({
-                        reversed: true,
-                        paused: true,
-                        defaults: { duration: 0.5 },
-                    });
-
-                    const formHideTl = new TimelineMax({
-                        // reversed: true,
-                        // paused: true,
-                        // defaults: { duration: 1 },
-                        // onEnter: () => {
-                        //     console.log('start');
-                        // }
-                    });
-
-                    const overlayShow = new TimelineMax({
-                        reversed: true,
-                        paused: true,
-                        defaults: { duration: 0.5 },
-                        onComplete: () => {
-                            formShowTl.play();
-                        }
-                    });
-
-                    const overlayHide = new TimelineMax({
-                        reversed: true,
-                        paused: true,
-                        defaults: { duration: 0.7 },
-                    });
-
-                    overlayShow
-                        .to(
-                            overlay,
-                            {
-                                autoAlpha: 0.5,
-                                ease: 'power4.out'
-                            }
-                        );
-
-                    overlayHide
-                        .to(
-                            overlay,
-                            {
-                                autoAlpha: 0,
-                                ease: 'power2.out'
-                            }
-                        );
-
-                    formHideTl
-                        .to(
-                            panel,
-                            {
-                                autoAlpha: 0,
-                                xPercent: 100,
-                                //xPercent: -50,
-                                ease: 'power2.out',
-                                duration: 1
-                            }
-                        );
-
-                    formShowTl
-                        .set(
-                            panel, {
-                            xPercent: 100,
-                        }
-                        )
-                        .to(
-                            panel,
-                            {
-                                autoAlpha: 1,
-                                xPercent: -100,
-                                ease: 'power2.out'
-                            },
-                        );
-
-                    if (!$('.menu-btn').hasClass('slide-menu-open')) {
-                        $('.js-sidemenu-popup').removeClass('open');
-                    }
-
-                    if (!$('.menu-btn').hasClass('open') && !$('.menu-btn').hasClass('slide-menu-open')) {
-                        overlayHide.play();
-                        overlayShow.reverse();
-                        formShowTl.reverse();
-                        projectFunc.lockedDOM(false);
-                    } else if ($('.menu-btn').hasClass('open') && !$('.menu-btn').hasClass('slide-menu-open')) {
-                        overlayShow.play();
-                        projectFunc.lockedDOM(true);
-                    }
-
-                    overlay.addEventListener('click', function () {
-                        $('.menu-btn').removeClass('open');
-                        overlayHide.play();
-                        overlayShow.reverse();
-                        formShowTl.reverse();
-                        projectFunc.lockedDOM(false);
-                    });
-
+                    overlayMenu('.js-menu-mobile', '.js-ovl-mm', true);
                 }
-            });
-        }).resize();
+            }
+        });
+    }
+
+    if ($('.js-btn-sidemenu').exists()) {
+        $('.js-btn-sidemenu').on('click', () => {
+            overlayMenu('.js-sidemenu-popup', '.js-ovl-mm', true);
+        });
+    }
+
+    if ($('.js-ovl-mm').exists()) {
+        $('.js-ovl-mm').on('click', () => {
+            overlayMenu('.js-menu-filter', '.js-ovl-mm', false);
+            overlayMenu('.js-menu-mobile', '.js-ovl-mm', false);
+            overlayMenu('.js-sidemenu-popup', '.js-ovl-mm', false);
+        });
     }
 
     if ($('.js-menu-close').exists()) {
@@ -1911,9 +1945,9 @@ window.addEventListener('load', function () {
 
     if ($('.js-btn-sidemenu').exists()) {
         $('.js-btn-sidemenu').click(function () {
-            $('.js-sidemenu-popup').addClass('open');
-            $('.menu-btn').addClass('open slide-menu-open');
-            projectFunc.lockedDOM(true);
+            // $('.js-sidemenu-popup').addClass('open');
+            // $('.menu-btn').addClass('open slide-menu-open');
+            // projectFunc.lockedDOM(true);
         });
     }
 

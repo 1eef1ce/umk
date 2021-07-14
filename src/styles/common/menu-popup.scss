@@ -8,6 +8,7 @@
     overflow: auto;
     z-index: 300;
     opacity: 0;
+    visibility: hidden;
 
     &__backdrop {
         position: absolute;
