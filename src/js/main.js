@@ -1202,20 +1202,24 @@ window.addEventListener('load', function () {
     }
 
     if ($('.js-footer-acc').exists()) {
-        let accordions = document.getElementsByClassName("js-footer-acc");
+        if ($(window).width() <= 720) {
+            let accordions = document.getElementsByClassName("js-footer-acc");
+            let btn = '';
+            let list = '';
 
-        for (let i = 0; i < accordions.length; i++) {
-            accordions[i].onclick = function () {
-                this.classList.toggle('is-open');
+            for (let i = 0; i < accordions.length; i++) {
+                btn = accordions[i].querySelector('.footer__btn');
 
-                let content = $(this).find('.footer__list')[0];
+                console.log(btn);
 
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                }
-            };
+                btn.onclick = function (event) {
+                    accordions[i].classList.toggle('is-open');
+                    list = $(accordions[i]).find('.footer__list');
+                    event.preventDefault();
+                    console.log(list);
+                    $(list).slideToggle();
+                };
+            }
         }
     }
 
@@ -1332,7 +1336,7 @@ window.addEventListener('load', function () {
             );
 
         btnFilter.addEventListener('click', function () {
-            $('.menu-btn').addClass('open');
+            $('.menu-btn').addClass('open filter-open');
             overlayShow.play();
             projectFunc.lockedDOM(true);
         });
@@ -1350,119 +1354,6 @@ window.addEventListener('load', function () {
             overlayShow.reverse();
             formShowTl.reverse();
             projectFunc.lockedDOM(false);
-        });
-    }
-
-
-    if ($('.js-btn-menu').exists()) {
-        const btnFilter = document.querySelector('.js-btn-menu');
-        const panel = document.querySelector('.js-menu-mobile');
-        const overlay = document.querySelector('.js-ovl-mm');
-
-        const formShowTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 },
-        });
-
-        const formHideTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 },
-        });
-
-        const overlayShow = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.7 },
-            onComplete: () => {
-                formShowTl.play();
-            }
-        });
-
-        const overlayHide = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.7 },
-            onComplete: () => {
-                formHideTl.play();
-            }
-        });
-
-        overlayShow
-            .to(
-                overlay,
-                {
-                    autoAlpha: 0.5,
-                    ease: 'power4.out'
-                }
-            )
-
-        overlayHide
-            .to(
-                overlay,
-                {
-                    autoAlpha: 0,
-                    ease: 'power2.out'
-                }
-            )
-
-        formHideTl
-            .to(
-                panel,
-                {
-                    autoAlpha: 0,
-                    xPercent: 100,
-                    //xPercent: -50,
-                    ease: 'power2.out'
-                }
-            );
-
-        formShowTl
-            .set(
-                panel, {
-                xPercent: 100,
-            }
-            )
-            .to(
-                panel,
-                {
-                    autoAlpha: 1,
-                    xPercent: -100,
-                    //xPercent: -50,
-                    ease: 'power2.out'
-                },
-            );
-
-        btnFilter.addEventListener('click', function () {
-            //    $('.menu-btn').addClass('open');
-            console.log(1);
-
-            if (!$('.menu-btn').hasClass('open')) {
-                overlayHide.play();
-                overlayShow.reverse();
-                formShowTl.reverse();
-                projectFunc.lockedDOM(false);
-            } else {
-                overlayShow.play();
-                projectFunc.lockedDOM(true);
-
-            }
-        });
-
-        overlay.addEventListener('click', function () {
-            $('.menu-btn').removeClass('open');
-            overlayHide.play();
-            overlayShow.reverse();
-            formShowTl.reverse();
-            projectFunc.lockedDOM(false);
-        });
-
-        $('.js-btn-menu').on('click', function () {
-            // overlayHide.play();
-            // overlayShow.reverse();
-            //formShowTl.reverse();
-            // projectFunc.lockedDOM(false);
         });
     }
 
@@ -1738,20 +1629,117 @@ window.addEventListener('load', function () {
 
         $(window).on('resize load', function () {
             $('.js-btn-menu').on('click', () => {
+                $('.menu-btn').toggleClass('open');
+
+                if ($('.menu-btn').hasClass('slide-menu-open')) {
+                    $('.menu-btn').removeClass('slide-menu-open');
+                }
 
                 if ($(window).width() > 1024) {
                     if (popup) {
-                        $('.menu-btn').addClass('open');
                         projectFunc.formShow(popup, true);
                     }
                 } else {
-                    // if (!$('.menu-btn').hasClass('open')) {
-                    //     projectFunc.showOverlay('.js-menu-mobile', false);
-                    //     $('header').removeClass('active');
-                    // } else {
-                    //     projectFunc.showOverlay('.js-menu-mobile', true);
-                    //     $('header').addClass('active');
-                    // }
+                    const panel = document.querySelector('.js-menu-mobile');
+                    const overlay = document.querySelector('.js-ovl-mm');
+
+                    const formShowTl = new TimelineMax({
+                        reversed: true,
+                        paused: true,
+                        defaults: { duration: 0.5 },
+                    });
+
+                    const formHideTl = new TimelineMax({
+                        // reversed: true,
+                        // paused: true,
+                        // defaults: { duration: 1 },
+                        // onEnter: () => {
+                        //     console.log('start');
+                        // }
+                    });
+
+                    const overlayShow = new TimelineMax({
+                        reversed: true,
+                        paused: true,
+                        defaults: { duration: 0.5 },
+                        onComplete: () => {
+                            formShowTl.play();
+                        }
+                    });
+
+                    const overlayHide = new TimelineMax({
+                        reversed: true,
+                        paused: true,
+                        defaults: { duration: 0.7 },
+                    });
+
+                    overlayShow
+                        .to(
+                            overlay,
+                            {
+                                autoAlpha: 0.5,
+                                ease: 'power4.out'
+                            }
+                        );
+
+                    overlayHide
+                        .to(
+                            overlay,
+                            {
+                                autoAlpha: 0,
+                                ease: 'power2.out'
+                            }
+                        );
+
+                    formHideTl
+                        .to(
+                            panel,
+                            {
+                                autoAlpha: 0,
+                                xPercent: 100,
+                                //xPercent: -50,
+                                ease: 'power2.out',
+                                duration: 1
+                            }
+                        );
+
+                    formShowTl
+                        .set(
+                            panel, {
+                            xPercent: 100,
+                        }
+                        )
+                        .to(
+                            panel,
+                            {
+                                autoAlpha: 1,
+                                xPercent: -100,
+                                ease: 'power2.out'
+                            },
+                        );
+
+                    if (!$('.menu-btn').hasClass('slide-menu-open')) {
+                        $('.js-sidemenu-popup').removeClass('open');
+                    }
+
+                    if (!$('.menu-btn').hasClass('open') && !$('.menu-btn').hasClass('slide-menu-open')) {
+                        overlayHide.play();
+                        overlayShow.reverse();
+                        formShowTl.reverse();
+                        projectFunc.lockedDOM(false);
+                    } else if ($('.menu-btn').hasClass('open') && !$('.menu-btn').hasClass('slide-menu-open')) {
+                        overlayShow.play();
+                        projectFunc.lockedDOM(true);
+                    }
+
+                    overlay.addEventListener('click', function () {
+                        $('.menu-btn').removeClass('open');
+                        overlayHide.play();
+                        overlayShow.reverse();
+                        formShowTl.reverse();
+                        projectFunc.lockedDOM(false);
+                    });
+
                 }
             });
         }).resize();
@@ -1767,14 +1755,6 @@ window.addEventListener('load', function () {
             }
         });
     }
-
-    $('.menu-btn').click(function () {
-        $('.menu-btn').toggleClass('open');
-
-        if (!$('.menu-btn').hasClass('open')) {
-            $('.js-sidemenu-popup').removeClass('open');
-        }
-    });
 
     if ($('.js-input').exists()) {
         try {
@@ -1932,7 +1912,8 @@ window.addEventListener('load', function () {
     if ($('.js-btn-sidemenu').exists()) {
         $('.js-btn-sidemenu').click(function () {
             $('.js-sidemenu-popup').addClass('open');
-            $('.menu-btn').addClass('open');
+            $('.menu-btn').addClass('open slide-menu-open');
+            projectFunc.lockedDOM(true);
         });
     }
 

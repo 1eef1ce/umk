@@ -1,69 +1,97 @@
-footer.footer
+footer.footer(itemscope="" itemtype="http://schema.org/WPFooter")
     .footer__top
-        .footer__container.container 
-            .footer__grid 
-                .footer__column
+        .footer__container.container(itemscope="" itemtype="http://www.schema.org/SiteNavigationElement") 
+            .footer__grid(itemscope itemtype="http://schema.org/ItemList")
+                .footer__column(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
                     .footer__acc
-                        a(href="javascript:void(0);").footer__link.footer__link--title.footer__btn.active Контакты
+                        a(href="contacts.html" itemprop="url").footer__link.footer__link--title.footer__btn.active Контакты
+                            meta(itemprop="name" content="Контакты")
                     .footer__acc.js-footer-acc
-                        a(href="javascript:void(0);").footer__btn
+                        a(href="catalog.html" itemprop="url").footer__btn
                             .footer__link.footer__link--title Каталог
                             .footer__ic
                                 +icon("chevron_down")
+                            meta(itemprop="name" content="Каталог")
                         .footer__box.footer__list
                             .footer__content
-                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile.active Каталог
-                                a(href="javascript:void(0);").footer__link.footer__link--small Продукция для упаковки
-                                a(href="javascript:void(0);").footer__link.footer__link--small Лента стальная (штрипс)
-                                a(href="javascript:void(0);").footer__link.footer__link--small Трубы
-                                a(href="javascript:void(0);").footer__link.footer__link--small Профиль для строительства
-                                a(href="javascript:void(0);").footer__link.footer__link--title Спецпредложения
-                .footer__column
+                                a(href="catalog.html" itemprop="url").footer__link.footer__link--small.footer__link--mobile.active Каталог
+                                    meta(itemprop="name" content="Каталог")
+                                a(href="javascript:void(0);" itemprop="url").footer__link.footer__link--small Продукция для упаковки
+                                    meta(itemprop="name" content="Продукция для упаковки")
+                                a(href="javascript:void(0);" itemprop="url").footer__link.footer__link--small Лента стальная (штрипс)
+                                    meta(itemprop="name" content="Лента стальная (штрипс)")
+                                a(href="javascript:void(0);" itemprop="url").footer__link.footer__link--small Трубы
+                                    meta(itemprop="name" content="Трубы")
+                                a(href="javascript:void(0);" itemprop="url").footer__link.footer__link--small Профиль для строительства
+                                    meta(itemprop="name" content="Профиль для строительства")
+                                a(href="catalog-goods.html" itemprop="url").footer__link.footer__link--title Спецпредложения
+                                    meta(itemprop="name" content="Спецпредложения")
+                .footer__column(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
                     .footer__acc.js-footer-acc
-                        a(href="javascript:void(0);").footer__btn
+                        a(href="catalog-service.html" itemprop="url").footer__btn
                             .footer__link.footer__link--title Сервис
                             .footer__ic
                                 +icon("chevron_down")
+                            meta(itemprop="name" content="Сервис")
                         .footer__box.footer__list
                             .footer__content
-                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Сервис
-                                a(href="javascript:void(0);").footer__link.footer__link--small Плоский прокат
-                                a(href="javascript:void(0);").footer__link.footer__link--small Гнутый и фасонный профиль
-                                a(href="javascript:void(0);").footer__link.footer__link--small Сортовой прокат
-                                a(href="javascript:void(0);").footer__link.footer__link--small Метизная продукция
-                                a(href="javascript:void(0);").footer__link.footer__link--small Дополнительные услуги
-                                a(href="javascript:void(0);").footer__link.footer__link--title.footer__link--laptop Обратная связь
-                .footer__column
+                                a(href="catalog-service.html" itemprop="url").footer__link.footer__link--small.footer__link--mobile Сервис
+                                    meta(itemprop="name" content="Сервис")
+                                a(href="service-detail.html" itemprop="url").footer__link.footer__link--small Плоский прокат
+                                    meta(itemprop="name" content="Плоский прокат")
+                                a(href="service-detail.html" itemprop="url").footer__link.footer__link--small Гнутый и фасонный профиль
+                                    meta(itemprop="name" content="Гнутый и фасонный профиль")
+                                a(href="service-detail.html" itemprop="url").footer__link.footer__link--small Сортовой прокат
+                                    meta(itemprop="name" content="Сортовой прокат")
+                                a(href="service-detail.html" itemprop="url").footer__link.footer__link--small Метизная продукция
+                                    meta(itemprop="name" content="Метизная продукция")
+                                a(href="catalog-service.html" itemprop="url").footer__link.footer__link--small Дополнительные услуги
+                                    meta(itemprop="name" content="Дополнительные услуги")
+                                a(href="lk-call.html" itemprop="url").footer__link.footer__link--title.footer__link--laptop Обратная связь
+                                    meta(itemprop="name" content="Обратная связь")
+                .footer__column(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
                     .footer__acc.js-footer-acc
-                        a(href="javascript:void(0);").footer__btn
+                        a(href="javascript:void(0);" itemprop="url").footer__btn
                             .footer__link.footer__link--title Информация
                             .footer__ic
                                 +icon("chevron_down") 
+                            meta(itemprop="name" content="Информация")
                         .footer__list
                             .footer__content
-                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Информация
-                                a(href="javascript:void(0);").footer__link.footer__link--title ГОСТы и ТУ
-                                a(href="javascript:void(0);").footer__link.footer__link--title Поставщикам
-                                a(href="javascript:void(0);").footer__link.footer__link--title Доставка
-                                a(href="javascript:void(0);").footer__link.footer__link--title Закупки
-                                a(href="javascript:void(0);").footer__link.footer__link--title Тендер
-                .footer__column
+                                a(href="standard.html" itemprop="url").footer__link.footer__link--title ГОСТы и ТУ
+                                    meta(itemprop="name" content="ГОСТы и ТУ")
+                                a(href="supply.html" itemprop="url").footer__link.footer__link--title Поставщикам
+                                    meta(itemprop="name" content="Поставщикам")
+                                a(href="delivery.html" itemprop="url").footer__link.footer__link--title Доставка
+                                    meta(itemprop="name" content="Доставка")
+                                a(href="purchase.html" itemprop="url").footer__link.footer__link--title Закупки
+                                    meta(itemprop="name" content="Закупки")
+                                a(href="tender.html" itemprop="url").footer__link.footer__link--title Тендер
+                                    meta(itemprop="name" content="Тендер")
+                .footer__column(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
                     .footer__acc.js-footer-acc
-                        a(href="javascript:void(0);").footer__btn
+                        a(href="javascript:void(0);" itemprop="url").footer__btn
                             .footer__link.footer__link--title Компания
                             .footer__ic
-                                +icon("chevron_down") 
+                                +icon("chevron_down")
+                            meta(itemprop="name" content="Компания")
                         .footer__box.footer__list
                             .footer__content
-                                a(href="javascript:void(0);").footer__link.footer__link--small.footer__link--mobile Компания
-                                a(href="javascript:void(0);").footer__link.footer__link--small О нас
-                                a(href="javascript:void(0);").footer__link.footer__link--small История
-                                a(href="javascript:void(0);").footer__link.footer__link--small Карьера
-                                a(href="javascript:void(0);").footer__link.footer__link--title Новости
-                                a(href="javascript:void(0);").footer__link.footer__link--title Оповещение о НМУ
-                .footer__column.footer__column--desk 
-                    a(href="javascript:void(0);").footer__link.footer__link--title Обратная связь
-                    a(href="javascript:void(0);").footer__link.footer__link--title Карта сайта
+                                a(href="about.html" itemprop="url").footer__link.footer__link--small О нас
+                                    meta(itemprop="name" content="О нас")
+                                a(href="history.html" itemprop="url").footer__link.footer__link--small История
+                                    meta(itemprop="name" content="История")
+                                a(href="vacancy.html" itemprop="url").footer__link.footer__link--small Карьера
+                                    meta(itemprop="name" content="Карьера")
+                                a(href="news.html" itemprop="url").footer__link.footer__link--title Новости
+                                    meta(itemprop="name" content="Новости")
+                                a(href="notification.html" itemprop="url").footer__link.footer__link--title Оповещение о НМУ
+                                    meta(itemprop="name" content="Оповещение о НМУ")
+                .footer__column.footer__column--desk(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ItemList")
+                    a(href="lk-call.html" itemprop="url").footer__link.footer__link--title Обратная связь
+                        meta(itemprop="name" content="Обратная связь")
+                    a(href="javascript:void(0);" itemprop="url").footer__link.footer__link--title Карта сайта
+                        meta(itemprop="name" content="Карта сайта")
     .footer__bottom 
         .footer__container.container 
             .footer__cover 

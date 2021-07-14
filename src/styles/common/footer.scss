@@ -150,9 +150,7 @@
 
             &__list {
                 @media(max-width: 720px) {
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: .4s ease-in-out;
+                    display: none;
                     padding: 0 20px;
                     margin-top: -8px;
                 }

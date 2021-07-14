@@ -30,10 +30,18 @@
     }
 
     &.open {
-      display: block;
+      display: flex;
+      flex-direction: column;
       position: absolute;
-      top: 64px;
+      top: 65px;
       right: 0;
+
+
+      @media(max-width: 620px) {
+        height: calc(100vh - 65px);
+        overflow: scroll;
+        justify-content: space-between;
+      }
     }
 
     .delivery-unit {

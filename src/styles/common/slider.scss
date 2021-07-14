@@ -7,6 +7,11 @@
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.08);
         margin-top: 36px;
 
+        @media(max-width: 1024px) {
+            width: calc(100% + 40px);
+            margin-left: -20px;
+        }
+
         @media(max-width: 620px) {
             margin-top: 26px;
         }

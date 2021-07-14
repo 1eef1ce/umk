@@ -122,6 +122,17 @@
             }
         }
     }
+
+
+    &--user {
+        @media(max-width: 1024px) {
+            display: none;
+        }
+
+        .dropdown-menu {
+            min-width: max-content;
+        }
+    }
 }
 
 .dropdown-label {
