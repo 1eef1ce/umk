@@ -1,16 +1,21 @@
-.sidemenu
-    a.sidemenu__section.active(href="lk-desk.html")
+.sidemenu(itemscope itemtype="http://www.schema.org/SiteNavigationElement")
+    a.sidemenu__section.active(href="lk-desk.html" itemprop="url")
+        meta(itemprop="name" content="Рабочий стол")
         .sidemenu__head
             .sidemenu__title Рабочий стол
-    a.sidemenu__section(href="lk-order.html")
+    a.sidemenu__section(href="lk-order.html" itemprop="url")
+        meta(itemprop="name" content="Мои заказы")
         .sidemenu__head
             .sidemenu__title Мои заказы
-    a.sidemenu__section(href="lk-call.html")
+    a.sidemenu__section(href="lk-call.html" itemprop="url")
+        meta(itemprop="name" content="Обратная связь")
         .sidemenu__head
             .sidemenu__title Обратная связь
-    a.sidemenu__section(href="lk-profile-user.html")
+    a.sidemenu__section(href="lk-profile-user.html" itemprop="url")
+        meta(itemprop="name" content="Личный профиль")
         .sidemenu__head
             .sidemenu__title Личный профиль
-    a.sidemenu__section(href="lk-profile-company.html")
+    a.sidemenu__section(href="lk-profile-company.html" itemprop="url")
+        meta(itemprop="name" content="Профиль компании")
         .sidemenu__head
             .sidemenu__title Профиль компании

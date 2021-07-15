@@ -7,17 +7,17 @@ block content
                 .aside.aside--lk
                     .aside__sidebar
                         include common/sidemenu
-                        .delivery-unit
+                        .delivery-unit(itemscope itemtype="http://schema.org/Organization")
                             .delivery-unit__title Ваш менеджер:
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="contactPoint")
                                 | Специалист:
                                 br
                                 span Иванов Иван Иванович
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="email")
                                 | Почта:
                                 br
                                 a(href="mailto:sdefefvr@mail.ru") sdefefvr@mail.ru
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="telephone")
                                 | Телефон:
                                 br
                                 a(href="tel:+7(999)985-48-56") +7 (999) 985-48-56
@@ -34,15 +34,15 @@ block content
                                     a.tab__item(href="javascript:void(0);") 2020 г.
                                     a.tab__item(href="javascript:void(0);") 2019 г.
                                     a.tab__item(href="javascript:void(0);") 2018 г.
-                        .order
-                            .order-card
+                        .order(itemscope itemtype="https://schema.org/ItemList")
+                            .order-card(itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer")
                                 .order-card__top
                                     .order-card__unit.order-card__column.order-card__column--order
-                                        .order-card__title Заказ №0155-3213543
-                                        .order-card__date от 24 декабря 2021 г.
+                                        .order-card__title(itemprop="name") Заказ №0155-3213543
+                                        .order-card__date(itemprop="availabilityStarts") от 24 декабря 2021 г.
                                     .order-card__unit.order-card__column.order-card__column--price
-                                        .order-card__price 386 000
-                                            span ₽
+                                        .order-card__price(itemprop="price") 386 000
+                                            span(itemprop="priceCurrency" content="RUB") ₽
                                     .order-card__box.order-card__column.order-card__column--info
                                         .order-card__txt Подписание счета
                                         a.tooltip.tooltip--steps(href="javascript:void(0);")
@@ -161,12 +161,12 @@ block content
                                     .order-btn__txt Развернуть подробную информацию
                                     .order-btn__ic 
                                         +icon('chevron_down')
-                                .modal.modal--order.js-modal-order
+                                .modal.modal--order.js-modal-order(itemscope itemtype="http://schema.org/Offer")
                                     .modal__content
                                         a.modal__close.js-close-modal(href="javascript:void(0);")
                                             +icon('close_big')
                                         .modal__title.title-2 Информация о заказе
-                                        .modal__subtitle №0155-3213543
+                                        .modal__subtitle(itemprop="name") №0155-3213543
                                         .modal__grid 
                                             .modal__row 
                                                 span Получатель:
@@ -192,17 +192,17 @@ block content
                                             .modal__row 
                                                 span Скидка: 
                                                 | 71 200 ₽
-                                            .modal__row 
+                                            .modal__row(itemprop="price") 
                                                 span Итого: 
                                                 | 3 488 800
-                            .order-card
+                            .order-card(itemprop="itemListElement" itemscope itemtype="http://schema.org/Offer")
                                 .order-card__top
                                     .order-card__unit.order-card__column.order-card__column--order
-                                        .order-card__title Заказ №0155-3213543
-                                        .order-card__date от 24 декабря 2021 г.
+                                        .order-card__title(itemprop="name") Заказ №0155-3213543
+                                        .order-card__date(itemprop="availabilityStarts") от 24 декабря 2021 г.
                                     .order-card__unit.order-card__column.order-card__column--price
-                                        .order-card__price 386 000 
-                                            span ₽
+                                        .order-card__price(itemprop="price") 386 000 
+                                            span(itemprop="priceCurrency" content="RUB") ₽
                                     .order-card__box.order-card__column.order-card__column--info
                                         .order-card__txt Подписание счета
                                         a.tooltip.tooltip--steps(href="javascript:void(0);")
@@ -321,12 +321,12 @@ block content
                                     .order-btn__txt Развернуть подробную информацию
                                     .order-btn__ic 
                                         +icon('chevron_down')
-                                .modal.modal--order.js-modal-order
+                                .modal.modal--order.js-modal-order(itemscope itemtype="http://schema.org/Offer")
                                     .modal__content
                                         a.modal__close.js-close-modal(href="javascript:void(0);")
                                             +icon('close_big')
                                         .modal__title.title-2 Информация о заказе
-                                        .modal__subtitle №0155-3213543
+                                        .modal__subtitle(itemprop="name") №0155-3213543
                                         .modal__grid 
                                             .modal__row 
                                                 span Получатель:
@@ -352,7 +352,7 @@ block content
                                             .modal__row 
                                                 span Скидка: 
                                                 | 71 200 ₽
-                                            .modal__row 
+                                            .modal__row(itemprop="price") 
                                                 span Итого: 
                                                 | 3 488 800
         include common/menu-app

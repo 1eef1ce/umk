@@ -38,7 +38,7 @@ block content
                                     td(itemprop="telephone") +7 (3517) 01 08 13 доб. 193
                                     td Старший менеджер по продаже трубы
                                     td(itemprop="contactPoint") Нелюбин Михаил Павлович
-                                tr
+                                tr(itemprop="itemListElement" itemscope itemtype="http://schema.org/Organization")
                                     td(itemprop="department") Группа продажи штрипса (ленты)
                                     td(itemprop="telephone") +7 (3517) 01 08 13 доб. 185
                                     td(itemprop="contactPoint") Старший менеджер по продаже штрипса
@@ -55,7 +55,7 @@ block content
                     .tabs-content__body.active.js-tab-body(data-tab-body="7")
                 .contacts__section(itemscope itemtype="http://schema.org/Organization")
                     h2.title-2 Адрес и схема проезда:
-                    .contacts__items
+                    .contacts__items(itemprop="address" itemscope itemtype="https://schema.org/PostalAddress")
                         .contacts__item
                             .contacts__img
                                 +icon('location_outline')
