@@ -3,12 +3,12 @@ extends common/layout
 block content
     main.main
         include common/topmenu
-        .tender-detail
+        .tender-detail(itemscope itemtype="https://schema.org/Article")
             .container
                 .tender-detail__container
                     include common/breadcrumb
-                    h1.title-1 Тендер 1 56226-548ОПНт59
-                    .tender-detail__content
+                    h1.title-1(itemprop="headline name" content="Тендер 1 56226-548ОПНт59") Тендер 1 56226-548ОПНт59
+                    .tender-detail__content(itemprop="description")
                         p.
                             Проводится конкурс на поставку пиломатериалов и поддонов на ООО «УМК». Контракт заключается с
                             победителем тендера — участником, подавшим предложение, соответствующее требованиям
@@ -16,17 +16,17 @@ block content
                         p.
                             Согласно типовому договору ООО «УМК» на поставку продукции срок оплаты составляет 30 дней после
                             поставки продукции на склад Покупателя. Базис поставки — склад Покупателя.
-                        .tender-detail__contacts
+                        .tender-detail__contacts(itemscope itemtype="http://schema.org/Organization")
                             h2.title-4 Контактное лицо:
-                            p
+                            p(itemprop="contactPoint")
                                 | Зам. начальника бюро снабжения ООО «Уральская металлообрабатывающая компания»:
                                 |
                                 span О. М. Савин.
-                            p
+                            p(itemprop="email")
                                 | Электронная почта:
                                 |
                                 a(href="mailto:o.savin@uralmetalcompany.ru") o.savin@uralmetalcompany.ru
-                            p
+                            p(itemprop="telephone")
                                 | Телефон:
                                 |
                                 span 8 (912) 300-24-00; 8 (3519) 58-00-15 (доб.187)

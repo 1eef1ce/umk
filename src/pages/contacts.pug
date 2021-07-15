@@ -26,22 +26,22 @@ block content
                             a.tabs__link.js-tab-btn(href="javascript:void(0);" data-tab-btn="7") Реквизиты
                 .tabs-content
                     .tabs-content__body.active.js-tab-body(data-tab-body="1")
-                        .contacts__table
+                        .contacts__table(itemscope itemtype = "https://schema.org/ItemList")
                             table
                                 tr
                                     td Подразделение
                                     td Телефон
                                     td Руководитель подразделения/контактное лицо
                                     td ФИО
-                                tr
-                                    td Группа продажи трубы
-                                    td +7 (3517) 01 08 13 доб. 193
+                                tr(itemprop="itemListElement" itemscope itemtype="http://schema.org/Organization")
+                                    td(itemprop="department") Группа продажи трубы
+                                    td(itemprop="telephone") +7 (3517) 01 08 13 доб. 193
                                     td Старший менеджер по продаже трубы
-                                    td Нелюбин Михаил Павлович
+                                    td(itemprop="contactPoint") Нелюбин Михаил Павлович
                                 tr
-                                    td Группа продажи штрипса (ленты)
-                                    td +7 (3517) 01 08 13 доб. 185
-                                    td Старший менеджер по продаже штрипса
+                                    td(itemprop="department") Группа продажи штрипса (ленты)
+                                    td(itemprop="telephone") +7 (3517) 01 08 13 доб. 185
+                                    td(itemprop="contactPoint") Старший менеджер по продаже штрипса
                                     td Вечканов Николай Александрович
                         p
                             |Электронная почта для покупателей:
@@ -53,20 +53,20 @@ block content
                     .tabs-content__body.active.js-tab-body(data-tab-body="5")
                     .tabs-content__body.active.js-tab-body(data-tab-body="6")
                     .tabs-content__body.active.js-tab-body(data-tab-body="7")
-                .contacts__section
+                .contacts__section(itemscope itemtype="http://schema.org/Organization")
                     h2.title-2 Адрес и схема проезда:
                     .contacts__items
                         .contacts__item
                             .contacts__img
                                 +icon('location_outline')
-                            div Адрес: Коммунальная улица, 10с1, Орджоникидзевский район, Магнитогорск, Челябинская область, 455007
+                            div(itemprop="streetAddress") Адрес: Коммунальная улица, 10с1, Орджоникидзевский район, Магнитогорск, Челябинская область, 455007
                         .contacts__item
                             .contacts__img
                                 +icon('mail')
                             div
                                 |E-mail:
                                 |
-                                a.link(href="mailto:mail@uralmetalcompany.ru") mail@uralmetalcompany.ru
+                                a.link(href="mailto:mail@uralmetalcompany.ru" itemprop="email") mail@uralmetalcompany.ru
                         .contacts__item
                             .contacts__img
                                 +icon('site')

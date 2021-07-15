@@ -53,17 +53,17 @@ block content
                             a.sidemenu__section(href="javascript:void(0);")
                                 .sidemenu__head
                                     .sidemenu__title Прочее
-                        .delivery-unit
+                        .delivery-unit(itemscope itemtype="http://schema.org/Organization")
                             .delivery-unit__title Отдел логистики:
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="contactPoint")
                                 | Специалист по логистике:
                                 br
                                 span Наталья Бандяева
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="contactPoint")
                                 | Специалист по логистике:
                                 br
                                 span Ольга Мацапей
-                            .delivery-unit__text
+                            .delivery-unit__text(itemprop="telephone")
                                 | Телефон:
                                 br
                                 a(href="tel:+73517013320") +7 (3517) 01-33-20
