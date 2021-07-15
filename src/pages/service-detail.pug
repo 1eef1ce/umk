@@ -2,11 +2,11 @@ extends common/layout
 
 block content
     main.main
-        .service-detail
+        .service-detail(itemscope itemtype="http://schema.org/Product")
             .service-detail__header(style="background-color: #f3f4f5; background-image: url('../img/bg-service-detail.png');")
                 .container
                     include common/breadcrumb
-                    h1.title-1 Горячекатаный рулон
+                    h1.title-1(itemprop="name") Горячекатаный рулон
             .container
                 .aside
                     .aside__main
@@ -15,7 +15,7 @@ block content
                             +icon('chevron_down')
                         h1.title-1.title-1--hidden Горячекатаный рулон
                         h2.title-4 Общие характеристики
-                        p.
+                        p(itemprop="description").
                             Внутренний диаметр рулона со станов горячей прокатки «2000» и «2500» составляет 850 мм.
                             Кромка у рулона обоих станов катаная. Внутренний диаметр рулона из агрегата продольной
                             резки — 750 или 840 мм. Рулон поставляется с обрезной кромкой.
@@ -75,37 +75,43 @@ block content
                             Условия поставки, конкретные типоразмеры и марочный состав согласовываются индивидуально
                             при оформлении заказа.
                     .aside__sidebar.js-sidemenu-popup
-                        .sidemenu
+                        .sidemenu(itemscope itemtype="http://www.schema.org/SiteNavigationElement")
                             .sidemenu__name Выбрать плоский прокат
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Выбрать плоский прокат")
                                 .sidemenu__head
                                     .sidemenu__title Горячекатаный рулон
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Горячекатаный рулон")
                                 .sidemenu__head
                                     .sidemenu__title Горячекатаный лист
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Горячекатаный лист")
                                 .sidemenu__head
                                     .sidemenu__title Холоднокатаный рулон
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Холоднокатаный рулон")
                                 .sidemenu__head
                                     .sidemenu__title Холоднокатаный лист
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Холоднокатаный лист")
                                 .sidemenu__head
                                     .sidemenu__title Оцинкованный прокат
-                            a.sidemenu__section(href="javascript:void(0);")
+                            a.sidemenu__section(href="service-detail.html" itemprop="url")
+                                meta(itemprop="name" content="Оцинкованный прокат")
                                 .sidemenu__head
                                     .sidemenu__title Прокат с полимерным покрытием
-                        .delivery-unit
+                        .delivery-unit(itemscope itemtype="http://schema.org/Organization")
                             .delivery-unit__title Отдел продаж:
                             .delivery-unit__text
                                 | Менеджер:
                                 br
-                                span Роман Южаков
-                            .delivery-unit__text
+                                span(itemprop="contactPoint") Роман Южаков
+                            .delivery-unit__text(itemprop="telephone")
                                 | Телефон:
                                 br
                                 a(href="tel:+73519517015") +7 (3519) 51-70-15
                             .delivery-unit__text
                                 | E-mail:
                                 br
-                                a(href="mailto:order@uralmetalcompany.ru") order@uralmetalcompany.ru
+                                a(href="mailto:order@uralmetalcompany.ru" itemprop="email") order@uralmetalcompany.ru

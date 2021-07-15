@@ -23,61 +23,61 @@ block content
                             option 2021
                             option 2020
                             option 2019
-                .news__container
+                .news__container(itemscope itemtype = "https://schema.org/ItemList")
                     .tabs-content
                         .tabs-content__body.active.js-tab-body(data-tab-body="1")
                             .news__items
-                                .news__item
+                                .news__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
                                     .news__img
-                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%" itemprop="image")
                                     .news__content
-                                        .news__date 3 декабря 2020 года
-                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
-                                        .news__text.
+                                        .news__date(itemprop="dateCreated") 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);" itemprop="name" content="WSA: за январь-февраль производство стали в мире выросло на 6,6%") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text(itemprop="description").
                                             В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
                                             данные World Steel Association, выплавили 315 млн. тонн стали.
-                                .news__item
+                                .news__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
                                     .news__img
-                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности")
+                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности" itemprop="image")
                                     .news__content
-                                        .news__date 3 декабря 2020 года
-                                        a.news__title(href="javascript:void(0);") На ЧерМК начали выпускать новую сталь повышенной прочности
-                                        .news__text.
+                                        .news__date(itemprop="dateCreated") 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);" itemprop="name" content="WSA: за январь-февраль производство стали в мире выросло на 6,6%") На ЧерМК начали выпускать новую сталь повышенной прочности
+                                        .news__text(itemprop="description").
                                             В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
                                             "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
                                             горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
                             include common/pagination
                         .tabs-content__body.js-tab-body(data-tab-body="2")
                             .news__items
-                                .news__item
+                                .news__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
                                     .news__img
-                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%" itemprop="image")
                                     .news__content
-                                        .news__date 3 декабря 2020 года
-                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
-                                        .news__text.
+                                        .news__date(itemprop="dateCreated") 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);" itemprop="name" content="WSA: за январь-февраль производство стали в мире выросло на 6,6%") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text(itemprop="description").
                                             В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
                                             данные World Steel Association, выплавили 315 млн. тонн стали.
                         .tabs-content__body.js-tab-body(data-tab-body="3")
                             .news__items
-                                .news__item
+                                .news__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
                                     .news__img
-                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности")
+                                        img(src="../img/placeholder-s.jpg" alt="На ЧерМК начали выпускать новую сталь повышенной прочности" itemprop="image")
                                     .news__content
-                                        .news__date 3 декабря 2020 года
-                                        a.news__title(href="javascript:void(0);") На ЧерМК начали выпускать новую сталь повышенной прочности
-                                        .news__text.
+                                        .news__date(itemprop="dateCreated") 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);" itemprop="name" content="На ЧерМК начали выпускать новую сталь повышенной прочности") На ЧерМК начали выпускать новую сталь повышенной прочности
+                                        .news__text(itemprop="description").
                                             В листопрокатном цехе №2 Череповецкого металлургического комбината (предприятие дивизиона
                                             "Северсталь Российская сталь") освоено производство новой продукции - двухфазной феррито-мартенситной
                                             горячекатаной травленой стали повышенной прочности с техническим названием DP 600.
                         .tabs-content__body.js-tab-body(data-tab-body="4")
                             .news__items
-                                .news__item
+                                .news__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
                                     .news__img
-                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
+                                        img(src="../img/placeholder-s.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%" itemprop="image")
                                     .news__content
-                                        .news__date 3 декабря 2020 года
-                                        a.news__title(href="javascript:void(0);") WSA: за январь-февраль производство стали в мире выросло на 6,6%
-                                        .news__text.
+                                        .news__date(itemprop="dateCreated") 3 декабря 2020 года
+                                        a.news__title(href="javascript:void(0);" itemprop="name" content="WSA: за январь-февраль производство стали в мире выросло на 6,6%") WSA: за январь-февраль производство стали в мире выросло на 6,6%
+                                        .news__text(itemprop="description").
                                             В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих
                                             данные World Steel Association, выплавили 315 млн. тонн стали.

@@ -196,7 +196,7 @@ block content
                             +icon('chevron_down')
                         .subject(itemtype="http://schema.org/ItemList" itemscope)
                             .subject__cover
-                                .subject__item(itemtype="http://schema.org/Product" itemprop="itemListElement" itemscope)
+                                .subject__item(itemscope itemtype="http://schema.org/Product")
                                     .subject__header 
                                         .subject__icon
                                             +icon("ic-coll")
@@ -249,7 +249,7 @@ block content
                                                 span.btn__ic
                                                     +icon('ic-cart')
 
-                                .subject__item.subject__item--discounts&attributes({'data-discounts': '10'})(itemtype="http://schema.org/Product" itemprop="itemListElement" itemscope)
+                                .subject__item.subject__item--discounts&attributes({'data-discounts': '10'})(itemscope itemtype="http://schema.org/Product")
                                     .subject__header 
                                         .subject__icon
                                             +icon("ic-coll")

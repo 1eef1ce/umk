@@ -3,15 +3,15 @@ extends common/layout
 block content
     main.main
         include common/topmenu
-        .news-detail
+        .news-detail(itemscope itemtype="https://schema.org/Article")
             .container
                 .news-detail__container
                     include common/breadcrumb
-                    h1.title-1.news-detail__title WSA: за январь-февраль производство стали в&nbsp;мире выросло на&nbsp;6,6%
-                    .news-detail__date 3 декабря 2020 года
+                    h1.title-1.news-detail__title(itemprop="headline name" content="WSA: за январь-февраль производство стали в мире выросло на 6,6%") WSA: за январь-февраль производство стали в&nbsp;мире выросло на&nbsp;6,6%
+                    .news-detail__date(itemprop="dateCreated") 3 декабря 2020 года
                     .news-detail__img
-                        img(src="../img/placeholder-l.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%")
-                    .news-detail__text
+                        img(src="../img/placeholder-l.jpg" alt="WSA: за январь-февраль производство стали в мире выросло на 6,6%" itemprop="image")
+                    .news-detail__text(itemprop="description")
                         p.
                             В течение января-февраля 2021 года металлургические предприятия 64 стран, предоставляющих данные
                             World Steel Association, выплавили 315 млн. тонн стали. Рост объёмов в годовом соотношении - 6,6%.

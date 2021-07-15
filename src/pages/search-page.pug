@@ -2,12 +2,12 @@ extends common/layout
 
 block content
     main.main
-        .search-page
+        .search-page(itemscope itemtype="https://schema.org/WebSite")
             .container
                 include common/breadcrumb
                 h1.title-1 Результаты поиска
-                form.search.search-page__search(action="#" method="get")
-                    input.search__field(name="s" placeholder="Поиск" type="search")
+                form.search.search-page__search(action="#" method="get" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction")
+                    input.search__field(name="s" placeholder="Поиск" type="search" itemprop="query-input")
                     button.btn.btn--basic.search-page__button.mf-search(type="submit")
                         span.btn__icon
                             +icon('ic-search')

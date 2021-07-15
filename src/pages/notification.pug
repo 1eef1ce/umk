@@ -31,18 +31,18 @@ block content
                             span.btn__icon
                                 +icon('ic-search')
                             span Найти
-                    .notification__items
-                        .notification__item
-                            .notification__title 26 февраля 2021 года
-                            .notification__text.
+                    .notification__items(itemscope itemtype = "https://schema.org/ItemList")
+                        .notification__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
+                            .notification__title(itemprop="name" content="26 февраля 2021 года") 26 февраля 2021 года
+                            .notification__text(itemprop="description").
                                 По данным Челябинского ЦГМС — филиала «Уральского УГМС» c 19:00 часов 26.02.2020 г. до 13:00
                                 часов 27.02.2021 г. на территории г.Магнитогорск, в приземном слое атмосферы, ожидаются НМУ
                                 1 степени опасности, неблагоприятные для рассеивания вредных примесей в атмосферном воздухе
                                 (слабый ветер, инверсия)Перевести Организацию в режим работы № I, установленный мероприятиями
                                 по уменьшению выбросов вредных веществ в атмосферный воздух в периоды НМУ.
-                        .notification__item
-                            .notification__title 26 февраля 2021 года
-                            .notification__text.
+                        .notification__item(itemprop = "itemListElement" itemscope itemtype = "https://schema.org/Article")
+                            .notification__title(itemprop="name" content="26 февраля 2021 года") 26 февраля 2021 года
+                            .notification__text(itemprop="description").
                                 По данным Челябинского ЦГМС — филиала «Уральского УГМС» c 19:00 часов 26.02.2020 г. до 13:00
                                 часов 27.02.2021 г. на территории г.Магнитогорск, в приземном слое атмосферы, ожидаются НМУ
                                 1 степени опасности, неблагоприятные для рассеивания вредных примесей в атмосферном воздухе

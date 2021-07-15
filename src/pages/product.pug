@@ -2,7 +2,7 @@ extends common/layout
 
 block content
     main.main
-        .product
+        .product(itemscope itemtype="http://schema.org/Product")
             .container
                 include common/breadcrumb
                 .product__top
@@ -10,20 +10,22 @@ block content
                         +icon('layers_alt')
                     .product__title
                         .product__code Код товара: 954108
-                        h1.title-1.product__name Натяжитель ленты ГОСТ 380-2005
+                        h1.title-1.product__name(itemprop="name") Натяжитель ленты ГОСТ 380-2005
+                        meta(itemprop="brand" content="Натяжитель ленты ГОСТ 380-2005")
                 include includes/product/product-specs
                 .product__bottom
-                    .product-numbers
+                    .product-numbers(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
                         .product-numbers__item
                             .product-numbers__text На складе:&nbsp;
                             .product-numbers__value 350 т
                         .product-numbers__item.product-numbers__item--price
                             .product-numbers__text Стоимость:&nbsp;
-                            .product-numbers__value 50 000 ₽
+                            .product-numbers__value(itemprop="price") 50 000 ₽
+                            meta(itemprop="priceCurrency" content="RUB")
                     .product-actions
-                         .count
+                        .count
                             input#quantity.count__input(type="number" name="quantity" placeholder="1 т")
-                         button.btn.btn--basic.btn--w127.btn--c_cart 
+                        button.btn.btn--basic.btn--w127.btn--c_cart 
                             span.btn__txt В корзину
                             span.btn__ic
                                 +icon('ic-cart')
