@@ -30,7 +30,6 @@
       &:active {
 
         &+.checkbox__label {
-
           &::before {
             background-color: $red-1;
             border-color: $red-1;
@@ -64,8 +63,12 @@
       &+.checkbox__label {
 
         &::before {
-          background-color: $red-1;
-          border-color: $red-1;
+          background-color: $purple-1;
+          border-color: $purple-1;
+        }
+
+        &:after {
+          opacity: 1;
         }
       }
     }
@@ -105,7 +108,7 @@
       height: 25px;
       flex-shrink: 0;
       flex-grow: 0;
-      border: 1px solid $red-1;
+      border: 1px solid $purple-1;
       margin-right: 12px;
       box-sizing: border-box;
       background-color: white;
@@ -130,6 +133,7 @@
       border: solid #fff;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
+      opacity: 0;
 
       @media (max-width: 1024px) {
         left: 8px;
@@ -138,8 +142,8 @@
       }
 
       // @media (max-width: 620px) {
-  //   top: 10px;
-  // }
+      //   top: 10px;
+      // }
     }
   }
 }
