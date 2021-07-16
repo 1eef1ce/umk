@@ -1553,19 +1553,17 @@ window.addEventListener('load', function () {
 
     if ($('.js-open-auth').exists()) {
         try {
-            $(window).on('resize load', function () {
-                if ($(window).width() <= 620) {
-                    const refs = document.querySelectorAll('.js-open-auth');
+            if ($(window).width() <= 620) {
+                const refs = document.querySelectorAll('.js-open-auth');
 
-                    refs.forEach((item, index) => {
-                        item.addEventListener('click', function (event) {
-                            event.preventDefault();
-                            projectFunc.popupShow('.js-modal-reg', false);
-                            projectFunc.popupShow('.js-modal-auth', true);
-                        }, false);
-                    });
-                }
-            });
+                refs.forEach((item, index) => {
+                    item.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        projectFunc.popupShow('.js-modal-reg', false);
+                        projectFunc.popupShow('.js-modal-auth', true);
+                    }, false);
+                });
+            }
         }
         catch (err) {
             console.log(err);
@@ -1574,16 +1572,14 @@ window.addEventListener('load', function () {
 
     if ($('.js-open-reg').exists()) {
         try {
-            $(window).on('resize load', function () {
-                if ($(window).width() <= 620) {
-                    const ref = document.querySelector('.js-open-reg');
-                    ref.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        projectFunc.popupShow('.js-modal-reg', true);
-                        projectFunc.popupShow('.js-modal-auth', false);
-                    }, false);
-                }
-            });
+            if ($(window).width() <= 620) {
+                const ref = document.querySelector('.js-open-reg');
+                ref.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    projectFunc.popupShow('.js-modal-reg', true);
+                    projectFunc.popupShow('.js-modal-auth', false);
+                }, false);
+            }
         }
         catch (err) {
             console.log(err);
@@ -1592,17 +1588,15 @@ window.addEventListener('load', function () {
 
     if ($('.js-open-res').exists()) {
         try {
-            $(window).on('resize load', function () {
-                if ($(window).width() <= 620) {
-                    const ref = document.querySelector('.js-open-res');
-                    ref.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        projectFunc.popupShow('.js-modal-res', true);
-                        projectFunc.popupShow('.js-modal-auth', false);
-                        projectFunc.popupShow('.js-modal-reg', false);
-                    }, false);
-                }
-            });
+            if ($(window).width() <= 620) {
+                const ref = document.querySelector('.js-open-res');
+                ref.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    projectFunc.popupShow('.js-modal-res', true);
+                    projectFunc.popupShow('.js-modal-auth', false);
+                    projectFunc.popupShow('.js-modal-reg', false);
+                }, false);
+            }
         }
         catch (err) {
             console.log(err);
@@ -1829,30 +1823,30 @@ window.addEventListener('load', function () {
         }
     }
 
-    if ($('.service__bloc').exists()) {
-        try {
-            gsap.utils.toArray('.service__bloc').forEach((item) => {
-                item.addEventListener('mouseenter', function () {
-                    projectFunc.serviceHover(item, true);
-                });
+    // if ($('.service__bloc').exists()) {
+    //     try {
+    //         gsap.utils.toArray('.service__bloc').forEach((item) => {
+    //             item.addEventListener('mouseenter', function () {
+    //                 projectFunc.serviceHover(item, true);
+    //             });
 
-                item.addEventListener('mouseleave', function () {
-                    projectFunc.serviceHover(item, false);
-                });
+    //             item.addEventListener('mouseleave', function () {
+    //                 projectFunc.serviceHover(item, false);
+    //             });
 
-                item.addEventListener('touchenter', function () {
-                    projectFunc.serviceHover(item, true);
-                });
+    //             item.addEventListener('touchenter', function () {
+    //                 projectFunc.serviceHover(item, true);
+    //             });
 
-                item.addEventListener('touchleave', function () {
-                    projectFunc.serviceHover(item, false);
-                });
-            });
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
+    //             item.addEventListener('touchleave', function () {
+    //                 projectFunc.serviceHover(item, false);
+    //             });
+    //         });
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
+    // }
 
     if ($('.header__inner').exists) {
         try {

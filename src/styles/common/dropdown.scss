@@ -130,7 +130,8 @@
         }
 
         .dropdown-menu {
-            min-width: max-content;
+            min-width: 180px;
+            display: none;
         }
     }
 }
@@ -200,6 +201,18 @@
     text-decoration: none;
     font-size: 15px;
     padding: 10px 17px 10px;
+
+    &.submenu__out {
+        display: flex;
+        align-items: center;
+        border-top: 2px solid $gray-3;
+
+        .submenu__ic {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+    }
 }
 
 .submenu>li>a:hover {

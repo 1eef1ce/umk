@@ -75,27 +75,46 @@
 
         @media(max-width: 620px) {
             min-height: 155px;
-            padding: 17px 15px 15px;
+            padding: 16px 15px 14px;
+        }
+
+        &:hover {
+            background-color: $purple-1;
+            color: white;
+
+            .link--detail {
+                .link__txt {
+                    color: white;
+                }
+
+                .link__ic {
+                    .icon {
+                        fill: white;
+                    }
+                }
+            }
         }
 
         &--special {
-            background-color: $purple-1 !important;
+            background-color: $purple-1;
             color: white;
 
             .link,
             .service__article {
-                color: white !important;
+                color: white;
             }
 
             &:hover {
-                background-color: white !important;
+                background-color: white;
 
-                .link {
-                    color: $purple-1 !important;
+                .link--detail {
+                    .link__txt {
+                        color: $purple-1;
+                    }
 
-                    &__ic {
+                    .link__ic {
                         .icon {
-                            fill: $purple-1 !important;
+                            fill: $purple-1;
                         }
                     }
                 }
@@ -168,9 +187,9 @@
         font-weight: 600;
         font-size: 24px;
         line-height: 1;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+        // overflow: hidden;
 
         @media(max-width: 1024px) {
             font-size: 22px;
@@ -178,6 +197,7 @@
 
         @media(max-width: 620px) {
             font-size: 14px;
+            line-height: 1.4;
         }
     }
 
@@ -186,7 +206,7 @@
         pointer-events: none;
 
         @media(max-width: 620px) {
-            margin-top: 8px;
+            margin-top: 5px;
         }
 
         &__txt {
