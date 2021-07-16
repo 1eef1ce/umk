@@ -1,6 +1,7 @@
 import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
 import Scrollbar from 'smooth-scrollbar';
+import 'jquery.maskedinput/src/jquery.maskedinput.js';
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     if ($('#ds_filter_catalog').exists()) {
@@ -423,7 +424,7 @@ const projectFunc = {
                 });
 
                 const hideMainMenu = new TimelineMax({
-                    paused: true,
+                    paused: true
                 });
 
                 const formShowTl = new TimelineMax({
@@ -441,6 +442,7 @@ const projectFunc = {
                         duration: 1.1
                     },
                     onComplete: () => {
+                        projectFunc.lockedDOM(false);
                         hideMainMenu.play();
                     }
                 });
@@ -665,20 +667,16 @@ const projectFunc = {
                 const productItem = document.querySelectorAll('.subject__item');
 
                 productItem.forEach((element) => {
-                    let num = '';
+                    let num = 0;
                     let costInfo = element.querySelector('.js-cost').textContent;
-                    let discounts = element.dataset.discounts
+                    let cost = element.dataset.cost;
 
                     $(element).find('.js-cost').text(costInfo);
                     costInfo = +costInfo.replace(/\s+/g, '');
 
                     $(element).find('.js-count-input').on('keyup change', function () {
 
-                        if (element.hasAttribute('data-discounts')) {
-                            num = $(this).val() * (costInfo - (costInfo / 100 * discounts));
-                        } else {
-                            num = $(this).val() * costInfo;
-                        }
+                        num = $(this).val() * cost;
 
                         if (num < costInfo) {
                             num = costInfo;
@@ -1166,6 +1164,17 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('.js-phone').exists()) {
+        $('.js-phone').mask("+7(999) 999-99-99");
+    }
+
+    if ($('.js-count-input').exists()) {
+        $('.js-count-input').keypress(function (event) {
+            event = event || window.event;
+            if (event.charCode && event.charCode != 0 && event.charCode != 46 && (event.charCode < 48 || event.charCode > 57))
+                return false;
+        });
+    }
 
     if ($('.js-dropdown').exists()) {
         try {
@@ -1173,7 +1182,7 @@ window.addEventListener('load', function () {
 
             for (let i = 0; i < accordions.length; i++) {
                 accordions[i].onclick = function () {
-
+                    $(this).toggleClass('open');
 
                     let content = $(this).find('.menu-mobile__sub')[0];
 
@@ -1738,6 +1747,7 @@ window.addEventListener('load', function () {
 
                         if (popup) {
                             projectFunc.formShow(popup, true);
+                            projectFunc.lockedDOM(true);
                         }
                     } else {
                         overlayMenu('.js-menu-mobile', '.js-ovl-mm', true);

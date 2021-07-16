@@ -98,7 +98,7 @@
                     }
                 }
             }
-    
+
             &--city {
                 margin-right: 70px;
 
@@ -112,7 +112,7 @@
 
                 .js-select {
                     width: 294px;
-    
+
                     @media(max-width: 1024px) {
                         width: 360px;
                     }
@@ -121,7 +121,7 @@
                         width: 100%;
                     }
                 }
-    
+
                 .lk-cart {
                     &__subtitle {
                         @media(max-width: 1024px) {
@@ -194,7 +194,7 @@
             }
         }
 
-        &:not(:last-child){
+        &:not(:last-child) {
             @media(max-width: 700px) {
                 margin-right: 25px;
             }
@@ -232,7 +232,7 @@
 
             &:first-child {
                 margin-right: 26px;
-                
+
                 @media(max-width: 620px) {
                     margin-right: 0;
                 }
@@ -560,7 +560,7 @@
         height: 26px;
         cursor: pointer;
 
-        @media (max-width: 620px){
+        @media (max-width: 620px) {
             width: 21px;
             height: 21px;
         }
@@ -619,7 +619,7 @@
             border-color: $red-1;
             color: $red-1;
 
-            
+
             &:hover {
                 border-color: $purple-1;
                 color: $purple-1;
@@ -633,17 +633,17 @@
         }
 
         &--delivery {
-           .lk-cart {
-               &__content {
-                @media(max-width: 1024px) {    
-                    justify-content: space-between;
-                }
+            .lk-cart {
+                &__content {
+                    @media(max-width: 1024px) {
+                        justify-content: space-between;
+                    }
 
-                @media(max-width: 700px) {
-                    flex-direction: column;
+                    @media(max-width: 700px) {
+                        flex-direction: column;
+                    }
                 }
-               }
-           }
+            }
 
             .btn {
                 @media(max-width: 1024px) {
@@ -670,9 +670,8 @@
     }
 
     &__top {
-        width: 99.9vw;
-        margin: 0 0 0 50%;
-        transform: translateX(-50%);
+        // width: 99.9vw;
+        margin: 0;
         background-color: $gray-3;
         padding: 19px 0 22px;
 
@@ -794,7 +793,7 @@
         }
 
         @media(max-width: 500px) {
-            grid-column-gap: 0; 
+            grid-column-gap: 0;
             grid-template-areas:
                 "name name close"
                 "nds wnds wnds"
@@ -826,9 +825,9 @@
             }
 
             @media(max-width: 500px) {
-                grid-template-areas: 
-                        "city delete"
-                        "itog itog";
+                grid-template-areas:
+                    "city delete"
+                    "itog itog";
                 grid-template-columns: auto;
                 justify-content: space-between;
             }
