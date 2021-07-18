@@ -94,8 +94,12 @@
           transform: translateY(-50%);
         }
 
+        @media(max-width: 620px) {
+          margin-left: -325px;
+        }
+
         @media(max-width: 400px) {
-          margin-left: -370px;
+          margin-left: -92vw;
           min-width: 100vw;
         }
 

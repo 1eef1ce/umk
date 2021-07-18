@@ -45,6 +45,10 @@
     font-size: 18px;
     line-height: 1.6;
 
+    &:hover {
+      color: $purple-1;
+    }
+
     @media (max-width: 1024px) {
       font-size: 16px;
       line-height: 1.65;

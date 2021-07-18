@@ -671,9 +671,25 @@
 
     &__top {
         // width: 99.9vw;
+        position: relative;
         margin: 0;
         background-color: $gray-3;
         padding: 19px 0 22px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100vw;
+            background: #f3f4f5;
+            z-index: -1;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
 
         @media(max-width: 1024px) {
             padding: 16px 0 19px;
@@ -687,6 +703,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0;
         }
     }
 

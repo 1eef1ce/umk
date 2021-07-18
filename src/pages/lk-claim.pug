@@ -29,7 +29,9 @@ block content
                                 label.form-group__label(for="order") Номер заказа*
                                 input#order.form-group__input.js-input(type="text")
                         .lk-call__col.lk-call__col--description
-                            textarea(name="comment" placeholder="Введите описание претензии")
+                            .form-group.form-group--textarea
+                                label.form-group__label(for="text") Введите описание претензии
+                                textarea#text.form-group__input.js-input(name="text")
                     .lk-call__file
                         label.file(for="file")
                             input#file.file__input(type="file" name="file" accept=".pdf, .doc, .docx, .ppt, .pptx")

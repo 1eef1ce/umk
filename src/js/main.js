@@ -1176,6 +1176,30 @@ window.addEventListener('load', function () {
         });
     }
 
+    if($('.js-dd-catalog').exists()){
+        $('.js-dd-catalog').on('click', function(){
+            console.log(1);
+            if($(this).hasClass('open')){
+                $(this).removeClass('open').addClass('close');
+                $(this).siblings('.dropdown-menu').fadeOut();
+            } else {
+                $(this).removeClass('close').addClass('open'); 
+                $(this).siblings('.dropdown-menu').fadeIn();
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            const container = $('.js-dd-catalog');
+            console.log(container.has(e.target).length);
+
+            if (container.has(e.target).length == 0){
+                console.log('hide');
+                $('.js-dd-catalog').removeClass('open').addClass('close');
+                $('.js-dd-catalog').siblings('.dropdown-menu').fadeOut();
+            }
+        });
+    }
+
     if ($('.js-dropdown').exists()) {
         try {
             let accordions = document.getElementsByClassName("js-dropdown");
@@ -1801,9 +1825,31 @@ window.addEventListener('load', function () {
         }
     }
 
+    if($('.js-search-clear').exists()){
+        $('.js-search-clear').on('click', function(){
+            if($('.js-search-field').exists()){
+                try {
+                    $('.js-search-field').val('');
+                    $('.js-search-clear').css('visibility', 'hidden');
+                }
+                catch(err){
+                    console.log(err);
+                }
+            }
+        });
+    }
+
+    if($('.js-search-field').exists()){
+        document.querySelector('.js-search-field').addEventListener('input', e => {
+            let btn = e.target.nextElementSibling;
+            btn.style.visibility = e.target.value.length ? 'visible' : 'hidden';
+        }); 
+    }
+
     if ($('.js-input').exists()) {
         try {
             $('.js-input').each((_, element) => {
+                $(element).val('');
                 $(element).focus(function () {
                     $(element).parent().addClass('on-focus');
                 }).blur(function () {
