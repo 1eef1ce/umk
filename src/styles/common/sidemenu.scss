@@ -51,7 +51,6 @@
 
     &:hover,
     &.active {
-      border-left-color: $purple-1;
 
       .sidemenu__title {
         color: $purple-1;
@@ -63,6 +62,7 @@
     }
 
     &.active {
+      border-left-color: $purple-1;
 
       .sidemenu__icon {
         transform: scale(1, -1);
@@ -137,6 +137,10 @@
       font-size: 16px;
       line-height: 1.7;
       color: $gray-2;
+    }
+
+    &:hover {
+      color: $purple-1;
     }
 
     &.active {
