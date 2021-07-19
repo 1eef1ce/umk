@@ -47,6 +47,10 @@
     bottom: 0;
     margin: auto;
     transition: .4s ease;
+
+    @media(max-width: 620px) {
+        top: -3px;
+    }
 }
 
 /* стили для радиокнопки, находящейся в состоянии checked */

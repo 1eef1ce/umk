@@ -59,7 +59,7 @@
                 height: 0%;
                 width: 2px;
                 position: absolute;
-                top: -39%;
+                top: -44%;
                 left: 11px;
                 transition-delay: 0s;
             }
@@ -100,6 +100,7 @@
                     &:nth-child(1) {
                         height: 122%;
                         transition-delay: .625s;
+                        width: 11%;
                     }
 
                     &:nth-child(2) {

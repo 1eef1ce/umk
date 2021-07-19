@@ -33,10 +33,13 @@
     }
 
     &__icon {
+        position: relative;
         width: 22px;
         height: 22px;
         transform-origin: center;
         transition: .4s ease-in-out;
+        transform: scale(1, -1);
+        left: 5px;
     }
 
     &__group {
@@ -61,7 +64,7 @@
 
         &.is-open {
             .filter__icon {
-                transform: scale(1, -1);
+                transform: scale(1, 1);
             }
         }
 

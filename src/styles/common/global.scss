@@ -12,6 +12,7 @@
 
 :root {
     --wScroll: 0px;
+    overflow-y: scroll; overflow-x: hidden;
 }
 
 h1,
@@ -229,6 +230,8 @@ input::-webkit-inner-spin-button {
 input,
 textarea {
     font-size: 16px;
+    font-family: 'MyriadPro',Arial,sans-serif;
+    color: $basic;
 
     &::placeholder {
         font-family: 'MyriadPro', Arial, sans-serif;
@@ -270,3 +273,16 @@ textarea {
 
 
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button { display: none }

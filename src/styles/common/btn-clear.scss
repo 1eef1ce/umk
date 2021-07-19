@@ -1,0 +1,39 @@
+.btn-clear {
+    display: inline-block;
+    position: relative;
+    margin-left: -200px;
+    font-weight: bold; 
+    visibility: hidden;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;    
+    top: 2px;
+    transition: .3s ease-in-out;
+
+
+    @media(max-width: 620px) {
+        margin-left: -95px;
+    }
+
+    &:after, 
+    &::before {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: $purple-1;
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+}

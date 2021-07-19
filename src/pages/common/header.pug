@@ -1,4 +1,4 @@
-header.header
+header.header(itemscope itemtype="http://schema.org/WPHeader")
   .header__inner
     .header__container.container.container--full
       a(href="/").header__logo 
@@ -93,8 +93,11 @@ header.header
                     a(href="lk-profile-user.html") Личный профиль
                   li  
                     a(href="lk-profile-company.html") Профиль компании
-                  li  
-                    a(href="javascript:void(0);") Выйти
+                  li
+                    a(href="javascript:void(0);").submenu__out 
+                      .submenu__ic
+                        +icon('ic-out')
+                      .submenu__txt Выйти
             //- a(href="auth.html").header-link.header-link--user
             //-     .header-link__icon
             //-       +icon('ic-users')

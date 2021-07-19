@@ -73,7 +73,7 @@
 
                 .icon {
                     svg {
-                        fill: $red-1;
+                        //fill: $red-1;
                     }
                 }
             }
@@ -95,6 +95,7 @@
 
                     svg {
                         fill: $purple-1;
+                        transition: none;
                     }
                 }
             }
@@ -108,6 +109,10 @@
                 //     margin-right: 3px;
                 // }
             }
+        }
+
+        svg {
+            transition: none;
         }
     }
 }

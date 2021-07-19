@@ -89,4 +89,12 @@
             transform: rotate(-45deg);
         }
     }
+
+    .search {
+        .mf-search {
+            .icon {
+                fill: $basic;
+            }
+        }
+    }
 }

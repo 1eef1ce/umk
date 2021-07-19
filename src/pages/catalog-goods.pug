@@ -6,8 +6,10 @@ block content
             .catalog-goods__container.container
                 include common/breadcrumb
                 .dropdown.dropdown--catalog-goods
-                    .dropdown-label
+                    .dropdown-label.js-dd-catalog
                         h1.dropdown-label__txt Ручной инструмент
+                        .dropdown-label__ic
+                            +icon('ic-fl-arrow')
                     .dropdown-menu 
                         ul.submenu
                             li.active  
@@ -196,7 +198,7 @@ block content
                             +icon('chevron_down')
                         .subject(itemtype="http://schema.org/ItemList" itemscope)
                             .subject__cover
-                                .subject__item(itemscope itemtype="http://schema.org/Product")
+                                .subject__item&attributes({'data-old-cost': '50000', 'data-cost': '50000'})(itemscope itemtype="http://schema.org/Product")
                                     .subject__header 
                                         .subject__icon
                                             +icon("ic-coll")
@@ -249,7 +251,7 @@ block content
                                                 span.btn__ic
                                                     +icon('ic-cart')
 
-                                .subject__item.subject__item--discounts&attributes({'data-discounts': '10'})(itemscope itemtype="http://schema.org/Product")
+                                .subject__item.subject__item--discounts&attributes({'data-old-cost': '55000', 'data-cost': '49500'})(itemscope itemtype="http://schema.org/Product")
                                     .subject__header 
                                         .subject__icon
                                             +icon("ic-coll")
@@ -294,11 +296,11 @@ block content
                                                 .subject__block
                                                     .subject__subtitle.subject__subtitle--cost Стоимость:
                                                     .subject__price.subject__price--itog(itemtype="http://schema.org/Offer" itemprop="offers" itemscope)
-                                                        span.js-cost(itemprop="price") 50 000
+                                                        span.js-cost(itemprop="price") 49 500
                                                         span.mf-symbol(itemprop="priceCurrency" content="RUB") ₽
                                                 .subject__block
                                                     .subject__price.subject__price--discount(itemtype="http://schema.org/Offer" itemprop="offers" itemscope)
-                                                        span.js-cost-discounts(itemprop="price") 55 000
+                                                        span(itemprop="price") 55 000
                                                         span.mf-symbol(itemprop="priceCurrency" content="RUB") ₽
                                         .product-actions
                                             .count

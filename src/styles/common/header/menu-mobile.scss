@@ -21,7 +21,7 @@
     &__box {
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        flex: 1;
     }
 
     &__header {
@@ -100,10 +100,16 @@
             font-weight: 400;
             font-size: 16px;
             color: #2d2d2d;
-            padding: 14px 25px 15px 19px;
+            padding: 14px 20px 15px 20px;
             background-color: #fff;
             cursor: pointer;
             transition: .4s ease-in-out;
+
+            &.open {
+                .menu-mobile__icon {
+                    transform: scale(1, -1);
+                }
+            }
         }
 
         &--list {
@@ -124,6 +130,7 @@
         transition: .4s ease-in-out;
         position: relative;
         top: 2px;
+        left: 5px;
 
         .icon {
             width: 22px;

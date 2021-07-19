@@ -95,6 +95,10 @@
         .form-group {
             margin-top: 0;
             height: 65px;
+
+            &--textarea {
+                height: 274px;
+            }
         }
     }
 
