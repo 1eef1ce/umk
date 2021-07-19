@@ -1038,8 +1038,11 @@ window.addEventListener('load', function () {
                 );
             // Добавление метки на карту
 
-            if ($(window).width() <= 1024) {
-                myMap.behaviors.disable("drag");
+            //отключаем зум колёсиком мышки
+            myMap.behaviors.disable('scrollZoom');
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                myMap.behaviors.disable('drag');
             }
 
             if ($(window).width() >= 621) {
