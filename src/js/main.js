@@ -1211,6 +1211,25 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('.js-ta-input').exists()) {
+        try {
+            $('.js-ta-input').on('input scroll', function (e) {
+                if (this.scrollTop > 0) {
+                    if ($('.js-form-label').exists()) {
+                        $('.js-form-label').css('opacity', '0');
+                    }
+                } else {
+                    if ($('.js-form-label').exists()) {
+                        $('.js-form-label').css('opacity', '1');
+                    }
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
     if ($('.js-count-input').exists()) {
         try {
             $('.js-count-input').keypress(function (event) {
