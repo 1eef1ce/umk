@@ -4,6 +4,11 @@
   background-position: 116% 72%;
   padding: 70px 0 74px;
 
+  @media (max-width: 1720px) {
+    background-position: 125% 50%;
+    background-size: 60%;
+  }
+
   @media (max-width: 1024px) {
     max-width: 590px;
     padding: 36px 0 298px;

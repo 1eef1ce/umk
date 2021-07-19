@@ -37,6 +37,11 @@
             grid-gap: 25px 25px;
             margin-top: 24px;
         }
+
+        @media(max-width: 370px) {
+            grid-template-columns: repeat(2, calc(50% - 8px));
+            grid-gap: 15px 15px;
+        }
     }
 
     &__quote {
