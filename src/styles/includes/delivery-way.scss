@@ -99,6 +99,10 @@
                     flex-direction: column;
                     padding: 17px 21px 19px;
                 }
+
+                @media(max-width: 375px) {
+                    padding: 17px 15px 19px;
+                }
             }
 
             &__txt {
@@ -128,6 +132,10 @@
         @media(max-width: 620px) {
             padding: 16px 21px 19px;
             flex-direction: column;
+        }
+
+        @media(max-width: 375px) {
+            padding: 16px 15px 19px;
         }
     }
 }

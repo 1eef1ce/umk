@@ -783,6 +783,26 @@ function init() {
     showService('.lk-menu__item');
 }
 
+//===========Truncate text=============
+
+function truncateText(bloc, qty) {
+    if (bloc.length > 0) {
+        let txtBloc = document.querySelectorAll(bloc);
+        for (let i = 0; i < txtBloc.length; i++) {
+            trc(txtBloc[i], qty);
+        }
+    }
+}
+
+function trc(txt, qty) {
+    let text = txt.textContent;
+    var sliced = text.slice(0, qty);
+    if (sliced.length < text.length) {
+        sliced += '...';
+    }
+    txt.textContent = sliced;
+}
+
 window.addEventListener('load', function () {
     init();
 
@@ -1018,6 +1038,10 @@ window.addEventListener('load', function () {
                 );
             // Добавление метки на карту
 
+            if ($(window).width() <= 1024) {
+                myMap.behaviors.disable("drag");
+            }
+
             if ($(window).width() >= 621) {
                 var myPlacemark = new ymaps.Placemark(
                     // Координаты метки
@@ -1165,39 +1189,62 @@ window.addEventListener('load', function () {
     }
 
     if ($('.js-phone').exists()) {
-        $('.js-phone').mask("+7(999) 999-99-99");
+        try {
+            $('.js-phone').mask("+7(999) 999-99-99");
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    if ($('.service__article').exists()) {
+        try {
+            if ($(window).width() <= 370) {
+                truncateText('.service__article', 17);
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
     if ($('.js-count-input').exists()) {
-        $('.js-count-input').keypress(function (event) {
-            event = event || window.event;
-            if (event.charCode && event.charCode != 0 && event.charCode != 46 && (event.charCode < 48 || event.charCode > 57))
-                return false;
-        });
+        try {
+            $('.js-count-input').keypress(function (event) {
+                event = event || window.event;
+                if (event.charCode && event.charCode != 0 && event.charCode != 46 && (event.charCode < 48 || event.charCode > 57))
+                    return false;
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
-    if($('.js-dd-catalog').exists()){
-        $('.js-dd-catalog').on('click', function(){
-            console.log(1);
-            if($(this).hasClass('open')){
-                $(this).removeClass('open').addClass('close');
-                $(this).siblings('.dropdown-menu').fadeOut();
-            } else {
-                $(this).removeClass('close').addClass('open'); 
-                $(this).siblings('.dropdown-menu').fadeIn();
-            }
-        });
+    if ($('.js-dd-catalog').exists()) {
+        try {
+            $('.js-dd-catalog').on('click', function () {
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open').addClass('close');
+                    $(this).siblings('.dropdown-menu').fadeOut();
+                } else {
+                    $(this).removeClass('close').addClass('open');
+                    $(this).siblings('.dropdown-menu').fadeIn();
+                }
+            });
 
-        $(document).mouseup(function (e) {
-            const container = $('.js-dd-catalog');
-            console.log(container.has(e.target).length);
+            $(document).mouseup(function (e) {
+                const container = $('.js-dd-catalog');
 
-            if (container.has(e.target).length == 0){
-                console.log('hide');
-                $('.js-dd-catalog').removeClass('open').addClass('close');
-                $('.js-dd-catalog').siblings('.dropdown-menu').fadeOut();
-            }
-        });
+                if (container.has(e.target).length == 0) {
+                    $('.js-dd-catalog').removeClass('open').addClass('close');
+                    $('.js-dd-catalog').siblings('.dropdown-menu').fadeOut();
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
     if ($('.js-dropdown').exists()) {
@@ -1825,25 +1872,25 @@ window.addEventListener('load', function () {
         }
     }
 
-    if($('.js-search-clear').exists()){
-        $('.js-search-clear').on('click', function(){
-            if($('.js-search-field').exists()){
+    if ($('.js-search-clear').exists()) {
+        $('.js-search-clear').on('click', function () {
+            if ($('.js-search-field').exists()) {
                 try {
                     $('.js-search-field').val('');
                     $('.js-search-clear').css('visibility', 'hidden');
                 }
-                catch(err){
+                catch (err) {
                     console.log(err);
                 }
             }
         });
     }
 
-    if($('.js-search-field').exists()){
+    if ($('.js-search-field').exists()) {
         document.querySelector('.js-search-field').addEventListener('input', e => {
             let btn = e.target.nextElementSibling;
             btn.style.visibility = e.target.value.length ? 'visible' : 'hidden';
-        }); 
+        });
     }
 
     if ($('.js-input').exists()) {
