@@ -1,12 +1,13 @@
 extends common/layout
 
 block content
-  main.main
-    include includes/index/view
-    include common/catalog-list
-    include includes/index/service
-    include includes/index/advantage
-    include includes/index/novation
-    include includes/index/slider-partner
-    include includes/index/inset
-    include includes/index/call
+  main.main 
+    div(data-scroll)
+      include includes/index/view
+      include common/catalog-list
+      include includes/index/service
+      include includes/index/advantage
+      include includes/index/novation
+      include includes/index/slider-partner
+      include includes/index/inset
+      include includes/index/call

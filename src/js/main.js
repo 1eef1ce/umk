@@ -2,6 +2,8 @@ import Slider from './class/Slider.js';
 import { gsap, TimelineMax, Back, Power1 } from 'gsap';
 import Scrollbar from 'smooth-scrollbar';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     if ($('#ds_filter_catalog').exists()) {
@@ -32,9 +34,36 @@ $.fn.exists = function () {
     return $(this).length;
 };
 
-
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const projectFunc = {
+    pinImage(image) {
+        if ($(image).exists()) {
+            try {
+                gsap.utils.toArray(image).forEach((section, i) => {
+
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: section.parentElement,
+                            scrub: true,
+                            invalidateOnRefresh: true,
+                            start: `${-section.offsetHeight - 350} center`,
+                            end: `${section.offsetHeight + 20} center`,
+                        }
+                    })
+                        .fromTo(section, {
+                            yPercent: -25
+                        }, {
+                            yPercent: 0,
+                            ease: "none"
+                        });
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    },
     objAd(element, place) {
         if ($(element).exists()) {
             $(element).each(function (index) {
@@ -780,6 +809,11 @@ function init() {
     projectFunc.createSlider();
     projectFunc.sendFilter();
     projectFunc.initCost();
+    projectFunc.pinImage('.about__img img');
+    projectFunc.pinImage('.advantage__img img');
+    projectFunc.pinImage('.inset__left img');
+    projectFunc.pinImage('.history-slider__img img');
+    projectFunc.pinImage('.vacancy-detail__img img');
     showService('.lk-menu__item');
 }
 
@@ -1242,6 +1276,53 @@ window.addEventListener('load', function () {
             console.log(err);
         }
     }
+
+    // if ($('.advantage__img picture').exists()) {
+    //     try {
+    //         gsap.utils.toArray('.advantage__img img').forEach((section, i) => {
+
+    //             gsap.timeline({
+    //                 scrollTrigger: {
+    //                     trigger: section.parentElement,
+    //                     scrub: true,
+    //                     invalidateOnRefresh: true,
+    //                     start: `${-section.offsetHeight - 350} center`,
+    //                     end: `${section.offsetHeight + 40} center`,
+    //                 }
+    //             })
+    //                 .fromTo(section, {
+    //                     yPercent: -25
+    //                 }, {
+    //                     yPercent: 0,
+    //                     ease: "none"
+    //                 });
+    //         });
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
+    // }
+
+    // if ($('.inset__pic picture').exists()) {
+    //     gsap.utils.toArray('.inset__pic img').forEach((section, i) => {
+
+    //         gsap.timeline({
+    //             scrollTrigger: {
+    //                 trigger: section.parentElement,
+    //                 scrub: true,
+    //                 invalidateOnRefresh: true,
+    //                 start: `${-section.offsetHeight - 350} center`,
+    //                 end: `${section.offsetHeight + 40} center`,
+    //             }
+    //         })
+    //             .fromTo(section, {
+    //                 yPercent: -25
+    //             }, {
+    //                 yPercent: 0,
+    //                 ease: "none"
+    //             });
+    //     });
+    // }
 
     if ($('.js-dd-catalog').exists()) {
         try {

@@ -51,7 +51,9 @@
 
         img {
             width: 100%;
-            height: 100%;
+            --overflow: 100px;
+            height: calc(100% + (2 * var(--overflow)));
+            top: calc(-1 * var(--overflow));
         }
     }
 
@@ -63,6 +65,8 @@
         top: 0;
         bottom: 0;
         margin: auto;
+        overflow: hidden;
+        background-color: red;
 
         @media(max-width: 1024px) {
             position: relative;
