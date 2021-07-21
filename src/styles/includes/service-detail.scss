@@ -58,7 +58,7 @@
     align-items: center;
     height: 240px;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: 42vw 0px;
     margin-bottom: 48px;
 
     // &:after {
@@ -76,7 +76,7 @@
 
     @media (max-width: 1024px) {
       height: auto;
-      background: none!important;
+      background: none !important;
       margin: 18px 0 0;
     }
 
