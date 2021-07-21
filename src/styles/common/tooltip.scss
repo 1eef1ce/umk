@@ -307,10 +307,18 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.open {
 
     .tooltip__content {
       display: block;
+    }
+  }
+
+  &.close {
+
+    .tooltip__content {
+      display: none;
     }
   }
 

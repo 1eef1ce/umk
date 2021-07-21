@@ -78,6 +78,8 @@
   position: relative;
   overflow: hidden;
   height: auto;
+  scrollbar-color: $purple-1 #f3f4f5;
+  scrollbar-width: thin;
 
   &::-webkit-scrollbar {
     width: 2px;
