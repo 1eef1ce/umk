@@ -2,6 +2,10 @@
     background: url(../img/decor/bg-catalog.svg) no-repeat center;
     background-size: cover;
 
+    @media(max-width: 620px) {
+        background: url(../img/decor/bg-catalog-mobile.svg) no-repeat 0% 196%
+    }
+
     p {
         @media(max-width: 620px) {
             margin-top: 5px;

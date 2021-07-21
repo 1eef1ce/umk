@@ -3,17 +3,17 @@
     position: relative;
 
     &:hover {
-        // .dropdown-label {
-        //     &:after {
-        //         transform: scale(1, -1);
-        //     }
+        .dropdown-label {
+            &:after {
+                transform: scale(1, -1);
+            }
 
-        //     color: $purple-1;
-        // }
+            color: $purple-1;
+        }
 
-        // .dropdown-label__txt {
-        //     color: $purple-1;
-        // }
+        .dropdown-label__txt {
+            color: $purple-1;
+        }
     }
 
     &--phone {
