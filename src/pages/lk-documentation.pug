@@ -35,10 +35,9 @@ block content
                                             path(d="M12 30.8288L14.8284 28.0004L26.3633 39.5353L23.5349 42.3637L12 30.8288Z" fill="#D9D9D9")
                                             path(d="M23.5349 42.3637L20.7065 39.5353L43.2545 17L46.0829 19.8284L23.5349 42.3637Z" fill="#D9D9D9")
                                     .lk-documentation__text Вы подписали спецификацию и отправили обратно
-                            label.file(for="file__spec")
-                                input#file__spec.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
-                                span.btn.btn--transparent.btn--w239.btn--h47 Прикрепить спецификацию
-                                span.file__label 
+                            label.file.file--btn(for="file-spec")
+                                input#file-spec.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
+                                .file__label Прикрепить спецификацию
                     .lk-documentation__row.lk-documentation__row--active.lk-documentation__row--billing
                         .lk-documentation__col
                             .lk-documentation__icon
@@ -82,8 +81,7 @@ block content
                                             path(d="M12 30.8288L14.8284 28.0004L26.3633 39.5353L23.5349 42.3637L12 30.8288Z" fill="#D9D9D9")
                                             path(d="M23.5349 42.3637L20.7065 39.5353L43.2545 17L46.0829 19.8284L23.5349 42.3637Z" fill="#D9D9D9")
                                     .lk-documentation__text Вы подписали договор и отправили обратно
-                            label.file(for="file__dogovor")
-                                input#file__dogovor.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
-                                span.btn.btn--transparent.btn--w239.btn--h47 Прикрепить договор
-                                span.file__label 
+                            label.file.file--btn(for="file-doc")
+                                input#file-doc.file__input(type="file" accept=".pdf, .doc, .docx, .ppt, .pptx")
+                                .file__label Прикрепить договор
         include common/menu-app

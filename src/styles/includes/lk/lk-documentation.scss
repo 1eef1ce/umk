@@ -54,13 +54,17 @@
             }
         }
 
-        .btn {
-            border-color: $gray-1;
-            color: $gray-1;
+        .file--btn {
+            margin-top: 31px;
             pointer-events: none;
 
             @media(max-width: 620px) {
                 width: 100%;
+            }
+
+            .file__label {
+                color: $gray-1;
+                border-color: $gray-1;
             }
         }
     }
@@ -121,9 +125,6 @@
             grid-column-gap: 10px;
         }
 
-        .file {
-            pointer-events: none;
-        }
 
         &--active {
             .lk-documentation {
@@ -165,14 +166,20 @@
                         }
                     }
 
-                    .btn {
-                        border-color: $purple-1;
-                        color: $purple-1;
+                    .file--btn {
                         pointer-events: initial;
 
+                        .file__label {
+                            color: $purple-1;
+                            border-color: $purple-1;
+                        }
+
                         &:hover {
-                            border-color: $red-1;
-                            color: $red-1;
+
+                            .file__label {
+                                color: $red-1;
+                                border-color: $red-1;
+                            }
                         }
                     }
                 }
@@ -185,13 +192,9 @@
             }
 
             &.lk-documentation__row--contract {
-                .btn {
+                .file--btn {
                     display: none;
                 }
-            }
-
-            .file {
-                pointer-events: initial;
             }
         }
 
@@ -316,37 +319,6 @@
 
         @media(max-width: 620px) {
             margin-top: 14px;
-        }
-    }
-
-    .file {
-        margin-top: 31px;
-
-        @media(max-width: 620px) {
-            margin-top: 25px;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        &__label {
-            @media(max-width: 620px) {
-                width: 100%;
-                margin-left: 0;
-                margin-top: 10px;
-            }
-        }
-
-        &:hover {
-            .file {
-                &__label {
-                    color: $red-1;
-                }
-            }
-
-            .btn {
-                border-color: $red-1;
-                color: $red-1;
-            }
         }
     }
 }
