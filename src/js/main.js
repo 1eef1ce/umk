@@ -809,11 +809,11 @@ function init() {
     projectFunc.createSlider();
     projectFunc.sendFilter();
     projectFunc.initCost();
-    projectFunc.pinImage('.about__img img');
-    projectFunc.pinImage('.advantage__img img');
-    projectFunc.pinImage('.inset__left img');
-    projectFunc.pinImage('.history-slider__img img');
-    projectFunc.pinImage('.vacancy-detail__img img');
+    // projectFunc.pinImage('.about__img img');
+    // projectFunc.pinImage('.advantage__img img');
+    // projectFunc.pinImage('.inset__left img');
+    // projectFunc.pinImage('.history-slider__img img');
+    // projectFunc.pinImage('.vacancy-detail__img img');
     showService('.lk-menu__item');
 }
 
