@@ -54,15 +54,18 @@
             }
         }
 
-        .btn {
+        .file--btn {
             margin-top: 31px;
-            border-color: $gray-1;
-            color: $gray-1;
             pointer-events: none;
 
             @media(max-width: 620px) {
                 width: 100%;
                 margin-top: 25px;
+            }
+
+            .file__label {
+                color: $gray-1;
+                border-color: $gray-1;
             }
         }
     }
@@ -163,14 +166,20 @@
                         }
                     }
 
-                    .btn {
-                        border-color: $purple-1;
-                        color: $purple-1;
+                    .file--btn {
                         pointer-events: initial;
 
+                        .file__label {
+                            color: $purple-1;
+                            border-color: $purple-1;
+                        }
+
                         &:hover {
-                            border-color: $red-1;
-                            color: $red-1;
+
+                            .file__label {
+                                color: $red-1;
+                                border-color: $red-1;
+                            }
                         }
                     }
                 }
@@ -183,7 +192,7 @@
             }
 
             &.lk-documentation__row--contract {
-                .btn {
+                .file--btn {
                     display: none;
                 }
             }

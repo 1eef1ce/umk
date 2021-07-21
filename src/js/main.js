@@ -2223,4 +2223,29 @@ window.addEventListener('load', function () {
             });
         });
     }
+
+    if ($('.js-tooltip').exists()) {
+        if($(window).width() < 1024) {
+            try {
+                $('.js-tooltip').on('click', function () {
+                    if ($(this).hasClass('open')) {
+                        $(this).removeClass('open').addClass('close');
+                    } else {
+                        $(this).removeClass('close').addClass('open');
+                    }
+                });
+
+                $(document).mouseup(function (e) {
+                    const container = $('.js-tooltip');
+
+                    if (container.has(e.target).length == 0) {
+                        $('.js-tooltip').removeClass('open').addClass('close');
+                    }
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    }
 });
