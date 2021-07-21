@@ -197,4 +197,14 @@
             }
         }
     }
+
+    &--cancel {
+        border-color: $purple-1;
+        color: $purple-1;
+
+        &:hover {
+            border-color: $red-1;
+            color: $red-1;
+        }
+    }
 }

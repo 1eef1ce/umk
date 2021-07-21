@@ -152,7 +152,7 @@
                 @media(max-width: 720px) {
                     display: none;
                     padding: 0 20px;
-                    margin-top: -8px;
+                    // margin-top: -8px;
                 }
 
                 .footer {
@@ -174,7 +174,7 @@
 
                         &:not(:first-child) {
                             @media(max-width: 720px) {
-                                margin-top: 4px;
+                                margin-top: 5px;
                             }
                         }
                     }
@@ -197,7 +197,7 @@
                 @media(max-width: 720px) {
                     display: flex;
                     align-items: center;
-                    padding: 11px 20px;
+                    padding: 11px 20px 7px;
                     padding-right: 15px;
                     justify-content: space-between;
                 }

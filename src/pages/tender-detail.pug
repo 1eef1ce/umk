@@ -53,9 +53,9 @@ block content
                             .form-group
                                 label.form-group__label(for="company") Компания
                                 input#company.form-group__input.js-input(type="text" name="company")
-                            .form-group
-                                label.form-group__label(for="text") Поле ввода
-                                textarea#text.form-group__input.js-input(name="text")
+                            .form-group.form-group--textarea
+                                label.form-group__label.form-group__label--text.js-form-label(for="text") Введите описание претензии
+                                textarea#text.form-group__input.js-input.js-ta-input(name="text")
                             label.checkmark Подтверждаю корректность введенных данных и даю согласие на обработку моих персональных данных
                                 input(type="checkbox" name="check" value="agree")
                                 span.checkmark__flag
