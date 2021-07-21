@@ -58,8 +58,12 @@
     align-items: center;
     height: 240px;
     background-repeat: no-repeat;
-    background-position: 42vw 0px;
+    background-position: right;
     margin-bottom: 48px;
+
+    @media(max-width: 1920px) {
+      background-position: 43vw 0px;
+    }
 
     // &:after {
     //   position: absolute;
