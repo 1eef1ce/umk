@@ -117,12 +117,13 @@
         }
 
         &--discounts {
+
             .subject {
+
                 &__footer {
-                    padding: 11px 20px 22px;
 
                     @media(max-width: 620px) {
-                        padding: 11px 20px 12px;
+                        padding: 12px 20px;
                     }
                 }
             }
@@ -240,7 +241,7 @@
 
         &--store {
             @media(max-width: 620px) {
-                margin-top: 5px;
+                margin-top: 2px;
             }
         }
     }
@@ -313,7 +314,7 @@
         background-color: rgba(217, 217, 217, 0.15);
 
         @media(max-width: 1235px) {
-            padding: 15px 12px 15px;
+            padding: 15px 12px;
         }
 
         @media(max-width: 1024px) {
@@ -322,12 +323,13 @@
 
         @media(max-width: 620px) {
             background: rgba(217, 217, 217, .1);
-            padding: 19px 20px 22px;
+            padding: 17px 20px;
         }
 
         .count {
             &__input {
                 height: 47px;
+                padding: 0 16px;
             }
         }
     }

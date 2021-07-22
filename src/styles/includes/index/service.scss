@@ -90,11 +90,13 @@
             .link--detail {
                 .link__txt {
                     color: white;
+                    opacity: 0.75;
                 }
 
                 .link__ic {
                     .icon {
                         fill: white;
+                        opacity: 0.75;
                     }
                 }
             }
@@ -104,9 +106,23 @@
             background-color: $purple-1;
             color: white;
 
-            .link,
             .service__article {
                 color: white;
+            }
+
+            .link--detail {
+
+                .link__txt {
+                    color: #fff;
+                    opacity: 0.75;
+                }
+
+                .link__ic {
+                    .icon {
+                        fill: #fff;
+                        opacity: 0.75;
+                    }
+                }
             }
 
             &:hover {
@@ -115,11 +131,13 @@
                 .link--detail {
                     .link__txt {
                         color: $purple-1;
+                        opacity: 1;
                     }
 
                     .link__ic {
                         .icon {
                             fill: $purple-1;
+                            opacity: 1;
                         }
                     }
                 }

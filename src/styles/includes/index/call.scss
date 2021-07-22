@@ -234,12 +234,21 @@
 
     .checkmark {
         transform: translateY(-4px);
+        line-height: 1.4;
+
+        @media(max-width: 1235px) {
+            line-height: 25px;
+        }
+
+        @media(max-width: 1024px) {
+            line-height: 20px;
+        }
 
         &__flag {
             top: 4px;
 
             @media(max-width: 1235px) {
-                top: -2px;
+                top: 0px;
             }
 
             @media(max-width: 1024px) {

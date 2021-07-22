@@ -12,7 +12,8 @@
 
 :root {
     --wScroll: 0px;
-    overflow-y: scroll; overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 h1,
@@ -231,7 +232,7 @@ input::-webkit-inner-spin-button {
 input,
 textarea {
     font-size: 16px;
-    font-family: 'MyriadPro',Arial,sans-serif;
+    font-family: 'MyriadPro', Arial, sans-serif;
     color: $basic;
 
     &::placeholder {
@@ -279,11 +280,38 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 input[type='number'] {
     -moz-appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-cancel-button { display: none }
+input[type="search"]::-webkit-search-cancel-button {
+    display: none
+}
+
+/* Reset HTML5 Search Input in Webkit */
+input[type=text]::-webkit-text-cancel-button,
+input[type=text]::-webkit-text-decoration,
+input[type=text]::-webkit-text-results-button,
+input[type=text]::-webkit-text-results-decoration {
+    -webkit-appearance: none;
+}
+
+input[type=text] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+textarea {
+    -webkit-appearance: none;
+}
+
+::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}

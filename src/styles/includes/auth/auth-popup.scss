@@ -16,11 +16,8 @@
 
     &__ref {
         margin-top: 19px;
+        font-size: 14px;
         color: $gray-2;
-
-        @media(max-width: 1024px) {
-            font-size: 14px;
-        }
     }
 
     &__form {
@@ -88,6 +85,7 @@
 
         &>.link {
             color: $gray-2;
+            text-decoration: underline;
 
             &:hover {
                 color: $purple-1;

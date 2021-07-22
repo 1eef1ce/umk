@@ -186,3 +186,63 @@
     opacity: 0;
     visibility: hidden;
 }
+
+.showBtn {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#btnUp {
+    display: inline-block;
+    background-color: white;
+    width: 83px;
+    height: 83px;
+    text-align: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 25px;
+    transition: .3s ease-in-out;
+
+    @media(max-width: 1024px) {
+        width: 70px;
+        height: 70px;
+        right: 20px;
+        padding: 21px;
+        bottom: 100px
+    }
+
+    @media(max-width: 620px) {
+        width: 55px;
+        height: 55px;
+        right: 20px;
+        padding: 17px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $purple-1;
+        color: white;
+
+        & .icon {
+            fill: white;
+            transition: .3s ease-in-out;
+        }
+    }
+
+    .icon {
+        transition: none;
+        fill: $purple-1;
+    }
+
+    @media (max-width: 1023px) {
+        right: 20px;
+    }
+}

@@ -1264,6 +1264,29 @@ window.addEventListener('load', function () {
         }
     }
 
+    if ($('#btnUp').exists()) {
+        try {
+            const btn = $('#btnUp');
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    btn.addClass('showBtn');
+                } else {
+                    btn.removeClass('showBtn');
+                }
+            });
+
+            btn.on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, '300');
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
     if ($('.js-count-input').exists()) {
         try {
             $('.js-count-input').keypress(function (event) {

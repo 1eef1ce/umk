@@ -291,6 +291,8 @@
         width: 100vw;
         height: 100vh;
         padding: 35px 20px 16px;
+        background-size: 100% auto;
+        background-position: bottom;
       }
 
       &__title {
@@ -355,6 +357,11 @@
           }
         }
       }
+
+      &__content {
+        background: url(../img/decor/bg-modal-auth.svg) white no-repeat bottom;
+        background-size: 100% auto;
+      }
     }
   }
 
@@ -375,8 +382,11 @@
         margin-top: 13px;
         line-height: 1.7;
         color: $basic;
+      }
 
-
+      &__content {
+        background: url(../img/decor/bg-modal-res.svg) white no-repeat bottom;
+        background-size: 100% auto;
       }
 
       &__form {
@@ -388,6 +398,11 @@
   &--auth_enter {
 
     .modal {
+
+      &__content {
+        background: url(../img/decor/bg-modal-auth.svg)white no-repeat bottom;
+        background-size: 100% auto;
+      }
 
       &__bottom {
         margin-top: 16px;

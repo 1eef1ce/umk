@@ -59,7 +59,7 @@
 
     &__bloc {
         &:not(:last-child) {
-            border-bottom: 1px solid #aaaaaa80;
+            border-bottom: 2px solid rgba(217, 217, 217, 0.35);
         }
 
         &.is-open {
@@ -95,6 +95,10 @@
 
         &:not(:first-child) {
             margin-top: 18px;
+
+            @media(max-width: 1024px) {
+                margin-top: 16px;
+            }
         }
 
         &__label {
@@ -104,10 +108,10 @@
             max-width: 208px;
             color: $basic;
 
-
             @media(max-width: 1024px) {
                 align-items: center;
                 white-space: nowrap;
+                font-size: 16px;
             }
 
             &:after {
@@ -128,6 +132,7 @@
                 height: 15px;
                 margin-right: 10px;
                 position: relative;
+                border-color: $basic;
                 background-color: rgba(44, 67, 161, 0);
 
                 @media(max-width: 1024px) {
@@ -144,6 +149,70 @@
         &__input:checked+.checkbox__label::before {
             background-color: $purple-1;
             border-color: $purple-1;
+        }
+
+        &__input {
+
+            &:not(:disabled) {
+
+                &:not(:checked) {
+
+                    &+.checkbox__label {
+
+                        &:hover {
+
+                            &::before {
+                                border-color: $purple-1;
+                            }
+                        }
+                    }
+                }
+
+                &:active {
+
+                    &+.checkbox__label {
+                        &::before {
+                            background-color: $purple-1;
+                            border-color: $purple-1;
+                        }
+                    }
+                }
+            }
+
+            &:focus {
+
+                &+.checkbox__label {
+
+                    &::before {
+                        border-color: $purple-1;
+                    }
+                }
+
+                &:not(:checked) {
+
+                    &+.checkbox__label {
+
+                        &::before {
+                            border-color: $purple-1;
+                        }
+                    }
+                }
+            }
+
+            &:checked {
+
+                &+.checkbox__label {
+
+                    &::before {
+                        background-color: $purple-1;
+                        border-color: $purple-1;
+                    }
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 

@@ -1,18 +1,18 @@
 .auth {
     background: url(../img/decor/grid4.svg) no-repeat 50% 28%/auto;
-    min-height: 677px;
+    min-height: 773px;
     margin-bottom: -102px;
-    height: calc(100vh - 558px);
+    height: calc(100vh - 518px);
 
     @media(max-width: 1024px) {
-        min-height: 592px;
+        min-height: 568px;
+        height: calc(100vh - 459px);
         margin-bottom: -70px;
     }
 
     &__box {
         height: 100vh;
         max-height: 473px;
-        overflow: hidden;
         display: flex;
         max-width: 556px;
         width: 100%;
@@ -40,10 +40,10 @@
 
     &--restore {
         background: url(../img/decor/grid5.svg) no-repeat 50% -12%;
-        min-height: 520px;
+        min-height: 643px;
 
         @media(max-width: 1024px) {
-            min-height: 422px;
+            min-height: 468px;
         }
 
         .auth-popup {
