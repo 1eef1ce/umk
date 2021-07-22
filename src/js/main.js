@@ -48,7 +48,7 @@ const projectFunc = {
                             scrub: true,
                             invalidateOnRefresh: true,
                             start: `${-section.offsetHeight - 350} center`,
-                            end: `${section.offsetHeight + 20} center`,
+                            end: `${section.offsetHeight + 60} center`,
                         }
                     })
                         .fromTo(section, {
@@ -809,11 +809,12 @@ function init() {
     projectFunc.createSlider();
     projectFunc.sendFilter();
     projectFunc.initCost();
-    // projectFunc.pinImage('.about__img img');
-    // projectFunc.pinImage('.advantage__img img');
-    // projectFunc.pinImage('.inset__left img');
-    // projectFunc.pinImage('.history-slider__img img');
-    // projectFunc.pinImage('.vacancy-detail__img img');
+    projectFunc.pinImage('.about__img img');
+    projectFunc.pinImage('.advantage__img img');
+    projectFunc.pinImage('.inset__left img');
+    projectFunc.pinImage('.history-slider__img img');
+    projectFunc.pinImage('.vacancy-detail__img img');
+    projectFunc.pinImage('.mission__img img');
     showService('.lk-menu__item');
 }
 
@@ -1232,6 +1233,117 @@ window.addEventListener('load', function () {
         catch (err) {
             console.log(err);
         }
+    }
+
+    
+
+    function initHeaderTilt() {
+        document.querySelector('.novation').addEventListener('mousemove', moveImages);
+    }
+    
+    
+    function moveImages(e){
+        const { offsetX, offsetY, target } = e;
+        const { clientWidth, clientHeight } = target;
+    
+        // console.log(offsetX, offsetY, clientWidth, clientHeight);
+        // get 0 0 in the center
+    
+        const xPos = (offsetX/clientWidth) - 0.5;
+        const yPos = (offsetY/clientHeight) - 0.5
+    
+        const leftImages = gsap.utils.toArray('.layer--forward .layer__bloc--left');
+        const rightImages = gsap.utils.toArray('.layer--forward .layer__bloc--right');
+        const backImageR = gsap.utils.toArray('.layer--back .layer__bloc--right');
+        const backImageL = gsap.utils.toArray('.layer--back .layer__bloc--left');
+        
+        const modifier = (index) => index*1.2+0.5;
+    
+        // move left 3 images
+
+        backImageL.forEach((image, index) => {
+            gsap.to(
+                image, 
+                {
+                    duration: 0.4,
+                    x: xPos*8*modifier(index),
+                    y: yPos*12*modifier(index),
+                    rotationY: xPos*10,
+                    rotationX: yPos*4,
+                    ease: 'Power3.out'
+                }
+            )
+        });
+
+        backImageR.forEach((image, index) => {
+            gsap.to(
+                image, 
+                {
+                    duration: 0.4,
+                    x: xPos*8*modifier(index),
+                    y: -yPos*12*modifier(index),
+                    rotationY: xPos*10,
+                    rotationX: yPos*4,
+                    ease: 'Power3.out'
+                }
+            )
+        });
+        
+        leftImages.forEach((image, index) => {
+            gsap.to(
+                image, 
+                {
+                    duration: 1.2,
+                    x: xPos*20*modifier(index),
+                    y: yPos*30*modifier(index),
+                    rotationY: xPos*40,
+                    rotationX: yPos*10,
+                    ease: 'Power3.out'
+                }
+            )
+        });
+    
+        rightImages.forEach((image, index) => {
+            gsap.to(
+                image, 
+                {
+                    duration: 1.2,
+                    x: xPos*20*modifier(index),
+                    y: -yPos*30*modifier(index),
+                    rotationY: xPos*40,
+                    rotationX: yPos*10,
+                    ease: 'Power3.out'
+                }
+            )
+        });
+    }
+
+    if($('.layer').exists()){
+        //const blocs = gsap.utils.toArray('.layer--forward .layer__bloc');
+        const blocs = gsap.utils.toArray('.layer--forward .layer__bloc');
+        const bigBloc = gsap.utils.toArray('.layer--middle .layer__bloc');
+        
+        const tween = new TimelineMax({
+            scrollTrigger: {
+                trigger: '.novation',
+                invalidateOnRefresh: true,
+                start: 'top center',
+                markers: true
+            },
+            delay: 0.3,
+            ease: 'Power3.out',
+            onComplete: ()=>{
+                initHeaderTilt();
+            }
+        });    
+
+        blocs.forEach((elem, index) => {
+            tween
+                .set(elem, {autoAlpha: 0, y: '+=30'})
+                .to(elem, 0.2, {autoAlpha: 1, y: '-=40'})
+                .to(elem, 0.2, {autoAlpha: 1, y: 0})
+                .to (bigBloc, {autoAlpha: 1}, '-=0.6')
+        });        
     }
 
     if ($('.service__article').exists()) {
