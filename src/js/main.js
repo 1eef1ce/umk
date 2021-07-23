@@ -47,8 +47,9 @@ const projectFunc = {
                             trigger: section.parentElement,
                             scrub: true,
                             invalidateOnRefresh: true,
-                            start: `${-section.offsetHeight - 350} center`,
-                            end: `${section.offsetHeight + 60} center`,
+                            start: `${-section.offsetHeight + 460} bottom`,
+                            end: `${section.offsetHeight - 360} top`,
+                            markers: true
                         }
                     })
                         .fromTo(section, {
@@ -1235,115 +1236,137 @@ window.addEventListener('load', function () {
         }
     }
 
-    
-
     function initHeaderTilt() {
-        document.querySelector('.novation').addEventListener('mousemove', moveImages);
+        if ($(window).width() > 1024) {
+            document.querySelector('.novation').addEventListener('mousemove', moveImages);
+        }
     }
-    
-    
-    function moveImages(e){
+
+    function initPhoneBloc() {
+        const tweenPhone = new TimelineMax({
+            scrollTrigger: {
+                trigger: '.novation',
+                start: 'top center',
+                scrub: true,
+            },
+            ease: 'Power3.out',
+            paused: true
+        });
+
+        tweenPhone
+            .fromTo('.layer--middle .layer__bloc', {
+                yPercent: 7
+            }, {
+                yPercent: -10,
+            });
+    }
+
+
+    function moveImages(e) {
         const { offsetX, offsetY, target } = e;
         const { clientWidth, clientHeight } = target;
-    
+
         // console.log(offsetX, offsetY, clientWidth, clientHeight);
         // get 0 0 in the center
-    
-        const xPos = (offsetX/clientWidth) - 0.5;
-        const yPos = (offsetY/clientHeight) - 0.5
-    
+
+        const xPos = (offsetX / clientWidth) - 0.5;
+        const yPos = (offsetY / clientHeight) - 0.5;
+
         const leftImages = gsap.utils.toArray('.layer--forward .layer__bloc--left');
         const rightImages = gsap.utils.toArray('.layer--forward .layer__bloc--right');
         const backImageR = gsap.utils.toArray('.layer--back .layer__bloc--right');
         const backImageL = gsap.utils.toArray('.layer--back .layer__bloc--left');
-        
-        const modifier = (index) => index*1.2+0.5;
-    
+
+        const modifier = (index) => index * 1.2 + 0.5;
+
         // move left 3 images
 
         backImageL.forEach((image, index) => {
             gsap.to(
-                image, 
+                image,
                 {
                     duration: 0.4,
-                    x: xPos*8*modifier(index),
-                    y: yPos*12*modifier(index),
-                    rotationY: xPos*10,
-                    rotationX: yPos*4,
+                    x: xPos * 8 * modifier(index),
+                    y: yPos * 12 * modifier(index),
+                    // rotationY: xPos*10,
+                    // rotationX: yPos*4,
                     ease: 'Power3.out'
                 }
-            )
+            );
         });
 
         backImageR.forEach((image, index) => {
             gsap.to(
-                image, 
+                image,
                 {
                     duration: 0.4,
-                    x: xPos*8*modifier(index),
-                    y: -yPos*12*modifier(index),
-                    rotationY: xPos*10,
-                    rotationX: yPos*4,
+                    x: xPos * 8 * modifier(index),
+                    y: -yPos * 12 * modifier(index),
+                    //rotationY: xPos*10,
+                    // rotationX: yPos*4,
                     ease: 'Power3.out'
                 }
-            )
+            );
         });
-        
+
         leftImages.forEach((image, index) => {
             gsap.to(
-                image, 
+                image,
                 {
                     duration: 1.2,
-                    x: xPos*20*modifier(index),
-                    y: yPos*30*modifier(index),
-                    rotationY: xPos*40,
-                    rotationX: yPos*10,
+                    x: xPos * 30 * modifier(index),
+                    y: yPos * 40 * modifier(index),
+                    //rotationY: xPos * 40,
+                    //rotationX: yPos * 10,
                     ease: 'Power3.out'
                 }
-            )
+            );
         });
-    
+
         rightImages.forEach((image, index) => {
             gsap.to(
-                image, 
+                image,
                 {
                     duration: 1.2,
-                    x: xPos*20*modifier(index),
-                    y: -yPos*30*modifier(index),
-                    rotationY: xPos*40,
-                    rotationX: yPos*10,
+                    x: xPos * 30 * modifier(index),
+                    y: -yPos * 40 * modifier(index),
+                    //rotationY: xPos * 40,
+                    //rotationX: yPos * 10,
                     ease: 'Power3.out'
                 }
-            )
+            );
         });
     }
 
-    if($('.layer').exists()){
-        //const blocs = gsap.utils.toArray('.layer--forward .layer__bloc');
+    if ($('.layer').exists()) {
+        const blocsBackLeft = gsap.utils.toArray('.layer--back .layer__bloc--left');
+        const blocsBackRight = gsap.utils.toArray('.layer--back .layer__bloc--right');
         const blocs = gsap.utils.toArray('.layer--forward .layer__bloc');
         const bigBloc = gsap.utils.toArray('.layer--middle .layer__bloc');
-        
+
         const tween = new TimelineMax({
             scrollTrigger: {
                 trigger: '.novation',
-                invalidateOnRefresh: true,
                 start: 'top center',
-                markers: true
             },
             delay: 0.3,
             ease: 'Power3.out',
-            onComplete: ()=>{
+            onStart: () => {
+                initPhoneBloc();
+                projectFunc.pinImage('.novation .decor');
+            },
+            onComplete: () => {
                 initHeaderTilt();
             }
-        });    
+        });
 
-        blocs.forEach((elem, index) => {
-            tween
-                .set(elem, {autoAlpha: 0, y: '+=30'})
-                .to(elem, 0.2, {autoAlpha: 1, y: '-=40'})
-                .to(elem, 0.2, {autoAlpha: 1, y: 0})
-                .to (bigBloc, {autoAlpha: 1}, '-=0.6')
-        });        
+        tween
+            .set(blocsBackLeft, { xPercent: -30 })
+            .set(blocsBackRight, { xPercent: 30 })
+            .set(blocs, { autoAlpha: 0, y: '+=30' })
+            .to(bigBloc, 1, { autoAlpha: 1 })
+            .to(blocs, { autoAlpha: 1, y: '-=40', stagger: { each: 0.2, onComplete: function () { gsap.to(this.targets()[0], { y: 0 }) } } }, '-=0.3')
+            .to([blocsBackLeft, blocsBackRight], 0.5, { autoAlpha: 1, xPercent: 0 });
     }
 
     if ($('.service__article').exists()) {
