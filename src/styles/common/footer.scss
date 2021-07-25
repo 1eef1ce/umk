@@ -280,19 +280,6 @@
             &:not(:first-child) {
                 margin-top: 10px;
             }
-
-            &:hover {
-                opacity: 0.8;
-            }
-
-            &.active {
-                opacity: 0.8;
-
-                @media(max-width: 720px) {
-                    opacity: 1;
-                    color: $purple-1;
-                }
-            }
         }
 
         &--laptop {
@@ -347,9 +334,18 @@
         }
 
         .footer {
+
             &__col {
+
                 &:first-child {
                     display: flex;
+                }
+            }
+
+            &__link {
+
+                &:hover {
+                    color: $purple-1;
                 }
             }
         }

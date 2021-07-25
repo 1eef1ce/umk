@@ -680,11 +680,18 @@
     }
 
     &__top {
-        // width: 99.9vw;
         position: relative;
         margin: 0;
         background-color: $gray-3;
-        padding: 19px 0 22px;
+        padding: 20px 0;
+
+        @media(max-width: 1024px) {
+            padding: 17px 0;
+        }
+
+        @media(max-width: 620px) {
+            padding: 20px 0;
+        }
 
         &:after {
             position: absolute;
@@ -699,14 +706,6 @@
             bottom: 0;
             right: 0;
             overflow: hidden;
-        }
-
-        @media(max-width: 1024px) {
-            padding: 16px 0 19px;
-        }
-
-        @media(max-width: 620px) {
-            padding: 21px 0 20px;
         }
 
         .container {
