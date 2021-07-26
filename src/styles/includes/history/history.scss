@@ -215,11 +215,14 @@
         position: absolute;
         bottom: 26px;
         font-size: 24px;
+        z-index: 1;
 
         @media(max-width: 1024px) {
             bottom: 25px;
             font-size: 22px;
         }
+
+        
     }
 
     .item-dot {

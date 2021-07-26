@@ -135,44 +135,120 @@ const projectFunc = {
             try {	
                     let autoPlayDelay = 1500;
                     let slides = $('.js-history-slider').find('.swiper-slide');
-                    
-                    
-                    let options = {
-                        init: true,
-                        // Optional parameters
-                        loop: false,
-                        speed: 500,
-                    
-                        // autoplay: {
-                        //     delay: autoPlayDelay
-                        // },
-                
-                        // Navigation arrows
+
+                    const historyPug = new Swiper('.js-slider-year',{
+                        // spaceBetween: 10,
+                        slidesPerView: 'auto',
+                        watchSlidesVisibility: true,//防止不可点击
+                    });
+                    const historySlider = new Swiper('.js-history-slider',{
+                        spaceBetween: 10,
                         navigation: {
                             nextEl: '.arrow__link--next',
                             prevEl: '.arrow__link--prev',
                         },
-                      };
+                        thumbs: {
+                            swiper: historyPug,
+                        }
+                    });
                     
-                    let mySwiper = new Swiper ('.js-history-slider', options);
+                    
+                    let options = {
+                        init: true,
+                        loop: false,
+                        speed: 500,
+                       
+                    
+                        // Navigation arrows
+                        
+                      };
 
-                    // if($('.history-pagination').exists()){
-                    //     const swContainer = $('.history-pagination').find('.swiper-wrapper');
-                    //     const arrSlidePag = [];
 
-                    //     if(slides.length > 0) {
-                    //         $(slides).each((index, item) => {
-                    //             let dot = document.createElement('div');
-                    //             dot.classList.add('swiper-slide');
-                    //             dot.textContent(index);
-                    //             arrSlidePag.push(dot);
-                    //         });
+                      let optionsPug = {
+                        slidesPerView: 'auto',
+                        init: true,
+                        speed: 500,
+                        thumbs: {
+                            swiper: historyPug
+                        }
+                    }
 
-                    //         $(swContainer).append(arrSlidePag);
-                    //     }
-                    // }
+                   
+                    
+                    // let historySlider = new Swiper ('.js-history-slider', options);
 
-                    // .history-pagination
+                    if($('.history-pagination').exists()){
+                        const swContainer = $('.history-pagination').find('.swiper-wrapper');
+                        const arrSlidePag = [];
+
+                        if(slides.length > 0) {
+                            $(slides).each((index, item) => {
+                                let year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+                                // let dot = document.createElement('div');
+                                // dot.classList.add('swiper-slide');
+                                // $(dot).append(`<span class="item-dot"><span class="year-history"></span><span class="year-dot">${year}</span></span>`);
+                                // arrSlidePag.push(dot);
+                                $(swContainer).append(`<div class="swiper-slide"><i class="line-progress"></i><div class="item-bloc"><div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div></div></div>`);
+                            });
+                            $(swContainer).append(arrSlidePag);
+
+
+                            let slidersCount = historySlider.params.loop ? historySlider.slides.length - 2 : historySlider.slides.length;
+                            let widthParts = 100 / slidersCount;
+                            console.log(widthParts);
+
+
+                            function initProgressBar(){
+                                let calcProgress = (slidersCount-1) * (autoPlayDelay + historySlider.params.speed);
+                                calcProgress += autoPlayDelay;
+                                // $('.history-pagination .line-progress').animate({
+                                //     width: '100%'
+                                // }, calcProgress, 'linear');
+                            }
+
+                            initProgressBar();
+
+                          //  $('.history-pagination .progress').css('width', widthParts * (historySlider.activeIndex + 1) + '%');
+
+                            historySlider.on('slideChange', function () {
+                        
+                                let progress = $('.history-pagination .line-progress');
+                                
+                                if( 
+                                    ( 
+                                        this.progress == -0 || (this.progress == 1 && this.params.loop) 
+                                    ) && !progress.parent().is('.stopped')
+                                ){
+                                    progress.css('width', '0');
+                                    if(this.activeIndex == 0){
+                                     //   initProgressBar();
+                                    }
+                                }
+                                   
+                                progress.animate({
+                                    'width': 100 + '%'
+                                }, this.params.speed, 'linear', ()=>{
+                                   // $(dots[historySlider.activeIndex]).addClass('active');
+                                });
+                                
+                                // $(dots).each((index, _) => {
+                                //     if (index > historySlider.activeIndex) {
+                                //         $(dots[index]).removeClass('active');
+                                //     }
+                                // });
+                            });
+                        }
+
+                        
+                        // historyPug = new Swiper('.js-slider-year', optionsPug);
+                        // historySlider.controller.control = historyPug;
+                        // historyPug.controller.control = historySlider;
+                    }
+
+
+                    
+
+                    // //.history-pagination
                     // let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
                     // let widthParts = 100 / slidersCount;
                     
@@ -928,7 +1004,7 @@ function init() {
     projectFunc.sendFilter();
     projectFunc.initCost();
     projectFunc.pinImage('.about__img img');
-    projectFunc.pinImage('.advantage__img picture');
+    projectFunc.pinImage('.advantage__img img');
     projectFunc.pinImage('.inset__left picture');
     projectFunc.pinImage('.history-slider__img img');
     projectFunc.pinImage('.vacancy-detail__img img');

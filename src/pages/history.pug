@@ -66,14 +66,22 @@ block content
                                 .history-slider__year 2009 год
                                 .history-slider__title Запуск нового центра 2
                                 .history-slider__info Ясность нашей позиции очевидна: современная методология разработки позволяет оценить значение глубокомысленных рассуждений. Каждый из нас понимает очевидную вещь: семантический разбор внешних противодействий прекрасно подходит для реализации позиций, занимаемых участниками в отношении поставленных задач. Ясность нашей позиции очевидна: семантический разбор внешних противодействий создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса системы массового участия.
-                .history-pagination
-                    .swiper-wrapper 
+                        .swiper-slide.history-slider__slide(data-year=`2014`) 
+                            .history-slider__img
+                                img(src="img/history.jpg" alt="")
+                            .history-slider__content
+                                .history-slider__year 2009 год
+                                .history-slider__title Запуск нового центра 2
+                                .history-slider__info Ясность нашей позиции очевидна: современная методология разработки позволяет оценить значение глубокомысленных рассуждений. Каждый из нас понимает очевидную вещь: семантический разбор внешних противодействий прекрасно подходит для реализации позиций, занимаемых участниками в отношении поставленных задач. Ясность нашей позиции очевидна: семантический разбор внешних противодействий создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса системы массового участия.
                 .arrow
-                    .swiper-pagination
-                        <div class="swiper-progress-bar">
-                            <div class="progress"></div>
-                            <div class="progress-sections"></div>
-                        </div>
+                    //- .swiper-pagination
+                    //-     <div class="swiper-progress-bar">
+                    //-         <div class="progress"></div>
+                    //-         <div class="progress-sections"></div>
+                    //-     </div>
+                    .history-pagination.js-slider-year
+                        .swiper-wrapper 
+                        .progress
                     .arrow__cover
                         .arrow__link.arrow__link--prev
                             svg(width="33" height="17" viewbox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg")
