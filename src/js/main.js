@@ -4,6 +4,7 @@ import Scrollbar from 'smooth-scrollbar';
 import 'jquery.maskedinput/src/jquery.maskedinput.js';
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Swiper from 'swiper/swiper-bundle.min';
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     if ($('#ds_filter_catalog').exists()) {
@@ -47,12 +48,13 @@ const projectFunc = {
                             trigger: section.parentElement,
                             scrub: true,
                             invalidateOnRefresh: true,
-                            start: `${-section.offsetHeight - 350} center`,
-                            end: `${section.offsetHeight + 20} center`,
+                            start: `top bottom`,
+                            end: `bottom top`,
+                            markers: true
                         }
                     })
                         .fromTo(section, {
-                            yPercent: -25
+                            yPercent: -40
                         }, {
                             yPercent: 0,
                             ease: "none"
@@ -131,12 +133,110 @@ const projectFunc = {
         }
 
         if ($('.js-history-slider').exists()) {
-            try {
-                const objSlider = new Slider('.js-history-slider', 1, 0);
-                objSlider.createSlider();
-                objSlider.updateSlider('effect', 'fade');
-                objSlider.updateSlider('arrow');
-                objSlider.updateSlider('pagination');
+            try {	
+                    let autoPlayDelay = 1500;
+                    
+                    
+                    let options = {
+                        init: true,
+                        // Optional parameters
+                        loop: false,
+                        speed: 500,
+                    
+                        // autoplay: {
+                        //     delay: autoPlayDelay
+                        // },
+                
+                        // Navigation arrows
+                        navigation: {
+                            nextEl: '.arrow__link--next',
+                            prevEl: '.arrow__link--prev',
+                        },
+                      };
+                    
+                    let mySwiper = new Swiper ('.js-history-slider', options);
+                    let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
+                    let widthParts = 100 / slidersCount;
+                    
+
+                    for(let i=0; i<slidersCount; i++){
+                        let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
+                        $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
+                        console.log('1');
+                    }
+
+                    let dots = $('.item-dot');
+                    $(dots[0]).addClass('active');
+
+                    function initProgressBar(){
+                        let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
+                        calcProgress += autoPlayDelay;
+                        // $('.swiper-progress-bar .progress').animate({
+                        //     width: '100%'
+                        // }, calcProgress, 'linear');
+                    }
+                    
+                    initProgressBar();
+
+                     $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
+                     $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
+
+                    mySwiper.on('slideChange', function () {
+                        
+                        let progress = $('.swiper-progress-bar .progress');
+                        
+                        if( 
+                            ( 
+                                this.progress == -0 || (this.progress == 1 && this.params.loop) 
+                            ) && !progress.parent().is('.stopped')
+                        ){
+                            progress.css('width', '0');
+                            if(this.activeIndex == 0){
+                                initProgressBar();
+                            }
+                        }
+                           
+                        progress.animate({
+                            'width': widthParts * (this.activeIndex + 1) + '%'
+                        }, this.params.speed, 'linear', ()=>{
+                            $(dots[mySwiper.activeIndex]).addClass('active');
+                        });
+                        
+                        $(dots).each((index, _) => {
+                            if (index > mySwiper.activeIndex) {
+                                $(dots[index]).removeClass('active');
+                            }
+                        });
+                    });
+
+                    dots.each((index, item) => {
+                        $(item).on('click', function(){
+                            mySwiper.slideTo(index, 500);
+
+                            dots.each((index, item) => {
+                                if (index > mySwiper.activeIndex) {
+                                    $(dots[index]).removeClass('active');
+                                } else {
+                                    console.log($(dots[index]));
+                                    $(dots[index]).addClass('active');
+                                }
+
+                                console.log(index);
+                                console.log(mySwiper.activeIndex);
+                            });
+                        });
+                    })
+
+                    setTimeout(() => {
+                    $('.js-history-slider').css('opacity', 1);
+                }, 600);
+                    
+                    
+                
+
+
+
+
             }
             catch (err) {
                 console.log(err);
@@ -809,11 +909,12 @@ function init() {
     projectFunc.createSlider();
     projectFunc.sendFilter();
     projectFunc.initCost();
-    // projectFunc.pinImage('.about__img img');
-    // projectFunc.pinImage('.advantage__img img');
-    // projectFunc.pinImage('.inset__left img');
-    // projectFunc.pinImage('.history-slider__img img');
-    // projectFunc.pinImage('.vacancy-detail__img img');
+    projectFunc.pinImage('.about__img img');
+    projectFunc.pinImage('.advantage__img picture');
+    projectFunc.pinImage('.inset__left picture');
+    projectFunc.pinImage('.history-slider__img img');
+    projectFunc.pinImage('.vacancy-detail__img img');
+    projectFunc.pinImage('.mission__img img');
     showService('.lk-menu__item');
 }
 
@@ -1232,6 +1333,139 @@ window.addEventListener('load', function () {
         catch (err) {
             console.log(err);
         }
+    }
+
+    function initHeaderTilt() {
+        if ($(window).width() > 1024) {
+            document.querySelector('.novation').addEventListener('mousemove', moveImages);
+        }
+    }
+
+    function initPhoneBloc() {
+        const tweenPhone = new TimelineMax({
+            scrollTrigger: {
+                trigger: '.novation',
+                start: 'top center',
+                scrub: true,
+            },
+            ease: 'Power3.out',
+            paused: true
+        });
+
+        tweenPhone
+            .fromTo('.layer--middle .layer__bloc', {
+                yPercent: 7
+            }, {
+                yPercent: -10,
+            });
+    }
+
+
+    function moveImages(e) {
+        const { offsetX, offsetY, target } = e;
+        const { clientWidth, clientHeight } = target;
+
+        // console.log(offsetX, offsetY, clientWidth, clientHeight);
+        // get 0 0 in the center
+
+        const xPos = (offsetX / clientWidth) - 0.5;
+        const yPos = (offsetY / clientHeight) - 0.5;
+
+        const leftImages = gsap.utils.toArray('.layer--forward .layer__bloc--left');
+        const rightImages = gsap.utils.toArray('.layer--forward .layer__bloc--right');
+        const backImageR = gsap.utils.toArray('.layer--back .layer__bloc--right');
+        const backImageL = gsap.utils.toArray('.layer--back .layer__bloc--left');
+
+        const modifier = (index) => index * 1.2 + 0.5;
+
+        // move left 3 images
+
+        backImageL.forEach((image, index) => {
+            gsap.to(
+                image,
+                {
+                    duration: 0.4,
+                    x: xPos * 8 * modifier(index),
+                    y: yPos * 12 * modifier(index),
+                    // rotationY: xPos*10,
+                    // rotationX: yPos*4,
+                    ease: 'Power3.out'
+                }
+            );
+        });
+
+        backImageR.forEach((image, index) => {
+            gsap.to(
+                image,
+                {
+                    duration: 0.4,
+                    x: xPos * 8 * modifier(index),
+                    y: -yPos * 12 * modifier(index),
+                    //rotationY: xPos*10,
+                    // rotationX: yPos*4,
+                    ease: 'Power3.out'
+                }
+            );
+        });
+
+        leftImages.forEach((image, index) => {
+            gsap.to(
+                image,
+                {
+                    duration: 1.2,
+                    x: xPos * 30 * modifier(index),
+                    y: yPos * 40 * modifier(index),
+                    //rotationY: xPos * 40,
+                    //rotationX: yPos * 10,
+                    ease: 'Power3.out'
+                }
+            );
+        });
+
+        rightImages.forEach((image, index) => {
+            gsap.to(
+                image,
+                {
+                    duration: 1.2,
+                    x: xPos * 30 * modifier(index),
+                    y: -yPos * 40 * modifier(index),
+                    //rotationY: xPos * 40,
+                    //rotationX: yPos * 10,
+                    ease: 'Power3.out'
+                }
+            );
+        });
+    }
+
+    if ($('.layer').exists()) {
+        const blocsBackLeft = gsap.utils.toArray('.layer--back .layer__bloc--left');
+        const blocsBackRight = gsap.utils.toArray('.layer--back .layer__bloc--right');
+        const blocs = gsap.utils.toArray('.layer--forward .layer__bloc');
+        const bigBloc = gsap.utils.toArray('.layer--middle .layer__bloc');
+
+        const tween = new TimelineMax({
+            scrollTrigger: {
+                trigger: '.novation',
+                start: 'top center',
+            },
+            delay: 0.3,
+            ease: 'Power3.out',
+            onStart: () => {
+                initPhoneBloc();
+                projectFunc.pinImage('.novation .decor');
+            },
+            onComplete: () => {
+                initHeaderTilt();
+            }
+        });
+
+        tween
+            .set(blocsBackLeft, { xPercent: -30 })
+            .set(blocsBackRight, { xPercent: 30 })
+            .set(blocs, { autoAlpha: 0, y: '+=30' })
+            .to(bigBloc, 1, { autoAlpha: 1 })
+            .to(blocs, { autoAlpha: 1, y: '-=40', stagger: { each: 0.2, onComplete: function () { gsap.to(this.targets()[0], { y: 0 }) } } }, '-=0.3')
+            .to([blocsBackLeft, blocsBackRight], 0.5, { autoAlpha: 1, xPercent: 0 });
     }
 
     if ($('.service__article').exists()) {
