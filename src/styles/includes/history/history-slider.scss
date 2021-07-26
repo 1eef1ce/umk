@@ -86,6 +86,10 @@
         justify-content: space-between;
         margin-top: 50px;
 
+        @media(max-width: 767px) {
+            flex-direction: column;
+        }
+
         @media(max-width: 620px) {
             flex-direction: column;
             margin-top: 71px;
@@ -99,7 +103,11 @@
     .swiper-pagination {
         flex-direction: column;
         width: 100%;
-        margin-right: 37px;
+        margin-right: 70px;
+
+        @media(max-width: 767px) {
+            margin-right: 0;
+        }
 
         .swiper-pagination-bullet {
             width: auto;
@@ -124,10 +132,6 @@
                 min-width: 10px;
                 min-height: 10px;
                 display: block;
-            }
-
-            .year-history {
-                font-size: 24px;
             }
         }
     }
@@ -182,8 +186,13 @@
 
     .year-history {
         position: absolute;
-        font-size: 24px;
         bottom: 26px;
+        font-size: 24px;
+
+        @media(max-width: 1024px) {
+            bottom: 25px;
+            font-size: 22px;
+        }
     }
 
     .item-dot {
@@ -191,9 +200,12 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        background-color: red;
         position: relative;
         cursor: pointer;
+
+        @media(max-width: 767px) {
+            right: 6.8%;
+        }
 
         &.active {
             .year-dot {

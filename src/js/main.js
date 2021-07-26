@@ -50,7 +50,6 @@ const projectFunc = {
                             invalidateOnRefresh: true,
                             start: `top bottom`,
                             end: `bottom top`,
-                            markers: true
                         }
                     })
                         .fromTo(section, {
@@ -135,6 +134,7 @@ const projectFunc = {
         if ($('.js-history-slider').exists()) {
             try {	
                     let autoPlayDelay = 1500;
+                    let slides = $('.js-history-slider').find('.swiper-slide');
                     
                     
                     let options = {
@@ -155,77 +155,95 @@ const projectFunc = {
                       };
                     
                     let mySwiper = new Swiper ('.js-history-slider', options);
-                    let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
-                    let widthParts = 100 / slidersCount;
+
+                    // if($('.history-pagination').exists()){
+                    //     const swContainer = $('.history-pagination').find('.swiper-wrapper');
+                    //     const arrSlidePag = [];
+
+                    //     if(slides.length > 0) {
+                    //         $(slides).each((index, item) => {
+                    //             let dot = document.createElement('div');
+                    //             dot.classList.add('swiper-slide');
+                    //             dot.textContent(index);
+                    //             arrSlidePag.push(dot);
+                    //         });
+
+                    //         $(swContainer).append(arrSlidePag);
+                    //     }
+                    // }
+
+                    // .history-pagination
+                    // let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
+                    // let widthParts = 100 / slidersCount;
                     
 
-                    for(let i=0; i<slidersCount; i++){
-                        let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
-                        $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
-                        console.log('1');
-                    }
+                    // for(let i=0; i<slidersCount; i++){
+                    //     let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
+                    //     $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
+                    //     console.log('1');
+                    // }
 
-                    let dots = $('.item-dot');
-                    $(dots[0]).addClass('active');
+                    // let dots = $('.item-dot');
+                    // $(dots[0]).addClass('active');
 
-                    function initProgressBar(){
-                        let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
-                        calcProgress += autoPlayDelay;
-                        // $('.swiper-progress-bar .progress').animate({
-                        //     width: '100%'
-                        // }, calcProgress, 'linear');
-                    }
+                    // function initProgressBar(){
+                    //     let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
+                    //     calcProgress += autoPlayDelay;
+                    //     // $('.swiper-progress-bar .progress').animate({
+                    //     //     width: '100%'
+                    //     // }, calcProgress, 'linear');
+                    // }
                     
-                    initProgressBar();
+                    // initProgressBar();
 
-                     $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
-                     $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
+                    //  $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
+                    //  $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
 
-                    mySwiper.on('slideChange', function () {
+                    // mySwiper.on('slideChange', function () {
                         
-                        let progress = $('.swiper-progress-bar .progress');
+                    //     let progress = $('.swiper-progress-bar .progress');
                         
-                        if( 
-                            ( 
-                                this.progress == -0 || (this.progress == 1 && this.params.loop) 
-                            ) && !progress.parent().is('.stopped')
-                        ){
-                            progress.css('width', '0');
-                            if(this.activeIndex == 0){
-                                initProgressBar();
-                            }
-                        }
+                    //     if( 
+                    //         ( 
+                    //             this.progress == -0 || (this.progress == 1 && this.params.loop) 
+                    //         ) && !progress.parent().is('.stopped')
+                    //     ){
+                    //         progress.css('width', '0');
+                    //         if(this.activeIndex == 0){
+                    //             initProgressBar();
+                    //         }
+                    //     }
                            
-                        progress.animate({
-                            'width': widthParts * (this.activeIndex + 1) + '%'
-                        }, this.params.speed, 'linear', ()=>{
-                            $(dots[mySwiper.activeIndex]).addClass('active');
-                        });
+                    //     progress.animate({
+                    //         'width': widthParts * (this.activeIndex + 1) + '%'
+                    //     }, this.params.speed, 'linear', ()=>{
+                    //         $(dots[mySwiper.activeIndex]).addClass('active');
+                    //     });
                         
-                        $(dots).each((index, _) => {
-                            if (index > mySwiper.activeIndex) {
-                                $(dots[index]).removeClass('active');
-                            }
-                        });
-                    });
+                    //     $(dots).each((index, _) => {
+                    //         if (index > mySwiper.activeIndex) {
+                    //             $(dots[index]).removeClass('active');
+                    //         }
+                    //     });
+                    // });
 
-                    dots.each((index, item) => {
-                        $(item).on('click', function(){
-                            mySwiper.slideTo(index, 500);
+                    // dots.each((index, item) => {
+                    //     $(item).on('click', function(){
+                    //         mySwiper.slideTo(index, 500);
 
-                            dots.each((index, item) => {
-                                if (index > mySwiper.activeIndex) {
-                                    $(dots[index]).removeClass('active');
-                                } else {
-                                    console.log($(dots[index]));
-                                    $(dots[index]).addClass('active');
-                                }
+                    //         dots.each((index, item) => {
+                    //             if (index > mySwiper.activeIndex) {
+                    //                 $(dots[index]).removeClass('active');
+                    //             } else {
+                    //                 console.log($(dots[index]));
+                    //                 $(dots[index]).addClass('active');
+                    //             }
 
-                                console.log(index);
-                                console.log(mySwiper.activeIndex);
-                            });
-                        });
-                    })
+                    //             console.log(index);
+                    //             console.log(mySwiper.activeIndex);
+                    //         });
+                    //     });
+                    // })
 
                     setTimeout(() => {
                     $('.js-history-slider').css('opacity', 1);
