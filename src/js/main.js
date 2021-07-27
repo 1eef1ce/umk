@@ -132,205 +132,208 @@ const projectFunc = {
         }
 
         if ($('.js-history-slider').exists()) {
-            try {	
-                    let autoPlayDelay = 1500;
-                    let slides = $('.js-history-slider').find('.swiper-slide');
-
-                    const historyPug = new Swiper('.js-slider-year',{
-                        // spaceBetween: 10,
-                        slidesPerView: 'auto',
-                        watchSlidesVisibility: true,//防止不可点击
-                    });
-                    const historySlider = new Swiper('.js-history-slider',{
-                        spaceBetween: 10,
-                        navigation: {
-                            nextEl: '.arrow__link--next',
-                            prevEl: '.arrow__link--prev',
-                        },
-                        thumbs: {
-                            swiper: historyPug,
-                        }
-                    });
-                    
-                    
-                    let options = {
-                        init: true,
-                        loop: false,
-                        speed: 500,
-                       
-                    
-                        // Navigation arrows
-                        
-                      };
+            try {
+                let autoPlayDelay = 1500;
+                let slides = $('.js-history-slider').find('.swiper-slide');
 
 
-                      let optionsPug = {
-                        slidesPerView: 'auto',
-                        init: true,
-                        speed: 500,
-                        thumbs: {
-                            swiper: historyPug
-                        }
-                    }
+                if ($('.history-pagination').exists()) {
+                    const swContainer = $('.history-pagination').find('.swiper-wrapper');
+                    const arrSlidePag = [];
 
-                   
-                    
-                    // let historySlider = new Swiper ('.js-history-slider', options);
+                    if (slides.length > 0) {
+                        $(slides).each((index, item) => {
+                            let year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+                            $(swContainer).append(`<div class="swiper-slide"><i class="line-progress"></i><div class="item-bloc"><div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div></div></div>`);
+                        });
 
-                    if($('.history-pagination').exists()){
-                        const swContainer = $('.history-pagination').find('.swiper-wrapper');
-                        const arrSlidePag = [];
+                        const historyPug = new Swiper('.js-slider-year', {
+                            // spaceBetween: 10,
+                            init: true,
+                            slidesPerView: 7.4,
+                            //loop: true,
+                            touchRatio: 0,
+                            speed: 500,
+                            breakpoints: {
 
-                        if(slides.length > 0) {
-                            $(slides).each((index, item) => {
-                                let year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
-                                // let dot = document.createElement('div');
-                                // dot.classList.add('swiper-slide');
-                                // $(dot).append(`<span class="item-dot"><span class="year-history"></span><span class="year-dot">${year}</span></span>`);
-                                // arrSlidePag.push(dot);
-                                $(swContainer).append(`<div class="swiper-slide"><i class="line-progress"></i><div class="item-bloc"><div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div></div></div>`);
-                            });
-                            $(swContainer).append(arrSlidePag);
+                                320: {
+                                    slidesPerView: 4.7,
+                                },
+                                768: {
+                                    slidesPerView: 7.4,
+                                }
+                            }
+                            // centeredSlides: true,
+                            // initialSlide: 5,
+                            // autoplay: {
+                            //     delay: autoPlayDelay,
+                            // },
+                            // watchSlidesVisibility: true
+                        });
+
+                        const historySlider = new Swiper('.js-history-slider', {
+                            spaceBetween: 10,
+                            speed: 500,
+                            //initialSlide: 5,
+                            // autoplay: {
+                            //     delay: autoPlayDelay,
+                            // },
+                            //loop: true,
+                            navigation: {
+                                nextEl: '.arrow__link--next',
+                                prevEl: '.arrow__link--prev',
+                            },
+                            thumbs: {
+                                swiper: historyPug,
+                            }
+                        });
+
+                        historyPug.update();
+
+                        let slidesPug = $('.js-slider-year').find('.swiper-slide');
+                        // $(slidesPug[0]).find('.line-progress').css({
+                        //     width: '100%'
+                        // });
 
 
-                            let slidersCount = historySlider.params.loop ? historySlider.slides.length - 2 : historySlider.slides.length;
-                            let widthParts = 100 / slidersCount;
+                        let slidersCount = historyPug.params.loop ? historyPug.slides.length - 2 : historyPug.slides.length;
+                        let widthParts = 100 / slidersCount;
+
+                        console.log(widthParts);
+
+
+                        let calcProgress = (historySlider.params.speed);
+                        let dots = $('.item-dot');
+                        $(dots[0]).addClass('active');
+                        // let widthSlide = $(slidesPug[0]).width();
+                        const konfGrow = ((widthParts * (historySlider.activeIndex + 1)) * 6.6) / $(slidesPug[0]).width();
+                        //console.log(konfGrow)
+
+                        $('.js-slider-year .progress').css('width', ((widthParts * (historySlider.activeIndex + 1))) + '%');
+                        //console.log(((widthParts * (this.activeIndex + 1)) - (0.5681818181818182 * (this.activeIndex + 1))) + '%');
+
+                        historySlider.on('slideChange', function (e) {
+                            let progress = $('.js-slider-year .progress');
+
                             console.log(widthParts);
 
+                            progress.animate({
+                                'width': ((widthParts * (this.activeIndex + 1)) - (konfGrow * (this.activeIndex + 1))) + '%'
+                            }, this.params.speed, 'linear', () => {
+                                $(dots[historySlider.activeIndex]).addClass('active');
+                            });
 
-                            function initProgressBar(){
-                                let calcProgress = (slidersCount-1) * (autoPlayDelay + historySlider.params.speed);
-                                calcProgress += autoPlayDelay;
-                                // $('.history-pagination .line-progress').animate({
-                                //     width: '100%'
-                                // }, calcProgress, 'linear');
+                            $(dots).each((index, _) => {
+                                if (index > historySlider.activeIndex) {
+                                    $(dots[index]).removeClass('active');
+                                }
+                            });
+
+                            dots.each((index, item) => {
+                                if (index > historySlider.activeIndex) {
+                                    $(dots[index]).removeClass('active');
+                                } else {
+                                    //console.log($(dots[index]));
+                                    $(dots[index]).addClass('active');
+                                }
+                                // console.log(index);
+                                // console.log(mySwiper.activeIndex);
+                            });
+
+                            console.log('AI: ' + historySlider.activeIndex);
+                            console.log('length: ' + dots.length);
+
+                            if (historySlider.activeIndex == dots.length - 1) {
+                                progress.animate({
+                                    'width': ((widthParts * (this.activeIndex + 1)) - (konfGrow * (this.activeIndex + 1)) + 3) + '%'
+                                }, this.params.speed, 'linear');
                             }
 
-                            initProgressBar();
-
-                          //  $('.history-pagination .progress').css('width', widthParts * (historySlider.activeIndex + 1) + '%');
-
-                            historySlider.on('slideChange', function () {
-                        
-                                let progress = $('.history-pagination .line-progress');
-                                
-                                if( 
-                                    ( 
-                                        this.progress == -0 || (this.progress == 1 && this.params.loop) 
-                                    ) && !progress.parent().is('.stopped')
-                                ){
-                                    progress.css('width', '0');
-                                    if(this.activeIndex == 0){
-                                     //   initProgressBar();
-                                    }
-                                }
-                                   
-                                progress.animate({
-                                    'width': 100 + '%'
-                                }, this.params.speed, 'linear', ()=>{
-                                   // $(dots[historySlider.activeIndex]).addClass('active');
-                                });
-                                
-                                // $(dots).each((index, _) => {
-                                //     if (index > historySlider.activeIndex) {
-                                //         $(dots[index]).removeClass('active');
-                                //     }
-                                // });
-                            });
-                        }
-
-                        
-                        // historyPug = new Swiper('.js-slider-year', optionsPug);
-                        // historySlider.controller.control = historyPug;
-                        // historyPug.controller.control = historySlider;
+                        });
                     }
 
 
-                    
+                    // historyPug = new Swiper('.js-slider-year', optionsPug);
+                    // historySlider.controller.control = historyPug;
+                    // historyPug.controller.control = historySlider;
+                }
 
-                    // //.history-pagination
-                    // let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
-                    // let widthParts = 100 / slidersCount;
-                    
-
-                    // for(let i=0; i<slidersCount; i++){
-                    //     let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
-                    //     $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
-                    //     console.log('1');
-                    // }
-
-                    // let dots = $('.item-dot');
-                    // $(dots[0]).addClass('active');
-
-                    // function initProgressBar(){
-                    //     let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
-                    //     calcProgress += autoPlayDelay;
-                    //     // $('.swiper-progress-bar .progress').animate({
-                    //     //     width: '100%'
-                    //     // }, calcProgress, 'linear');
-                    // }
-                    
-                    // initProgressBar();
-
-                    //  $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
-                    //  $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
-
-                    // mySwiper.on('slideChange', function () {
-                        
-                    //     let progress = $('.swiper-progress-bar .progress');
-                        
-                    //     if( 
-                    //         ( 
-                    //             this.progress == -0 || (this.progress == 1 && this.params.loop) 
-                    //         ) && !progress.parent().is('.stopped')
-                    //     ){
-                    //         progress.css('width', '0');
-                    //         if(this.activeIndex == 0){
-                    //             initProgressBar();
-                    //         }
-                    //     }
-                           
-                    //     progress.animate({
-                    //         'width': widthParts * (this.activeIndex + 1) + '%'
-                    //     }, this.params.speed, 'linear', ()=>{
-                    //         $(dots[mySwiper.activeIndex]).addClass('active');
-                    //     });
-                        
-                    //     $(dots).each((index, _) => {
-                    //         if (index > mySwiper.activeIndex) {
-                    //             $(dots[index]).removeClass('active');
-                    //         }
-                    //     });
-                    // });
-
-                    // dots.each((index, item) => {
-                    //     $(item).on('click', function(){
-                    //         mySwiper.slideTo(index, 500);
-
-                    //         dots.each((index, item) => {
-                    //             if (index > mySwiper.activeIndex) {
-                    //                 $(dots[index]).removeClass('active');
-                    //             } else {
-                    //                 console.log($(dots[index]));
-                    //                 $(dots[index]).addClass('active');
-                    //             }
-
-                    //             console.log(index);
-                    //             console.log(mySwiper.activeIndex);
-                    //         });
-                    //     });
-                    // })
-
-                    setTimeout(() => {
-                    $('.js-history-slider').css('opacity', 1);
-                }, 600);
-                    
-                    
-                
+                // //.history-pagination
+                // let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
+                // let widthParts = 100 / slidersCount;
 
 
+                // for(let i=0; i<slidersCount; i++){
+                //     let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
+                //     $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
+                //     console.log('1');
+                // }
 
+                // let dots = $('.item-dot');
+                // $(dots[0]).addClass('active');
 
+                // function initProgressBar(){
+                //     let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
+                //     calcProgress += autoPlayDelay;
+                //     // $('.swiper-progress-bar .progress').animate({
+                //     //     width: '100%'
+                //     // }, calcProgress, 'linear');
+                // }
+
+                // initProgressBar();
+
+                //  $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
+                //  $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
+
+                // mySwiper.on('slideChange', function () {
+
+                //     let progress = $('.swiper-progress-bar .progress');
+
+                //     if( 
+                //         ( 
+                //             this.progress == -0 || (this.progress == 1 && this.params.loop) 
+                //         ) && !progress.parent().is('.stopped')
+                //     ){
+                //         progress.css('width', '0');
+                //         if(this.activeIndex == 0){
+                //             initProgressBar();
+                //         }
+                //     }
+
+                //     progress.animate({
+                //         'width': widthParts * (this.activeIndex + 1) + '%'
+                //     }, this.params.speed, 'linear', ()=>{
+                //         $(dots[mySwiper.activeIndex]).addClass('active');
+                //     });
+
+                //     $(dots).each((index, _) => {
+                //         if (index > mySwiper.activeIndex) {
+                //             $(dots[index]).removeClass('active');
+                //         }
+                //     });
+                // });
+
+                // dots.each((index, item) => {
+                //     $(item).on('click', function(){
+                //         mySwiper.slideTo(index, 500);
+
+                //         dots.each((index, item) => {
+                //             if (index > mySwiper.activeIndex) {
+                //                 $(dots[index]).removeClass('active');
+                //             } else {
+                //                 console.log($(dots[index]));
+                //                 $(dots[index]).addClass('active');
+                //             }
+
+                //             console.log(index);
+                //             console.log(mySwiper.activeIndex);
+                //         });
+                //     });
+                // })
+
+                // setTimeout(() => {
+                //     $('.js-history-slider').css('opacity', 1);
+                // }, 600);
             }
             catch (err) {
                 console.log(err);

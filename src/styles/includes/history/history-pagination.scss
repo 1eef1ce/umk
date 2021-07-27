@@ -1,28 +1,50 @@
 .history-pagination {
     position: relative;
     background-color: transparent;
-    overflow: hidden;
     width: 100%;
-    margin-right: 70px;
+    margin-right: 0px;
+    max-width: 930px;
+    margin-left: -66px;
+
+    @media(max-width: 767px) {
+        // width: calc(100% + 40px);
+        // margin-right: 0;
+    }
+
+    @media(max-width: 620px) {
+        margin-left: -32px;
+    }
 
     .swiper-slide {
-        width: auto;
         display: flex;
         background-color: transparent;
-        flex: 1;
         position: relative;
         height: 18px;
         align-items: center;
         height: 152px;
-        // align-items: center;
-        // left: 0;
-        // top: 0;
-        // position: absolute;
-        // height: inherit;
-        // width: inherit;
-        // z-index: 2;
-        // display: flex;
-        // flex-direction: row;
+
+        @media(max-width: 620px) {
+            height: 84px;
+        }
+
+        &:last-child {
+            &:after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                background-color: $gray-1;
+                height: 2px;
+                top: 0;
+                left: 45px;
+                bottom: 0;
+                margin: auto;
+
+
+                @media(max-width: 767px) {
+                    left: 66px;
+                }
+            }
+        }
 
         .item-bloc {
             width: 100%;
@@ -44,18 +66,18 @@
             margin: auto;
         }
 
-        // &.swiper-slide-thumb-active {
-        //     .line-progress {
-        //        width: 100%;
-        //     }
-        // }
+        &.active {
+            .line-progress {
+                width: 100%;
+            }
+        }
     }
 
     .progress {
         height: 2px;
-        background-color: red;
+        background-color: $purple-1;
         position: absolute;
-        width:0%;
+        width: 0%;
         top: 0;
         bottom: 0;
         margin: auto;
