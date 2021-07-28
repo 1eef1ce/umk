@@ -150,7 +150,7 @@ const projectFunc = {
                             touchRatio: 0,
                             speed: 500,
                             //noSwiping: true,
-                            simulateTouch: false,
+                            // simulateTouch: false,
                             breakpoints: {
                                 320: {
                                     slidesPerView: 4,
@@ -173,9 +173,9 @@ const projectFunc = {
                                 nextEl: '.arrow__link--next',
                                 prevEl: '.arrow__link--prev',
                             },
-                            // thumbs: {
-                            //     swiper: historyPug,
-                            // }
+                            thumbs: {
+                                swiper: historyPug,
+                            }
                         });
 
                         historyPug.update();
@@ -196,12 +196,6 @@ const projectFunc = {
 
                         $(dots[0]).addClass('active');
                         $('.js-slider-year .progress').css('width', ((widthParts * (historySlider.activeIndex + 1))) + '%');
-
-                        dots.each((index, item) => {
-                            $(item).on('click', function () {
-                                historyPug.slideTo(index);
-                            });
-                        });
 
                         historySlider.on('slideChange', function (e) {
 
