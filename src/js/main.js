@@ -133,13 +133,10 @@ const projectFunc = {
 
         if ($('.js-history-slider').exists()) {
             try {
-                let autoPlayDelay = 1500;
                 let slides = $('.js-history-slider').find('.swiper-slide');
-
 
                 if ($('.history-pagination').exists()) {
                     const swContainer = $('.history-pagination').find('.swiper-wrapper');
-                    const arrSlidePag = [];
 
                     if (slides.length > 0) {
                         $(slides).each((index, item) => {
@@ -148,80 +145,83 @@ const projectFunc = {
                         });
 
                         const historyPug = new Swiper('.js-slider-year', {
-                            // spaceBetween: 10,
                             init: true,
                             slidesPerView: 7.4,
-                            //loop: true,
                             touchRatio: 0,
                             speed: 500,
+                            //noSwiping: true,
+                            simulateTouch: false,
                             breakpoints: {
-
                                 320: {
-                                    slidesPerView: 4.7,
+                                    slidesPerView: 4,
+                                    slidesPerGroup: 4,
+                                },
+                                621: {
+                                    slidesPerView: 5,
+                                    slidesPerGroup: 5,
                                 },
                                 768: {
                                     slidesPerView: 7.4,
                                 }
                             }
-                            // centeredSlides: true,
-                            // initialSlide: 5,
-                            // autoplay: {
-                            //     delay: autoPlayDelay,
-                            // },
-                            // watchSlidesVisibility: true
                         });
 
                         const historySlider = new Swiper('.js-history-slider', {
                             spaceBetween: 10,
                             speed: 500,
-                            //initialSlide: 5,
-                            // autoplay: {
-                            //     delay: autoPlayDelay,
-                            // },
-                            //loop: true,
                             navigation: {
                                 nextEl: '.arrow__link--next',
                                 prevEl: '.arrow__link--prev',
                             },
-                            thumbs: {
-                                swiper: historyPug,
-                            }
+                            // thumbs: {
+                            //     swiper: historyPug,
+                            // }
                         });
 
                         historyPug.update();
 
                         let slidesPug = $('.js-slider-year').find('.swiper-slide');
-                        // $(slidesPug[0]).find('.line-progress').css({
-                        //     width: '100%'
-                        // });
-
-
-                        let slidersCount = historyPug.params.loop ? historyPug.slides.length - 2 : historyPug.slides.length;
-                        let widthParts = 100 / slidersCount;
-
-                        console.log(widthParts);
-
-
-                        let calcProgress = (historySlider.params.speed);
+                        let widthParts = 0;
                         let dots = $('.item-dot');
-                        $(dots[0]).addClass('active');
-                        // let widthSlide = $(slidesPug[0]).width();
-                        const konfGrow = ((widthParts * (historySlider.activeIndex + 1)) * 6.6) / $(slidesPug[0]).width();
-                        //console.log(konfGrow)
+                        let konfGrow = ((widthParts * (historySlider.activeIndex + 1)) * 75.4054) / $(slidesPug[0]).width();
+                        let konfGrowAd = ((widthParts * (historySlider.activeIndex + 1)) * 1) / $(slidesPug[0]).width();
 
+                        if ($(window).width() <= 767 && $(window).width() > 620) {
+                            widthParts = 100 / 5;
+                        } else if ($(window).width() <= 620) {
+                            widthParts = 100 / 4;
+                        } else {
+                            widthParts = 100 / 7.4;
+                        }
+
+                        $(dots[0]).addClass('active');
                         $('.js-slider-year .progress').css('width', ((widthParts * (historySlider.activeIndex + 1))) + '%');
-                        //console.log(((widthParts * (this.activeIndex + 1)) - (0.5681818181818182 * (this.activeIndex + 1))) + '%');
+
+                        dots.each((index, item) => {
+                            $(item).on('click', function () {
+                                historyPug.slideTo(index);
+                            });
+                        });
 
                         historySlider.on('slideChange', function (e) {
+
+                            konfGrow = ((widthParts * 1) * Math.abs(historyPug.translate)) / $(slidesPug[0]).width();
+
                             let progress = $('.js-slider-year .progress');
 
-                            console.log(widthParts);
-
-                            progress.animate({
-                                'width': ((widthParts * (this.activeIndex + 1)) - (konfGrow * (this.activeIndex + 1))) + '%'
-                            }, this.params.speed, 'linear', () => {
-                                $(dots[historySlider.activeIndex]).addClass('active');
-                            });
+                            if (historySlider.activeIndex == 0) {
+                                progress.animate({
+                                    'width': ((widthParts * (historySlider.activeIndex + 1))) + '%'
+                                }, this.params.speed, 'linear', () => {
+                                    $(dots[historySlider.activeIndex]).addClass('active');
+                                });
+                            } else {
+                                progress.animate({
+                                    'width': (((widthParts * (this.activeIndex + 1)) - konfGrow)) + '%'
+                                }, this.params.speed, 'linear', () => {
+                                    $(dots[historySlider.activeIndex]).addClass('active');
+                                });
+                            }
 
                             $(dots).each((index, _) => {
                                 if (index > historySlider.activeIndex) {
@@ -231,109 +231,25 @@ const projectFunc = {
 
                             dots.each((index, item) => {
                                 if (index > historySlider.activeIndex) {
-                                    $(dots[index]).removeClass('active');
                                 } else {
-                                    //console.log($(dots[index]));
                                     $(dots[index]).addClass('active');
                                 }
-                                // console.log(index);
-                                // console.log(mySwiper.activeIndex);
                             });
 
-                            console.log('AI: ' + historySlider.activeIndex);
-                            console.log('length: ' + dots.length);
-
                             if (historySlider.activeIndex == dots.length - 1) {
-                                progress.animate({
-                                    'width': ((widthParts * (this.activeIndex + 1)) - (konfGrow * (this.activeIndex + 1)) + 3) + '%'
-                                }, this.params.speed, 'linear');
+                                if ($(window).width() <= 767) {
+                                    progress.animate({
+                                        'width': (((widthParts * (this.activeIndex + 1)) - konfGrow) + 12.5) + '%'
+                                    }, this.params.speed, 'linear');
+                                } else {
+                                    progress.animate({
+                                        'width': (((widthParts * (this.activeIndex + 1)) - konfGrow) + 4.575) + '%'
+                                    }, this.params.speed, 'linear');
+                                }
                             }
-
                         });
                     }
-
-
-                    // historyPug = new Swiper('.js-slider-year', optionsPug);
-                    // historySlider.controller.control = historyPug;
-                    // historyPug.controller.control = historySlider;
                 }
-
-                // //.history-pagination
-                // let slidersCount = mySwiper.params.loop ? mySwiper.slides.length - 2 : mySwiper.slides.length;
-                // let widthParts = 100 / slidersCount;
-
-
-                // for(let i=0; i<slidersCount; i++){
-                //     let year = document.querySelectorAll('.swiper-slide')[i].getAttribute('data-year');
-                //     $('.swiper-progress-bar .progress-sections').append('<span></span>').append(`<div class="item-dot"><span class="year-history">${year}</span></span><span class="year-dot"></span></div>`);
-                //     console.log('1');
-                // }
-
-                // let dots = $('.item-dot');
-                // $(dots[0]).addClass('active');
-
-                // function initProgressBar(){
-                //     let calcProgress = (slidersCount-1) * (autoPlayDelay + mySwiper.params.speed);
-                //     calcProgress += autoPlayDelay;
-                //     // $('.swiper-progress-bar .progress').animate({
-                //     //     width: '100%'
-                //     // }, calcProgress, 'linear');
-                // }
-
-                // initProgressBar();
-
-                //  $('.swiper-progress-bar .progress').stop().parent().addClass('stopped');
-                //  $('.swiper-progress-bar .progress').css('width', widthParts * (mySwiper.activeIndex + 1) + '%');
-
-                // mySwiper.on('slideChange', function () {
-
-                //     let progress = $('.swiper-progress-bar .progress');
-
-                //     if( 
-                //         ( 
-                //             this.progress == -0 || (this.progress == 1 && this.params.loop) 
-                //         ) && !progress.parent().is('.stopped')
-                //     ){
-                //         progress.css('width', '0');
-                //         if(this.activeIndex == 0){
-                //             initProgressBar();
-                //         }
-                //     }
-
-                //     progress.animate({
-                //         'width': widthParts * (this.activeIndex + 1) + '%'
-                //     }, this.params.speed, 'linear', ()=>{
-                //         $(dots[mySwiper.activeIndex]).addClass('active');
-                //     });
-
-                //     $(dots).each((index, _) => {
-                //         if (index > mySwiper.activeIndex) {
-                //             $(dots[index]).removeClass('active');
-                //         }
-                //     });
-                // });
-
-                // dots.each((index, item) => {
-                //     $(item).on('click', function(){
-                //         mySwiper.slideTo(index, 500);
-
-                //         dots.each((index, item) => {
-                //             if (index > mySwiper.activeIndex) {
-                //                 $(dots[index]).removeClass('active');
-                //             } else {
-                //                 console.log($(dots[index]));
-                //                 $(dots[index]).addClass('active');
-                //             }
-
-                //             console.log(index);
-                //             console.log(mySwiper.activeIndex);
-                //         });
-                //     });
-                // })
-
-                // setTimeout(() => {
-                //     $('.js-history-slider').css('opacity', 1);
-                // }, 600);
             }
             catch (err) {
                 console.log(err);

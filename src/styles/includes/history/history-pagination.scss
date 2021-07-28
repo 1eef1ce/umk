@@ -6,13 +6,20 @@
     max-width: 930px;
     margin-left: -66px;
 
+    @media(max-width: 1024px) {
+        margin-left: -15px;
+    }
+
     @media(max-width: 767px) {
-        // width: calc(100% + 40px);
-        // margin-right: 0;
+        margin-left: -11%;
     }
 
     @media(max-width: 620px) {
-        margin-left: -32px;
+        margin-left: -13%;
+    }
+
+    @media(max-width: 500px) {
+        margin-left: -13%;
     }
 
     .swiper-slide {
@@ -29,19 +36,22 @@
 
         &:last-child {
             &:after {
+                background: #d9d9d9;
                 position: absolute;
                 content: '';
-                width: 100%;
-                background-color: $gray-1;
+                width: 46px;
                 height: 2px;
                 top: 0;
-                left: 45px;
+                left: auto;
                 bottom: 0;
+                right: -41px;
                 margin: auto;
+                z-index: -1;
 
 
                 @media(max-width: 767px) {
-                    left: 66px;
+                    right: -100%;
+                    width: 100%;
                 }
             }
         }
