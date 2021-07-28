@@ -57,9 +57,7 @@
     img {
       width: 100%;
       object-fit: cover;
-      --overflow: 100px;
-      height: calc(100% + (2 * var(--overflow)));
-      top: calc(-1 * var(--overflow));
+      height: 140%;
     }
   }
 

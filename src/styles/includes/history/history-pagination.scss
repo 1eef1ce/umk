@@ -1,0 +1,98 @@
+.history-pagination {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    margin-right: 0px;
+    max-width: 930px;
+    margin-left: -66px;
+
+    @media(max-width: 1024px) {
+        margin-left: -15px;
+    }
+
+    @media(max-width: 767px) {
+        margin-left: -11%;
+    }
+
+    @media(max-width: 620px) {
+        margin-left: -13%;
+    }
+
+    @media(max-width: 500px) {
+        margin-left: -13%;
+    }
+
+    .swiper-slide {
+        display: flex;
+        background-color: transparent;
+        position: relative;
+        height: 18px;
+        align-items: center;
+        height: 152px;
+
+        @media(max-width: 620px) {
+            height: 84px;
+        }
+
+        &:last-child {
+            &:after {
+                background: #d9d9d9;
+                position: absolute;
+                content: '';
+                width: 46px;
+                height: 2px;
+                top: 0;
+                left: auto;
+                bottom: 0;
+                right: -41px;
+                margin: auto;
+                z-index: -1;
+
+
+                @media(max-width: 767px) {
+                    right: -100%;
+                    width: 100%;
+                }
+            }
+        }
+
+        .item-bloc {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background-color: $gray-1;
+            height: 2px;
+        }
+
+        .line-progress {
+            position: absolute;
+            background-color: red;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &.active {
+            .line-progress {
+                width: 100%;
+            }
+        }
+    }
+
+    .progress {
+        height: 2px;
+        background-color: $purple-1;
+        position: absolute;
+        width: 0%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 1;
+        left: 0;
+        top: 0;
+    }
+}

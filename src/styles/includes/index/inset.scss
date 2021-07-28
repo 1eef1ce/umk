@@ -51,9 +51,14 @@
 
         img {
             width: 100%;
-            --overflow: 100px;
-            height: calc(100% + (2 * var(--overflow)));
-            top: calc(-1 * var(--overflow));
+            height: 100%;
+        }
+
+        picture {
+            position: absolute;
+            width: 100%;
+            height: 140%;
+            --overflow: 65px;
         }
     }
 
@@ -66,7 +71,6 @@
         bottom: 0;
         margin: auto;
         overflow: hidden;
-        background-color: red;
 
         @media(max-width: 1024px) {
             position: relative;

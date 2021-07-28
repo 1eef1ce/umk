@@ -52,6 +52,7 @@
   &__img {
     width: 465px;
     height: 353px;
+    overflow: hidden;
 
     @media (max-width: 1024px) {
       width: 275px;
@@ -67,6 +68,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      height: 145%
     }
   }
 
