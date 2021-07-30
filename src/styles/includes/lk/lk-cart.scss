@@ -342,7 +342,6 @@
 
         span {
             font-weight: 400;
-            margin-left: 4px;
         }
     }
 
@@ -381,21 +380,10 @@
     }
 
     &__textarea {
-        width: 100%;
-        margin-top: 22px;
         height: 198px;
-        font-family: 'MyriadPro', Arial, sans-serif;
-        font-size: 16px;
-        border-color: $gray-1;
-        padding: 21px 26px;
 
         @media(max-width: 1024px) {
-            margin-top: 16px;
             height: 274px;
-        }
-
-        &::placeholder {
-            color: $gray-2;
         }
     }
 
@@ -403,7 +391,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin-top: 17px;
+        margin-top: 25px;
 
         @media(max-width: 620px) {
             margin: 8px 0 2px;

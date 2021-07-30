@@ -61,7 +61,9 @@ block content
                         .order-detaile__bloc
                             .order-detaile__title 4. Комментарий к заказу
                             .order-detaile__box
-                                textarea.order-detaile__textarea(name="comment")
+                                .form-group.form-group--textarea
+                                    label.form-group__label.form-group__label--text.js-form-label(for="comment") Введите комментарий
+                                    textarea#comment.order-detaile__textarea.form-group__input.js-input.js-ta-input(name="comment")
                     .order-detaile__right
                         .order-detaile__bloc
                             .order-detaile__title 5. Оформление заявки

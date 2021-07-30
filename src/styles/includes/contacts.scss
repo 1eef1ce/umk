@@ -11,10 +11,6 @@
       margin-top: 24px;
     }
 
-    .tabs__list {
-      border-bottom-color: transparent;
-    }
-
     .tabs__item {
 
       &:not(:last-of-type) {
@@ -43,25 +39,6 @@
       @media (max-width: 620px) {
         padding-bottom: 11px;
         font-size: 18px;
-      }
-
-      &:hover {
-        color: $purple-1;
-
-        &::after {
-          background: transparent;
-        }
-      }
-
-      &.active {
-
-        &:hover {
-          color: $basic;
-
-          &::after {
-            background: $purple-1;
-          }
-        }
       }
     }
   }

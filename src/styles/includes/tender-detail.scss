@@ -109,6 +109,14 @@
 
         &--textarea {
           width: 100%;
+
+          textarea {
+            height: 160px;
+
+            @media (max-width: 620px) {
+              height: 141px;
+            }
+          }
         }
       }
 

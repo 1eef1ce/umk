@@ -74,15 +74,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0 16px;
+    padding: 16px 0;
     cursor: pointer;
 
     @media (max-width: 1024px) {
-      padding: 11px 13px 13px 0;
-    }
-
-    @media (max-width: 620px) {
-      padding: 12px 13px 12px 0;
+      padding: 12px 13px 11px 0;
     }
   }
 

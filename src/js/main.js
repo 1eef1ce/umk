@@ -1784,9 +1784,9 @@ window.addEventListener('load', function () {
                                 }
 
                                 if (this.classList.contains('btn--comment') && this.classList.contains('is-open')) {
-                                    $(this).find('.js-btn-txt').text('Удалить комментарий');
+                                    $(this).find('.js-btn-txt').text('Комментарий');
                                 } else if (this.classList.contains('btn--comment') && !this.classList.contains('is-open')) {
-                                    $(this).find('.js-btn-txt').text('Добавить комментарий');
+                                    $(this).find('.js-btn-txt').text('Комментарий');
                                 }
 
                                 content = panel[index];

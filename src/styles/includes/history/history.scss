@@ -1,6 +1,14 @@
 .history {
-    background: url(../img/decor/bg-history.svg) no-repeat center;
-    background-size: cover;
+    background: url(../img/decor/bg-history.svg) no-repeat 100% -10%;
+    background-size: contain;
+
+    @media (min-width: 1921px) {
+        background-size: cover;
+    }
+
+    @media(max-width: 1024px) {
+        background: url(../img/decor/bg-history-tablet.svg) no-repeat top;
+    }
 
     @media(max-width: 620px) {
         background: none;

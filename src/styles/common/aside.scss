@@ -63,15 +63,14 @@
 
     &--special {
 
-
       @media(max-width: 1024px) {
         position: fixed;
-        z-index: 200;
+        z-index: 2010;
         top: 65px;
+        right: 0;
         max-height: calc(100vh - 65px);
         overflow: scroll;
         transform: translateX(100%);
-        right: 0px;
         width: 368px;
         display: block;
         height: 100vh;

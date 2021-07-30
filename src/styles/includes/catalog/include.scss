@@ -1,5 +1,6 @@
 .include {
-    background-color: $gray-3;
+    background: $gray-3 url("../../img/decor/bg-catalog-description.svg") no-repeat center;
+    background-size: cover;
     width: 99vw;
     margin: 0 0 0 50%;
     transform: translateX(-50%);
@@ -8,7 +9,7 @@
         width: calc(100% + 40px);
         margin-left: -20px;
         transform: none;
-        background-color: white;
+        background: #fff;
     }
 
     &__container {

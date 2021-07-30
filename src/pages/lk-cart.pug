@@ -101,7 +101,10 @@ block content
                                 .lk-cart__box
                                     .lk-cart__finish
                                         .lk-cart__s ИТОГО: 
-                                        .lk-cart__n 4 952 016 ₽
+                                        .lk-cart__n
+                                            |4 952 016
+                                            |
+                                            span ₽
                                     .lk-cart__discount
                                         .lk-cart__s Скидка: 
                                         .lk-cart__n 1 607 338 ₽
@@ -112,9 +115,9 @@ block content
                                 a.btn.btn--delivery.btn--cart-info.btn--transparent.btn--w218.js-btn-cartInfo(href="javascript:void(0);") 
                                     span
                                     span.js-btn-txt Добавить доставку
-                                a.btn.btn--comment.btn--cart-info.btn--transparent.btn--w218.js-btn-cartInfo(href="javascript:void(0);")
+                                a.btn.btn--comment.btn--cart-info.btn--transparent.btn--w181.js-btn-cartInfo(href="javascript:void(0);")
                                     span
-                                    span.js-btn-txt Добавить комментарий
+                                    span.js-btn-txt Комментарий
                                 a.btn.btn--basic.btn--w187(href="order-detaile.html") Оформить заказ
                             .lk-cart__detail.lk-cart__detail--delivery
                                 form.lk-cart__content
@@ -140,7 +143,9 @@ block content
                                 form.lk-cart__content
                                     .lk-cart__cover
                                         .lk-cart__subhead Введите свой комментарий к заказу:
-                                        textarea.lk-cart__textarea(name="comment" placeholder="Введите описание претензии")
+                                        .form-group.form-group--textarea
+                                            label.form-group__label.form-group__label--text.js-form-label(for="comment") Введите комментарий
+                                            textarea#comment.lk-cart__textarea.form-group__input.js-input.js-ta-input(name="comment")
                                         .lk-cart__func
                                             button.btn.btn--transparent.btn--w187.btn--cancel(type="reset") Отмена
                                             button.btn.btn--transparent.btn--w187(type="submit") Сохранить

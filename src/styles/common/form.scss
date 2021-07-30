@@ -56,6 +56,10 @@
         &:focus,
         &:not([value=""]) {
           padding: 33px 26px 11px;
+
+          @media(max-width: 620px) {
+            padding: 33px 22px 11px;
+          }
         }
       }
 
@@ -86,9 +90,6 @@
     }
 
     textarea {
-      height: 160px;
-
-
       // &::-webkit-scrollbar {
       //   display: none;
       // }
@@ -108,10 +109,6 @@
       /* Add a thumb */
       &::-webkit-scrollbar-thumb {
         background: $purple-1;
-      }
-
-      @media (max-width: 620px) {
-        height: 141px;
       }
     }
   }

@@ -69,7 +69,10 @@
       }
     }
 
-    &:hover,
+    &:hover {
+      color: $basic;
+    }
+
     &.active {
       color: $basic;
 

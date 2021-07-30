@@ -165,6 +165,7 @@
 
     &__txt {
         font-size: 14px;
+        color: $purple-1;
     }
 
     &__icon {
@@ -183,7 +184,7 @@
     }
 
     &__content {
-        padding: 26px 24px 32px;
+        padding: 26px 24px 28px;
 
         @media(max-width: 1024px) {
             padding: 26px 20px 28px;
@@ -209,7 +210,7 @@
             grid-column-gap: 50px;
         }
 
-        @media(max-width: 767pc) {
+        @media(max-width: 767px) {
             grid-template-columns: 40px auto minmax(55px, 90px) minmax(24px, 49px);
             grid-column-gap: 15px;
         }
@@ -222,15 +223,11 @@
             grid-column-gap: 8px;
         }
 
-        &:not(:first-child) {
-            margin-top: 21px;
-
-            @media(max-width: 1024px) {
-                margin-top: 22px;
-            }
+        &:not(:last-of-type) {
+            margin-bottom: 22px;
 
             @media(max-width: 620px) {
-                margin-top: 8px;
+                margin-bottom: 8px;
             }
         }
     }
@@ -339,10 +336,15 @@
     }
 
     &__name {
+
         @media(max-width: 640px) {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
+        }
+
+        &:hover {
+            color: $purple-1;
         }
     }
 

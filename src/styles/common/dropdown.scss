@@ -18,7 +18,8 @@
 
     &--phone {
         .dropdown-menu {
-            left: -100px;
+            left: auto;
+            right: 0;
             min-width: 248px;
         }
 
@@ -38,20 +39,23 @@
 
         .dropdown-menu {
             min-width: 328px;
-            left: -206%;
+            left: auto;
+            right: 0;
         }
     }
 
     &--lng {
         .dropdown-menu {
-            left: -60%;
+            left: auto;
+            right: 0;
         }
     }
 
     &--lng-icons {
 
         .dropdown-menu {
-            left: -60%;
+            left: auto;
+            right: 0;
         }
 
         img {
@@ -227,13 +231,14 @@
         }
     }
 
-
     &--user {
         @media(max-width: 1024px) {
             display: none;
         }
 
         .dropdown-menu {
+            left: auto;
+            right: 0;
             min-width: 180px;
             display: none;
         }
@@ -279,9 +284,8 @@
     display: none;
     position: absolute;
     left: 0;
-    top: 20px;
-    min-width: 100%;
     top: 16px;
+    min-width: 100%;
     padding-top: 13px;
 }
 
@@ -297,7 +301,6 @@
     background-color: white;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.12);
 }
-
 
 .submenu>li>a {
     display: block;

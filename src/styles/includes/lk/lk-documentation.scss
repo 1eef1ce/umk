@@ -1,9 +1,11 @@
 .lk-documentation {
     padding-top: 27px;
-    background: none;
+    background: url("../../img/decor/bg-lk-documentation.svg") no-repeat center;
+    background-size: cover;
 
     @media(max-width: 1024px) {
         padding-top: 18px;
+        background: none;
     }
 
     @media(max-width: 620px) {
@@ -13,6 +15,7 @@
     &__date {
         display: block;
         font-size: 14px;
+        color: $gray-2;
         width: max-content;
         margin-top: 32px;
 

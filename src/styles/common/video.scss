@@ -18,13 +18,11 @@
     }
 
     &:hover {
-      .video {
-        &__button {
-          border-color: $purple-1;
 
-          .icon {
-            fill: $purple-1;
-          }
+      .video {
+
+        &__button {
+          opacity: 1;
         }
       }
     }
