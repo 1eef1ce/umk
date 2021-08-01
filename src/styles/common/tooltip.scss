@@ -72,6 +72,12 @@
     }
   }
 
+  &--pending {
+    .icon {
+      fill: $orange;
+    }
+  }
+
   &--steps {
     .tooltip {
       &__content {

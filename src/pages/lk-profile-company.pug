@@ -173,5 +173,18 @@ block content
                                                 .lk-profile__col
                                                     a.lk-profile__icon(href="javascript:void(0);")
                                                         +icon("ic-edit")
+                                    .lk-profile__item.lk-profile__item--doc.lk-profile__item--doc-pending
+                                        .lk-profile__row
+                                            .lk-profile__col.lk-profile__col--tooltip
+                                                .lk-profile__caption Типовой договор
+                                                a.tooltip.tooltip--contract.tooltip--pending(href="javascript:void(0);")
+                                                    .tooltip__icon
+                                                        +icon('ic-warrning')
+                                                    .tooltip__content Типовой договор на рассмотрении
+                                            .lk-profile__col.lk-profile__col--subgrid
+                                                .lk-profile__info
+                                                .lk-profile__col
+                                                    a.lk-profile__icon(href="javascript:void(0);")
+                                                        +icon("ic-edit")
                             button.btn.btn--basic.js-btn-save.btn--w275(type="submit") Сохранить изменения                            
         include common/menu-app

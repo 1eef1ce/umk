@@ -71,16 +71,16 @@
     "gulp-replace": "^1.1.3",
     "gulp-size": "^4.0.0",
     "gulp-svgmin": "^3.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^9.0.0",
     "jquery": "^3.6.0",
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1",
     "select2": "^4.1.0-rc.0",
     "smooth-scrollbar": "^8.6.2",
-    "swiper": "^6.7.0",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-jpegtran": "^7.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^9.0.0"
+    "swiper": "^6.7.0"
   },
   "editorconfig-cli": [
     "*.json",

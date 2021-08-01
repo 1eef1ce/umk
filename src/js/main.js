@@ -2341,9 +2341,9 @@ window.addEventListener('load', function () {
     }
 
 
-    if ($('.file').exists()) {
+    if ($('.js-file').exists()) {
         try {
-            let fileEl = document.querySelectorAll('.file');
+            let fileEl = document.querySelectorAll('.js-file');
 
             fileEl.forEach((element, _) => {
                 let label = $(element).find('.file__label');
@@ -2373,25 +2373,6 @@ window.addEventListener('load', function () {
             console.log(err);
         }
     }
-
-    // $('input[type="file"]').change(function () {
-    //     let label = $('.file .file__label');
-    //     if (typeof (this.files) != 'undefined') {
-    //         if (this.files.length == 0) {
-    //             label.removeClass('withFile').text(label.data('default'));
-    //         }
-    //         else {
-    //             let file = this.files[0];
-    //             let name = file.name;
-    //             label.addClass('withFile').text(name);
-    //         }
-    //     }
-    //     else {
-    //         let name = this.value.split("\\");
-    //         label.addClass('withFile').text(name[name.length - 1]);
-    //     }
-    //     return false;
-    // });
 
     if ($('.js-open-modal').exists()) {
         try {
