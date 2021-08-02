@@ -327,9 +327,15 @@
         }
 
         .count {
+
             &__input {
                 height: 47px;
-                padding: 0 16px;
+                padding: 0 22px 0 16px;
+            }
+
+            &__symbol {
+                width: 20px;
+                line-height: 47px;
             }
         }
     }
@@ -345,20 +351,25 @@
     }
 
     .count {
+        margin-right: 20px;
+
+        @media(max-width: 1024px) {
+            margin-right: 18px;
+        }
+
+        @media(max-width: 620px) {
+            margin-right: 20px;
+        }
+
         &__input {
             width: 100px;
-            margin-right: 20px;
-
-
 
             @media(max-width: 1024px) {
                 width: 100px;
-                margin-right: 18px;
             }
 
             @media(max-width: 620px) {
                 width: 105px;
-                margin-right: 20px;
             }
         }
     }
